@@ -22,4 +22,9 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+    * After cloning/pulling:
+    
+        `bundle install`
+        
+        `db:drop db:create db:migrate`
 
