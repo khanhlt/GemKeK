@@ -10,12 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_04_163647) do
+ActiveRecord::Schema.define(version: 2018_10_06_141943) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content", null: false
     t.integer "user_id", null: false
     t.integer "review_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_genres", force: :cascade do |t|
+    t.integer "genre_id", null: false
+    t.integer "game_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_platforms", force: :cascade do |t|
+    t.integer "game_id", null: false
+    t.integer "platform_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,9 +49,9 @@ ActiveRecord::Schema.define(version: 2018_10_04_163647) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "target_type", null: false
+    t.string "likeable_type", null: false
     t.integer "user_id", null: false
-    t.integer "target_id", null: false
+    t.integer "likeable_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
