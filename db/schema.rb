@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 2018_10_06_141943) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "target_type", null: false
+    t.string "likeable_type", null: false
     t.integer "user_id", null: false
-    t.integer "target_id", null: false
+    t.integer "likeable_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
