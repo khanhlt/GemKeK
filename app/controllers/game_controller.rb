@@ -4,10 +4,10 @@ class GameController < ApplicationController
 
     @game_full = []
     @games.each do |game|
-      game_ = {"image": Photo.where(game_id: game.id).first.image,
+      game_ = {"image": game.photos.first.image,
                "name": game.name, "id": game.id, "summary": game.summary, "release_date": game.relase_date,
-               "score": Review.where(game_id: game.id).average(:rating),
-               "platform": Platform.where(id: GamePlatform.where(game_id: game.id))}
+               "score": game.reviews.average(:rating),
+               "platform": game.platform_of_game}
       @game_full.push(game_)
     end
 

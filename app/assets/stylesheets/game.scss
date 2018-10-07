@@ -1,3 +1,17 @@
 // Place all the styles related to the game controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#about img {
+    padding: 3px;
+    width: 500px;
+    margin-top: 10px;
+    background: #fff;
+    border-right: 0;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
+    height: 172px;
+}
+
+.fix-padding {
+    padding:0px !important;
+}
