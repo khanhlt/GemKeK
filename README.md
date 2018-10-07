@@ -9,22 +9,10 @@ Things you may want to cover:
 
 * Rails version 5.2.1
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
 * Deployment instructions
     * After cloning/pulling:
     
         `bundle install`
         
-        `db:drop db:create db:migrate`
+        `rake db:drop db:create db:migrate db:seed`
 
