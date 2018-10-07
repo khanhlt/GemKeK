@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'login/home'
   get 'game/index'
   get 'gameshousai/home'
 

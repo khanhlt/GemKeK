@@ -16871,7 +16871,11 @@ Processing by GameshousaiController#home as HTML
 Completed 200 OK in 2620ms (Views: 2611.0ms | ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
+Started GET "/users/new" for 127.0.0.1 at 2018-10-05 22:00:38 +0700
+=======
 Started GET "/" for 127.0.0.1 at 2018-10-05 22:03:11 +0700
+>>>>>>> 5fb4b35af9ff6ffc0bbd5f7e164d0bb9ff2dbd1d
   
 ActiveRecord::PendingMigrationError (
 
@@ -16914,6 +16918,242 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/users/signin" for 127.0.0.1 at 2018-10-05 22:00:47 +0700
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to DeviseCreateUsers (20181004154627)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004154627"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to AddInfoToUsers (20181004155528)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "full_name" varchar[0m
+  ↳ db/migrate/20181004155528_add_info_to_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "is_admin" boolean[0m
+  ↳ db/migrate/20181004155528_add_info_to_users.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004155528"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateGames (20181004160938)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "games" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "summary" varchar, "relase_date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004160938_create_games.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004160938"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreatePlatforms (20181004161054)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "platforms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "version" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004161054_create_platforms.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004161054"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateGenres (20181004161258)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004161258_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004161258"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreatePhotos (20181004162317)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004162317_create_photos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004162317"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateReviews (20181004163206)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar NOT NULL, "rating" integer, "user_id" integer NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163206_create_reviews.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163206"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateComments (20181004163244)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar NOT NULL, "user_id" integer NOT NULL, "review_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163244_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163244"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateLikes (20181004163647)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "likes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "target_type" integer NOT NULL, "user_id" integer NOT NULL, "target_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163647_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163647"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-05 15:01:02.567396"], ["updated_at", "2018-10-05 15:01:02.567396"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Started GET "/users/signin" for 127.0.0.1 at 2018-10-05 22:01:05 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/users/signin"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-05 22:01:24 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 2146ms (Views: 2131.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-05 22:01:56 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 54ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:07:29 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.7ms)
+  Rendered gameshousai/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 287ms (Views: 281.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:11:53 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.5ms)
+  Rendered gameshousai/home.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 1870ms (Views: 1869.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:12:18 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.4ms)
+  Rendered gameshousai/home.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 1721ms (Views: 1719.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:12:33 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.5ms)
+  Rendered gameshousai/home.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 1722ms (Views: 1720.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:14:31 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/gameshousai/home"):
+=======
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
   [1m[35m (176.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
@@ -17031,6 +17271,7 @@ Completed 200 OK in 9ms (Views: 3.4ms | ActiveRecord: 0.0ms)
 Started GET "/game_shousai" for 127.0.0.1 at 2018-10-05 22:04:28 +0700
   
 ActionController::RoutingError (No route matches [GET] "/game_shousai"):
+>>>>>>> 5fb4b35af9ff6ffc0bbd5f7e164d0bb9ff2dbd1d
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -17059,6 +17300,462 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
+<<<<<<< HEAD
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:14:48 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.6ms)
+  Rendered gameshousai/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:14:50 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.7ms)
+  Rendered gameshousai/home.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 82ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:14:50 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.9ms)
+  Rendered gameshousai/home.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 86ms (Views: 82.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:14:54 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.3ms)
+  Rendered gameshousai/home.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 93ms (Views: 89.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:14:55 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.8ms)
+  Rendered gameshousai/home.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 80ms (Views: 76.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:14:56 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.2ms)
+  Rendered gameshousai/home.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 114ms (Views: 109.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:14:59 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.5ms)
+  Rendered gameshousai/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 85ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:15:00 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (1.7ms)
+  Rendered gameshousai/home.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 88ms (Views: 85.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:15:01 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.1ms)
+  Rendered gameshousai/home.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 104ms (Views: 99.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:15:02 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.9ms)
+  Rendered gameshousai/home.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 67ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:15:04 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.9ms)
+  Rendered gameshousai/home.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 63ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:15:05 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.7ms)
+  Rendered gameshousai/home.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 81ms (Views: 78.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:15:05 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.7ms)
+  Rendered gameshousai/home.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 85ms (Views: 83.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:15:06 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (1.1ms)
+  Rendered gameshousai/home.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 114ms (Views: 112.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:15:08 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (1.2ms)
+  Rendered gameshousai/home.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 83ms (Views: 79.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:15:08 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.3ms)
+  Rendered gameshousai/home.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 151ms (Views: 146.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:16:16 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.4ms)
+  Rendered gameshousai/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 66ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-05 22:16:38 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 88ms (Views: 65.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-05 22:16:49 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.1ms)
+  Rendered gameshousai/home.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 109ms (Views: 104.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-05 22:16:51 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 66ms (Views: 64.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-05 22:16:54 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 76ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-05 22:16:57 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 61ms (Views: 59.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-05 22:17:05 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 63ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-05 22:24:38 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 375ms (Views: 357.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-10-05 22:24:52 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vUqHbxLst3W7Ai5TgcZVZXOyIcrmSo+WlEse3BQHY4FchZXawIvvxEo1977u201+EuET3ASD3hv/piMs06N17A==", "user"=>{"email"=>"trung@123.com", "full_name"=>"Trung", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :full_name
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trung@123.com"], ["LIMIT", 1]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "trung@123.com"], ["encrypted_password", "$2a$11$KSV1ckd4XKe6/JOtrCKRKeFWIh2A6rHZrWSFMUt5X/ebmqrWX3rPa"], ["created_at", "2018-10-05 15:24:52.223309"], ["updated_at", "2018-10-05 15:24:52.223309"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 216ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-05 22:24:52 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-06 08:16:59 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.3ms)
+  Rendered gameshousai/home.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 356ms (Views: 350.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-06 16:35:13 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.5ms)
+  Rendered gameshousai/home.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 373ms (Views: 366.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-06 16:35:27 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.2ms)
+  Rendered gameshousai/home.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 85ms (Views: 80.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-06 16:35:27 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.1ms)
+  Rendered gameshousai/home.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 170ms (Views: 164.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-06 16:35:28 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (1.9ms)
+  Rendered gameshousai/home.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 148ms (Views: 143.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-06 16:35:28 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.1ms)
+  Rendered gameshousai/home.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 120ms (Views: 115.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-06 16:35:29 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.0ms)
+  Rendered gameshousai/home.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 134ms (Views: 128.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-06 16:35:30 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.7ms)
+  Rendered gameshousai/home.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 140ms (Views: 134.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-06 16:35:33 +0700
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.0ms)
+  Rendered gameshousai/home.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 110ms (Views: 105.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home?message=" for 127.0.0.1 at 2018-10-06 16:36:12 +0700
+Processing by GameshousaiController#home as HTML
+  Parameters: {"message"=>""}
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.6ms)
+  Rendered gameshousai/home.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 76ms (Views: 74.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home?message=" for 127.0.0.1 at 2018-10-06 16:36:20 +0700
+Processing by GameshousaiController#home as HTML
+  Parameters: {"message"=>""}
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.8ms)
+  Rendered gameshousai/home.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 127ms (Views: 123.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home?message=" for 127.0.0.1 at 2018-10-06 16:36:23 +0700
+Processing by GameshousaiController#home as HTML
+  Parameters: {"message"=>""}
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.0ms)
+  Rendered gameshousai/home.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 126ms (Views: 121.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home?message=" for 127.0.0.1 at 2018-10-06 16:36:26 +0700
+Processing by GameshousaiController#home as HTML
+  Parameters: {"message"=>""}
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.2ms)
+  Rendered gameshousai/home.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 153ms (Views: 148.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home?message=" for 127.0.0.1 at 2018-10-06 16:36:29 +0700
+Processing by GameshousaiController#home as HTML
+  Parameters: {"message"=>""}
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (1.0ms)
+  Rendered gameshousai/home.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 115ms (Views: 99.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home?message=" for 127.0.0.1 at 2018-10-06 16:36:31 +0700
+Processing by GameshousaiController#home as HTML
+  Parameters: {"message"=>""}
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.1ms)
+  Rendered gameshousai/home.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 92ms (Views: 87.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home?message=" for 127.0.0.1 at 2018-10-06 16:36:32 +0700
+Processing by GameshousaiController#home as HTML
+  Parameters: {"message"=>""}
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.6ms)
+  Rendered gameshousai/home.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 137ms (Views: 133.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home?message=" for 127.0.0.1 at 2018-10-06 16:36:33 +0700
+Processing by GameshousaiController#home as HTML
+  Parameters: {"message"=>""}
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.1ms)
+  Rendered gameshousai/home.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 121ms (Views: 116.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home?message=" for 127.0.0.1 at 2018-10-06 16:36:34 +0700
+Processing by GameshousaiController#home as HTML
+  Parameters: {"message"=>""}
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.2ms)
+  Rendered gameshousai/home.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 129ms (Views: 124.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home?message=" for 127.0.0.1 at 2018-10-06 16:36:34 +0700
+Processing by GameshousaiController#home as HTML
+  Parameters: {"message"=>""}
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.1ms)
+  Rendered gameshousai/home.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 161ms (Views: 156.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gameshousai/home?message=" for 127.0.0.1 at 2018-10-06 16:36:35 +0700
+Processing by GameshousaiController#home as HTML
+  Parameters: {"message"=>""}
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (2.2ms)
+  Rendered gameshousai/home.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 127ms (Views: 124.0ms | ActiveRecord: 0.0ms)
+
+
+=======
+>>>>>>> 5fb4b35af9ff6ffc0bbd5f7e164d0bb9ff2dbd1d
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateGemeGenres (20181006141825)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181006141825_create_geme_genres.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "game_genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "genre_id" integer NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181006141825_create_geme_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181006141825"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateGamePlatforms (20181006141943)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "game_platforms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "game_id" integer NOT NULL, "platform_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181006141943_create_game_platforms.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181006141943"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Started GET "/gameshousai/home" for 127.0.0.1 at 2018-10-07 07:23:30 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GameshousaiController#home as HTML
+  Rendering gameshousai/home.html.erb within layouts/application
+  Rendered gameshousai/_page_title.html.erb (0.4ms)
+  Rendered gameshousai/home.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 293ms (Views: 288.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-07 07:24:39 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 70ms (Views: 54.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-07 07:34:13 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 123ms (Views: 117.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/bg-01.jpg" for 127.0.0.1 at 2018-10-07 07:34:13 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/images/bg-01.jpg"):
+=======
 Started GET "/" for 127.0.0.1 at 2018-10-05 22:16:15 +0700
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
@@ -17112,6 +17809,7 @@ Completed 200 OK in 2096ms (Views: 1944.9ms | ActiveRecord: 0.0ms)
 Started GET "/users" for 127.0.0.1 at 2018-10-05 22:31:00 +0700
   
 ActionController::RoutingError (No route matches [GET] "/users"):
+>>>>>>> 58b93f1e435925901068a175d06f653136a19d53
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -17140,9 +17838,22 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 07:53:34 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1964ms (Views: 1963.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/images/bg-01.jpg" for 127.0.0.1 at 2018-10-07 07:53:36 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/login/images/bg-01.jpg"):
+=======
 Started GET "/users/sign_out" for 127.0.0.1 at 2018-10-05 22:31:23 +0700
   
 ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+>>>>>>> 58b93f1e435925901068a175d06f653136a19d53
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -17171,6 +17882,1090 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 07:54:20 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1907ms (Views: 1905.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/images/bg-01.jpg" for 127.0.0.1 at 2018-10-07 07:54:22 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/login/images/bg-01.jpg"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/fonts/poppins/Poppins-Medium.ttf" for 127.0.0.1 at 2018-10-07 07:54:22 +0700
+Started GET "/fonts/poppins/Poppins-Regular.ttf" for 127.0.0.1 at 2018-10-07 07:54:22 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Medium.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Regular.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 07:54:41 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1827ms (Views: 1823.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/images/bg-01.jpg" for 127.0.0.1 at 2018-10-07 07:54:43 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/login/images/bg-01.jpg"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/fonts/poppins/Poppins-Medium.ttf" for 127.0.0.1 at 2018-10-07 07:54:43 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Medium.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/fonts/poppins/Poppins-Regular.ttf" for 127.0.0.1 at 2018-10-07 07:54:43 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Regular.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 07:55:21 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 487ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (SyntaxError: [stdin]:5:2: reserved word 'function'):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+(execjs):7539:8
+(execjs):7545:14
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__2277970794158634502_70300737949420'
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 07:55:39 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 86ms (Views: 85.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/images/bg-01.jpg" for 127.0.0.1 at 2018-10-07 07:55:39 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/login/images/bg-01.jpg"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/fonts/poppins/Poppins-Medium.ttf" for 127.0.0.1 at 2018-10-07 07:55:39 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Medium.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/fonts/poppins/Poppins-Regular.ttf" for 127.0.0.1 at 2018-10-07 07:55:39 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Regular.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 07:55:52 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 289ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (SyntaxError: [stdin]:2:2: reserved word 'function'):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+(execjs):7539:8
+(execjs):7545:14
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__2277970794158634502_70300740119680'
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 07:56:38 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 224ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (SyntaxError: [stdin]:2:2: reserved word 'function'):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10: <!--     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:  -->  </head>
+    12: 
+    13:   <body>
+  
+(execjs):7539:8
+(execjs):7545:14
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__2277970794158634502_70300833479720'
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 07:56:43 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 233ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (SyntaxError: [stdin]:2:2: reserved word 'function'):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+(execjs):7539:8
+(execjs):7545:14
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__2277970794158634502_70300709010240'
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 07:58:30 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 424ms (Views: 413.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/images/bg-01.jpg" for 127.0.0.1 at 2018-10-07 07:58:31 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/login/images/bg-01.jpg"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/fonts/poppins/Poppins-Regular.ttf" for 127.0.0.1 at 2018-10-07 07:58:31 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Regular.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/fonts/poppins/Poppins-Medium.ttf" for 127.0.0.1 at 2018-10-07 07:58:31 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Medium.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login/home?username=&pass=" for 127.0.0.1 at 2018-10-07 07:58:33 +0700
+Processing by LoginController#home as HTML
+  Parameters: {"username"=>"", "pass"=>""}
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 91ms (Views: 89.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/images/bg-01.jpg" for 127.0.0.1 at 2018-10-07 07:58:34 +0700
+  
+Started GET "/fonts/poppins/Poppins-Medium.ttf" for 127.0.0.1 at 2018-10-07 07:58:34 +0700
+ActionController::RoutingError (No route matches [GET] "/login/images/bg-01.jpg"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/fonts/poppins/Poppins-Regular.ttf" for 127.0.0.1 at 2018-10-07 07:58:34 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Regular.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Medium.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login/home?username=&pass=" for 127.0.0.1 at 2018-10-07 08:00:05 +0700
+Processing by LoginController#home as HTML
+  Parameters: {"username"=>"", "pass"=>""}
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 96ms (Views: 93.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/images/bg-01.jpg" for 127.0.0.1 at 2018-10-07 08:00:06 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/login/images/bg-01.jpg"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/fonts/poppins/Poppins-Medium.ttf" for 127.0.0.1 at 2018-10-07 08:00:06 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Medium.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/fonts/poppins/Poppins-Regular.ttf" for 127.0.0.1 at 2018-10-07 08:00:06 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Regular.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login/home?username=&pass=" for 127.0.0.1 at 2018-10-07 08:01:59 +0700
+Processing by LoginController#home as HTML
+  Parameters: {"username"=>"", "pass"=>""}
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 187ms (Views: 185.7ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/login/bg-01.jpg"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.1) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.1) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/fonts/poppins/Poppins-Medium.ttf" for 127.0.0.1 at 2018-10-07 08:01:59 +0700
+Started GET "/fonts/poppins/Poppins-Regular.ttf" for 127.0.0.1 at 2018-10-07 08:01:59 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Medium.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Regular.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login/home?username=&pass=" for 127.0.0.1 at 2018-10-07 08:02:12 +0700
+Processing by LoginController#home as HTML
+  Parameters: {"username"=>"", "pass"=>""}
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 83ms (Views: 82.5ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/images/login/bg-01.jpg"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.1) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.1) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/fonts/poppins/Poppins-Regular.ttf" for 127.0.0.1 at 2018-10-07 08:02:13 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Regular.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/fonts/poppins/Poppins-Medium.ttf" for 127.0.0.1 at 2018-10-07 08:02:13 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Medium.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login/home?username=&pass=" for 127.0.0.1 at 2018-10-07 08:02:23 +0700
+Processing by LoginController#home as HTML
+  Parameters: {"username"=>"", "pass"=>""}
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 111ms (Views: 109.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fonts/poppins/Poppins-Medium.ttf" for 127.0.0.1 at 2018-10-07 08:02:24 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Medium.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/fonts/poppins/Poppins-Regular.ttf" for 127.0.0.1 at 2018-10-07 08:02:24 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Regular.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login/home?username=&pass=" for 127.0.0.1 at 2018-10-07 08:03:33 +0700
+Processing by LoginController#home as HTML
+  Parameters: {"username"=>"", "pass"=>""}
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1983ms (Views: 1980.1ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/fonts/poppins/Poppins-Medium.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.1) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.1) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/fonts/poppins/Poppins-Regular.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.1) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.1) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login/home?username=&pass=" for 127.0.0.1 at 2018-10-07 08:04:35 +0700
+Processing by LoginController#home as HTML
+  Parameters: {"username"=>"", "pass"=>""}
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 127ms (Views: 125.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fonts/poppins/Poppins-Medium.ttf" for 127.0.0.1 at 2018-10-07 08:04:35 +0700
+Started GET "/fonts/poppins/Poppins-Regular.ttf" for 127.0.0.1 at 2018-10-07 08:04:35 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Regular.ttf"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/poppins/Poppins-Medium.ttf"):
+=======
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
@@ -23045,6 +24840,7 @@ Completed 200 OK in 80ms (Views: 33.8ms | ActiveRecord: 3.7ms)
 Started GET "/class=%22img-responsive%22" for 127.0.0.1 at 2018-10-07 18:10:42 +0700
   
 ActionController::RoutingError (No route matches [GET] "/class=%22img-responsive%22"):
+>>>>>>> 58b93f1e435925901068a175d06f653136a19d53
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -23073,6 +24869,448 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/login/home?username=&pass=" for 127.0.0.1 at 2018-10-07 08:05:08 +0700
+Processing by LoginController#home as HTML
+  Parameters: {"username"=>"", "pass"=>""}
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1898ms (Views: 1896.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home?username=&pass=" for 127.0.0.1 at 2018-10-07 08:07:25 +0700
+Processing by LoginController#home as HTML
+  Parameters: {"username"=>"", "pass"=>""}
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 92ms (Views: 90.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:07:28 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:09:49 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 84ms (Views: 82.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:10:55 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 130ms (Views: 128.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:15:52 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 134ms (Views: 129.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:18:53 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 101ms (Views: 100.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:19:01 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 110ms (Views: 107.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:19:07 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 114ms (Views: 112.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:19:54 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 119ms (Views: 117.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:19:58 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 146ms (Views: 145.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:23:43 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 209ms (Views: 206.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:24:54 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 113ms (Views: 111.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:26:17 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 131ms (Views: 126.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:26:20 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 80ms (Views: 78.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:26:44 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 84ms (Views: 82.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:27:24 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 86ms (Views: 84.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:27:49 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 119ms (Views: 115.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:28:24 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 96ms (Views: 95.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:28:35 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 106ms (Views: 102.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:28:46 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 87ms (Views: 85.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:30:05 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 85ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:31:38 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 90ms (Views: 86.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:32:06 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 105ms (Views: 103.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:33:49 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 2297ms (Views: 2290.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:35:11 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 2159ms (Views: 2152.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:35:35 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2016ms (Views: 2014.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:37:14 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2038ms (Views: 2036.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:37:24 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 2084ms (Views: 2082.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:37:34 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1987ms (Views: 1985.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:38:04 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 79ms (Views: 77.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:38:28 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 94ms (Views: 91.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:38:35 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 73ms (Views: 71.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:38:36 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 143ms (Views: 140.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:38:45 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 126ms (Views: 124.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:39:01 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 81ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:39:12 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 95ms (Views: 93.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:40:21 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 113ms (Views: 112.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:41:04 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 134ms (Views: 133.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:42:27 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 542ms (Views: 540.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:43:22 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 140ms (Views: 137.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:43:59 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 545ms (Views: 543.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:44:53 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 93ms (Views: 89.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:45:45 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 101ms (Views: 98.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:46:33 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 94ms (Views: 91.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:47:08 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 102ms (Views: 98.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:48:15 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 122ms (Views: 116.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:48:38 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 119ms (Views: 117.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:48:58 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 74ms (Views: 72.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:49:29 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 390ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (SyntaxError: [stdin]:64:1: unexpected indentation):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+(execjs):7539:8
+(execjs):7545:14
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__2277970794158634502_70300708700000'
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:51:07 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 512ms (Views: 510.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:51:23 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 105ms (Views: 104.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:51:35 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 105ms (Views: 103.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:52:11 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 86ms (Views: 85.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:53:42 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1944ms (Views: 1942.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:54:44 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 100ms (Views: 98.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:55:06 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 91ms (Views: 89.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:56:38 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2354ms (Views: 2350.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 08:57:11 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 154ms (Views: 151.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 09:00:54 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2201ms (Views: 2200.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/home" for 127.0.0.1 at 2018-10-07 09:06:37 +0700
+Processing by LoginController#home as HTML
+  Rendering login/home.html.erb within layouts/application
+  Rendered login/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 91ms (Views: 88.3ms | ActiveRecord: 0.0ms)
+=======
 Started GET "/" for 127.0.0.1 at 2018-10-07 18:12:51 +0700
 Processing by GameController#index as HTML
   [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
@@ -23344,5 +25582,617 @@ Processing by GameController#index as HTML
   ↳ app/views/game/index.html.erb:110
   Rendered game/index.html.erb within layouts/application (6.0ms)
 Completed 200 OK in 71ms (Views: 57.1ms | ActiveRecord: 1.7ms)
+>>>>>>> 58b93f1e435925901068a175d06f653136a19d53
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:39:30 +0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (2.1ms)
+  Rendered game/index.html.erb within layouts/application (19.6ms)
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:39:56 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (2.9ms)
+  Rendered game/index.html.erb within layouts/application (272.6ms)
+Completed 200 OK in 51990ms (Views: 51876.4ms | ActiveRecord: 2.0ms)
+
+
+Completed 200 OK in 25770ms (Views: 25367.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:41:14 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (0.4ms)
+  Rendered game/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 463ms (Views: 442.8ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to DeviseCreateUsers (20181004154627)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004154627"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to AddInfoToUsers (20181004155528)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "full_name" varchar[0m
+  ↳ db/migrate/20181004155528_add_info_to_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "is_admin" boolean[0m
+  ↳ db/migrate/20181004155528_add_info_to_users.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004155528"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateGames (20181004160938)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "games" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "summary" varchar, "relase_date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004160938_create_games.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004160938"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreatePlatforms (20181004161054)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "platforms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "version" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004161054_create_platforms.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004161054"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateGenres (20181004161258)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004161258_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004161258"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreatePhotos (20181004162317)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004162317_create_photos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004162317"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateReviews (20181004163206)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar NOT NULL, "rating" integer, "user_id" integer NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163206_create_reviews.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163206"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateComments (20181004163244)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar NOT NULL, "user_id" integer NOT NULL, "review_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163244_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163244"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateLikes (20181004163647)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "likes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "likeable_type" varchar NOT NULL, "user_id" integer NOT NULL, "likeable_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163647_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163647"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateGemeGenres (20181006141825)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "game_genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "genre_id" integer NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181006141825_create_geme_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181006141825"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateGamePlatforms (20181006141943)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "game_platforms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "game_id" integer NOT NULL, "platform_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181006141943_create_game_platforms.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181006141943"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-07 11:44:01.406637"], ["updated_at", "2018-10-07 11:44:01.406637"]]
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hoangtuyb96@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "hoangtuyb96@gmail.com"], ["encrypted_password", "$2a$11$U.cBYzSZ5TDvI/mX8eVDKeVe8PYRDNY9u6S.2wYClmfV82emJpO1e"], ["created_at", "2018-10-07 11:44:01.577211"], ["updated_at", "2018-10-07 11:44:01.577211"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@gmail.com"], ["encrypted_password", "$2a$11$6Pech71M.GG9KfTCXi/GQe9fpTBzUS89Opj1fC5G4QNzK8Cej3.Mi"], ["created_at", "2018-10-07 11:44:01.719787"], ["updated_at", "2018-10-07 11:44:01.719787"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("name", "summary", "relase_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Generation Streets"], ["summary", "Generation Streets, a game based on the real-world map. Load your hometown, find your place and this casual shooter start giving you very unexpected impressions. Almost any point on Earth is available to load except the North pole and Antarctica."], ["relase_date", "2018-06-10 00:00:00"], ["created_at", "2018-10-07 11:44:01.744028"], ["updated_at", "2018-10-07 11:44:01.744028"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("name", "summary", "relase_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Assassin's creed Odyssey"], ["summary", "Choose your fate in Assassin's Creed® Odyssey. From outcast to living legend, embark on an odyssey to uncover the secrets of your past and change the fate of Ancient Greece."], ["relase_date", "2018-10-16 00:00:00"], ["created_at", "2018-10-07 11:44:01.750060"], ["updated_at", "2018-10-07 11:44:01.750060"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "rating", "user_id", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "It's good!"], ["rating", 4], ["user_id", 1], ["game_id", 1], ["created_at", "2018-10-07 11:44:01.761586"], ["updated_at", "2018-10-07 11:44:01.761586"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "rating", "user_id", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "It's not interesting"], ["rating", 3], ["user_id", 1], ["game_id", 1], ["created_at", "2018-10-07 11:44:01.767221"], ["updated_at", "2018-10-07 11:44:01.767221"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "rating", "user_id", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "Awesome!!!"], ["rating", 5], ["user_id", 1], ["game_id", 2], ["created_at", "2018-10-07 11:44:01.772898"], ["updated_at", "2018-10-07 11:44:01.772898"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashida"], ["user_id", 1], ["review_id", 1], ["created_at", "2018-10-07 11:44:01.784000"], ["updated_at", "2018-10-07 11:44:01.784000"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsd"], ["user_id", 1], ["review_id", 1], ["created_at", "2018-10-07 11:44:01.789924"], ["updated_at", "2018-10-07 11:44:01.789924"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsd"], ["user_id", 2], ["review_id", 1], ["created_at", "2018-10-07 11:44:01.796847"], ["updated_at", "2018-10-07 11:44:01.796847"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsd"], ["user_id", 2], ["review_id", 1], ["created_at", "2018-10-07 11:44:01.805455"], ["updated_at", "2018-10-07 11:44:01.805455"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsdasuihduiashdu"], ["user_id", 2], ["review_id", 1], ["created_at", "2018-10-07 11:44:01.814025"], ["updated_at", "2018-10-07 11:44:01.814025"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("likeable_type", "user_id", "likeable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["likeable_type", "Comment"], ["user_id", 1], ["likeable_id", 1], ["created_at", "2018-10-07 11:44:01.867891"], ["updated_at", "2018-10-07 11:44:01.867891"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("likeable_type", "user_id", "likeable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["likeable_type", "Review"], ["user_id", 1], ["likeable_id", 1], ["created_at", "2018-10-07 11:44:01.879198"], ["updated_at", "2018-10-07 11:44:01.879198"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("likeable_type", "user_id", "likeable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["likeable_type", "Comment"], ["user_id", 2], ["likeable_id", 1], ["created_at", "2018-10-07 11:44:01.888586"], ["updated_at", "2018-10-07 11:44:01.888586"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPlatform Create (0.3ms)[0m  [1m[32mINSERT INTO "platforms" ("name", "version", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Windows"], ["version", 8.1], ["created_at", "2018-10-07 11:44:01.908049"], ["updated_at", "2018-10-07 11:44:01.908049"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mPlatform Create (0.2ms)[0m  [1m[32mINSERT INTO "platforms" ("name", "version", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "iOS"], ["version", 11.4], ["created_at", "2018-10-07 11:44:01.913762"], ["updated_at", "2018-10-07 11:44:01.913762"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mPlatform Load (0.1ms)[0m  [1m[34mSELECT  "platforms".* FROM "platforms" WHERE "platforms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mGamePlatform Create (0.2ms)[0m  [1m[32mINSERT INTO "game_platforms" ("game_id", "platform_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["game_id", 1], ["platform_id", 1], ["created_at", "2018-10-07 11:44:01.925925"], ["updated_at", "2018-10-07 11:44:01.925925"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mPlatform Load (0.1ms)[0m  [1m[34mSELECT  "platforms".* FROM "platforms" WHERE "platforms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mGamePlatform Create (0.3ms)[0m  [1m[32mINSERT INTO "game_platforms" ("game_id", "platform_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["game_id", 2], ["platform_id", 2], ["created_at", "2018-10-07 11:44:01.934957"], ["updated_at", "2018-10-07 11:44:01.934957"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mPhoto Create (0.2ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "generation_streets_1"], ["game_id", 1], ["created_at", "2018-10-07 11:44:01.949846"], ["updated_at", "2018-10-07 11:44:01.949846"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mPhoto Create (0.3ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "generation_streets_2"], ["game_id", 1], ["created_at", "2018-10-07 11:44:01.958259"], ["updated_at", "2018-10-07 11:44:01.958259"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mPhoto Create (0.3ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "assassin_creed_odyssey_1"], ["game_id", 2], ["created_at", "2018-10-07 11:44:01.965978"], ["updated_at", "2018-10-07 11:44:01.965978"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mPhoto Create (0.2ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "assassin_creed_odyssey_2"], ["game_id", 2], ["created_at", "2018-10-07 11:44:01.972873"], ["updated_at", "2018-10-07 11:44:01.972873"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:44:07 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (1.6ms)
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:110
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:110
+  Rendered game/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 170ms (Views: 119.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:51:03 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (0.5ms)
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:110
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:110
+  Rendered game/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 1917ms (Views: 1907.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:51:21 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (1.0ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (0.3ms)
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:110
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:110
+  Rendered game/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 91ms (Views: 78.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:53:43 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tp-trung/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (0.4ms)
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:110
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:110
+  Rendered game/index.html.erb within layouts/application (298.3ms)
+Completed 200 OK in 408ms (Views: 358.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:53:55 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (1.1ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (0.5ms)
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:110
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:110
+  Rendered game/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 110ms (Views: 93.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:53:57 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (1.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.9ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (0.4ms)
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:110
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:110
+  Rendered game/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 125ms (Views: 84.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:54:05 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.9ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (0.4ms)
+  [1m[36mPlatform Load (0.9ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:110
+  [1m[36mPlatform Load (0.5ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:110
+  Rendered game/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 99ms (Views: 85.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:54:42 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (0.4ms)
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:110
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:110
+  Rendered game/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 111ms (Views: 94.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:55:13 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (1.6ms)
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:110
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:110
+  Rendered game/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 110ms (Views: 102.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:55:53 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (0.4ms)
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:110
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:110
+  Rendered game/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 1860ms (Views: 1813.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:56:07 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (0.4ms)
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:110
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:110
+  Rendered game/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 90ms (Views: 74.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/game/index" for 127.0.0.1 at 2018-10-07 18:56:20 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (0.3ms)
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:110
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" WHERE "platforms"."id" IN (SELECT "game_platforms"."id" FROM "game_platforms" WHERE "game_platforms"."game_id" = ?)[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:110
+  Rendered game/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 1594ms (Views: 1585.6ms | ActiveRecord: 1.9ms)
 
 

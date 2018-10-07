@@ -95,23 +95,22 @@
               <div class="col-xs-12 col-md-4">
                 <%= image_tag(game[:image], :class => "img-responsive") %>
               </div>
-              <div class="col-xs-12 col-md-7">
+              <div class="col-xs-12 col-md-8">
                 <div class="about-text">
                   <h4><a href="#"> <%= game[:name] %></a></h4>
                 </div>
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-5">
                   <b>Release date: <%= game[:release_date].to_date %> </b>
                 </div>
-                <div class="col-xs-12 col-md-3">
+                <div class="col-xs-12 col-md-3 fix-padding">
                   <b>User score: <%= game[:score] %> </b>
                 </div>
-                <div class="col-xs-7 col-md-3">
+                <div class="col-xs-7 col-md-4">
                   <b>Platform: </b>
                   <% game[:platform].each do |platform| %>
                     <b> <%= platform.name %> </b>
                   <% end %>
                 </div>
-
                 <div class="col-md-12">
                   <p><%= game[:summary] %> <a href="#">more...</a></p>
                 </div>
