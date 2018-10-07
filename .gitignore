@@ -114,7 +114,6 @@ build-iPhoneSimulator/
 # intended to run in multiple environments; otherwise, check them in:
 Gemfile.lock
 .ruby-version
-tmp
 .idea
 # .ruby-gemset
 
