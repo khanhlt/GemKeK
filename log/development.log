@@ -34866,3 +34866,1611 @@ Completed 200 OK in 10675ms (Views: 10629.4ms | ActiveRecord: 9.0ms)
 Completed 200 OK in 12650ms (Views: 12453.5ms | ActiveRecord: 43.2ms)
 
 
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (238.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (139.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to DeviseCreateUsers (20181004154627)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:39
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004154627"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (181.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to AddInfoToUsers (20181004155528)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "users" ADD "full_name" varchar[0m
+  ↳ db/migrate/20181004155528_add_info_to_users.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "is_admin" boolean[0m
+  ↳ db/migrate/20181004155528_add_info_to_users.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004155528"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (89.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateGames (20181004160938)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "games" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "summary" varchar, "relase_date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004160938_create_games.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004160938"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (137.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreatePlatforms (20181004161054)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "platforms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "version" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004161054_create_platforms.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004161054"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (151.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateGenres (20181004161258)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004161258_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004161258"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (161.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreatePhotos (20181004162317)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004162317_create_photos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004162317"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (158.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateReviews (20181004163206)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar NOT NULL, "rating" integer, "user_id" integer NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163206_create_reviews.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163206"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (571.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateComments (20181004163244)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar NOT NULL, "user_id" integer NOT NULL, "review_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163244_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163244"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (168.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateLikes (20181004163647)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "likes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "likeable_type" varchar NOT NULL, "user_id" integer NOT NULL, "likeable_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163647_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163647"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (175.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateGemeGenres (20181006141825)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "game_genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "genre_id" integer NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181006141825_create_geme_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181006141825"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (176.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateGamePlatforms (20181006141943)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "game_platforms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "game_id" integer NOT NULL, "platform_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181006141943_create_game_platforms.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181006141943"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (237.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-07 16:28:39.683823"], ["updated_at", "2018-10-07 16:28:39.683823"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (100.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hoangtuyb96@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "hoangtuyb96@gmail.com"], ["encrypted_password", "$2a$11$2jxlbYqG4DOs4pYLHuC0YutyiYP.KFAVw4OVGTBC0jBvuAYu1RkHS"], ["created_at", "2018-10-07 16:28:40.202626"], ["updated_at", "2018-10-07 16:28:40.202626"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (114.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@gmail.com"], ["encrypted_password", "$2a$11$NiIn2RK4arzZYhrJbtbG/eoSHgZ9mgGKqqnttyGD1Su/j83Xr3RbO"], ["created_at", "2018-10-07 16:28:40.572348"], ["updated_at", "2018-10-07 16:28:40.572348"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (108.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mGame Create (0.8ms)[0m  [1m[32mINSERT INTO "games" ("name", "summary", "relase_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Generation Streets"], ["summary", "Generation Streets, a game based on the real-world map. Load your hometown, find your place and this casual shooter start giving you very unexpected impressions. Almost any point on Earth is available to load except the North pole and Antarctica."], ["relase_date", "2018-06-10 00:00:00"], ["created_at", "2018-10-07 16:28:40.764693"], ["updated_at", "2018-10-07 16:28:40.764693"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (176.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mGame Create (0.9ms)[0m  [1m[32mINSERT INTO "games" ("name", "summary", "relase_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Assassin's creed Odyssey"], ["summary", "Choose your fate in Assassin's Creed® Odyssey. From outcast to living legend, embark on an odyssey to uncover the secrets of your past and change the fate of Ancient Greece."], ["relase_date", "2018-10-16 00:00:00"], ["created_at", "2018-10-07 16:28:40.952815"], ["updated_at", "2018-10-07 16:28:40.952815"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (101.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mReview Create (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "rating", "user_id", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "It's good!"], ["rating", 4], ["user_id", 1], ["game_id", 1], ["created_at", "2018-10-07 16:28:41.093723"], ["updated_at", "2018-10-07 16:28:41.093723"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (101.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mReview Create (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "rating", "user_id", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "It's not interesting"], ["rating", 3], ["user_id", 1], ["game_id", 1], ["created_at", "2018-10-07 16:28:41.200765"], ["updated_at", "2018-10-07 16:28:41.200765"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (251.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mReview Create (0.8ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "rating", "user_id", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "Awesome!!!"], ["rating", 5], ["user_id", 1], ["game_id", 2], ["created_at", "2018-10-07 16:28:41.461103"], ["updated_at", "2018-10-07 16:28:41.461103"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (675.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mComment Create (2.3ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashida"], ["user_id", 1], ["review_id", 1], ["created_at", "2018-10-07 16:28:42.177013"], ["updated_at", "2018-10-07 16:28:42.177013"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (263.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mComment Create (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsd"], ["user_id", 1], ["review_id", 1], ["created_at", "2018-10-07 16:28:42.451574"], ["updated_at", "2018-10-07 16:28:42.451574"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (104.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mComment Create (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsd"], ["user_id", 2], ["review_id", 1], ["created_at", "2018-10-07 16:28:42.565815"], ["updated_at", "2018-10-07 16:28:42.565815"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (476.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mComment Create (1.0ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsd"], ["user_id", 2], ["review_id", 1], ["created_at", "2018-10-07 16:28:43.052270"], ["updated_at", "2018-10-07 16:28:43.052270"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (114.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mComment Create (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsdasuihduiashdu"], ["user_id", 2], ["review_id", 1], ["created_at", "2018-10-07 16:28:43.172584"], ["updated_at", "2018-10-07 16:28:43.172584"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (249.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mLike Create (0.8ms)[0m  [1m[32mINSERT INTO "likes" ("likeable_type", "user_id", "likeable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["likeable_type", "Comment"], ["user_id", 1], ["likeable_id", 1], ["created_at", "2018-10-07 16:28:43.558816"], ["updated_at", "2018-10-07 16:28:43.558816"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (143.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mLike Create (0.8ms)[0m  [1m[32mINSERT INTO "likes" ("likeable_type", "user_id", "likeable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["likeable_type", "Review"], ["user_id", 1], ["likeable_id", 1], ["created_at", "2018-10-07 16:28:43.713417"], ["updated_at", "2018-10-07 16:28:43.713417"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (177.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mLike Create (0.9ms)[0m  [1m[32mINSERT INTO "likes" ("likeable_type", "user_id", "likeable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["likeable_type", "Comment"], ["user_id", 2], ["likeable_id", 1], ["created_at", "2018-10-07 16:28:43.904071"], ["updated_at", "2018-10-07 16:28:43.904071"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (89.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPlatform Create (1.1ms)[0m  [1m[32mINSERT INTO "platforms" ("name", "version", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Windows"], ["version", 8.1], ["created_at", "2018-10-07 16:28:44.032141"], ["updated_at", "2018-10-07 16:28:44.032141"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (174.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mPlatform Create (0.8ms)[0m  [1m[32mINSERT INTO "platforms" ("name", "version", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "iOS"], ["version", 11.4], ["created_at", "2018-10-07 16:28:44.214455"], ["updated_at", "2018-10-07 16:28:44.214455"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (244.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mPlatform Load (0.5ms)[0m  [1m[34mSELECT  "platforms".* FROM "platforms" WHERE "platforms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mGamePlatform Create (2.4ms)[0m  [1m[32mINSERT INTO "game_platforms" ("game_id", "platform_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["game_id", 1], ["platform_id", 1], ["created_at", "2018-10-07 16:28:44.501859"], ["updated_at", "2018-10-07 16:28:44.501859"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (248.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT  "platforms".* FROM "platforms" WHERE "platforms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mGamePlatform Create (0.7ms)[0m  [1m[32mINSERT INTO "game_platforms" ("game_id", "platform_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["game_id", 2], ["platform_id", 2], ["created_at", "2018-10-07 16:28:44.766065"], ["updated_at", "2018-10-07 16:28:44.766065"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (92.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mPhoto Create (0.8ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "generation_streets_1"], ["game_id", 1], ["created_at", "2018-10-07 16:28:44.895347"], ["updated_at", "2018-10-07 16:28:44.895347"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (101.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mPhoto Create (0.7ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "generation_streets_2"], ["game_id", 1], ["created_at", "2018-10-07 16:28:45.010085"], ["updated_at", "2018-10-07 16:28:45.010085"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (94.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mPhoto Create (0.7ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "assassin_creed_odyssey_1"], ["game_id", 2], ["created_at", "2018-10-07 16:28:45.114598"], ["updated_at", "2018-10-07 16:28:45.114598"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (103.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mPhoto Create (0.7ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "assassin_creed_odyssey_2"], ["game_id", 2], ["created_at", "2018-10-07 16:28:45.226978"], ["updated_at", "2018-10-07 16:28:45.226978"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (104.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+Started GET "/" for 127.0.0.1 at 2018-10-07 23:28:54 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (1.0ms)
+  [1m[36mPlatform Load (0.5ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:120
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:120
+  Rendered game/index.html.erb within layouts/application (5087.8ms)
+Completed 200 OK in 5578ms (Views: 5343.6ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-07 23:29:14 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (391.9ms)
+Completed 200 OK in 682ms (Views: 621.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-07 23:29:58 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (114.0ms)
+Completed 200 OK in 4153ms (Views: 4149.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (102.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (409.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to DeviseCreateUsers (20181004154627)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:5
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:39
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004154627"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (114.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to AddInfoToUsers (20181004155528)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "full_name" varchar[0m
+  ↳ db/migrate/20181004155528_add_info_to_users.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "is_admin" boolean[0m
+  ↳ db/migrate/20181004155528_add_info_to_users.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004155528"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (127.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateGames (20181004160938)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "games" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "summary" varchar, "relase_date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004160938_create_games.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004160938"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (114.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreatePlatforms (20181004161054)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "platforms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "version" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004161054_create_platforms.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004161054"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (115.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateGenres (20181004161258)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004161258_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004161258"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (104.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreatePhotos (20181004162317)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004162317_create_photos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004162317"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (161.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateReviews (20181004163206)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar NOT NULL, "rating" integer, "user_id" integer NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163206_create_reviews.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163206"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (299.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateComments (20181004163244)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar NOT NULL, "user_id" integer NOT NULL, "review_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163244_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163244"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (114.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateLikes (20181004163647)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "likes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "likeable_type" varchar NOT NULL, "user_id" integer NOT NULL, "likeable_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163647_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163647"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (151.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateGemeGenres (20181006141825)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "game_genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "genre_id" integer NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181006141825_create_geme_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181006141825"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (203.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateGamePlatforms (20181006141943)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "game_platforms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "game_id" integer NOT NULL, "platform_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181006141943_create_game_platforms.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181006141943"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (126.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-07 16:48:23.710991"], ["updated_at", "2018-10-07 16:48:23.710991"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (216.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hoangtuyb96@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "hoangtuyb96@gmail.com"], ["encrypted_password", "$2a$11$9/kHIJs0WXlIIK8OGcYOj.9w4liwdbBEr38WSnqw1KhDjrUm.xEzi"], ["created_at", "2018-10-07 16:48:24.418080"], ["updated_at", "2018-10-07 16:48:24.418080"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (96.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@gmail.com"], ["encrypted_password", "$2a$11$DbV/IeQ8v92tM9pHsW/QZug1uymK8WhTKjoyPNEg0nbA3FjnvFsJ6"], ["created_at", "2018-10-07 16:48:24.672197"], ["updated_at", "2018-10-07 16:48:24.672197"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (101.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("name", "summary", "relase_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Generation Streets"], ["summary", "Generation Streets, a game based on the real-world map. Load your hometown, find your place and this casual shooter start giving you very unexpected impressions. Almost any point on Earth is available to load except the North pole and Antarctica."], ["relase_date", "2018-06-10 00:00:00"], ["created_at", "2018-10-07 16:48:24.855582"], ["updated_at", "2018-10-07 16:48:24.855582"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (117.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mGame Create (0.8ms)[0m  [1m[32mINSERT INTO "games" ("name", "summary", "relase_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Assassin's creed Odyssey"], ["summary", "Choose your fate in Assassin's Creed® Odyssey. From outcast to living legend, embark on an odyssey to uncover the secrets of your past and change the fate of Ancient Greece."], ["relase_date", "2018-10-16 00:00:00"], ["created_at", "2018-10-07 16:48:24.979100"], ["updated_at", "2018-10-07 16:48:24.979100"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (92.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "rating", "user_id", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "It's good!"], ["rating", 4], ["user_id", 1], ["game_id", 1], ["created_at", "2018-10-07 16:48:25.087588"], ["updated_at", "2018-10-07 16:48:25.087588"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (91.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mReview Create (0.7ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "rating", "user_id", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "It's not interesting"], ["rating", 3], ["user_id", 1], ["game_id", 1], ["created_at", "2018-10-07 16:48:25.183251"], ["updated_at", "2018-10-07 16:48:25.183251"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (94.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mReview Create (0.9ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "rating", "user_id", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "Awesome!!!"], ["rating", 5], ["user_id", 1], ["game_id", 2], ["created_at", "2018-10-07 16:48:25.287419"], ["updated_at", "2018-10-07 16:48:25.287419"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (111.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mComment Create (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashida"], ["user_id", 1], ["review_id", 1], ["created_at", "2018-10-07 16:48:25.445867"], ["updated_at", "2018-10-07 16:48:25.445867"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (92.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mComment Create (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsd"], ["user_id", 1], ["review_id", 1], ["created_at", "2018-10-07 16:48:25.545058"], ["updated_at", "2018-10-07 16:48:25.545058"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (427.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mComment Create (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsd"], ["user_id", 2], ["review_id", 1], ["created_at", "2018-10-07 16:48:25.978267"], ["updated_at", "2018-10-07 16:48:25.978267"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (102.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mComment Create (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsd"], ["user_id", 2], ["review_id", 1], ["created_at", "2018-10-07 16:48:26.085879"], ["updated_at", "2018-10-07 16:48:26.085879"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (102.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mComment Create (0.9ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsdasuihduiashdu"], ["user_id", 2], ["review_id", 1], ["created_at", "2018-10-07 16:48:26.196911"], ["updated_at", "2018-10-07 16:48:26.196911"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (233.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mLike Create (1.0ms)[0m  [1m[32mINSERT INTO "likes" ("likeable_type", "user_id", "likeable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["likeable_type", "Comment"], ["user_id", 1], ["likeable_id", 1], ["created_at", "2018-10-07 16:48:26.557763"], ["updated_at", "2018-10-07 16:48:26.557763"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (117.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mLike Create (0.7ms)[0m  [1m[32mINSERT INTO "likes" ("likeable_type", "user_id", "likeable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["likeable_type", "Review"], ["user_id", 1], ["likeable_id", 1], ["created_at", "2018-10-07 16:48:26.708990"], ["updated_at", "2018-10-07 16:48:26.708990"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (192.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mLike Create (1.1ms)[0m  [1m[32mINSERT INTO "likes" ("likeable_type", "user_id", "likeable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["likeable_type", "Comment"], ["user_id", 2], ["likeable_id", 1], ["created_at", "2018-10-07 16:48:26.915184"], ["updated_at", "2018-10-07 16:48:26.915184"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (109.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPlatform Create (0.8ms)[0m  [1m[32mINSERT INTO "platforms" ("name", "version", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Windows"], ["version", 8.1], ["created_at", "2018-10-07 16:48:27.078045"], ["updated_at", "2018-10-07 16:48:27.078045"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (109.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mPlatform Create (0.9ms)[0m  [1m[32mINSERT INTO "platforms" ("name", "version", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "iOS"], ["version", 11.4], ["created_at", "2018-10-07 16:48:27.196722"], ["updated_at", "2018-10-07 16:48:27.196722"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (101.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT  "platforms".* FROM "platforms" WHERE "platforms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mGamePlatform Create (0.7ms)[0m  [1m[32mINSERT INTO "game_platforms" ("game_id", "platform_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["game_id", 1], ["platform_id", 1], ["created_at", "2018-10-07 16:48:27.343096"], ["updated_at", "2018-10-07 16:48:27.343096"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (106.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT  "platforms".* FROM "platforms" WHERE "platforms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mGamePlatform Create (0.8ms)[0m  [1m[32mINSERT INTO "game_platforms" ("game_id", "platform_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["game_id", 2], ["platform_id", 2], ["created_at", "2018-10-07 16:48:27.463587"], ["updated_at", "2018-10-07 16:48:27.463587"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (121.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mPhoto Create (0.5ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "generation_streets_1"], ["game_id", 1], ["created_at", "2018-10-07 16:48:27.646266"], ["updated_at", "2018-10-07 16:48:27.646266"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (139.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mPhoto Create (0.8ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "generation_streets_2"], ["game_id", 1], ["created_at", "2018-10-07 16:48:27.795787"], ["updated_at", "2018-10-07 16:48:27.795787"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (109.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mPhoto Create (0.9ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "assassin_creed_odyssey_1"], ["game_id", 2], ["created_at", "2018-10-07 16:48:27.919198"], ["updated_at", "2018-10-07 16:48:27.919198"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (106.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mPhoto Create (1.1ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "assassin_creed_odyssey_2"], ["game_id", 2], ["created_at", "2018-10-07 16:48:28.037600"], ["updated_at", "2018-10-07 16:48:28.037600"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (105.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+Started GET "/" for 127.0.0.1 at 2018-10-07 23:50:03 +0700
+  [1m[35m (38.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by GameController#index as HTML
+  [1m[36mGame Load (33.8ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (33.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (1.8ms)
+  [1m[36mPlatform Load (108.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:120
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:120
+  Rendered game/index.html.erb within layouts/application (7188.3ms)
+Completed 200 OK in 7616ms (Views: 7246.5ms | ActiveRecord: 180.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-07 23:50:26 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (138.6ms)
+Completed 200 OK in 252ms (Views: 228.3ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-07 23:51:06 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l2+rB8Dr1TYJb8D1OjDYhdeMhTfag4ImPkM8ytkj5lN9MGpNnKm4hWfCLl+gQZY5xeoPA9MOa/HdFtwIouhUbg==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (66.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lekhanh.lamson@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 151ms (ActiveRecord: 66.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l2+rB8Dr1TYJb8D1OjDYhdeMhTfag4ImPkM8ytkj5lN9MGpNnKm4hWfCLl+gQZY5xeoPA9MOa/HdFtwIouhUbg==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 316ms (Views: 88.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-07 23:51:19 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DdX3CVntWGddPA3lb/ctgaYuwrHp9GeUi3cTB7HQMn1OtlUZbw63tg4f/CQyncBA8UumySWU3kfQlhb+PCnPwA==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DdX3CVntWGddPA3lb/ctgaYuwrHp9GeUi3cTB7HQMn1OtlUZbw63tg4f/CQyncBA8UumySWU3kfQlhb+PCnPwA==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-07 23:51:27 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 40ms (Views: 39.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-07 23:52:03 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RvG7G7xLLgE9Jy0bySCNx6rSW5yMbjdBGhAsTX5msRmsrnpR4AlDslOKw7FTUcN7uLTRqIXj3pb5RcyPBa0DJA==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lekhanh.lamson@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RvG7G7xLLgE9Jy0bySCNx6rSW5yMbjdBGhAsTX5msRmsrnpR4AlDslOKw7FTUcN7uLTRqIXj3pb5RcyPBa0DJA==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 162ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-07 23:53:14 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (760.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (31.7ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (83.8ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (835.7ms)
+  [1m[36mPlatform Load (585.6ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:120
+  [1m[36mPlatform Load (0.5ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:120
+  Rendered game/index.html.erb within layouts/application (6205.1ms)
+Completed 200 OK in 14851ms (Views: 12336.1ms | ActiveRecord: 1463.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-07 23:54:52 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (280.5ms)
+Completed 200 OK in 3044ms (Views: 2915.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-07 23:55:08 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S4QEfnd9+OVbJR2tkAmLJPCeDrjEerewFHPls8nsqUt/ZUPtsE+a2KCcuFTfxEtvud4k35j/QqMp4Hxr+3CKOA==", "user"=>{"email"=>"20142269@student.hust.edu.vn", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (441.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "20142269@student.hust.edu.vn"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 448ms (ActiveRecord: 441.6ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S4QEfnd9+OVbJR2tkAmLJPCeDrjEerewFHPls8nsqUt/ZUPtsE+a2KCcuFTfxEtvud4k35j/QqMp4Hxr+3CKOA==", "user"=>{"email"=>"20142269@student.hust.edu.vn", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 448ms (Views: 247.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-07 23:56:02 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 46ms (Views: 44.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (18.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (145.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (198.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to DeviseCreateUsers (20181004154627)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:39
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20181004154627_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004154627"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (162.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to AddInfoToUsers (20181004155528)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "users" ADD "full_name" varchar[0m
+  ↳ db/migrate/20181004155528_add_info_to_users.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "is_admin" boolean[0m
+  ↳ db/migrate/20181004155528_add_info_to_users.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004155528"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (98.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateGames (20181004160938)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "games" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "summary" varchar, "relase_date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004160938_create_games.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004160938"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (212.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreatePlatforms (20181004161054)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "platforms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "version" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004161054_create_platforms.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004161054"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (135.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateGenres (20181004161258)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004161258_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004161258"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (186.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreatePhotos (20181004162317)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004162317_create_photos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004162317"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (166.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateReviews (20181004163206)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar NOT NULL, "rating" integer, "user_id" integer NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163206_create_reviews.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163206"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (196.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateComments (20181004163244)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar NOT NULL, "user_id" integer NOT NULL, "review_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163244_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163244"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (507.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateLikes (20181004163647)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "likes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "likeable_type" varchar NOT NULL, "user_id" integer NOT NULL, "likeable_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181004163647_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181004163647"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (174.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateGemeGenres (20181006141825)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "game_genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "genre_id" integer NOT NULL, "game_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181006141825_create_geme_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181006141825"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (172.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateGamePlatforms (20181006141943)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "game_platforms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "game_id" integer NOT NULL, "platform_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181006141943_create_game_platforms.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181006141943"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (160.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-07 16:56:08.197395"], ["updated_at", "2018-10-07 16:56:08.197395"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (106.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hoangtuyb96@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "hoangtuyb96@gmail.com"], ["encrypted_password", "$2a$11$eJQzIimCRKNNNjdejqtm3uYGlYeyPtY9vKwKhQOz9TZi9d.97OBRq"], ["created_at", "2018-10-07 16:56:08.655553"], ["updated_at", "2018-10-07 16:56:08.655553"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (128.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@gmail.com"], ["encrypted_password", "$2a$11$r.jg61CHB1SCiEJ2YunpkeVRtyg/Qz5yzm4Su7gn4mGJtZQSNEy.m"], ["created_at", "2018-10-07 16:56:08.945603"], ["updated_at", "2018-10-07 16:56:08.945603"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (116.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("name", "summary", "relase_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Generation Streets"], ["summary", "Generation Streets, a game based on the real-world map. Load your hometown, find your place and this casual shooter start giving you very unexpected impressions. Almost any point on Earth is available to load except the North pole and Antarctica."], ["relase_date", "2018-06-10 00:00:00"], ["created_at", "2018-10-07 16:56:09.164676"], ["updated_at", "2018-10-07 16:56:09.164676"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (127.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mGame Create (0.9ms)[0m  [1m[32mINSERT INTO "games" ("name", "summary", "relase_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Assassin's creed Odyssey"], ["summary", "Choose your fate in Assassin's Creed® Odyssey. From outcast to living legend, embark on an odyssey to uncover the secrets of your past and change the fate of Ancient Greece."], ["relase_date", "2018-10-16 00:00:00"], ["created_at", "2018-10-07 16:56:09.295825"], ["updated_at", "2018-10-07 16:56:09.295825"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (113.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "rating", "user_id", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "It's good!"], ["rating", 4], ["user_id", 1], ["game_id", 1], ["created_at", "2018-10-07 16:56:09.444413"], ["updated_at", "2018-10-07 16:56:09.444413"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (124.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mReview Create (1.0ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "rating", "user_id", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "It's not interesting"], ["rating", 3], ["user_id", 1], ["game_id", 1], ["created_at", "2018-10-07 16:56:09.576994"], ["updated_at", "2018-10-07 16:56:09.576994"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (104.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mReview Create (0.8ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "rating", "user_id", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "Awesome!!!"], ["rating", 5], ["user_id", 1], ["game_id", 2], ["created_at", "2018-10-07 16:56:09.689084"], ["updated_at", "2018-10-07 16:56:09.689084"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (115.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashida"], ["user_id", 1], ["review_id", 1], ["created_at", "2018-10-07 16:56:09.861945"], ["updated_at", "2018-10-07 16:56:09.861945"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (122.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mComment Create (0.9ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsd"], ["user_id", 1], ["review_id", 1], ["created_at", "2018-10-07 16:56:09.989414"], ["updated_at", "2018-10-07 16:56:09.989414"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (138.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mComment Create (1.2ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsd"], ["user_id", 2], ["review_id", 1], ["created_at", "2018-10-07 16:56:10.139508"], ["updated_at", "2018-10-07 16:56:10.139508"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (91.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsd"], ["user_id", 2], ["review_id", 1], ["created_at", "2018-10-07 16:56:10.237710"], ["updated_at", "2018-10-07 16:56:10.237710"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (99.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mComment Create (0.9ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ashduiashduahsdasuihduiashdu"], ["user_id", 2], ["review_id", 1], ["created_at", "2018-10-07 16:56:10.341498"], ["updated_at", "2018-10-07 16:56:10.341498"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (241.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mLike Create (0.9ms)[0m  [1m[32mINSERT INTO "likes" ("likeable_type", "user_id", "likeable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["likeable_type", "Comment"], ["user_id", 1], ["likeable_id", 1], ["created_at", "2018-10-07 16:56:10.786956"], ["updated_at", "2018-10-07 16:56:10.786956"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (115.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mLike Create (2.1ms)[0m  [1m[32mINSERT INTO "likes" ("likeable_type", "user_id", "likeable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["likeable_type", "Review"], ["user_id", 1], ["likeable_id", 1], ["created_at", "2018-10-07 16:56:10.915890"], ["updated_at", "2018-10-07 16:56:10.915890"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (555.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mLike Create (0.7ms)[0m  [1m[32mINSERT INTO "likes" ("likeable_type", "user_id", "likeable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["likeable_type", "Comment"], ["user_id", 2], ["likeable_id", 1], ["created_at", "2018-10-07 16:56:11.482955"], ["updated_at", "2018-10-07 16:56:11.482955"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (215.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPlatform Create (0.8ms)[0m  [1m[32mINSERT INTO "platforms" ("name", "version", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Windows"], ["version", 8.1], ["created_at", "2018-10-07 16:56:11.767905"], ["updated_at", "2018-10-07 16:56:11.767905"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (188.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mPlatform Create (0.9ms)[0m  [1m[32mINSERT INTO "platforms" ("name", "version", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "iOS"], ["version", 11.4], ["created_at", "2018-10-07 16:56:11.965690"], ["updated_at", "2018-10-07 16:56:11.965690"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (97.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT  "platforms".* FROM "platforms" WHERE "platforms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mGamePlatform Create (0.2ms)[0m  [1m[32mINSERT INTO "game_platforms" ("game_id", "platform_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["game_id", 1], ["platform_id", 1], ["created_at", "2018-10-07 16:56:12.084404"], ["updated_at", "2018-10-07 16:56:12.084404"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (198.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT  "platforms".* FROM "platforms" WHERE "platforms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mGamePlatform Create (0.7ms)[0m  [1m[32mINSERT INTO "game_platforms" ("game_id", "platform_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["game_id", 2], ["platform_id", 2], ["created_at", "2018-10-07 16:56:12.295289"], ["updated_at", "2018-10-07 16:56:12.295289"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1111.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mPhoto Create (0.7ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "generation_streets_1"], ["game_id", 1], ["created_at", "2018-10-07 16:56:13.439575"], ["updated_at", "2018-10-07 16:56:13.439575"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (184.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mPhoto Create (0.8ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "generation_streets_2"], ["game_id", 1], ["created_at", "2018-10-07 16:56:13.633962"], ["updated_at", "2018-10-07 16:56:13.633962"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (101.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mPhoto Create (0.8ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "assassin_creed_odyssey_1"], ["game_id", 2], ["created_at", "2018-10-07 16:56:13.744965"], ["updated_at", "2018-10-07 16:56:13.744965"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (130.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mPhoto Create (0.8ms)[0m  [1m[32mINSERT INTO "photos" ("image", "game_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "assassin_creed_odyssey_2"], ["game_id", 2], ["created_at", "2018-10-07 16:56:13.884411"], ["updated_at", "2018-10-07 16:56:13.884411"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (106.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-07 23:56:25 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"olnf1J5KD1VARUhiVbyU6pesa2hW8AuC3VmcWD8kQ+O7x5CqY5l2ZATy0Efvk7KLUSbJVdqO5aXB0YhAoJ79ag==", "user"=>{"email"=>"20142269@student.hust.edu.vn", "password"=>"[FILTERED]"}, "remember-me"=>"on", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "20142269@student.hust.edu.vn"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 15ms (ActiveRecord: 3.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"olnf1J5KD1VARUhiVbyU6pesa2hW8AuC3VmcWD8kQ+O7x5CqY5l2ZATy0Efvk7KLUSbJVdqO5aXB0YhAoJ79ag==", "user"=>{"email"=>"20142269@student.hust.edu.vn", "password"=>"[FILTERED]"}, "remember-me"=>"on", "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 173ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-07 23:56:35 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (0.7ms)
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:120
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:120
+  Rendered game/index.html.erb within layouts/application (66.0ms)
+Completed 200 OK in 226ms (Views: 102.8ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-07 23:56:40 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 63ms (Views: 60.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:01:35 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 117ms (Views: 109.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 00:01:39 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (0.5ms)
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:120
+  [1m[36mPlatform Load (0.1ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:120
+  Rendered game/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 56ms (Views: 47.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:01:41 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 00:05:13 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (1.5ms)
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:120
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:120
+  Rendered game/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 113ms (Views: 78.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 00:08:15 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (0.6ms)
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:120
+  [1m[36mPlatform Load (0.1ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:120
+  Rendered game/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 4234ms (Views: 4225.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 00:08:28 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.9ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (1.2ms)
+  [1m[36mPlatform Load (0.7ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:120
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:120
+  Rendered game/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 100ms (Views: 64.2ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-08 00:08:32 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 89ms (Views: 86.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:08:59 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LU0wgyfibr+Q+PVHopUmOxu6P0cFedWk2w/pWK8u0hAZrHcQ4NAMgmtBUL7tWOZwUvoVIFn8ILfmnHCAnbLxYw==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lekhanh.lamson@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LU0wgyfibr+Q+PVHopUmOxu6P0cFedWk2w/pWK8u0hAZrHcQ4NAMgmtBUL7tWOZwUvoVIFn8ILfmnHCAnbLxYw==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 183ms (Views: 50.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:09:06 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Il3I0aCrMLPr8mF472dRz46igHRy5mrTxTD1d1/MvJg7w4evXXhJgq9F+V1VSHeuSCgiSf6YhPTZuOFvwHYCEQ==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lekhanh.lamson@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Il3I0aCrMLPr8mF472dRz46igHRy5mrTxTD1d1/MvJg7w4evXXhJgq9F+V1VSHeuSCgiSf6YhPTZuOFvwHYCEQ==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 171ms (Views: 46.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:09:07 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BdBgiXzA0JQJNhjYIi4E82i+40LfQ9XvnWMRYlPyCsEcTi/3gROppU2BgP2YASKSrjRBf1M9O8iB6wV6zEi0SA==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lekhanh.lamson@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BdBgiXzA0JQJNhjYIi4E82i+40LfQ9XvnWMRYlPyCsEcTi/3gROppU2BgP2YASKSrjRBf1M9O8iB6wV6zEi0SA==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 185ms (Views: 54.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:09:09 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZQkCf7qrbYgCjzTrN4/IaobCJKpUditZeoy943daBlN8l00BR3gUuUY4rM6NoO4LQEiGl9gIxX5mBKn76OC42g==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lekhanh.lamson@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZQkCf7qrbYgCjzTrN4/IaobCJKpUditZeoy943daBlN8l00BR3gUuUY4rM6NoO4LQEiGl9gIxX5mBKn76OC42g==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 211ms (Views: 57.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:09:10 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lPl1vxlbT5mDBKwlyKVkwUOlX4hLnVUnKkkYBDZtSIyNZzrB5Ig2qMezNAByikKghS/9tcfjuwA2wQwcqdf2BQ==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lekhanh.lamson@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 10ms (ActiveRecord: 1.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lPl1vxlbT5mDBKwlyKVkwUOlX4hLnVUnKkkYBDZtSIyNZzrB5Ig2qMezNAByikKghS/9tcfjuwA2wQwcqdf2BQ==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 199ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:09:13 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gyrDYRuvdh16x+5pl0HEB0icU13lHXqdVp20AdvDVmSatIwf5nwPLD5wdkwtbuJmjhbxYGljlLpKFaAZRHno7Q==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lekhanh.lamson@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gyrDYRuvdh16x+5pl0HEB0icU13lHXqdVp20AdvDVmSatIwf5nwPLD5wdkwtbuJmjhbxYGljlLpKFaAZRHno7Q==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 238ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-08 00:09:15 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 111ms (Views: 108.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:09:28 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fvjYvaHO0HKUzz6fWyBHYCPN+M+R/yF8i5HrfCQifn5KGZ8uZvyyT292m2YU7Ycrao3SqM161G+2AnKkFr5dDQ==", "user"=>{"email"=>"20142269@student.hust.edu.vn", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "20142269@student.hust.edu.vn"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fvjYvaHO0HKUzz6fWyBHYCPN+M+R/yF8i5HrfCQifn5KGZ8uZvyyT292m2YU7Ycrao3SqM161G+2AnKkFr5dDQ==", "user"=>{"email"=>"20142269@student.hust.edu.vn", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 186ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-08 00:10:40 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 73ms (Views: 71.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:10:48 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 68ms (Views: 65.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:11:02 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P/mRLWgxHL5YdyAXBPkkUBJXYHziwZhB+Fw+Vrjq7oMLGNa+rwN+g6POhe5LNOQbWxdKG75EbVLFz6eOinbN8A==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lekhanh.lamson@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.7ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P/mRLWgxHL5YdyAXBPkkUBJXYHziwZhB+Fw+Vrjq7oMLGNa+rwN+g6POhe5LNOQbWxdKG75EbVLFz6eOinbN8A==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 189ms (Views: 59.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:11:04 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WFtUTW2Xsgtt6ue+DIAsfD4fJQneB7V2G2I8jNLoYMNBxRszkETLOildf5u2rwod+JWHNFJ5W1EH6iiUTVLeSg==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lekhanh.lamson@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WFtUTW2Xsgtt6ue+DIAsfD4fJQneB7V2G2I8jNLoYMNBxRszkETLOildf5u2rwod+JWHNFJ5W1EH6iiUTVLeSg==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 205ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:12:15 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MVV4KBtpiDoyVHgcGGkrRv/K77NOMG0BAKpf+SiAFHAoyzdW5rrxC3bj4DmiRg0nOUBNjsJOgyYcIkvhtzqq+Q==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lekhanh.lamson@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MVV4KBtpiDoyVHgcGGkrRv/K77NOMG0BAKpf+SiAFHAoyzdW5rrxC3bj4DmiRg0nOUBNjsJOgyYcIkvhtzqq+Q==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 203ms (Views: 39.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:15:21 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 127ms (Views: 122.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-08 00:15:25 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 116ms (Views: 111.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:15:28 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 119ms (Views: 114.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-08 00:15:32 +0700
+Processing by GameController#index as HTML
+  [1m[36mGame Load (199.7ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/game_controller.rb:6
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/controllers/game_controller.rb:9
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."game_id" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["game_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/controllers/game_controller.rb:9
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/_page_title.html.erb (1.3ms)
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 2]]
+  ↳ app/views/game/index.html.erb:120
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "game_platforms" ON "platforms"."id" = "game_platforms"."platform_id" WHERE "game_platforms"."game_id" = ?[0m  [["game_id", 1]]
+  ↳ app/views/game/index.html.erb:120
+  Rendered game/index.html.erb within layouts/application (359.7ms)
+Completed 200 OK in 773ms (Views: 426.7ms | ActiveRecord: 202.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-08 00:16:54 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 118ms (Views: 113.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:20:56 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r1NYRRJ7bNd/d0SHfyTdrzJpIDvgyonitDmruOwvVHibsh/W1UkO6oTO4X4w6R3keykKXLxPfPGJqjJg3rN3Cw==", "user"=>{"email"=>"20142269@student.hust.edu.vn", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (643.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "20142269@student.hust.edu.vn"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 652ms (ActiveRecord: 643.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r1NYRRJ7bNd/d0SHfyTdrzJpIDvgyonitDmruOwvVHibsh/W1UkO6oTO4X4w6R3keykKXLxPfPGJqjJg3rN3Cw==", "user"=>{"email"=>"20142269@student.hust.edu.vn", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 291ms (Views: 136.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:22:29 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wnLofAKU0qJjO6ZkcIs8MYjthw8YlAS35UsoYbCwfKPb7KcC/0erkyeMPkHKpBpQTmclMpTq6pD5wzx5LwrCKg==", "user"=>{"email"=>"20142269@student.hust.edu.vn", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "20142269@student.hust.edu.vn"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wnLofAKU0qJjO6ZkcIs8MYjthw8YlAS35UsoYbCwfKPb7KcC/0erkyeMPkHKpBpQTmclMpTq6pD5wzx5LwrCKg==", "user"=>{"email"=>"20142269@student.hust.edu.vn", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 163ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-08 00:22:35 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 89ms (Views: 87.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:22:57 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1TSSraDAmSsIUMezezmphmkwpTQ9XvE/TH1WzJd/yirh1dU+Z/L7FvPpYko09GnNIHCPU2HbBCxx7s8UpePpWQ==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lekhanh.lamson@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1TSSraDAmSsIUMezezmphmkwpTQ9XvE/TH1WzJd/yirh1dU+Z/L7FvPpYko09GnNIHCPU2HbBCxx7s8UpePpWQ==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 157ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:23:06 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sbkiCA1aVpd6+dZ8P2dS457bQ552bNoyUd+CktPdZYSoJ2128Ikvpj5OTlmFSHSCWFHho/oSNBVNV5aKTGfbDQ==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "remember-me"=>"on", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lekhanh.lamson@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sbkiCA1aVpd6+dZ8P2dS457bQ552bNoyUd+CktPdZYSoJ2128Ikvpj5OTlmFSHSCWFHho/oSNBVNV5aKTGfbDQ==", "user"=>{"email"=>"lekhanh.lamson@gmail.com", "password"=>"[FILTERED]"}, "remember-me"=>"on", "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 172ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-08 00:24:52 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 116ms (Views: 112.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:25:09 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lppk3NCIZkTQLvU1kTi5UfDRYndUsKnUbOjhHJnhgsIaeyNPF7oEeSuXUMze9XkauZFIEAg1XMdRe3jEq32hsQ==", "user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lppk3NCIZkTQLvU1kTi5UfDRYndUsKnUbOjhHJnhgsIaeyNPF7oEeSuXUMze9XkauZFIEAg1XMdRe3jEq32hsQ==", "user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 226ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-10-08 00:26:07 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 77ms (Views: 75.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-08 00:26:32 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ixxvcs94Q2fDKGwj1MRA4P75CwO2hP4WcpNvkIl6lsQX/SjhCEohWjiRydqbCYCrt7khZOoBCwVPAPZIu+a1tw==", "user"=>{"email"=>"ltk.hust@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ltk.hust@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ixxvcs94Q2fDKGwj1MRA4P75CwO2hP4WcpNvkIl6lsQX/SjhCEohWjiRydqbCYCrt7khZOoBCwVPAPZIu+a1tw==", "user"=>{"email"=>"ltk.hust@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 184ms (Views: 50.6ms | ActiveRecord: 0.0ms)
+
+
