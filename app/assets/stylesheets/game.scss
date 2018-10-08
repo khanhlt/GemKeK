@@ -15,3 +15,13 @@
 .fix-padding {
     padding:0px !important;
 }
+.image-box-item{
+    position: relative;
+}
+.game-item{
+    position: absolute;
+    transform: translate(-50%, 120%);
+    top: 50%;
+    left: 50%;
+    color: #ffffff;
+}
