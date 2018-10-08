@@ -16,10 +16,7 @@ Game.create name: "Giraffe Town", relase_date: DateTime.new(2017, 11, 9), summar
 Review.create! content: "It's good!", user_id: 1, game_id: 1, rating: 4
 Review.create! content: "It's not interesting", user_id: 1, game_id: 1, rating: 3
 Review.create! content: "Awesome!!!", user_id: 1, game_id: 2, rating: 5
-Review.create! content: "Not good", user_id: 1, game_id: 4, rating: 2
-Review.create! content: "Boring!", user_id: 2, game_id: 4, rating: 1
 Review.create! content: "Animation is amazing!", user_id: 2, game_id: 5, rating: 4
-Review.create! content: "Animation is bad", user_id: 1, game_id: 3, rating: 3
 Review.create! content: "So old design!", user_id: 2, game_id: 6, rating: 2
 Comment.create! user_id: 1, review_id: 1, content: "ashduiashida"
 Comment.create! user_id: 1, review_id: 1, content: "ashduiashduahsd"
