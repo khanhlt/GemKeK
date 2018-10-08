@@ -116,6 +116,8 @@ Gemfile.lock
 .ruby-version
 .idea
 test/
+db/development.sqlite3
+log/
 # .ruby-gemset
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
