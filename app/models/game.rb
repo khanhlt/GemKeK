@@ -5,4 +5,7 @@ class Game < ApplicationRecord
     has_many :genres_of_game, through: :genre_game, source: :genre
     has_many :platform_game, class_name: GamePlatform.name, dependent: :destroy
     has_many :platform_of_game, through: :platform_game, source: :platform
+
+    scope :just_published, -> number {where("relase_date < ?", Time.current).limit(number)}
+    scope :upcoming, -> (number){where("relase_date > ?", Time.current).limit(number)}
 end

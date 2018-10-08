@@ -12,6 +12,8 @@ class GameController < ApplicationController
     end
 
     @game_full = @game_full.sort_by!{ |x| x[:score]}.reverse
-  end
+    @game_news = Game.just_published(5).includes(:photos)
+    @game_upcoming = Game.upcoming(5).includes(:photos)
+end
 
 end
