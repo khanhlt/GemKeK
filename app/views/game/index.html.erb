@@ -34,17 +34,17 @@
         <% if user_signed_in? %>
           <li>
             <div>
-            chúc <%= current_user.full_name %> một ngày tốt lành
+              Chúc <b><%= current_user.full_name %></b> một ngày tốt lành
             </div>
-            <%= link_to('Sign Out', destroy_user_session_path, method: :delete) %>        
+            <%= link_to('Sign Out', destroy_user_session_path, method: :delete) %>
           </li>
         <% else %>
           <li>
-            <%= link_to('Sign In', new_user_session_path)  %>  
-            <%= link_to('Sign Up', new_user_registration_path)  %>  
+            <%= link_to('Sign In', new_user_session_path) %>
+            <%= link_to('Sign Up', new_user_registration_path) %>
           </li>
         <% end %>
-        
+
       </ul>
     </div>
   </div>
@@ -57,30 +57,15 @@
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="/assets/slider/1.jpg" alt="First Slide">
-      <div class="carousel-caption">
-        <h1>Game Name</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, deserunt dolorem doloremque! Atque quia,
-          libero!</p>
+      <% @game_upcoming.each do |game| %>
+      <div class="item active">
+        <%= image_tag(game.photos.first.image, :alt => "First Slide") %>
+        <div class="carousel-caption">
+          <h2><%= game.name %></h2>
+          <h1><%= game.relase_date.to_date %></h1>
+        </div>
       </div>
-    </div>
-    <div class="item">
-      <img src="/assets/slider/2.jpg" alt="First Slide">
-      <div class="carousel-caption">
-        <h1>Game Name</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, deserunt dolorem doloremque! Atque quia,
-          libero!</p>
-      </div>
-    </div>
-    <div class="item">
-      <img src="/assets/slider/3.jpg" alt="First Slide">
-      <div class="carousel-caption">
-        <h1>Game Name</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, deserunt dolorem doloremque! Atque quia,
-          libero!</p>
-      </div>
-    </div>
+      <% end %>
   </div>
 
   <!-- Controls -->
@@ -100,11 +85,11 @@
     <div class="row">
 
       <!--- new game --->
-    
+
       <div class="col-md-9">
         <div class="col-md-12">
           <div class="col-md-12">
-            <h2>New Games Releases</h2>
+            <h2>New Games Release</h2>
           </div>
           <div class="col-md-12">
             <div class="carousel slide multi-item-carousel" id="theCarousel">
@@ -114,9 +99,9 @@
                     <div class="image-box-item col-xs-4"><a href="#1">
                       <%= image_tag(game.photos.last.image, :class => "img-responsive") %></a>
                       <div class="text-center game-item">
-                        <strong><%=game.name%></strong>
+                        <strong><%= game.name %></strong>
                         <br/>
-                          <strong><%=time_ago_in_words(game.relase_date)%> ago</strong>
+                        <strong><%= time_ago_in_words(game.relase_date) %> ago</strong>
                       </div>
                     </div>
                   </div>
@@ -127,6 +112,8 @@
             </div>
           </div>
         </div>
+
+        <!-- Top games -->
         <div class="col-md-12">
           <div class="col-md-12">
             <h2>Top Games</h2>
@@ -165,7 +152,7 @@
       <div class="col-md-3">
         <div class="row">
           <div class="about-text">
-            <h2>Search..</h2>
+            <h2>Advanced Search..</h2>
             <form action="" method="POST" role="form">
               <div class="form-group">
                 <label for="">Game Title</label>
@@ -196,15 +183,15 @@
           </div>
         </div>
         <div class="row ">
-          <div class="col-md-12 text-center related-game ">Related Game</div>
-          <% @game_upcoming.each do |game|%>
+          <div class="col-md-12 text-center related-game ">Upcoming Games</div>
+          <% @game_upcoming.each do |game| %>
             <div class="col-md-12 text-center list-related-game">
-              <a href="#"><strong><%=game.name%></strong>
+              <a href="#"><strong><%= game.name %></strong>
                 <hr>
-                <strong><%=game.relase_date.strftime("%F")%></strong>
+                <strong><%= game.relase_date.strftime("%F") %></strong>
               </a>
             </div>
-          <%end%>
+          <% end %>
         </div>
       </div>
     </div>
