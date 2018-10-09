@@ -1,5 +1,9 @@
-<p>Welcome <%= @email %>!</p>
+<p>Xin chào, chúc một ngày tốt lành <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>Bạn nhận đuợc email này vì bạn đã đăng kí web của chúng tôi, bạn có thể hòan thành đăng kí ngay tại đây</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>Email này có thời hạn trong 3 tiếng</p>
+
+<p>Nên bạn có thể xem bộ phim "Three Billboards Outside Ebbing, Missour" (3 tấm biến quảng cáo),</p>
+<p>rồi hòan thành đăng kí cũng chưa muộn. Phim rất hay.</p>
