@@ -32,19 +32,19 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-        <li>
-          <div>
-            Chúc <b><%= current_user.full_name %></b> một ngày tốt lành
-          </div>
-          <%= link_to('Sign Out', destroy_user_session_path, method: :delete) %>
-        </li>
+          <li>
+            <div>
+              Chúc <b><%= current_user.full_name %></b> một ngày tốt lành
+            </div>
+            <%= link_to('Sign Out', destroy_user_session_path, method: :delete) %>
+          </li>
         <% else %>
-        <li>
-          <%= link_to('Sign In', new_user_session_path) %>
-        </li>
-        <li>           
-          <%= link_to('Sign Up', new_user_registration_path) %>
-        </li>
+          <li>
+            <%= link_to('Sign In', new_user_session_path) %>
+          </li>
+          <li>
+            <%= link_to('Sign Up', new_user_registration_path) %>
+          </li>
         <% end %>
 
       </ul>
@@ -60,13 +60,13 @@
     </ol>
     <div class="carousel-inner" role="listbox">
       <% @game_upcoming.each.with_index do |game, index| %>
-      <div class="item <%= index == 0 ? 'active' : '' %>">
-        <%= image_tag(game.photos.first.image, :alt => "First Slide") %>
-        <div class="carousel-caption">
-          <h2><%= game.name %></h2>
-          <h1><%= game.relase_date.to_date %></h1>
+        <div class="item <%= index == 0 ? 'active' : '' %>">
+          <%= image_tag(game.photos.first.image, :alt => "First Slide") %>
+          <div class="carousel-caption">
+            <h2><%= game.name %></h2>
+            <h1><%= game.relase_date.to_date %></h1>
+          </div>
         </div>
-      </div>
       <% end %>
     </div>
     <!-- Controls -->
@@ -89,29 +89,29 @@
             <h2>New Games Release</h2>
           </div>
           <div class="col-md-12">
-<!--             <div class="carousel slide multi-item-carousel" id="theCarousel">
+            <!--  <div class="carousel slide multi-item-carousel" id="theCarousel">
               <div class="carousel-inner">
                 <% @game_news.each.with_index do |game, index| %>
-                <div class="item1 <%= index == 0 ? 'active' : '' %>">
-                  <div class="image-box-item col-xs-4"><a href="#1">
-                    <%= image_tag(game.photos.last.image, :class => "img-responsive") %></a>
-                    <div class="text-center game-item">
-                      <strong><%= game.name %></strong>
-                      <br/>
-                      <strong><%= time_ago_in_words(game.relase_date) %> ago</strong>
+                  <div class="item1 <%= index == 0 ? 'active' : '' %>">
+                    <div class="image-box-item col-xs-4"><a href="#1">
+                      <%= image_tag(game.photos.last.image, :class => "img-responsive") %></a>
+                      <div class="text-center game-item">
+                        <strong><%= game.name %></strong>
+                        <br/>
+                        <strong><%= time_ago_in_words(game.relase_date) %> ago</strong>
+                      </div>
                     </div>
                   </div>
-                </div>
                 <% end %>
               </div>
               <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
               <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-            </div>  -->
+            </div> -->
             <div class="owl-carousel new-game">
               <% @game_news.each do |game| %>
-              <div>
-               <a href="#"><%= image_tag(game.photos.last.image, :class => "img-responsive") %></a> 
-              </div>
+                <div>
+                  <%= image_tag(game.photos.last.image, :class => "img-responsive") %>
+                </div>
               <% end %>
             </div>
           </div>
@@ -121,38 +121,40 @@
             <h2>Top Games</h2>
           </div>
           <% @game_top.each do |game| %>
-          <div class="col-md-12">
-            <div class="col-xs-12 col-md-4">
-              <%= image_tag(game[:image], :class => "img-responsive") %>
+            <div class="col-md-12">
+              <div class="col-xs-12 col-md-4">
+                <%= image_tag(game[:image], :class => "img-responsive") %>
+              </div>
+              <div class="col-xs-12 col-md-8">
+                <div class="about-text">
+                  <h4><a href="#"> <%= game[:name] %></a></h4>
+                </div>
+                <div class="col-xs-12 col-md-5">
+                  <b>Release date: <%= game[:release_date].to_date %> </b>
+                </div>
+                <div class="col-xs-12 col-md-3 fix-padding">
+                  <b>User score: <%= game[:score] %> </b>
+                </div>
+                <div class="col-xs-7 col-md-4">
+                  <b>Platform: </b>
+                  <% game[:platform].each do |platform| %>
+                    <b> <%= platform.name %> </b>
+                  <% end %>
+                </div>
+                <div class="col-md-12">
+                  <p><%= game[:summary] %> <a href="#">more...</a></p>
+                </div>
+              </div>
             </div>
-            <div class="col-xs-12 col-md-8">
-              <div class="about-text">
-                <h4><a href="#"> <%= game[:name] %></a></h4>
-              </div>
-              <div class="col-xs-12 col-md-5">
-                <b>Release date: <%= game[:release_date].to_date %> </b>
-              </div>
-              <div class="col-xs-12 col-md-3 fix-padding">
-                <b>User score: <%= game[:score] %> </b>
-              </div>
-              <div class="col-xs-7 col-md-4">
-                <b>Platform: </b>
-                <% game[:platform].each do |platform| %>
-                <b> <%= platform.name %> </b>
-                <% end %>
-              </div>
-              <div class="col-md-12">
-                <p><%= game[:summary] %> <a href="#">more...</a></p>
-              </div>
-            </div>
-          </div>
           <% end %>
         </div>
       </div>
+
+      <!-- Search & Upcoming games list -->
       <div class="col-md-3">
         <div class="row">
           <div class="about-text">
-            <h2>Advanced Search..</h2>
+            <h2>Advance Search..</h2>
             <form action="" method="POST" role="form">
               <div class="form-group">
                 <label for="">Game Title</label>
@@ -185,12 +187,12 @@
         <div class="row ">
           <div class="col-md-12 text-center related-game ">Upcoming Games</div>
           <% @game_upcoming.each do |game| %>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong><%= game.name %></strong>
-              <hr>
-              <strong><%= game.relase_date.strftime("%F") %></strong>
-            </a>
-          </div>
+            <div class="col-md-12 text-center list-related-game">
+              <a href="#"><strong><%= game.name %></strong>
+                <hr>
+                <strong><%= game.relase_date.strftime("%F") %></strong>
+              </a>
+            </div>
           <% end %>
         </div>
       </div>
@@ -198,6 +200,7 @@
   </div>
 </div>
 
+<!-- More games section -->
 <div id="testimonials">
   <div class="container">
     <div class="section-title">
@@ -221,6 +224,9 @@
       </div>
     </div>
   </div>
+
+
+  <!-- Contact Section -->
   <div id="contact">
     <div class="container">
       <div class="col-md-8">
@@ -258,48 +264,48 @@
           <h4>Contact Info</h4>
           <p><span>Address</span>4321 California St,<br>
             San Francisco, CA 12345</p>
-          </div>
-          <div class="contact-item">
-            <p><span>Phone</span> +1 123 456 1234</p>
-          </div>
-          <div class="contact-item">
-            <p><span>Email</span> info@company.com</p>
-          </div>
         </div>
-        <div class="col-md-12">
-          <div class="row">
-            <div class="social">
-              <ul>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-              </ul>
-            </div>
+        <div class="contact-item">
+          <p><span>Phone</span> +1 123 456 1234</p>
+        </div>
+        <div class="contact-item">
+          <p><span>Email</span> info@company.com</p>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="social">
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Footer Section -->
-  <div id="footer">
-    <div class="container text-center">
-      <p>&copy; 2018 Design by <a href="http://www.templatewire.com" rel="nofollow"> KYUU-RY TEAM</a></p>
-    </div>
+<!-- Footer Section -->
+<div id="footer">
+  <div class="container text-center">
+    <p>&copy; 2018 Design by <a href="http://www.templatewire.com" rel="nofollow"> KYUU-RY TEAM</a></p>
   </div>
+</div>
 
-  <script>
+<script>
     var owl;
 
     owl = $('.new-game');
 
     owl.owlCarousel({
-      items: 4,
-      loop: true,
-      margin: 10,
-      autoplay: true,
-      autoplayTimeout: 1000,
-      autoplayHoverPause: true
+        items: 4,
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 1000,
+        autoplayHoverPause: true
     });
-  </script>
+</script>
