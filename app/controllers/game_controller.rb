@@ -17,5 +17,4 @@ class GameController < ApplicationController
     @game_news = Game.just_published(5).includes(:photos)
     @game_upcoming = Game.upcoming(5).includes(:photos)
   end
-
 end
