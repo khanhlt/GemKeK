@@ -120,7 +120,7 @@
           <div class="col-md-12">
             <h2>Top Games</h2>
           </div>
-          <% @game_full.each do |game| %>
+          <% @game_top.each do |game| %>
             <div class="col-md-12">
               <div class="col-xs-12 col-md-4">
                 <%= image_tag(game[:image], :class => "img-responsive") %>
@@ -154,7 +154,7 @@
       <div class="col-md-3">
         <div class="row">
           <div class="about-text">
-            <h2>Advanced Search..</h2>
+            <h2>Advance Search..</h2>
             <form action="" method="POST" role="form">
               <div class="form-group">
                 <label for="">Game Title</label>
