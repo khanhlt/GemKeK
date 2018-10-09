@@ -1,27 +1,48 @@
-<h2>Log in</h2>
+<div class="limiter">
+	<div class="container-login100" style="background-image: url('../assets/slider/1.jpg');">
+		<div class="wrap-login100">
+			<span class="login100-form-logo">
+				<!-- <i class="zmdi zmdi-landscape"></i> -->
+				<img src="../assets/logo.jpg" alt="">
+			</span>
+			<span class="login100-form-title p-b-34 p-t-27">
+				Log in
+			</span>
+			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+			<div class="wrap-input100 validate-input" data-validate = "Enter username">
+				<%= f.email_field :email, placeholder:"Email", class:"input100"%>
+				<span class="focus-input100" data-placeholder=""></span>
+			</div>
+			<div class="wrap-input100 validate-input" data-validate="Enter password">
+				<%= f.password_field :password, placeholder:"Password", id:"password",  class:"input100"%>
+				<span class="focus-input100" data-placeholder=""></span>
+			</div>
+			<div class="contact100-form-show">
+				<input type="checkbox" class= "input-show" onclick="myFunction()">
+				<span >Show Password</span>
+			</div>
+			<% if devise_mapping.rememberable? -%>
+			<div class="contact100-form-checkbox">
+				<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+				<%= f.label :remember_me , for:"ckb1", class:"label-checkbox100"%>
+			</div>
+			<% end -%>
+			<div class="actions">
+				<%= f.submit "Sign in" , class:"login100-form-btn"%>
+			</div>
+			<% end %>
+			<%= render "devise/shared/links" %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Sign in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+		</div>
+	</div>
+</div>
+<script>
+	function myFunction() {
+		var x = document.getElementById("password");
+		if (x.type === "password") {
+			x.type = "text";
+		} else {
+			x.type = "password";
+		}
+	}
+</script>

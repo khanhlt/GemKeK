@@ -1,12 +1,12 @@
 <%= render 'page_title', title: 'GemKeK' %>
 <nav id="menu" class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <a class="navbar-brand logo-header" href="#page-top">
         <img src="/assets/logo.jpg" alt="logo">
       </a>
     </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1 col-md-8">
+    <div class="collapse navbar-collapse col-md-9" id="bs-example-navbar-collapse-1 ">
       <ul class="nav navbar-nav navbar-left">
         <li><a href="#about" class="page-scroll">PC</a></li>
         <li><a href="#services" class="page-scroll">PS4</a></li>
@@ -31,45 +31,44 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" class="page-scroll">Sign In</a></li>
+        <% if user_signed_in? %>
+          <li>
+            <div>
+              Chúc <b><%= current_user.full_name %></b> một ngày tốt lành
+            </div>
+            <%= link_to('Sign Out', destroy_user_session_path, method: :delete) %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to('Sign In', new_user_session_path) %>
+          </li>
+          <li>           
+            <%= link_to('Sign Up', new_user_registration_path) %>
+          </li>
+        <% end %>
+
       </ul>
     </div>
   </div>
 </nav>
-
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="/assets/slider/1.jpg" alt="First Slide">
-      <div class="carousel-caption">
-        <h1>Game Name</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, deserunt dolorem doloremque! Atque quia,
-          libero!</p>
+<div class="container">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <% @game_upcoming.each.with_index do |game, index| %>
+      <div class="item <%= index == 0 ? 'active' : '' %>">
+        <%= image_tag(game.photos.first.image, :alt => "First Slide") %>
+        <div class="carousel-caption">
+          <h2><%= game.name %></h2>
+          <h1><%= game.relase_date.to_date %></h1>
+        </div>
       </div>
+      <% end %>
     </div>
-    <div class="item">
-      <img src="/assets/slider/2.jpg" alt="First Slide">
-      <div class="carousel-caption">
-        <h1>Game Name</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, deserunt dolorem doloremque! Atque quia,
-          libero!</p>
-      </div>
-    </div>
-    <div class="item">
-      <img src="/assets/slider/3.jpg" alt="First Slide">
-      <div class="carousel-caption">
-        <h1>Game Name</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, deserunt dolorem doloremque! Atque quia,
-          libero!</p>
-      </div>
-    </div>
-  </div>
-
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -80,12 +79,43 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-
+</div>
 <div id="about">
   <div class="container">
     <div class="row">
       <div class="col-md-9">
+        <div class="col-md-12">
+          <div class="col-md-12">
+            <h2>New Games Release</h2>
+          </div>
+          <div class="col-md-12">
+           <!--  <div class="carousel slide multi-item-carousel" id="theCarousel">
+              <div class="carousel-inner">
+                <% @game_news.each.with_index do |game, index| %>
+                  <div class="item1 <%= index == 0 ? 'active' : '' %>">
+                    <div class="image-box-item col-xs-4"><a href="#1">
+                      <%= image_tag(game.photos.last.image, :class => "img-responsive") %></a>
+                      <div class="text-center game-item">
+                        <strong><%= game.name %></strong>
+                        <br/>
+                        <strong><%= time_ago_in_words(game.relase_date) %> ago</strong>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+              <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+            </div> -->
+            <div class="owl-carousel new-game">
+            <% @game_news.each do |game| %>
+              <div>
+                <%= image_tag(game.photos.last.image, :class => "img-responsive") %>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
         <div class="col-md-12">
           <div class="col-md-12">
             <h2>Top Games</h2>
@@ -124,7 +154,7 @@
       <div class="col-md-3">
         <div class="row">
           <div class="about-text">
-            <h2>Search..</h2>
+            <h2>Advanced Search..</h2>
             <form action="" method="POST" role="form">
               <div class="form-group">
                 <label for="">Game Title</label>
@@ -155,61 +185,15 @@
           </div>
         </div>
         <div class="row ">
-          <div class="col-md-12 text-center related-game ">Related Game</div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 1</strong>
-              <hr>
-              <strong>15/11/2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 2</strong>
-              <hr>
-              <strong>15/11/2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 3</strong>
-              <hr>
-              <strong>15-11-2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 4</strong>
-              <hr>
-              <strong>15/11/2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 5</strong>
-              <hr>
-              <strong>15/11/2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 6</strong>
-              <hr>
-              <strong>15-11-2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 7</strong>
-              <hr>
-              <strong>15/11/2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 8</strong>
-              <hr>
-              <strong>15/11/2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 9</strong>
-              <hr>
-              <strong>15-11-2018</strong>
-            </a>
-          </div>
+          <div class="col-md-12 text-center related-game ">Upcoming Games</div>
+          <% @game_upcoming.each do |game| %>
+            <div class="col-md-12 text-center list-related-game">
+              <a href="#"><strong><%= game.name %></strong>
+                <hr>
+                <strong><%= game.relase_date.strftime("%F") %></strong>
+              </a>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -310,3 +294,18 @@
     <p>&copy; 2018 Design by <a href="http://www.templatewire.com" rel="nofollow"> KYUU-RY TEAM</a></p>
   </div>
 </div>
+
+<script>
+  var owl;
+
+owl = $('.new-game');
+
+owl.owlCarousel({
+  items: 4,
+  loop: true,
+  margin: 10,
+  autoplay: true,
+  autoplayTimeout: 1000,
+  autoplayHoverPause: true
+});
+</script>

@@ -509,7 +509,7 @@ color: #777;
 .picture-user img {
     border-radius: 50%;
     width: 50px !important;
-    height: 50px;
+    height: 50px !important;
 }
 
 .picture-user {
@@ -580,6 +580,10 @@ color: #777;
 }
 
 .item img {
-    width: 1900px;
-    height: 800px !important;
+    width: 1400px;
+    height: 600px !important;
+}
+
+.item1 img {
+    height: 250px !important;
 }
