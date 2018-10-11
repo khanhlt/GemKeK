@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 2018_10_09_150018) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "full_name"
-    t.boolean "is_admin"
+    t.boolean "is_admin", default: false
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"

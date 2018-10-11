@@ -5,8 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create! email: "hoangtuyb96@gmail.com", password: "863991"
-User.create! email: "test@gmail.com", password: "863991"
+User.create! email: "hoangtuyb96@gmail.com", password: "863991",  confirmed_at: "2018-10-11 11:28:26"
+User.create! email: "test@gmail.com", password: "863991",  confirmed_at: "2018-10-11 11:28:26"
+User.create! email: "nguyenthanhchinh96@gmail.com", password: "30061996", confirmed_at: "2018-10-11 11:28:26", full_name: "THanh Chinh", is_admin: true
 Game.create name: "Generation Streets", relase_date: DateTime.new(2018, 06, 10), summary: "Generation Streets, a game based on the real-world map. Load your hometown, find your place and this casual shooter start giving you very unexpected impressions. Almost any point on Earth is available to load except the North pole and Antarctica."
 Game.create name: "Assassin's creed Odyssey", relase_date: DateTime.new(2018, 10, 16), summary: "Choose your fate in Assassin's Creed® Odyssey. From outcast to living legend, embark on an odyssey to uncover the secrets of your past and change the fate of Ancient Greece."
 Game.create name: "Miracle Circus", relase_date: DateTime.new(2018, 12, 01), summary: "Qi joins the miracle circus as a genius magician. The other members all welcome Qi’s coming, like Liao, Liu, Ji, Xiang,Ning. But as the night is near around, something is approaching, straightly to their heart. Who is watching? And who are the demons of night exactly? Qi starts his investigation on a common day "

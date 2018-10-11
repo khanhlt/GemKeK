@@ -38,6 +38,9 @@
           </a>
           <ul class="dropdown-menu">
             <li><a href="#">Profile</a></li>
+            <% if current_user.is_admin %>
+            <li><a href="#">Admin</a></li>
+            <% end %>
             <li><a href="#"><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %> </a></li>
           </ul>
         </li>
