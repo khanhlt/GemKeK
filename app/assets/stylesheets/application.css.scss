@@ -18,3 +18,27 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import 'owlcarousel2/owl.carousel';
+
+#about img {
+    padding: 3px;
+    width: 500px;
+    margin-top: 10px;
+    background: #fff;
+    border-right: 0;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
+    height: 172px;
+}
+
+.fix-padding {
+    padding:0px !important;
+}
+.image-box-item{
+    position: relative;
+}
+.game-item{
+    position: absolute;
+    transform: translate(-50%, 120%);
+    top: 50%;
+    left: 50%;
+    color: #ffffff;
+}

@@ -129,26 +129,26 @@
   <% @game_top.each do |game| %>
   <div class="col-md-12 fix-pading-content">
     <div class="col-xs-12 col-md-4">
-      <%= image_tag(game[:image], :class => "img-responsive") %>
+      <%= image_tag(game.photos.first.image, :class => "img-responsive") %>
     </div>
     <div class="col-xs-12 col-md-8">
       <div class="about-text">
-        <h4><a href="#"> <%= game[:name] %></a></h4>
+        <h4><%=link_to game_detail_path(id: game.id) do %> <%= game.name %><%end%> </h4>
       </div>
       <div class="col-xs-12 col-md-5">
-        <b>Release date: <%= game[:release_date].to_date %> </b>
+        <b>Release date: <%= game.relase_date.to_date %> </b>
       </div>
       <div class="col-xs-12 col-md-3 fix-padding">
-        <b>User score: <%= game[:score] %> </b>
+        <b>User score: <%= game.reviews.average(:rating) %> </b>
       </div>
       <div class="col-xs-7 col-md-4">
         <b>Platform: </b>
-        <% game[:platform].each do |platform| %>
+        <% game.platform_of_game.each do |platform| %>
         <b> <%= platform.name %> </b>
         <% end %>
       </div>
       <div class="col-md-12">
-        <p><%= game[:summary] %> <a href="#">more...</a></p>
+        <p><%= game.summary %> <a href="#">more...</a></p>
       </div>
     </div>
   </div>
