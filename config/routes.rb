@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'login/home'
   get 'game/index'
+  get 'game/detail'
   get 'gameshousai/home'
 
   root 'game#index'
