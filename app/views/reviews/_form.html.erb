@@ -1,0 +1,14 @@
+<%= form_for @review, url: reviews_path do |f| %>
+  <div class="field">
+    <%= f.text_field :title, placeholder: "Title..." %>
+  </div>
+  <div class="field">
+        <%= f.label :rating %><br>
+        <%= f.number_field :rating %>
+      </div>
+      <%= hidden_field_tag :game_id, params[:game_id] %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Content..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
