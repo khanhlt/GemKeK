@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user_profile/home'
   get 'login/home'
   get 'game/index'
   get 'game/detail'
