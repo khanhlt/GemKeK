@@ -43,3 +43,10 @@ Photo.create game_id: 3, image: "miracle_circus_1"
 Photo.create game_id: 4, image: "rhem_ii_se_the_cave"
 Photo.create game_id: 5, image: "twilight_path_1"
 Photo.create game_id: 6, image: "giraffe_town_1"
+Genre.create name: "Action"
+Genre.create name: "Brain Training"
+Genre.create name: "Relax"
+GameGenre.create game_id: 1, genre_id: 1
+GameGenre.create game_id: 2, genre_id: 2
+GameGenre.create game_id: 4, genre_id: 3
+GameGenre.create game_id: 3, genre_id: 2
