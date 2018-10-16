@@ -34,10 +34,12 @@ class SearchController < ApplicationController
     @params_platform = params[:platform].to_i == 0 ? "" : Platform.find(params[:platform].to_i).name
     @params_score = params[:score] == "" ? "" : params[:score]
 
-    params_score = params[:score].scan(/\d+|"-"|\d+/)
-    if params_score != nil
-      score_min = params_score[0]
-      score_max = params_score[1]
+    if (params[:score] != nil)
+      params_score = params[:score].scan(/\d+|"-"|\d+/)
+      if params_score != nil
+        score_min = params_score[0]
+        score_max = params_score[1]
+      end
     end
 
     if (@games != nil)
