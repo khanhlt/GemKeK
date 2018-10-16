@@ -1,0 +1,10 @@
+<%= form_for @review do |f| %>
+  <%= hidden_field_tag :title, @review.title %>
+  <div class="field">
+        <%= f.label :rating %><br>
+        <%= f.number_field :rating, placeholder: @review.rating%>
+      </div>
+      <%= hidden_field_tag :game_id, @review.game_id %>
+      <%= hidden_field_tag :content, @review.content %>
+  <%= f.submit "Rate", class: "btn btn-primary" %>
+<% end %>

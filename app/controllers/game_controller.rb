@@ -12,6 +12,9 @@ class GameController < ApplicationController
     @game_top = @game_top.sort_by! {|x| x.reviews.average(:rating)}.reverse
     @game_news = Game.just_published(5).includes(:photos)
     @game_upcoming = Game.upcoming(5).includes(:photos)
+    if user_signed_in?
+      @review = current_user.reviews.build
+    end
   end
   
   def detail
