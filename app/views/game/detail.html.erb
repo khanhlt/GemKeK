@@ -107,8 +107,29 @@
                             <hr>
                             <div>
                                 <p><%=@game.summary.slice(0,200)%></p>
-                                <div class="readmore"><span><a href="#">read more...</a></span>
+                            </div>
+                            <div>
+                                <div class="collapse" id="collapseExample">
+                                  <div >
+                                    <p>Platform: 
+                                    <% @game.platform_of_game.each_with_index do |platform,index|%>
+                                        <%= index == 0? "" : ","  %>
+                                        <%= platform.name  %> 
+                                    <%end%>
+                                    </p>
+                                    <p>Genres: 
+                                    <% @game.genres_of_game.each_with_index do |genre, index|%>   
+                                        <%= index == 0? "" : ","  %>     
+                                        <%= genre.name  %>  
+                                    <%end%>
+                                    </p>
+                                  </div>
                                 </div>
+                                <p>
+                                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    Read more
+                                  </button>
+                                </p>
                             </div>
                         </div>
                     </div>
