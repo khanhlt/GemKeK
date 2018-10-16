@@ -58,7 +58,7 @@
 <!--</nav>-->
 
   <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+<!--   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
@@ -66,18 +66,7 @@
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
-<div id="get-touch">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-6 col-md-offset-1">
-                <h3>Cost for your home renovation project</h3>
-                <p>Get started today and complete our form to request your free estimate</p>
-            </div>
-            <div class="col-xs-12 col-md-4 text-center"><a href="#contact" class="btn btn-custom btn-lg page-scroll">Menu Game</a></div>
-        </div>
-    </div>
-</div>
+</div> -->
 <div id="about">
     <div class="container">
         <div class="row">
@@ -160,16 +149,15 @@
                         <div class="section-title">
                             <h2>Review Game</h2>
                         </div>
-
                         <div class="header-rating"><%= @game.reviews.count() %> Rating Detail</div>
                         <div class="col-md-12">
+                            <% @game.reviews.each do |review| %>
                             <div class="row">
-                                
-                                 <% @game.reviews.each do |review| %>
-                                <div class="col-md-10 col-md-offset-1 user-review">
-                                    <div class="col-md-1 picture-user">
+                                <div class="col-md-1 picture-user">
                                     <img src="/assets/game/game1.jpg" alt="">
                                 </div>
+
+                                <div class="col-md-10 col-md-offset-1 user-review">
                                     <div class="name-user col-md-3"><%= review.user.full_name %>
                                     </div>
                                     <div class="col-md-6 star-user">
@@ -238,38 +226,6 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="row">
-                    <div class="about-text">
-                        <h2>Search..</h2>
-                        <form action="" method="POST" role="form">
-                            <div class="form-group">
-                                <label for="">Game Title</label>
-                                <input type="text" class="form-control" id="" placeholder="Input game title">
-                            </div>
-                            <div class="form-group">
-                                <label for="sel1">Genre</label>
-                                <select class="form-control" id="sel1">
-                                    <option>Genre_1</option>
-                                    <option>Genre_2</option>
-                                    <option>Genre_3</option>
-                                    <option>Genre_4</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="sel1">Platform</label>
-                                <select class="form-control" id="sel1">
-                                    <option>Android</option>
-                                    <option>Ios</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Score</label>
-                                <input type="text" class="form-control" id="" placeholder="Input Score">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Search</button>
-                        </form>
-                    </div>
-                </div>
                 <div class="row ">
                     <div class="col-md-12 text-center related-game ">Related Game</div>
                     <div class="col-md-12 text-center list-related-game">
@@ -346,70 +302,3 @@
         </div>
     </div>
 </div>
-<!--    <!-- Contact Section -->-->
-<!--    <div id="contact">-->
-<!--        <div class="container">-->
-<!--            <div class="col-md-8">-->
-<!--                <div class="row">-->
-<!--                    <div class="section-title">-->
-<!--                        <h2>Get In Touch</h2>-->
-<!--                        <p>Please fill out the form below to send us an email and we will get back to you as soon as possible.</p>-->
-<!--                    </div>-->
-<!--                    <form name="sentMessage" id="contactForm" novalidate>-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-md-6">-->
-<!--                                <div class="form-group">-->
-<!--                                    <input type="text" id="name" class="form-control" placeholder="Name" required="required">-->
-<!--                                    <p class="help-block text-danger"></p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="col-md-6">-->
-<!--                                <div class="form-group">-->
-<!--                                    <input type="email" id="email" class="form-control" placeholder="Email" required="required">-->
-<!--                                    <p class="help-block text-danger"></p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="form-group">-->
-<!--                            <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>-->
-<!--                            <p class="help-block text-danger"></p>-->
-<!--                        </div>-->
-<!--                        <div id="success"></div>-->
-<!--                        <button type="submit" class="btn btn-custom btn-lg">Send Message</button>-->
-<!--                    </form>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-md-3 col-md-offset-1 contact-info">-->
-<!--                <div class="contact-item">-->
-<!--                    <h4>Contact Info</h4>-->
-<!--                    <p><span>Address</span>4321 California St,<br>-->
-<!--                        San Francisco, CA 12345</p>-->
-<!--                    </div>-->
-<!--                    <div class="contact-item">-->
-<!--                        <p><span>Phone</span> +1 123 456 1234</p>-->
-<!--                    </div>-->
-<!--                    <div class="contact-item">-->
-<!--                        <p><span>Email</span> info@company.com</p>-->
-<!--                    </div>-->
-<!--            </div>-->
-<!--            <div class="col-md-12">-->
-<!--                    <div class="row">-->
-<!--                        <div class="social">-->
-<!--                            <ul>-->
-<!--                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
-<!--                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
-<!--                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
-<!--                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--        <!-- Footer Section -->-->
-<!--<div id="footer">-->
-<!--    <div class="container text-center">-->
-<!--        <p>&copy; 2018 Design by  <a href="http://www.templatewire.com" rel="nofollow"> KYUU-RY TEAM</a></p>-->
-<!--    </div>-->
-<!--</div>-->
