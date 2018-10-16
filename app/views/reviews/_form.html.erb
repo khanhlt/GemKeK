@@ -1,14 +1,26 @@
-<%= form_for @review, url: reviews_path do |f| %>
-  <div class="field">
-    <%= f.text_field :title, placeholder: "Title..." %>
+<div class="limiter">
+  <div class="container-login100" style="background-image: url('../assets/slider/1.jpg');">
+    <div class="wrap-login100">
+      <%= form_for @review do |f| %>
+
+        <div class="wrap-input100 validate-input" data-validate = "Enter username">
+          <%= f.text_field :title, placeholder:"Title", class:"input100"%>
+          <span class="focus-input100" data-placeholder=""></span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate = "Enter username">
+          <%= f.number_field :rating, min: 1, max: 5, placeholder:"Rating", class:"input100"%>
+          <span class="focus-input100" data-placeholder=""></span>
+        </div>
+        <%= hidden_field_tag :game_id, params[:game_id] %>
+        <div class="wrap-input100 validate-input" data-validate = "Enter username">
+          <%= f.text_area :content, placeholder:"Content", class:"input100"%>
+          <span class="focus-input100" data-placeholder=""></span>
+        </div>
+     
+        <div class="actions" >
+          <%= f.submit "Sumbmit", class:"login100-form-btn"%>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div class="field">
-        <%= f.label :rating %><br>
-        <%= f.number_field :rating %>
-      </div>
-      <%= hidden_field_tag :game_id, params[:game_id] %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Content..." %>
-  </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
-<% end %>
+</div>
