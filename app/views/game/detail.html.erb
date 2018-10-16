@@ -101,7 +101,7 @@
                                 <p><%= @game.reviews.average(:rating)%> Point</p>
                             </div>
                             <div class="header_shousai_game">
-                                <p><%= @game.reviews.count() %> reviews</p>
+                                <p><%= @game.reviews.count() %> rating</p>
                             </div>
 
                             <hr>
@@ -136,14 +136,28 @@
                 </div>
                 <div class="col-md-12">
                     <div class="col-md-4 star-review">
-                        <div class="create_review_button">
-                            <% if @game.reviews.where(user_id: current_user.id).count == 0 %>
-                            <%= link_to new_review_path(game_id: @game.id)  do %>
-                            <button type="button" class="btn btn-danger">Create New Review</button>
+                        <section class="micropost_form">
+                            <% if user_signed_in? %>
+                            <% if @game.reviews.where(user_id: current_user.id).count != 0 %>
+                                <% @review = @game.reviews.where(user_id: current_user.id).first %>
+                             <% else %>
+                              <% @review = Review.new %>
+                              <% @review.game_id = @game.id %>
+                              <% end %>
+
+                                <%= render 'reviews/rating_form' %>
                             <% end %>
-                            <% else %>
+                        </section>
+
+                        <div class="create_review_button">
+                            <% if user_signed_in? and @game.reviews.where(user_id: current_user.id).count != 0 %>
                             <%= link_to edit_review_path(id: @game.reviews.where(user_id: current_user.id).first.id)  do %>
                             <button type="button" class="btn btn-danger">Edit your Review</button>
+                            <% end %>
+                            
+                            <% else %>
+                            <%= link_to new_review_path(game_id: @game.id)  do %>
+                            <button type="button" class="btn btn-danger">Create New Review</button>
                             <% end %>
                             <%end%>
                         </div>
@@ -167,11 +181,11 @@
                             <h2>Review Game</h2>
                         </div>
 
-                        <div class="header-rating"><%= @game.reviews.count() %> Rating Detail</div>
+                        <div class="header-rating"><%= @game.reviews.where.not(:title =>nil).count() %> Rating Detail</div>
                         <div class="col-md-12">
                             <div class="row">
                                 
-                                 <% @game.reviews.each do |review| %>
+                                 <% @game.reviews.where.not(:title =>nil).each do |review| %>
                                 <div class="col-md-10 col-md-offset-1 user-review">
                                     <div class="col-md-1 picture-user">
                                     <img src="/assets/game/game1.jpg" alt="">
