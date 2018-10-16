@@ -16,14 +16,20 @@
               <%= select_tag "platform", options_from_collection_for_select(Platform.all, :id, :name), {:class => 'form-control', :prompt => ""} %>
             </div>
 
-            <div class="col-xs-12 col-md-3">
-              Score:
-              <%= select_tag "score", options_for_select(["1-2", "2-3", "3-4", "4-5"]), {:class => 'form-control', :prompt => ""} %>
+            <div class="col-xs-12 col-md-2">
+              Min Score:
+              <%= select_tag "min_score", options_for_select(["1", "2", "3", "4", "5"]), {:class => 'form-control', :prompt => ""} %>
             </div>
+
+            <div class="col-xs-12 col-md-2">
+              Max Score:
+              <%= select_tag "max_score", options_for_select(["1", "2", "3", "4", "5"]), {:class => 'form-control', :prompt => ""} %>
+            </div>
+
             <% @search_results.map(&:id).each do |id| %>
               <%= hidden_field_tag "game_ids[]", id %>
             <% end %>
-            <div class="col-xs-12 col-md-3">
+            <div class="col-xs-12 col-md-2">
               <br>
               <%= submit_tag "Filter", class: 'btn btn-default' %>
             </div>

@@ -28,21 +28,12 @@ class SearchController < ApplicationController
     @games = params[:game_ids]
     @search_results = []
 
-    puts "search result"
-    @search_results.each do |q|
-      puts q
-    end
     @params_genre = params[:genre].to_i == 0 ? "" : Genre.find(params[:genre].to_i).name
     @params_platform = params[:platform].to_i == 0 ? "" : Platform.find(params[:platform].to_i).name
     @params_score = params[:score] == "" ? "" : params[:score]
 
-    if (params[:score] != nil)
-      params_score = params[:score].scan(/\d+|"-"|\d+/)
-      if params_score != nil
-        score_min = params_score[0]
-        score_max = params_score[1]
-      end
-    end
+    score_min = params[:min_score].to_i == 0 ? 0 : params[:min_score]
+    score_max = params[:max_score].to_i == 0 ? 5 : params[:max_score]
 
     if (@games != nil)
       @games.each do |game_id|
@@ -72,7 +63,7 @@ class SearchController < ApplicationController
         puts "flag2"
         puts flag2
 
-        flag3 = params_score.size == 0 ? true : false
+        flag3 = score_min==0 && score_max==5 ? true : false
         if (flag3 == false)
           if (score.to_i >= score_min.to_i && score.to_i <= score_max.to_i)
             flag3 = true
