@@ -1,5 +1,4 @@
 <%=render 'page_title', title: 'Game detail'%>
-<%= render 'page_title', title: 'GemKeK' %>
 <!--<nav id="menu" class="navbar navbar-default navbar-fixed-top">-->
 <!--  <div class="container">-->
 <!--    <div class="col-md-3">-->
@@ -53,7 +52,6 @@
           <%#= link_to('Sign Up', new_user_registration_path) %>
 <!--        </li>-->
         <%# end %>
-
 <!--      </ul>-->
 <!--    </div>-->
 <!--  </div>-->
@@ -118,7 +116,9 @@
                 <div class="col-md-12">
                     <div class="col-md-4 star-review">
                         <div class="create_review_button">
+                            <%= link_to new_review_path(game_id: @game.id)  do %>
                             <button type="button" class="btn btn-danger">Create New Review</button>
+                            <% end %>
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -143,11 +143,12 @@
                         <div class="header-rating"><%= @game.reviews.count() %> Rating Detail</div>
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="col-md-1 picture-user">
-                                    <img src="/assets/game/game1.jpg" alt="">
-                                </div>
+                                
                                  <% @game.reviews.each do |review| %>
                                 <div class="col-md-10 col-md-offset-1 user-review">
+                                    <div class="col-md-1 picture-user">
+                                    <img src="/assets/game/game1.jpg" alt="">
+                                </div>
                                     <div class="name-user col-md-3"><%= review.user.full_name %>
                                     </div>
                                     <div class="col-md-6 star-user">
@@ -155,6 +156,9 @@
                                     </div>
                                     <div class="col-md-3 star-user">
                                         <div class="text-right"><%= review.created_at.to_date()%></div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <strong><%= review.title%></strong>
                                     </div>
                                     <div class="col-md-12">
                                         <p><%= review.content%></p>
@@ -165,9 +169,11 @@
                                             </a>
                                             <strong class="space-i"><%= review.comments.count()%> comments</strong>
                                             <strong class="space-i"><a href="#"><strong>see review</strong></a></strong>
-                                            <strong><a href="#">Edit</a> |
+                                            <% if current_user == review.user %>
+                                            <strong><a href="#">Edit</a> | 
                                                 <a href="#">Delete</a>
                                             </strong>
+                                            <% end %>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -190,11 +196,13 @@
                                                             <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                                                         </a>
                                                     </div>
+                                                    <% if current_user == review.user %>
                                                     <div class="text-right">
                                                         <strong><a href="#">Edit</a> |
                                                             <a href="#">Delete</a>
                                                         </strong>
                                                     </div>
+                                                    <% end %>
                                                 </div>
                                             </div>
                                         </div>

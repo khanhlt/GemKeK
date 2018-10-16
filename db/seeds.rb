@@ -14,9 +14,9 @@ Game.create name: "Miracle Circus", relase_date: DateTime.new(2018, 12, 01), sum
 Game.create name: "RHEM II SE - The cave", relase_date: DateTime.new(2018, 12, 10), summary: "RHEM II SE - The Cave Special Edition is an intricate pure-puzzle first person adventure game. The player explores a hidden city far beneath the earths surface. RHEM II SE features non-linear gameplay non-violent story and mind-bending puzzles."
 Game.create name: "Twilight Path", relase_date: DateTime.new(2017, 05, 06), summary: "A virtual reality fantasy adventure set in surreal realm between the real world and the afterlife. Meet mischievous spirits and gods. Solve puzzles. Restore ancient stone structures. Explore a gorgeous and vibrant world."
 Game.create name: "Giraffe Town", relase_date: DateTime.new(2017, 11, 9), summary: "A giraffe born with slippery feet sets out to find love..."
-Review.create! content: "It's good!", user_id: 1, game_id: 1, rating: 4, id: 1
-Review.create! content: "It's not interesting", user_id: 1, game_id: 1, rating: 3
-Review.create! content: "Awesome!!!", user_id: 1, game_id: 2, rating: 5
+Review.create! content: "It's good!", user_id: 1, game_id: 1, rating: 4, title: "best game ever"
+Review.create! content: "It's not interesting", user_id: 1, game_id: 1, rating: 3, title: "best of the best"
+Review.create! content: "Awesome!!!", user_id: 1, game_id: 2, rating: 5, title: "are you kidding me"
 Review.create! content: "Animation is amazing!", user_id: 2, game_id: 5, rating: 4
 Review.create! content: "So old design!", user_id: 2, game_id: 6, rating: 2
 Comment.create! user_id: 1, review_id: 1, content: "ashduiashida"

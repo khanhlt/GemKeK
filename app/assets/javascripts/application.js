@@ -18,3 +18,10 @@
 //   	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
 //   }
 // });
+//= require rails-ujs
+//= require activestorage
+//= require jquery
+//= require bootstrap-sprockets
+//= require turbolinks
+//= require_tree .
+//= require owlcarousel2/owl.carousel

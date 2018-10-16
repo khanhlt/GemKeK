@@ -95,24 +95,7 @@
             <h2>New Games Release</h2>
           </div>
           <div class="col-md-12">
-<!--  <div class="carousel slide multi-item-carousel" id="theCarousel">
-<div class="carousel-inner">
-<% @game_news.each.with_index do |game, index| %>
-<div class="item1 <%= index == 0 ? 'active' : '' %>">
-<div class="image-box-item col-xs-4"><a href="#1">
-<%= image_tag(game.photos.last.image, :class => "img-responsive") %></a>
-<div class="text-center game-item">
-<strong><%= game.name %></strong>
-<br/>
-<strong><%= time_ago_in_words(game.relase_date) %> ago</strong>
-</div>
-</div>
-</div>
-<% end %>
-</div>
-<a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-<a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-</div> -->
+
 <div class="owl-carousel new-game">
   <% @game_news.each do |game| %>
   <div>
