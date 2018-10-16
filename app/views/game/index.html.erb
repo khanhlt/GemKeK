@@ -31,27 +31,27 @@
 <!--        </li>-->
 <!--      </ul>-->
 <!--      <ul class="nav navbar-nav navbar-right">-->
-        <%# if user_signed_in? %>
+<%# if user_signed_in? %>
 <!--        <li class="dropdown">-->
 <!--          <a class="dropdown-toggle dropdown-background-color" data-toggle="dropdown" href="#"><b><%#= current_user.full_name %></b>-->
 <!--            <span class="caret"></span>-->
 <!--          </a>-->
 <!--          <ul class="dropdown-menu">-->
 <!--            <li><a href="#">Profile</a></li>-->
-            <%# if current_user.is_admin %>
+<%# if current_user.is_admin %>
 <!--            <li><a href="#">Admin</a></li>-->
-            <%# end %>
+<%# end %>
 <!--            <li><a href="#"><%#= link_to('Sign Out', destroy_user_session_path, method: :delete) %> </a></li>-->
 <!--          </ul>-->
 <!--        </li>-->
-        <%# else %>
+<%# else %>
 <!--        <li>-->
-          <%#= link_to('Sign In', new_user_session_path) %>
+<%#= link_to('Sign In', new_user_session_path) %>
 <!--        </li>-->
 <!--        <li>-->
-          <%#= link_to('Sign Up', new_user_registration_path) %>
+<%#= link_to('Sign Up', new_user_registration_path) %>
 <!--        </li>-->
-        <%# end %>
+<%# end %>
 
 <!--      </ul>-->
 <!--    </div>-->
@@ -96,93 +96,93 @@
           </div>
           <div class="col-md-12">
 
-<div class="owl-carousel new-game">
-  <% @game_news.each do |game| %>
-  <div>
-    <%= image_tag(game.photos.last.image, :class => "img-responsive") %>
-  </div>
-  <% end %>
-</div>
-</div>
-</div>
-<div class="col-md-12 fix-pading-content">
-  <div class="col-md-12 ">
-    <h2>Top Games</h2>
-  </div>
-  <% @game_top.each do |game| %>
-  <div class="col-md-12 fix-pading-content">
-    <div class="col-xs-12 col-md-4">
-      <%= image_tag(game.photos.first.image, :class => "img-responsive") %>
-    </div>
-    <div class="col-xs-12 col-md-8">
-      <div class="about-text">
-        <h4><%=link_to game_detail_path(id: game.id) do %> <%= game.name %><%end%> </h4>
+            <div class="owl-carousel new-game">
+              <% @game_news.each do |game| %>
+              <div>
+                <%= image_tag(game.photos.last.image, :class => "img-responsive") %>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 fix-pading-content">
+          <div class="col-md-12 ">
+            <h2>Top Games</h2>
+          </div>
+          <% @game_top.each do |game| %>
+          <div class="col-md-12 fix-pading-content">
+            <div class="col-xs-12 col-md-4">
+              <%= image_tag(game.photos.first.image, :class => "img-responsive") %>
+            </div>
+            <div class="col-xs-12 col-md-8">
+              <div class="about-text">
+                <h4><%=link_to game_detail_path(id: game.id) do %> <%= game.name %><%end%> </h4>
+              </div>
+              <div class="col-xs-12 col-md-5">
+                <b>Release date: <%= game.relase_date.to_date %> </b>
+              </div>
+              <div class="col-xs-12 col-md-3 fix-padding">
+                <b>User score: <%= game.reviews.average(:rating) %> </b>
+              </div>
+              <div class="col-xs-7 col-md-4">
+                <b>Platform: </b>
+                <% game.platform_of_game.each do |platform| %>
+                <b> <%= platform.name %> </b>
+                <% end %>
+              </div>
+              <div class="col-md-12">
+                <p><%= game.summary %> <a href="#">more...</a></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
       </div>
-      <div class="col-xs-12 col-md-5">
-        <b>Release date: <%= game.relase_date.to_date %> </b>
-      </div>
-      <div class="col-xs-12 col-md-3 fix-padding">
-        <b>User score: <%= game.reviews.average(:rating) %> </b>
-      </div>
-      <div class="col-xs-7 col-md-4">
-        <b>Platform: </b>
-        <% game.platform_of_game.each do |platform| %>
-        <b> <%= platform.name %> </b>
+
+      <!-- Search & Upcoming games list -->
+      <div class="col-md-3">
+        <div class="about-text">
+          <h2>Advance Search..</h2>
+          <form action="" method="POST" role="form">
+            <div class="form-group">
+              <label for="">Game Title</label>
+              <input type="text" class="form-control" id="" placeholder="Input game title">
+            </div>
+            <div class="form-group">
+              <label for="sel1">Genre</label>
+              <select class="form-control" id="sel1">
+                <option>Genre_1</option>
+                <option>Genre_2</option>
+                <option>Genre_3</option>
+                <option>Genre_4</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="sel1">Platform</label>
+              <select class="form-control" id="sel1">
+                <option>Android</option>
+                <option>Ios</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="">Score</label>
+              <input type="text" class="form-control" id="" placeholder="Input Score">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+        </div>
+        <div class="col-md-12 text-center related-game ">Upcoming Games</div>
+        <% @game_upcoming.each do |game| %>
+        <div class="col-md-12 text-center list-related-game">
+          <a href="#"><strong><%= game.name %></strong>
+            <hr>
+            <strong><%= game.relase_date.strftime("%F") %></strong>
+          </a>
+        </div>
         <% end %>
       </div>
-      <div class="col-md-12">
-        <p><%= game.summary %> <a href="#">more...</a></p>
-      </div>
     </div>
   </div>
-  <% end %>
-</div>
-</div>
-
-<!-- Search & Upcoming games list -->
-<div class="col-md-3">
-  <div class="about-text">
-    <h2>Advance Search..</h2>
-    <form action="" method="POST" role="form">
-      <div class="form-group">
-        <label for="">Game Title</label>
-        <input type="text" class="form-control" id="" placeholder="Input game title">
-      </div>
-      <div class="form-group">
-        <label for="sel1">Genre</label>
-        <select class="form-control" id="sel1">
-          <option>Genre_1</option>
-          <option>Genre_2</option>
-          <option>Genre_3</option>
-          <option>Genre_4</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="sel1">Platform</label>
-        <select class="form-control" id="sel1">
-          <option>Android</option>
-          <option>Ios</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="">Score</label>
-        <input type="text" class="form-control" id="" placeholder="Input Score">
-      </div>
-      <button type="submit" class="btn btn-primary">Search</button>
-    </form>
-  </div>
-  <div class="col-md-12 text-center related-game ">Upcoming Games</div>
-  <% @game_upcoming.each do |game| %>
-  <div class="col-md-12 text-center list-related-game">
-    <a href="#"><strong><%= game.name %></strong>
-      <hr>
-      <strong><%= game.relase_date.strftime("%F") %></strong>
-    </a>
-  </div>
-  <% end %>
-</div>
-</div>
-</div>
 </div>
 
 <!-- More games section -->
@@ -211,7 +211,7 @@
   </div>
 </div>
 
-  <!-- Contact Section -->
+<!-- Contact Section -->
 <!--  <div id="contact">-->
 <!--    <div class="container">-->
 <!--      <div class="col-md-8">-->
@@ -272,22 +272,22 @@
 <!--      </div>-->
 <!--    </div>-->
 <!--  </div>-->
-  <!-- Footer Section -->
+<!-- Footer Section -->
 <!--  <div id="footer">-->
 <!--    <div class="container text-center">-->
 <!--      <p>&copy; 2018 Design by <a href="http://www.templatewire.com" rel="nofollow"> KYUU-RY TEAM</a></p>-->
 <!--    </div>-->
 <!--  </div>-->
 
-  <script>
+<script>
   var owl;
-    owl = $('.new-game');
-    owl.owlCarousel({
-      items: 4,
-      loop: true,
-      margin: 10,
-      autoplay: true,
-      autoplayTimeout: 1000,
-      autoplayHoverPause: true
-    });
-  </script>
+  owl = $('.new-game');
+  owl.owlCarousel({
+    items: 4,
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 1000,
+    autoplayHoverPause: true
+  });
+</script>
