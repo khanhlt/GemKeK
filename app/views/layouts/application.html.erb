@@ -33,14 +33,12 @@
           </li>
           <li>
             <div>
-              <form class="navbar-form navbar-left" rolze="search">
-                <%= form_tag search_index_path, :method => 'get' do %>
-                  <p>
-                    <%= text_field_tag :search, params[:search], placeholder: 'Search' %>
-                    <%= submit_tag "Search", name: nil, class: 'btn btn-default' %>
-                  </p>
-                <% end %>
-              </form>
+              <%= form_tag search_index_path, :method => 'get', :class => "navbar-form navbar-left", :rolze => "search" do %>
+                <p>
+                  <%= text_field_tag :search, params[:search], placeholder: 'Search' %>
+                  <%= submit_tag "Search", name: nil, class: 'btn btn-default' %>
+                </p>
+              <% end %>
             </div>
           </li>
         </ul>
