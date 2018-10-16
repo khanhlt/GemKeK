@@ -1,5 +1,7 @@
 class SearchController < ApplicationController
   def index
+    puts "params"
+    puts params[:search]
     @games = Game.search(params[:search])
     @genres = Genre.search(params[:search])
     @platforms = Platform.search(params[:search])

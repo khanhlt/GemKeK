@@ -33,14 +33,14 @@
           </li>
           <li>
             <div>
-            <form class="navbar-form navbar-left" rolze="search">
-              <%= form_tag url_for(:controller => 'search', :action => 'index'), :method => 'get' do %>
-                <p>
-                  <%= text_field_tag :search, params[:search], placeholder: 'Search' %>
-                  <%= submit_tag "Search", name: nil, class: 'btn btn-default' %>
-                </p>
-              <% end %>
-            </form>
+              <form class="navbar-form navbar-left" rolze="search">
+                <%= form_tag search_index_path, :method => 'get' do %>
+                  <p>
+                    <%= text_field_tag :search, params[:search], placeholder: 'Search' %>
+                    <%= submit_tag "Search", name: nil, class: 'btn btn-default' %>
+                  </p>
+                <% end %>
+              </form>
             </div>
           </li>
         </ul>
