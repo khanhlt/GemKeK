@@ -8,22 +8,22 @@
           <%= form_tag url_for(:controller => 'search', :action => 'advance_search'), :method => 'get' do %>
             <div class="col-xs-12 col-md-3">
               Genre:
-              <%= select_tag "genre", options_from_collection_for_select(Genre.all, :id, :name), {:class => 'form-control', :prompt => @params_genre} %>
+              <%= select_tag "genre", options_from_collection_for_select(Genre.all, :id, :name, :selected => params[:genre]), {:class => 'form-control', :prompt => ""} %>
             </div>
 
             <div class="col-xs-12 col-md-3">
               Platform:
-              <%= select_tag "platform", options_from_collection_for_select(Platform.all, :id, :name), {:class => 'form-control', :prompt => @params_platform} %>
+              <%= select_tag "platform", options_from_collection_for_select(Platform.all, :id, :name, :selected => params[:platform]), {:class => 'form-control', :prompt => ""} %>
             </div>
 
             <div class="col-xs-12 col-md-2">
               Min Score:
-              <%= select_tag "min_score", options_for_select(["1", "2", "3", "4", "5"]), {:class => 'form-control', :prompt => ""} %>
+              <%= select_tag "min_score", options_for_select(["1", "2", "3", "4", "5"], :selected => params[:min_score]), {:class => 'form-control', :prompt => ""} %>
             </div>
 
             <div class="col-xs-12 col-md-2">
               Max Score:
-              <%= select_tag "max_score", options_for_select(["1", "2", "3", "4", "5"]), {:class => 'form-control', :prompt => ""} %>
+              <%= select_tag "max_score", options_for_select(["1", "2", "3", "4", "5"], :selected => params[:max_score]), {:class => 'form-control', :prompt => ""} %>
             </div>
 
             <% @search_results.each do |id| %>
