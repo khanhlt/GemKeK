@@ -2,8 +2,8 @@
 <div id="about">
   <div class="container">
     <div class="row">
-      <div class="col-md-9 fix-pading-content">
-        <h2>Search Result</h2>
+      <div class="col-md-11 fix-pading-content">
+        <h2>Search Result for <b><%= params[:search] %></b></h2>
         <div class="col-md-12 fix-padding-content">
           <%= form_tag url_for(:controller => 'search', :action => 'advance_search'), :method => 'get' do %>
             <div class="col-xs-12 col-md-3">
@@ -29,6 +29,7 @@
             <% @search_results.each do |id| %>
               <%= hidden_field_tag "game_ids[]", id.to_i %>
             <% end %>
+            <%= hidden_field_tag "search", params[:search] %>
             <div class="col-xs-12 col-md-2">
               <br>
               <%= submit_tag "Filter", class: 'btn btn-default' %>
@@ -55,7 +56,12 @@
                     <b>Release date: <%= game.relase_date.to_date %> </b>
                   </div>
                   <div class="col-xs-12 col-md-3 fix-padding">
-                    <b>User score: <%= game.reviews.average(:rating) %> </b>
+                    <% if game.reviews.average(:rating) != nil %>
+                      <b>User score:
+                        <%= game.reviews.average(:rating) %></b>
+                    <% else %>
+                      <b>User score: No rating %> </b>
+                    <% end %>
                   </div>
                   <div class="col-xs-7 col-md-4">
                     <b>Platform: </b>
@@ -71,49 +77,6 @@
             <% end %>
           <% end %>
         </div>
-      </div>
-
-      <!-- Search & Upcoming games list -->
-      <div class="col-md-3">
-        <div class="about-text">
-          <h2>Advance Search..</h2>
-          <form action="" method="POST" role="form">
-            <div class="form-group">
-              <label for="">Game Title</label>
-              <input type="text" class="form-control" id="" placeholder="Input game title">
-            </div>
-            <div class="form-group">
-              <label for="sel1">Genre</label>
-              <select class="form-control" id="sel1">
-                <option>Genre_1</option>
-                <option>Genre_2</option>
-                <option>Genre_3</option>
-                <option>Genre_4</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="sel1">Platform</label>
-              <select class="form-control" id="sel1">
-                <option>Android</option>
-                <option>Ios</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="">Score</label>
-              <input type="text" class="form-control" id="" placeholder="Input Score">
-            </div>
-            <button type="submit" class="btn btn-primary">Search</button>
-          </form>
-        </div>
-        <!--        <div class="col-md-12 text-center related-game ">Upcoming Games</div>-->
-        <%# @game_upcoming.each do |game| %>
-        <!--          <div class="col-md-12 text-center list-related-game">-->
-        <!--            <a href="#"><strong><%#= game.name %></strong>-->
-        <!--              <hr>-->
-        <!--              <strong><%#= game.relase_date.strftime("%F") %></strong>-->
-        <!--            </a>-->
-        <!--          </div>-->
-        <%# end %>
       </div>
     </div>
   </div>
