@@ -9,70 +9,69 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <nav id="menu" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="col-md-2">
-        <a class="navbar-brand logo-header" href="#">
-          <img src="/assets/logo.jpg" alt="logo">
-        </a>
-      </div>
-      <div class="col-md-10" id="bs-example-navbar-collapse-1 ">
-        <ul class="nav navbar-nav navbar-left">
-          <li><a href="#about" class="page-scroll">PC</a></li>
-          <li><a href="#services" class="page-scroll">PS4</a></li>
-          <li><a href="#portfolio" class="page-scroll">XBOX ONE</a></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle dropdown-background-color" data-toggle="dropdown" href="#">MORE
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">GAME-1</a></li>
-              <li><a href="#">GAME-2</a></li>
-              <li><a href="#">GAME-3</a></li>
-            </ul>
-          </li>
-          <li>
-            <%= form_tag search_index_path, :method => 'get', :class => "navbar-form navbar-left", :rolze => "search" do %>
-            <div class="form-group">
-              <%= text_field_tag :search, params[:search], :class => "form-control" %>
-            </div>
-            <%= submit_tag "Search", name: nil, class: 'btn btn-default' %>
-            <% end %> 
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-          <li class="dropdown">
-            <a class="dropdown-toggle dropdown-background-color" data-toggle="dropdown" href="#"><b><%= current_user.full_name %></b>
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Profile</a></li>
-              <% if current_user.is_admin %>
-              <li><a href="#">Admin</a></li>
-              <% end %>
-              <li><a href="#"><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %> </a></li>
-            </ul>
-          </li>
-          <% else %>
-          <li>
-            <%= link_to('Sign In', new_user_session_path) %>
-          </li>
-          <li>
-            <%= link_to('Sign Up', new_user_registration_path) %>
-          </li>
-          <% end %>
-
-        </ul>
-      </div>
-    </div>
-  </nav>
 </head>
-
 <body>
-  <%= yield %>
-</body>
+<div class="container">
+  <nav id="menu" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="col-md-2">
+      <a class="navbar-brand logo-header" href="#">
+        <img src="/assets/logo.jpg" alt="logo">
+      </a>
+    </div>
+    <div class="col-md-10" id="bs-example-navbar-collapse-1 ">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="#about" class="page-scroll">PC</a></li>
+        <li><a href="#services" class="page-scroll">PS4</a></li>
+        <li><a href="#portfolio" class="page-scroll">XBOX ONE</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle dropdown-background-color" data-toggle="dropdown" href="#">MORE
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">GAME-1</a></li>
+            <li><a href="#">GAME-2</a></li>
+            <li><a href="#">GAME-3</a></li>
+          </ul>
+        </li>
+        <li>
+          <%= form_tag search_index_path, :method => 'get', :class => "navbar-form navbar-left", :rolze => "search" do %>
+          <div class="form-group">
+            <%= text_field_tag :search, params[:search], :class => "form-control" %>
+          </div>
+          <%= submit_tag "Search", name: nil, class: 'btn btn-default' %>
+          <% end %> 
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+        <li class="dropdown">
+          <a class="dropdown-toggle dropdown-background-color" data-toggle="dropdown" href="#"><b><%= current_user.full_name %></b>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <% if current_user.is_admin %>
+            <li><a href="#">Admin</a></li>
+            <% end %>
+            <li><a href="#"><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %> </a></li>
+          </ul>
+        </li>
+        <% else %>
+        <li>
+          <%= link_to('Sign In', new_user_session_path) %>
+        </li>
+        <li>
+          <%= link_to('Sign Up', new_user_registration_path) %>
+        </li>
+        <% end %>
 
+      </ul>
+    </div>
+  </div>
+  </nav>
+</div>
+<%= yield %>
 
 <!-- Contact Section -->
 <div id="contact">
@@ -141,4 +140,5 @@
     <p>&copy; 2018 Design by <a href="http://www.templatewire.com" rel="nofollow"> KYUU-RY TEAM</a></p>
   </div>
 </div>
+</body>
 </html>
