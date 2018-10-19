@@ -22,7 +22,7 @@
 //= require activestorage
 //= require jquery
 //= require bootstrap-sprockets
-//= require turbolinks
+//= require_tree .
 //= require ckeditor/init
 //= require owlcarousel2/owl.carousel
 //= require_tree .

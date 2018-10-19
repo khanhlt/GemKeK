@@ -2,6 +2,8 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy, :edit]
   before_action :find_review, only: [:edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
+
 
   def index
   end
@@ -45,6 +47,23 @@ class ReviewsController < ApplicationController
       redirect_to game_detail_path(id: game_id)
     else
       flash[:alert] = "Error updating post!"
+    end
+  end
+
+  def rate
+    @reviews = current_user.reviews 
+    if(@reviews.where(game_id: params[:game_id]).count >0)
+      review = @reviews.where(game_id: params[:game_id]).first
+    else
+      review = current_user.reviews.new review_params
+      review.game_id = params[:game_id]
+    end  
+    review.rating = params.require(:review)[:rating]
+      
+    if review.save
+      flash[:success] = "review created!"
+    else
+      flash[:danger] = "Fail"
     end
   end
   

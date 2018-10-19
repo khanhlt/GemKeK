@@ -57,23 +57,31 @@
                 </div>
                 <div class="col-md-12">
                     <div class="col-md-4 star-review">
-                       <!--  <section class="micropost_form">
                             <% if user_signed_in? %>
-                            <% if @game.reviews.where(user_id: current_user.id).count != 0 %>
-                            <% @review = @game.reviews.where(user_id: current_user.id).first %>
-                            <% else %>
-                            <% @review = Review.new %>
-                            <% @review.game_id = @game.id %>
+                                <% if @game.reviews.where(user_id: current_user.id).count != 0 %>
+                                    <% @review = @game.reviews.where(user_id: current_user.id).first %>
+                                <% else %>
+                                    <% @review = Review.new %>
+                                    <% @review.game_id = @game.id %>
+                                <% end %>
+                                <%=hidden_field(:game, :id)%>
+                                <div class="star-rating">
+                                    <span class="fa fa-star-o" data-rating="1"></span>
+                                    <span class="fa fa-star-o" data-rating="2"></span>
+                                    <span class="fa fa-star-o" data-rating="3"></span>
+                                    <span class="fa fa-star-o" data-rating="4"></span>
+                                    <span class="fa fa-star-o" data-rating="5"></span>
+                                    <input type="hidden" name="whatever1" class="rating-value" value=<%=@review.rating%>>
+                                </div>
                             <% end %>
-                            <%= render 'reviews/rating_form' %>
-                            <% end %>
-                        </section> -->
+    
                         <div class="create_review_button">
-          <!--                   <% if user_signed_in? and @game.reviews.where(user_id: current_user.id).count != 0 %>
+                            <% if user_signed_in? and @game.reviews.where(user_id: current_user.id).count != 0 %>
                             <%= link_to edit_review_path(id: @game.reviews.where(user_id: current_user.id).first.id) do %>
                             <button type="button" class="btn btn-danger">Edit your Review</button>
                             <% end %>
                             <% else %>
+
                             <%= link_to new_review_path(game_id: @game.id) do %> -->
                             <!-- <button type="button" class="btn btn-danger">Create New Review</button> -->
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
