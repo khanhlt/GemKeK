@@ -51,7 +51,6 @@ class ReviewsController < ApplicationController
   end
 
   def rate
-    binding.pry
     @reviews = current_user.reviews 
     if(@reviews.where(game_id: params[:game_id]).count >0)
       review = @reviews.where(game_id: params[:game_id]).first
