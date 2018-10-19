@@ -22,6 +22,5 @@
 //= require activestorage
 //= require jquery
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require_tree .
 //= require owlcarousel2/owl.carousel
