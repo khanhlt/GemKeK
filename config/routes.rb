@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   get 'user_profile/home'
   get 'login/home'
   get 'game/index'

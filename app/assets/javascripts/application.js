@@ -23,4 +23,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+//= require ckeditor/init
 //= require owlcarousel2/owl.carousel
+//= require_tree .
+
