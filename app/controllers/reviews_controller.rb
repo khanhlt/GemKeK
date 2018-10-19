@@ -53,6 +53,7 @@ class ReviewsController < ApplicationController
   attr_reader :review
 
   def review_params
+    binding.pry
     params.require(:review).permit :content, :title, :rating
   end
   
