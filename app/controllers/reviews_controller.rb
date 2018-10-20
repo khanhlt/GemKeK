@@ -38,6 +38,8 @@ class ReviewsController < ApplicationController
   end
   
   def show
+    @review = Review.find(params[:id])
+    @game = Game.find(@review.game_id)
   end
   
   def destroy

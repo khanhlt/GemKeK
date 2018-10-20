@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :reviews,          only: [:create, :destroy, :edit, :new, :update, :rate]
   post 'reviews_rate' , to: 'reviews#rate'
+  get 'reviews_show', to: 'reviews#show'
 end
