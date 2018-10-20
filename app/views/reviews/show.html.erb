@@ -1,9 +1,9 @@
 <%= render 'page_title', title: 'Game detail' %>
 <head>
   <style>
-    <% if @game.reviews.average(:rating) != nil %>
+    <% if @review.rating != nil %>
     .stars-inner {
-      width: <%= @game.reviews.average(:rating).round(1)*20 %>%;
+      width: <%= @review.rating.round(1)*20 %>%;
     }
 
     <%end%>
@@ -20,46 +20,20 @@
           </div>
           <div class="col-xs-12 col-md-7">
             <div class="about-text">
-              <h2><%= @game.name %></h2>
+              <h2><%= @review.title %></h2>
 
 
               <div class="header_shousai_game_star stars-outer">
                 <div class="stars-inner"></div>
               </div>
               <div class="header_shousai_game">
-                <% if @game.reviews.average(:rating) != nil %>
-                  <p><%= @game.reviews.average(:rating).round(1) %> Point</p>
-                <% else %>
-                  <p>No rating</p>
-                <% end %>
-              </div>
-              <div class="header_shousai_game">
-                <% if @game.reviews.count() != nil %>
-                  <p><%= @game.reviews.count() %> rating</p>
+                <% if @review.rating != nil %>
+                  <p><%= @review.rating.round(1) %> Point</p>
                 <% end %>
               </div>
               <hr>
               <div>
-                <p><%= @game.summary.slice(0, 200) %></p>
-              </div>
-              <div class="collapse" id="collapseExample">
-                <p>Platform:
-                  <% @game.platform_of_game.each_with_index do |platform, index| %>
-                    <%= index == 0 ? "" : "," %>
-                    <%= platform.name %>
-                  <% end %>
-                </p>
-                <p>Genres:
-                  <% @game.genres_of_game.each_with_index do |genre, index| %>
-                    <%= index == 0 ? "" : "," %>
-                    <%= genre.name %>
-                  <% end %>
-                </p>
-              </div>
-              <div>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                  Read more
-                </button>
+                <p><%= @review.content %></p>
               </div>
             </div>
           </div>
@@ -74,125 +48,51 @@
                 <% @review.game_id = @game.id %>
               <% end %>
               <%= hidden_field(:game, :id) %>
-              <div class="star-rating">
-                <span class="fa fa-star-o" data-rating="1"></span>
-                <span class="fa fa-star-o" data-rating="2"></span>
-                <span class="fa fa-star-o" data-rating="3"></span>
-                <span class="fa fa-star-o" data-rating="4"></span>
-                <span class="fa fa-star-o" data-rating="5"></span>
-                <input type="hidden" name="whatever1" class="rating-value" value=<%= @review.rating %>>
-              </div>
             <% end %>
 
             <div class="create_review_button">
-              <% if user_signed_in? and @game.reviews.where(user_id: current_user.id).count != 0 %>
+              <% if user_signed_in? and @review.user_id == current_user.id %>
                 <%= link_to edit_review_path(id: @game.reviews.where(user_id: current_user.id).first.id) do %>
                   <button type="button" class="btn btn-danger">Edit your Review</button>
                 <% end %>
-              <% else %>
-
-                <%= link_to new_review_path(game_id: @game.id) do %> -->
-                  <!-- <button type="button" class="btn btn-danger">Create New Review</button> -->
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
-                    Create New Review
-                  </button>
-                <% end %>
               <% end %>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <h2>GET GAME</h2>
-            <div class="col-md-4 url_link_game">
-              <a href="#">URL A</a>
-            </div>
-            <div class="col-md-4 url_link_game">
-              <a href="#">URL B</a>
-            </div>
-            <div class="col-md-4 url_link_game">
-              <a href="#">URL C</a>
             </div>
           </div>
         </div>
         <div class="col-md-12">
           <div id="services">
             <div class="section-title">
-              <h2>Review Game</h2>
+              <h2>Comments</h2>
             </div>
-            <div class="header-rating"><%= @game.reviews.where.not(:title => nil).count() %> Rating Detail</div>
-            <% @game.reviews.where.not(:title => nil).each do |review| %>
+            <% @review.comments.each do |comment| %>
               <div class="row">
                 <div class="col-md-1 picture-user">
                   <img src="/assets/game/game1.jpg" alt="">
                 </div>
                 <div class="col-md-11">
                   <div class="col-md-12">
-                    <div class="name-user col-md-3"><%= review.user.full_name %>
-                    </div>
-                    <div class="col-md-6 star-user">
-                      rating: <%= review.rating %>
+                    <div class="name-user col-md-3"><%= comment.user.full_name %>
                     </div>
                     <div class="col-md-3 star-user">
-                      <div class="text-right"><%= review.created_at.to_date() %></div>
+                      <div class="text-right"><%= comment.created_at.to_date() %></div>
                     </div>
                   </div>
                   <div class="col-md-12">
-                    <strong><%= review.title %></strong>
-                  </div>
-                  <div class="col-md-12">
-                    <p><%= review.content %></p>
+                    <p><%= comment.content %></p>
                     <div>
-                      <strong><%= review.likes.count %> Likes </strong>
+                      <strong><%= comment.likes.count %> Likes </strong>
                       <a href="#">
                         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                       </a>
-                      <strong class="space-i"><%= review.comments.count() %> comments</strong>
-                      <!--                      <strong class="space-i"><a href="#"><strong>see review</strong></a></strong>-->
-                      <strong class="space-i"><%= link_to reviews_show_path(id: review.id), method: :get do %>
-                          Full Review
-                        <% end %></strong>
-                      <% if current_user == review.user %>
-                        <strong><%= link_to edit_review_path(id: review.id) do %> Edit
-                          <% end %>|
-                          <%= link_to review_path(id: review.id), method: :delete, remote: true do %> Delete
-                          <% end %>
-                        </strong>
-                      <% end %>
+                      <%# if current_user == comment.user %>
+<!--                        <strong><%#= link_to edit_review_path(id: comment.review_id) do %> Edit-->
+<!--                          <%# end %>|-->
+<!--                          <%#= link_to review_path(id: review.id), method: :delete, remote: true do %> Delete-->
+                          <%# end %>
+<!--                        </strong>-->
+                      <%# end %>
                     </div>
                   </div>
-                  <% review.comments.first(2).each do |comment| %>
-                    <div class="col-md-12">
-                      <div class="row">
-                        <div class="col-md-1 picture-user">
-                          <img src="/assets/game/game1.jpg" alt="">
-                        </div>
-                        <div class="col-md-11">
-                          <div class="col-md-12 fix-pading-content">
-                            <div class="name-user-replier col-md-3"><%= comment.user.full_name %>
-                            </div>
-                            <div class="col-md-3 star-user col-md-offset-6">
-                              <div class="text-right"><%= comment.created_at.to_date %></div>
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <p><%= comment.content %></p>
-                            <div>
-                              <strong><%= comment.likes.count %> Likes </strong>
-                              <a href="#">
-                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                              </a>
-                            </div>
-                            <% if current_user == comment.user %>
-                              <div class="text-right">
-                                <strong><a href="#">Edit</a> |
-                                  <a href="#">Delete</a>
-                                </strong>
-                              </div>
-                            <% end %>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  <% end %>
                 </div>
               </div>
             <% end %>
