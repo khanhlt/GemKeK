@@ -20,7 +20,6 @@ star_rating.on('click', function() {
       url: "/reviews_rate",
       data: {review: { content: "", title: "", rating: $(this).data('rating')}, game_id: $('#game_id').val()},
        success: function(data) {
-	       alert('Rate successfully');
 	     },
 	    error: function(xhr, textStatus, error) {
 		    alert(xhr.statusText+""+textStatus+""+error);
