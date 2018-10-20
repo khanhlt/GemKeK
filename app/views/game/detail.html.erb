@@ -1,4 +1,14 @@
 <%= render 'page_title', title: 'Game detail' %>
+<head>
+<style>
+ <% if @game.reviews.average(:rating) != nil %>
+ .stars-inner {
+  width: <%= @game.reviews.average(:rating).round(1)*20 %>%;
+}
+<%end%>
+
+</style>
+</head>
 <div id="about">
     <div class="container">
         <div class="row">
@@ -10,12 +20,10 @@
                     <div class="col-xs-12 col-md-7">
                         <div class="about-text">
                             <h2><%= @game.name %></h2>
-                            <div class="header_shousai_game">
-                                <i class="fa fa-lg fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-lg fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-lg fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-lg fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-lg fa-star-half-o" aria-hidden="true"></i>
+                            
+                            
+                            <div class="header_shousai_game_star stars-outer">
+                              <div class="stars-inner"></div>
                             </div>
                             <div class="header_shousai_game">
                                 <% if @game.reviews.average(:rating) != nil %>
@@ -288,24 +296,27 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= form_for @review do |f| %>
-            <div class="form-group">
-            <label for="title">Title</label>
-                <!-- <input type="text" class="form-control" id="title"> -->
-                <%= f.text_field :title, placeholder:"Title", class:"form-control"%>
-            </div>
-            <div class="form-group">
-                <label for="rate">Reating</label>
-                <%= f.number_field :rating, min: 1, max: 5, placeholder:"Rating", class:"form-control"%>
-            </div>
-            <%= hidden_field_tag :game_id, params[:game_id] %>
-            <div class="form-group">
-                <!-- <label for="content">Contents</label> -->
-                <!-- <textarea class="form-control" rows="5" id="comment"></textarea> -->
-                <%= f.cktext_area :content, class:"form-control"%>
-            </div>
-            <%= f.submit "Create", class:"btn btn-primary"%>
-        <% end %>
+        <% if user_signed_in? %>
+            <%= form_for @review do |f| %>
+                <div class="form-group">
+                <label for="title">Title</label>
+                    <!-- <input type="text" class="form-control" id="title"> -->
+                    <%= f.text_field :title, placeholder:"Title", class:"form-control"%>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Reating</label>
+                    <%= f.number_field :rating, min: 1, max: 5, placeholder:"Rating", class:"form-control"%>
+                </div>
+                <%= hidden_field_tag :game_id, params[:game_id] %>
+                <div class="form-group">
+                    <!-- <label for="content">Contents</label> -->
+                    <!-- <textarea class="form-control" rows="5" id="comment"></textarea> -->
+                    <%= f.cktext_area :content, class:"form-control"%>
+                </div>
+                <%= f.submit "Create", class:"btn btn-primary"%>
+            <% end %>
+        <%end%>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

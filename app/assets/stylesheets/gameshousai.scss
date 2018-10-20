@@ -472,7 +472,14 @@ label {
 /*############################ Header_Game*/
 
 .header_shousai_game {
-  width:114px;
+  float: left;
+  margin-left :15px;
+  margin-top: 7px;
+}
+.header_shousai_game  p{
+  font-size: 17px;
+}
+.header_shousai_game_star {
   float: left;
 }
 
