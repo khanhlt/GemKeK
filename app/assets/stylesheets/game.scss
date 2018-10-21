@@ -45,3 +45,44 @@
 .create_review_modal {
     width: 915px !important;
 }
+
+.name-user,.name-user-replier{
+    font-weight: 100 !important;
+    color: #365899 !important;
+    cursor: pointer;
+    font-family: iinheritn !important;
+    text-shadow: -1px 0px 1px #365899 !important;
+    font-size: 18px !important;
+}
+
+.user_review_space_top {
+    margin-top: 11px;
+}
+
+#about p {
+    margin:unset !important;
+}
+
+.fix-title-space {
+    margin-top:10px;
+}
+
+.fix-content-review-space{
+    background-color:#eff2f3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.fix-title-space span{
+    padding: 3px 18px 3px 18px;
+    font-weight: 300;
+/*    background-color: #f9d8d8;
+    color: #000;*/
+    /*box-shadow: 5px 3px 5px #333;*/
+}
+
+.fix-content-comment-space {
+    padding: 5px 0px 4px 23px;
+    background-color:#eff2f3;
+    border-radius: 10px;
+}

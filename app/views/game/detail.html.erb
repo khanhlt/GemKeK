@@ -126,31 +126,34 @@
                   <img src="/assets/game/game1.jpg" alt="">
                 </div>
                 <div class="col-md-11">
-                  <div class="col-md-12">
-                    <div class="name-user col-md-3"><%= review.user.full_name %>
+                  <div class="col-md-12 user_review_space_top">
+                    <div class="name-user col-md-3"><%= review.user.full_name %> 
                     </div>
-                    <div class="col-md-6 star-user">
+                    <div class="col-md-3 fix-title-space star-user">
+                      <strong ><%= review.title %></strong>
+                    </div>
+                    <div class="col-md-3 star-user">
                       rating: <%= review.rating %>
                     </div>
                     <div class="col-md-3 star-user">
                       <div class="text-right"><%= review.created_at.to_date() %></div>
                     </div>
                   </div>
-                  <div class="col-md-12">
-                    <strong><%= review.title %></strong>
-                  </div>
-                  <div class="col-md-12">
-                    <p><%=raw review.content[0..200] + "....." %></p>
+<!--                   <div class="col-md-12 fix-title-space">
+                    <span ><%= review.title %></span>
+                  </div> -->
+                  <div class="col-md-12 ">
+                    <div class="fix-content-review-space" style="margin: 20px 0px 15px 0px !important"><%=raw review.content[0..1000] + "....." %></div>
                     <div>
                       <strong><%= review.likes.count %> Likes </strong>
                       <% if user_signed_in? and review.likes.where(user_id: current_user.id).count != 0 %>
                     <%= link_to like_path(review.id, likeable_type: "Review", likeable_id: review.id), method: :delete do %>
-                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                       <% end %>
                     <% else %>
               
                       <%= link_to likes_path(likeable_type: "Review", likeable_id: review.id), method: :post do %>
-                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <i class="fa fa-thumbs-o-up " aria-hidden="true"></i>
                       <% end %>
                     <% end %>
                   
@@ -177,7 +180,7 @@
                           <img src="/assets/game/game1.jpg" alt="">
                         </div>
                         <div class="col-md-11">
-                          <div class="col-md-12 fix-pading-content">
+                          <div class="col-md-12 user_review_space_top fix-pading-content">
                             <div class="name-user-replier col-md-3"><%= comment.user.full_name %>
                             </div>
                             <div class="col-md-3 star-user col-md-offset-6">
@@ -185,21 +188,20 @@
                             </div>
                           </div>
                           <div class="col-md-12">
-                            <p><%= comment.content %></p>
+                            <div class="fix-content-comment-space" style="margin: 9px -15px 10px 0px!important;">
+                              <%= comment.content %>
+                            </div>
                             <div>
-                              <strong><%= comment.likes.count %> 
-                              
+                              <strong><%= comment.likes.count %> </strong>
                               <% if user_signed_in? and comment.likes.where(user_id: current_user.id).count != 0 %>
                               <%= link_to like_path(comment.id, likeable_type: "Comment", likeable_id: comment.id), method: :delete do %>
-                                    <b class="fa fa-thumbs-o-up" aria-hidden="true"></b>
+                                    <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                                   <% end %>
-                                
                               <% else %>
                                   <%= link_to likes_path(likeable_type: "Comment", likeable_id: comment.id), method: :post do %>
-                                  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                  <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                                 <% end %>
                               <% end %>
-                                
                             </div>
                             <% if current_user == comment.user %>
                               <div class="text-right">
@@ -328,7 +330,7 @@
               <%= f.text_field :title, placeholder: @review.title, class: "form-control",required: "required"%>
             </div>
             <div class="form-group">
-              <label for="rate">Reating</label>
+              <label for="rate">Rating</label>
               <%= f.number_field :rating, min: 1, max: 5, placeholder: @review.rating, class: "form-control" %>
             </div>
             <%= hidden_field_tag :game_id, @game.id %>
