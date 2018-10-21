@@ -85,19 +85,20 @@
             <% end %>
 
             <div class="create_review_button">
-              <% if user_signed_in? and @game.reviews.where(user_id: current_user.id).count != 0 %>
-                <%= link_to edit_review_path(id: @game.reviews.where(user_id: current_user.id).first.id) do %>
-                  <button type="button" class="btn btn-danger">Edit your Review</button>
-                <% end %>
-              <% else %>
-<!-- 
-                <%= link_to new_review_path(game_id: @game.id) do %>  -->
-                  <!-- <button type="button" class="btn btn-danger">Create New Review</button> -->
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
-                    Create New Review
-                  </button>
-                <% end %>
+                <% if user_signed_in? %>
+                    <% if @game.reviews.where(user_id: current_user.id).count != 0 %>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
+                        Edit your Review
+                        </button>
+                     <% else %>
+
+                          <!-- <button type="button" class="btn btn-danger">Create New Review</button> -->
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
+                        Create New Review
+                      </button>
               <% end %>
+          <% end %>
             </div>
           </div>
           <div class="col-md-8">
@@ -139,20 +140,30 @@
                     <strong><%= review.title %></strong>
                   </div>
                   <div class="col-md-12">
-                    <p><%= review.content %></p>
+                    <p><%=raw review.content[0..200] + "....." %></p>
                     <div>
                       <strong><%= review.likes.count %> Likes </strong>
-                      <a href="#">
+                      <% if user_signed_in? and review.likes.where(user_id: current_user.id).count != 0 %>
+                    <%= link_to like_path(review.id, likeable_type: "Review", likeable_id: review.id), method: :delete do %>
                         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                      </a>
+                      <% end %>
+                    <% else %>
+              
+                      <%= link_to likes_path(likeable_type: "Review", likeable_id: review.id), method: :post do %>
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                      <% end %>
+                    <% end %>
+                  
                       <strong class="space-i"><%= review.comments.count() %> comments</strong>
 <!--                      <strong class="space-i"><a href="#"><strong>see review</strong></a></strong>-->
-                      <strong class="space-i"><%= link_to reviews_show_path(id: review.id), method: :get do %>
+                      <strong class="space-i"><%= link_to review_path(id: review.id), method: :get do %>
                         Full Review
                       <% end %></strong>
                       <% if current_user == review.user %>
-                        <strong><%= link_to edit_review_path(id: review.id) do %> Edit
-                          <% end %>|
+                        <strong class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
+                             Edit
+                          </strong>
+                          <strong>
                           <%= link_to review_path(id: review.id), method: :delete, remote: true do %> Delete
                           <% end %>
                         </strong>
@@ -176,10 +187,19 @@
                           <div class="col-md-12">
                             <p><%= comment.content %></p>
                             <div>
-                              <strong><%= comment.likes.count %> Likes </strong>
-                              <a href="#">
-                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                              </a>
+                              <strong><%= comment.likes.count %> 
+                              
+                              <% if user_signed_in? and comment.likes.where(user_id: current_user.id).count != 0 %>
+                              <%= link_to like_path(comment.id, likeable_type: "Comment", likeable_id: comment.id), method: :delete do %>
+                                    <b class="fa fa-thumbs-o-up" aria-hidden="true"></b>
+                                  <% end %>
+                                
+                              <% else %>
+                                  <%= link_to likes_path(likeable_type: "Comment", likeable_id: comment.id), method: :post do %>
+                                  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <% end %>
+                              <% end %>
+                                
                             </div>
                             <% if current_user == comment.user %>
                               <div class="text-right">
@@ -305,17 +325,17 @@
             <div class="form-group">
               <label for="title">Title</label>
               <!-- <input type="text" class="form-control" id="title"> -->
-              <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
+              <%= f.text_field :title, placeholder: @review.title, class: "form-control",required: "required"%>
             </div>
             <div class="form-group">
               <label for="rate">Reating</label>
-              <%= f.number_field :rating, min: 1, max: 5, placeholder: "Rating", class: "form-control" %>
+              <%= f.number_field :rating, min: 1, max: 5, placeholder: @review.rating, class: "form-control" %>
             </div>
-            <%= hidden_field_tag :game_id, params[:game_id] %>
+            <%= hidden_field_tag :game_id, @game.id %>
             <div class="form-group">
               <!-- <label for="content">Contents</label> -->
               <!-- <textarea class="form-control" rows="5" id="comment"></textarea> -->
-              <%= f.cktext_area :content, class: "form-control" %>
+              <%= f.cktext_area :content, placeholder: @review.content, class: "form-control", required: "required" %>
             </div>
             <%= f.submit "Create", class: "btn btn-primary" %>
           <% end %>

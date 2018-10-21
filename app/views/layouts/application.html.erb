@@ -15,9 +15,13 @@
   <nav id="menu" class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="col-md-2">
-      <a class="navbar-brand logo-header" href="#">
+     
+      
+         <%= link_to root_path, class: "navbar-brand logo-header" do %>
         <img src="/assets/logo.jpg" alt="logo">
-      </a>
+        <% end %>
+     
+      
     </div>
     <div class="col-md-10" id="bs-example-navbar-collapse-1 ">
       <ul class="nav navbar-nav navbar-left">

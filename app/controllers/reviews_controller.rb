@@ -1,16 +1,13 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :destroy, :edit]
-  before_action :find_review, only: [:edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :destroy, :edit]
+  before_action :find_review, only: [ :update, :destroy]
+  before_action :correct_user, only: [:update, :destroy]
   skip_before_action :verify_authenticity_token
 
 
   def index
   end
   
-  def new
-    @review = current_user.reviews.new
-  end
 
   def create
       @review = current_user.reviews.new review_params
@@ -22,15 +19,12 @@ class ReviewsController < ApplicationController
       flash[:danger] = "Fail"
     end
   end
-  
-  def edit
-  end
 
   # Update action updates the post with the new information
   def update
     if @review.update_attributes review_params
       flash[:notice] = "Successfully updated post!"
-      redirect_to game_detail_path(id: @review.game_id)
+      redirect_to  request.referrer
     else
       flash[:alert] = "Error updating post!"
       render :edit
@@ -43,10 +37,9 @@ class ReviewsController < ApplicationController
   end
   
   def destroy
-    game_id = @review.game_id
     if review.destroy
       flash[:notice] = "Successfully deleted review!"
-      redirect_to game_detail_path(id: game_id)
+      redirect_to  request.referrer
     else
       flash[:alert] = "Error updating post!"
     end
