@@ -7,7 +7,6 @@
     }
 
     <%end%>
-
   </style>
 </head>
 <div id="about">
@@ -38,7 +37,7 @@
                 <span><%= @review.likes.count %></span>
                 <span>
                   <%= link_to like_path(likeable_type: "Review", likeable_id: @review.id), method: :delete do %>
-                <strong><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+                <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                 </strong>
                 </span>
                 <% end %>
@@ -46,16 +45,16 @@
                 <span>
                 <span><%= @review.likes.count %></span>
                 <%= link_to likes_path(likeable_type: "Review", likeable_id: @review.id), method: :post do %>
-                <strong><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+                <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                 </strong>
                 </span>
                 <% end %>
               <% end %>
               <hr>
-              <div>
-                <p><%= raw @review.content %></p>
-              </div>
             </div>
+          </div>
+          <div class="col-md-12">
+              <p><%= raw @review.content %></p>
           </div>
         </div>
         <div class="col-md-12">
