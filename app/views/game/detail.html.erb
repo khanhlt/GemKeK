@@ -21,8 +21,6 @@
           <div class="col-xs-12 col-md-7">
             <div class="about-text">
               <h2><%= @game.name %></h2>
-
-
               <div class="header_shousai_game_star stars-outer">
                 <div class="stars-inner"></div>
               </div>
@@ -40,22 +38,26 @@
               </div>
               <hr>
               <div>
-                <p><%= @game.summary.slice(0, 200) %></p>
+                <p class="text-indent-content-game"><%= @game.summary.slice(0, 200) %></p>
               </div>
               <div class="collapse" id="collapseExample">
-                <p>Platform:
+                <strong>Platform:</strong>
+                <span>
                   <% @game.platform_of_game.each_with_index do |platform, index| %>
                     <%= index == 0 ? "" : "," %>
                     <%= platform.name %>
                   <% end %>
-                </p>
-                <p>Genres:
+                </span>
+                <br><br>
+                <strong>Genres:</strong>
+                <span>
                   <% @game.genres_of_game.each_with_index do |genre, index| %>
                     <%= index == 0 ? "" : "," %>
                     <%= genre.name %>
                   <% end %>
-                </p>
+                </span>
               </div>
+              <br>
               <div>
                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                   Read more
@@ -151,21 +153,19 @@
                         <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                       <% end %>
                     <% else %>
-              
                       <%= link_to likes_path(likeable_type: "Review", likeable_id: review.id), method: :post do %>
                         <i class="fa fa-thumbs-o-up " aria-hidden="true"></i>
                       <% end %>
                     <% end %>
                   
                       <strong class="space-i"><%= review.comments.count() %> comments</strong>
-<!--                      <strong class="space-i"><a href="#"><strong>see review</strong></a></strong>-->
                       <strong class="space-i"><%= link_to review_path(id: review.id), method: :get do %>
                         Full Review
                       <% end %></strong>
                       <% if current_user == review.user %>
-                        <strong class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
+                        <a data-toggle="modal" data-target="#basicExampleModal">
                              Edit
-                          </strong>
+                          </a>
                           <strong>
                           <%= link_to review_path(id: review.id), method: :delete, remote: true do %> Delete
                           <% end %>
@@ -188,28 +188,30 @@
                             </div>
                           </div>
                           <div class="col-md-12">
-                            <div class="fix-content-comment-space" style="margin: 9px -15px 10px 0px!important;">
+                            <div class="fix-content-comment-space " style="margin: 9px -15px 10px 0px!important;">
                               <%= comment.content %>
                             </div>
                             <div>
-                              <strong><%= comment.likes.count %> </strong>
-                              <% if user_signed_in? and comment.likes.where(user_id: current_user.id).count != 0 %>
-                              <%= link_to like_path(comment.id, likeable_type: "Comment", likeable_id: comment.id), method: :delete do %>
+                              <div>
+                                <strong><%= comment.likes.count %> </strong>
+                                <% if user_signed_in? and comment.likes.where(user_id: current_user.id).count != 0 %>
+                                <%= link_to like_path(comment.id, likeable_type: "Comment", likeable_id: comment.id), method: :delete do %>
+                                      <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
+                                    <% end %>
+                                <% else %>
+                                    <%= link_to likes_path(likeable_type: "Comment", likeable_id: comment.id), method: :post do %>
                                     <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                                   <% end %>
-                              <% else %>
-                                  <%= link_to likes_path(likeable_type: "Comment", likeable_id: comment.id), method: :post do %>
-                                  <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                                 <% end %>
+                              </div>
+                              <% if current_user == comment.user %>
+                                <div class="text-right">
+                                  <strong><a href="#">Edit</a> |
+                                    <a href="#">Delete</a>
+                                  </strong>
+                                </div>
                               <% end %>
                             </div>
-                            <% if current_user == comment.user %>
-                              <div class="text-right">
-                                <strong><a href="#">Edit</a> |
-                                  <a href="#">Delete</a>
-                                </strong>
-                              </div>
-                            <% end %>
                           </div>
                         </div>
                       </div>

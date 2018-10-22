@@ -1,0 +1,77 @@
+class CommentsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :destroy, :edit]
+  # before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  # before_action :correct_user, only: [:update, :destroy]
+  skip_before_action :verify_authenticity_token
+
+  # GET /comments
+  # GET /comments.json
+  def index
+    @comments = Comment.all
+  end
+
+  # GET /comments/1
+  # GET /comments/1.json
+  def show
+  end
+
+  # GET /comments/new
+  def new
+    @comment = Comment.new
+  end
+
+  # GET /comments/1/edit
+  def edit
+    @review = Review.find(params[:review_id])
+    @comment = Comment.find(params[:comment_id])
+  end
+
+  # POST /comments
+  # POST /comments.json
+  def create
+    @review = Review.find(params[:review_id])
+    @comment = @review.comments.new comment_params
+    @comment.user_id = current_user.id
+
+    if @comment.save
+      redirect_back fallback_location: root_path
+    else
+      redirect_back fallback_location: root_path, notice: "Your comment wasn't posted!"
+    end
+  end
+
+  # PATCH/PUT /comments/1
+  # PATCH/PUT /comments/1.json
+  def update
+    @comment = Comment.find(params[:id])
+    if @comment.update_attributes comment_params
+      flash[:notice] = "Successfully updated post!"
+      redirect_to review_path(id: params[:review_id], method: :show)
+    else
+      flash[:alert] = "Error updating post!"
+      render :edit
+    end
+  end
+
+  # DELETE /comments/1
+  # DELETE /comments/1.json
+  def destroy
+    if @comment.destroy
+      flash[:notice] = "Successfully deleted review!"
+      redirect_to request.referrer
+    else
+      flash[:alert] = "Error updating post!"
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_comment
+      @comment = Comment.find(params[:comment_id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def comment_params
+      params.require(:comment).permit :content
+    end
+end
