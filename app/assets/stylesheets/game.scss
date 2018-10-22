@@ -59,10 +59,10 @@
     margin-top: 11px;
 }
 
-#about p {
+/*#about p {
     margin:unset !important;
 }
-
+*/
 .fix-title-space {
     margin-top:10px;
 }
@@ -89,4 +89,65 @@
 
 .fix-content-review-space p img {
     max-width:675px;
+}
+
+.text-indent-content-game {
+    text-indent: 30px;
+}
+
+.content-game-home-page {
+    background-color: #f1f1ff ;
+    border-bottom-right-radius: 52px;
+    border-top-left-radius: 49px;
+    padding: 10px 0px 10px 0px;
+    text-indent: 27px;
+}
+
+.fix-pading-content
+{
+    font-family: awesome;
+    margin-top: 20px;
+}
+
+.fix-box-img-top-game
+{
+    box-shadow: 5px 5px 5px rgb(55, 126, 185) !important;
+}
+
+
+
+.container-top-game {
+  position: relative;
+}
+
+/*.image {
+  display: block !important;
+  width: 100% !important;
+}
+*/
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container-top-game:hover .overlay {
+  opacity: 0.8;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
