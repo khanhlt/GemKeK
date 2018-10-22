@@ -15,14 +15,10 @@
   <nav id="menu" class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="col-md-2">
-     
-      
          <%= link_to root_path, class: "navbar-brand logo-header" do %>
         <img src="/assets/logo.jpg" alt="logo">
         <% end %>
-     
-      
-    </div>
+       </div>
     <div class="col-md-10" id="bs-example-navbar-collapse-1 ">
       <ul class="nav navbar-nav navbar-left">
         <li><a href="#about" class="page-scroll">PC</a></li>
@@ -54,7 +50,7 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#">Profile</a></li>
+            <li><%=link_to "Profile" , user_profile_home_path() %>
             <% if current_user.is_admin %>
             <li><a href="#">Admin</a></li>
             <% end %>

@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   root 'game#index'
   devise_for :users, :controllers => { registrations: 'registrations' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
   resources :reviews,          only: [:create, :destroy, :rate, :show, :update] do
-    post 'reviews_rate' , to: 'reviews#rate'
     resources :comments
   end
+   post 'reviews_rate' , to: 'reviews#rate'
   #get 'reviews_show', to: 'reviews#show'
    resources :likes, only: [:create, :destroy]
 end
