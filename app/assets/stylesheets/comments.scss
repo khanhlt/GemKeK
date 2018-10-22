@@ -1,3 +1,22 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.input-comment {
+	background-color: #fafafa;
+    padding: 10px 10px 10px 35px;
+    border-radius: 21px;
+    border: 1px solid #e0e0e0 !important;
+    width: 800px;
+}
+
+.add-commit-button {
+	margin-right: 25px;
+    border-top-right-radius: 30px !important;
+    border-bottom-left-radius: 30px !important;
+}
+
+input[type="text"].input-comment::-webkit-input-placeholder {
+	color:#616161;
+	font-size: 16px;
+}

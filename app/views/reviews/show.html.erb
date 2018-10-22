@@ -7,7 +7,6 @@
     }
 
     <%end%>
-
   </style>
 </head>
 <div id="about">
@@ -38,24 +37,24 @@
                 <span><%= @review.likes.count %></span>
                 <span>
                   <%= link_to like_path(likeable_type: "Review", likeable_id: @review.id), method: :delete do %>
-                <strong><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+                <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                 </strong>
                     </span>
                 <% end %>
               <% else %>
                 <span>
                 <span><%= @review.likes.count %></span>
-                  <%= link_to likes_path(likeable_type: "Review", likeable_id: @review.id), method: :post do %>
-                <strong><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+                <%= link_to likes_path(likeable_type: "Review", likeable_id: @review.id), method: :post do %>
+                <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                 </strong>
                     </span>
                 <% end %>
               <% end %>
               <hr>
-              <div>
-                <p><%= raw @review.content %></p>
-              </div>
             </div>
+          </div>
+          <div class="col-md-12">
+              <p><%= raw @review.content %></p>
           </div>
         </div>
         <div class="col-md-12">
@@ -80,7 +79,7 @@
                   <img src="/assets/game/game1.jpg" alt="">
                 </div>
                 <div class="col-md-11">
-                  <div class="col-md-12">
+                  <div class="col-md-12 fix-pading-content">
                     <div class="name-user col-md-3"><%= comment.user.full_name %>
                     </div>
                     <div class="col-md-3 star-user">
@@ -88,19 +87,20 @@
                     </div>
                   </div>
                   <div class="col-md-12">
-                    <p><%= comment.content %></p>
+                    <div class="fix-content-comment-space " style="margin: 9px -15px 10px 0px!important;"><%= comment.content %>
+                    </div>
                     <div>
                       <% if user_signed_in? and comment.likes.where(user_id: current_user.id).count != 0 %>
-                        <span><%= comment.likes.count %></span>
+                        <strong><%= comment.likes.count %></strong>
                         <span><%= link_to like_path(likeable_type: "Comment", likeable_id: comment.id), method: :delete do %>
-                          <strong><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+                          <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                           </strong>
                         </span>
                         <% end %>
                         <% else %>
                         <span><%= comment.likes.count %></span>
                             <%= link_to likes_path(likeable_type: "Comment", likeable_id: comment.id), method: :post do %>
-                          <strong><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+                          <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                           </strong>
                               </span>
                           <% end %>
@@ -121,9 +121,12 @@
             <% end %>
             <br><br>
             <%= form_for [@review, Comment.new] do |f| %>
-              <%= f.text_field :content, placeholder: "Add a comment" %>
+              <%= f.text_field :content, placeholder: "Add a comment...", :class =>"input-comment" %>
               <%= hidden_field_tag :review_id, params[@review.id] %>
-              <%= f.submit "Add Comment" %>
+              <br><br>
+              <div class="form-group text-right">
+              <%= f.submit "Add Comment", class: "btn btn-primary add-commit-button" %>
+              </div>
             <% end %>
           </div>
         </div>
