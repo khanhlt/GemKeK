@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :reviews,          only: [:create, :destroy, :rate, :show, :update] do
     post 'reviews_rate' , to: 'reviews#rate'
+    resources :comments
   end
   #get 'reviews_show', to: 'reviews#show'
    resources :likes, only: [:create, :destroy]
