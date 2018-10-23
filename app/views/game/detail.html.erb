@@ -87,20 +87,19 @@
             <% end %>
 
             <div class="create_review_button">
-                <% if user_signed_in? %>
-                    <% if @game.reviews.where(user_id: current_user.id).count != 0 %>
+                    <% if user_signed_in? and @game.reviews.where(user_id: current_user.id).count != 0 %>
 
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
                         Edit your Review
                         </button>
                      <% else %>
-
+                      <% @review = Review.new %>
                           <!-- <button type="button" class="btn btn-danger">Create New Review</button> -->
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
                         Create New Review
                       </button>
-              <% end %>
-          <% end %>
+              
+                    <% end %>
             </div>
           </div>
           <div class="col-md-8">
@@ -167,7 +166,7 @@
                              Edit
                           </a>
                           <strong>
-                          <%= link_to review_path(id: review.id), method: :delete, remote: true do %> Delete
+                          <%= link_to review_path(id: review.id), method: :delete do %> Delete
                           <% end %>
                         </strong>
                       <% end %>
@@ -324,7 +323,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <% if user_signed_in? %>
+
           <%= form_for @review do |f| %>
             <div class="form-group">
               <label for="title">Title</label>
@@ -343,7 +342,7 @@
             </div>
             <%= f.submit "Create", class: "btn btn-primary" %>
           <% end %>
-        <% end %>
+
 
       </div>
       <div class="modal-footer">

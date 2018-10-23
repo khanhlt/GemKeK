@@ -25,5 +25,4 @@
 //= require_tree .
 //= require ckeditor/init
 //= require owlcarousel2/owl.carousel
-//= require bootstrap
 //= require bootstrap3-editable/bootstrap-editable
