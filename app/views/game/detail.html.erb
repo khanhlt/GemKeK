@@ -150,11 +150,12 @@
                       <strong><%= review.likes.count %> Likes </strong>
                       <% if user_signed_in? and review.likes.where(user_id: current_user.id).count != 0 %>
                     <%= link_to like_path(review.id, likeable_type: "Review", likeable_id: review.id), method: :delete do %>
-                        <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
+                        <!-- <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i> -->
+                        <i class="fa fa-thumbs-up fa-lg" aria-hidden="true" style="color:#3577e5"></i>
                       <% end %>
                     <% else %>
                       <%= link_to likes_path(likeable_type: "Review", likeable_id: review.id), method: :post do %>
-                        <i class="fa fa-thumbs-o-up " aria-hidden="true"></i>
+                        <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                       <% end %>
                     <% end %>
                   
@@ -196,7 +197,7 @@
                                 <strong><%= comment.likes.count %> </strong>
                                 <% if user_signed_in? and comment.likes.where(user_id: current_user.id).count != 0 %>
                                 <%= link_to like_path(comment.id, likeable_type: "Comment", likeable_id: comment.id), method: :delete do %>
-                                      <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
+                                      <i class="fa fa-thumbs-up fa-lg" aria-hidden="true" style="color:#3577e5"></i>
                                     <% end %>
                                 <% else %>
                                     <%= link_to likes_path(likeable_type: "Comment", likeable_id: comment.id), method: :post do %>
@@ -206,9 +207,8 @@
                               </div>
                               <% if current_user == comment.user %>
                                 <div class="text-right">
-                                  <strong><a href="#">Edit</a> |
-                                    <a href="#">Delete</a>
-                                  </strong>
+                                  <a href="#"><span class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></span></a> |
+                                    <a href="#"><span class="fa fa-trash-o fa-lg" aria-hidden="true"></span></a>
                                 </div>
                               <% end %>
                             </div>
