@@ -42,20 +42,34 @@ class CommentsController < ApplicationController
 
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
+  # def update
+  #   @comment = Comment.find(params[:id])
+  #   if @comment.update_attributes comment_params
+  #     flash[:notice] = "Successfully updated post!"
+  #     redirect_to review_path(id: params[:review_id], method: :show)
+  #   else
+  #     flash[:alert] = "Error updating post!"
+  #     render :edit
+  #   end
+  # end
+
   def update
     @comment = Comment.find(params[:id])
-    if @comment.update_attributes comment_params
-      flash[:notice] = "Successfully updated post!"
-      redirect_to review_path(id: params[:review_id], method: :show)
-    else
-      flash[:alert] = "Error updating post!"
-      render :edit
+    respond_to do |format|
+      if @comment.update(comment_params)
+        format.html { redirect_to @comment, notice: 'Edit was successfully updated.' }
+        format.json { head :no_content } # 204 No Content
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
+    @comment = Comment.find(params[:comment_id])
     if @comment.destroy
       flash[:notice] = "Successfully deleted review!"
       redirect_to request.referrer

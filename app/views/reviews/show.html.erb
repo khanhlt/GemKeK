@@ -44,7 +44,7 @@
               <% else %>
                 <span>
                 <span><%= @review.likes.count %></span>
-                <%= link_to likes_path(likeable_type: "Review", likeable_id: @review.id), method: :post do %>
+                  <%= link_to likes_path(likeable_type: "Review", likeable_id: @review.id), method: :post do %>
                 <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                 </strong>
                     </span>
@@ -54,7 +54,7 @@
             </div>
           </div>
           <div class="col-md-12">
-              <p><%= raw @review.content %></p>
+            <p><%= raw @review.content %></p>
           </div>
         </div>
         <div class="col-md-12">
@@ -87,29 +87,34 @@
                     </div>
                   </div>
                   <div class="col-md-12">
-                    <div class="fix-content-comment-space " style="margin: 9px -15px 10px 0px!important;"><%= comment.content %>
+                    <% if comment.user == current_user %>
+                    <div class="fix-content-comment-space " style="margin: 9px -15px 10px 0px!important;">
+                      <a href="#" data-xeditable="true" data-pk=<%= comment.id %> data-model="comment" data-name="content" data-url=<%= review_comment_path(review_id: @review.id, id: comment.id) %> data-title="Edit" class="editable editable-click"><%= comment.content %></a>
                     </div>
-                    <div>
+                    <% else %>
+                      <div class="fix-content-comment-space " style="margin: 9px -15px 10px 0px!important;"><%= comment.content %></div>
+                  <% end %>
+                      <div>
                       <% if user_signed_in? and comment.likes.where(user_id: current_user.id).count != 0 %>
                         <strong><%= comment.likes.count %></strong>
                         <span><%= link_to like_path(likeable_type: "Comment", likeable_id: comment.id), method: :delete do %>
                           <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                           </strong>
-                        </span>
+                            </span>
                         <% end %>
-                        <% else %>
+                      <% else %>
                         <span><%= comment.likes.count %></span>
-                            <%= link_to likes_path(likeable_type: "Comment", likeable_id: comment.id), method: :post do %>
+                        <%= link_to likes_path(likeable_type: "Comment", likeable_id: comment.id), method: :post do %>
                           <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
                           </strong>
-                              </span>
-                          <% end %>
+                          </span>
+                        <% end %>
                       <% end %>
                       <% if current_user == comment.user %>
-                        <strong><%= link_to edit_review_comment_path(review_id: @review.id, comment_id: comment.id) do %>
-                            Edit
-                          <% end %>|
-                          <%= link_to review_comment_path(review_id: @review.id, comment_id: comment.id), method: :delete do %>
+<!--                        <strong><%#= link_to edit_review_comment_path(review_id: @review.id, comment_id: comment.id) do %>-->
+<!--                            Edit-->
+<!--                          <%# end %>|-->
+                          <%= link_to review_comment_path(review_id: @review.id, comment_id: comment.id), method: :delete, data: {confirm: 'Are you sure?'} do %>
                             Delete
                           <% end %>
                         </strong>
@@ -121,11 +126,11 @@
             <% end %>
             <br><br>
             <%= form_for [@review, Comment.new] do |f| %>
-              <%= f.text_field :content, placeholder: "Add a comment...", :class =>"input-comment" %>
+              <%= f.text_field :content, placeholder: "Add a comment...", :class => "input-comment" %>
               <%= hidden_field_tag :review_id, params[@review.id] %>
               <br><br>
               <div class="form-group text-right">
-              <%= f.submit "Add Comment", class: "btn btn-primary add-commit-button" %>
+                <%= f.submit "Add Comment", class: "btn btn-primary add-commit-button" %>
               </div>
             <% end %>
           </div>
