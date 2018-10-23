@@ -18,12 +18,14 @@
 //   	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
 //   }
 // });
+
+
 //= require rails-ujs
 //= require activestorage
 //= require jquery
 //= require bootstrap-sprockets
-//= require_tree .
 //= require ckeditor/init
 //= require owlcarousel2/owl.carousel
-//= require bootstrap
+//= require_tree .
 //= require bootstrap3-editable/bootstrap-editable
+
