@@ -1,0 +1,10 @@
+
+<div class="col-md-12 text-center related-game ">Upcoming Game</div>
+<% @game_upcoming.each do |game| %>
+    <div class="col-md-12 text-center list-related-game">
+        <a href="#"><strong> <%=link_to game_detail_path(id: game.id) do %> <%= game.name %><%end%></strong>
+          <br>
+          <strong><%= game.relase_date.strftime("%F") %></strong>
+        </a>
+    </div>
+<% end %>
