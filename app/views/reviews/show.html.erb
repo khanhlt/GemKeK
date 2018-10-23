@@ -100,7 +100,7 @@
                       <% if user_signed_in? and comment.likes.where(user_id: current_user.id).count != 0 %>
                         <strong><%= comment.likes.count %></strong>
                         <span><%= link_to like_path(likeable_type: "Comment", likeable_id: comment.id), method: :delete do %>
-                          <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
+                          <strong><i class="fa fa-thumbs-up fa-lg" aria-hidden="true" style="color:#3577e5"></i>
                           </strong>
                             </span>
                         <% end %>
@@ -117,7 +117,7 @@
 <!--                            Edit-->
 <!--                          <%# end %>|-->
                           <%= link_to review_comment_path(review_id: @review.id, comment_id: comment.id), method: :delete, data: {confirm: 'Are you sure?'} do %>
-                            Delete
+                            | <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
                           <% end %>
                         </strong>
                       <% end %>
