@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
     @review.game_id = params[:game_id]
     if review.save
       flash[:success] = "review created!"
-      redirect_to game_detail_path(id: @review.game_id)
+      redirect_to request.referrer
     else
       flash[:danger] = "Fail"
     end
