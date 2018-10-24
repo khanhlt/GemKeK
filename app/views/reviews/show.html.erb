@@ -33,25 +33,26 @@
               <hr>
               <p>created by <%= @review.user.full_name %> at <%= @review.created_at.to_date %></p>
               <hr>
-              <div>
-              <% if user_signed_in? and @review.likes.where(user_id: current_user.id).count != 0 %>
-                <span><%= @review.likes.count %></span>
-                <span>
-                  <%= link_to like_path(likeable_type: "Review", likeable_id: @review.id), method: :delete do %>
-                <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
-                </strong>
-                    </span>
-                <% end %>
-              <% else %>
-                <span>
-                <span><%= @review.likes.count %></span>
-                  <%= link_to likes_path(likeable_type: "Review", likeable_id: @review.id), method: :post do %>
-                <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
-                </strong>
-                    </span>
-                <% end %>
-              <% end %>
-              </div>
+              <!--<div id="send_like_<%= @review.id %>">-->
+              <!--<% if user_signed_in? and @review.likes.where(user_id: current_user.id).count != 0 %>-->
+              <!--  <span><%= @review.likes.count %></span>-->
+              <!--  <span>-->
+              <!--    <%= link_to like_path(likeable_type: "Review", likeable_id: @review.id), method: :delete, remote: true do %>-->
+              <!--  <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>-->
+              <!--  </strong>-->
+              <!--      </span>-->
+              <!--  <% end %>-->
+              <!--<% else %>-->
+              <!--  <span>-->
+              <!--  <span><%= @review.likes.count %></span>-->
+              <!--    <%= link_to likes_path(likeable_type: "Review", likeable_id: @review.id), method: :post, remote: true do %>-->
+              <!--  <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>-->
+              <!--  </strong>-->
+              <!--      </span>-->
+              <!--  <% end %>-->
+              <!--<% end %>-->
+              <!--</div>-->
+              <%= render "reviews/like", object: @review%>
               <hr>
             </div>
           </div>
@@ -97,21 +98,7 @@
                       <div class="fix-content-comment-space " style="margin: 9px -15px 10px 0px!important;"><%= comment.content %></div>
                   <% end %>
                       <div>
-                      <% if user_signed_in? and comment.likes.where(user_id: current_user.id).count != 0 %>
-                        <strong><%= comment.likes.count %></strong>
-                        <span><%= link_to like_path(likeable_type: "Comment", likeable_id: comment.id), method: :delete do %>
-                          <strong><i class="fa fa-thumbs-up fa-lg" aria-hidden="true" style="color:#3577e5"></i>
-                          </strong>
-                            </span>
-                        <% end %>
-                      <% else %>
-                        <span><%= comment.likes.count %></span>
-                        <%= link_to likes_path(likeable_type: "Comment", likeable_id: comment.id), method: :post do %>
-                          <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
-                          </strong>
-                          </span>
-                        <% end %>
-                      <% end %>
+                      <%= render "like", object: comment %>
                       <% if current_user == comment.user %>
 <!--                        <strong><%#= link_to edit_review_comment_path(review_id: @review.id, comment_id: comment.id) do %>-->
 <!--                            Edit-->

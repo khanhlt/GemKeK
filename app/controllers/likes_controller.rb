@@ -7,19 +7,28 @@ class LikesController < ApplicationController
     like.likeable_id = params[:likeable_id]
     like.likeable_type = params[:likeable_type]
     if like.save
-        flash[:notice] = "Successfully like!"
-        redirect_to  request.referrer
+      respond_to do |format|
+        format.html { redirect_to request.referrer }
+        format.js
+      end
     else
-      flash[:alert] = "Error updating post!"
+      respond_to do |format|
+        format.html { redirect_to request.referrer }
+        format.js
+      end
     end
+        #flash[:notice] = "Successfully like!"
+        #redirect_to  request.referrer
   end
 
   def destroy
     @like = Like.find_liked_review(params[:likeable_id],
-      params[:likeable_type], current_user.id).first
+    params[:likeable_type], current_user.id).first
     if like.destroy
-      flash[:notice] = "Successfully delete!"
-        redirect_to  request.referrer
+      respond_to do |format|
+        format.html { redirect_to request.referrer }
+        format.js
+      end
     end
   end
 
