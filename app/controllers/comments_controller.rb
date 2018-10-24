@@ -34,9 +34,15 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
 
     if @comment.save
-      redirect_back fallback_location: root_path
+      respond_to do |format|
+        format.html { redirect_to request.referrer }
+        format.js
+      end
     else
-      redirect_back fallback_location: root_path, notice: "Your comment wasn't posted!"
+      respond_to do |format|
+        format.html { redirect_to request.referrer, notice: 'comment was unsuccessfully posted.' }
+        format.js
+      end
     end
   end
 
@@ -70,11 +76,17 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment = Comment.find(params[:comment_id])
+    @review = @comment.review
     if @comment.destroy
-      flash[:notice] = "Successfully deleted review!"
-      redirect_to request.referrer
+      respond_to do |format|
+        format.html { redirect_to request.referrer }
+        format.js
+      end
     else
-      flash[:alert] = "Error updating post!"
+      respond_to do |format|
+        format.html { redirect_to request.referrer }
+        format.js
+      end
     end
   end
 

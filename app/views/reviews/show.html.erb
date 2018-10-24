@@ -76,52 +76,7 @@
             <div class="section-title">
               <h2>Comments</h2>
             </div>
-            <% @review.comments.each do |comment| %>
-              <div class="row">
-                <div class="col-md-1 picture-user">
-                  <img src="/assets/game/game1.jpg" alt="">
-                </div>
-                <div class="col-md-11">
-                  <div class="col-md-12 fix-pading-content">
-                    <div class="name-user col-md-3"><%= comment.user.full_name %>
-                    </div>
-                    <div class="col-md-3 star-user">
-                      <div class="text-right"><%= time_ago_in_words(comment.created_at) %></div>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <% if comment.user == current_user %>
-                    <div class="fix-content-comment-space " style="margin: 9px -15px 10px 0px!important;">
-                      <a href="#" data-xeditable="true" data-pk=<%= comment.id %> data-model="comment" data-name="content" data-url=<%= review_comment_path(review_id: @review.id, id: comment.id) %> data-title="Edit" class="editable editable-click"><%= comment.content %></a>
-                    </div>
-                    <% else %>
-                      <div class="fix-content-comment-space " style="margin: 9px -15px 10px 0px!important;"><%= comment.content %></div>
-                  <% end %>
-                      <div>
-                      <%= render "like", object: comment %>
-                      <% if current_user == comment.user %>
-<!--                        <strong><%#= link_to edit_review_comment_path(review_id: @review.id, comment_id: comment.id) do %>-->
-<!--                            Edit-->
-<!--                          <%# end %>|-->
-                          <%= link_to review_comment_path(review_id: @review.id, comment_id: comment.id), method: :delete, data: {confirm: 'Are you sure?'} do %>
-                            | <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
-                          <% end %>
-                        </strong>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-            <br><br>
-            <%= form_for [@review, Comment.new] do |f| %>
-              <%= f.text_field :content, placeholder: "Add a comment...", :class => "input-comment" %>
-              <%= hidden_field_tag :review_id, params[@review.id] %>
-              <br><br>
-              <div class="form-group text-right">
-                <%= f.submit "Add Comment", class: "btn btn-primary add-commit-button" %>
-              </div>
-            <% end %>
+             <%= render "comments/comment", review: @review %>
           </div>
         </div>
       </div>
