@@ -146,17 +146,7 @@
                   <div class="col-md-12 ">
                     <div class="fix-content-review-space" style="margin: 20px 0px 15px 0px !important"><%=raw review.content[0..1000] + "....." %></div>
                     <div>
-                      <strong><%= review.likes.count %> Likes </strong>
-                      <% if user_signed_in? and review.likes.where(user_id: current_user.id).count != 0 %>
-                    <%= link_to like_path(review.id, likeable_type: "Review", likeable_id: review.id), method: :delete do %>
-                        <!-- <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i> -->
-                        <i class="fa fa-thumbs-up fa-lg" aria-hidden="true" style="color:#3577e5"></i>
-                      <% end %>
-                    <% else %>
-                      <%= link_to likes_path(likeable_type: "Review", likeable_id: review.id), method: :post do %>
-                        <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
-                      <% end %>
-                    <% end %>
+                      <%= render "reviews/like", object: review %>
                   
                       <strong class="space-i"><%= review.comments.count() %> comments</strong>
                       <strong class="space-i"><%= link_to review_path(id: review.id), method: :get do %>
@@ -193,16 +183,7 @@
                             </div>
                             <div>
                               <div>
-                                <strong><%= comment.likes.count %> </strong>
-                                <% if user_signed_in? and comment.likes.where(user_id: current_user.id).count != 0 %>
-                                <%= link_to like_path(comment.id, likeable_type: "Comment", likeable_id: comment.id), method: :delete do %>
-                                      <i class="fa fa-thumbs-up fa-lg" aria-hidden="true" style="color:#3577e5"></i>
-                                    <% end %>
-                                <% else %>
-                                    <%= link_to likes_path(likeable_type: "Comment", likeable_id: comment.id), method: :post do %>
-                                    <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
-                                  <% end %>
-                                <% end %>
+                                <%= render "reviews/like", object: comment %>
                               </div>
                               <% if current_user == comment.user %>
                                 <div class="text-right">

@@ -1,0 +1,21 @@
+<div id="send_like_<%= object.id %>">
+<% if user_signed_in? and object.likes.where(user_id: current_user.id).count != 0 %>
+<span><%= object.likes.count %>
+</span>
+<span><%= link_to like_path(object.id, likeable_type: object.class, likeable_id: object.id), method: :delete, remote: true do %>
+	<strong>
+		<strong><i class="fa fa-thumbs-up fa-lg" aria-hidden="true" style="color:#3577e5"></i>
+	</strong>
+</span>
+<% end %>
+<% else %>
+<span>
+	<span><%= object.likes.count %>
+	</span><%= link_to likes_path(likeable_type: object.class, likeable_id: object.id), method: :post, remote: true do %>
+	<strong>
+		<i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
+	</strong>
+</span>
+<% end %>
+<% end %>
+</div>
