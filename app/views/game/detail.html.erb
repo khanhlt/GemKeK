@@ -1,15 +1,4 @@
 <%= render 'page_title', title: 'Game detail' %>
-<head>
-  <style>
-    <% if @game.reviews.average(:rating) != nil %>
-    .stars-inner {
-      width: <%= @game.reviews.average(:rating).round(1)*20 %>%;
-    }
-
-    <%end%>
-
-  </style>
-</head>
 <div id="about">
   <div class="container">
     <div class="row">
@@ -22,7 +11,7 @@
             <div class="about-text">
               <h2><%= @game.name %></h2>
               <div class="header_shousai_game_star stars-outer">
-                <div class="stars-inner"></div>
+                <div class="stars-inner" style="width: <%= @game.reviews.average(:rating).round(1)*20 %>%"></div>
               </div>
               <div class="header_shousai_game">
                 <% if @game.reviews.average(:rating) != nil %>
@@ -134,7 +123,9 @@
                       <strong ><%= review.title %></strong>
                     </div>
                     <div class="col-md-3 star-user">
-                      rating: <%= review.rating %>
+                      <div class="star_home_page stars-outer">
+                        <div class="stars-inner" style="width: <%= review.rating*20 %>%"></div>
+                      </div>
                     </div>
                     <div class="col-md-3 star-user">
                       <div class="text-right"><%= review.created_at.to_date() %></div>
@@ -258,8 +249,14 @@
               <%= f.text_field :title, placeholder: @review.title, class: "form-control",required: "required"%>
             </div>
             <div class="form-group">
-              <label for="rate">Rating</label>
-              <%= f.number_field :rating, min: 1, max: 5, placeholder: @review.rating, class: "form-control" %>
+              <div class="star-rating">
+                <span class="fa fa-star-o" data-rating="1"></span>
+                <span class="fa fa-star-o" data-rating="2"></span>
+                <span class="fa fa-star-o" data-rating="3"></span>
+                <span class="fa fa-star-o" data-rating="4"></span>
+                <span class="fa fa-star-o" data-rating="5"></span>
+                <%= f.number_field :rating, class: "rating-value", type: "hidden", name: "" %>
+              </div>
             </div>
             <%= hidden_field_tag :game_id, @game.id %>
             <div class="form-group">

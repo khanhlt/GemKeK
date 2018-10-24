@@ -13,7 +13,7 @@
 
 .stars-outer::before {
   content: "\f006 \f006 \f006 \f006 \f006";
-  font-size: 23px;
+  font-size: 20px;
 }
 
 .stars-inner {
@@ -28,5 +28,5 @@
 .stars-inner::before {
   content: "\f005 \f005 \f005 \f005 \f005";
   color: #F9A825;
-  font-size: 23px;
+  font-size: 20px;
 }
