@@ -71,7 +71,9 @@
                 <b>Release date: <%= game.relase_date.to_date %> </b>
               </div>
               <div class="col-xs-12 col-md-3 fix-padding">
-                <b>User score: <%= game.reviews.average(:rating) %> </b>
+                <div class="star_home_page stars-outer">
+                  <div class="stars-inner" style="width: <%= game.reviews.average(:rating).round(1)*20 %>%"></div>
+                </div>
               </div>
               <div class="col-xs-7 col-md-4">
                 <b>Platform: </b>
