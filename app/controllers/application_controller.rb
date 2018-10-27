@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :store_user_location!, if: :storable_location?
   #before_action :authenticate_user!
 
+  
   private
     def storable_location?
       request.get? && is_navigational_format? && !devise_controller? && !request.xhr? 
@@ -18,4 +19,6 @@ class ApplicationController < ActionController::Base
    def after_sign_out_path_for(resource_or_scope)
      request.referrer || super
    end
+   
+   
 end

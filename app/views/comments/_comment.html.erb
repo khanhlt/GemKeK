@@ -35,8 +35,13 @@
               </div>
             <% end %>
             <br><br>
-            <%= form_for [review, Comment.new], remote: true do |f| %>
-              <%= f.text_field :content, placeholder: "Add a comment...", :class => "input-comment" %>
+            <% if user_signed_in? %>
+              <% remo = true %>
+              <% else %>
+              <% remo = false %>
+              <% end %>
+            <%= form_for [review, Comment.new], remote: remo do |f| %>
+              <%= f.text_field :content, placeholder: "Add a comment...", :class => "input-comment", required: "required" %>
               <%= hidden_field_tag :review_id, params[review.id] %>
               <br><br>
               <div class="form-group text-right">
