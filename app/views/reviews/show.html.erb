@@ -1,12 +1,9 @@
 <%= render 'page_title', title: @review.title %>
 <head>
   <style>
-    <% if @review.rating != nil %>
     .stars-inner {
-      width: <%= @review.rating.round(1)*20 %>%;
+      width: <%= get_rating_reivew(@review)*20 %>%;
     }
-
-    <%end%>
   </style>
 </head>
 <div id="about">
