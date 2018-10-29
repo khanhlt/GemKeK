@@ -53,7 +53,20 @@
         </li>
         <li>
           <a href="#">
-            <i class="fa fa-th"></i> <span>Create Post</span>
+            <!-- <i class="fa fa-th"></i> <span>Create Post</span> -->
+            <i class="fa fa-table"></i> <span>Tables</span>
+            <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+            <li><%= link_to manage_data_path do %> <i class="fa fa-circle-o"></i> User tables<% end %></li>
+          </ul>
+        </li>
+        <li>
+          <a href="../calendar.html">
+            <i class="fa fa-calendar"></i> <span>Calendar</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
             </span>
@@ -94,100 +107,46 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"><strong>Manage Game</strong></h3>
+              <h3 class="box-title"><strong>Manage User</strong></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Genres</th>
-                  <th>Platform</th>
-                  <th>Computer</th>
-                  <th>Rate</th>
-                  <th></th>
+                  <th>Email</th>
+                  <th>full_name</th>
+                  <th>register date</th>
+                  <th>number of reviews</th>
+                  <th>number of comment</th>
+                  <th>Function</th>
                 </tr>
                 </thead>
                 <tbody>
+                <% @user = User.all %>
+                <% @user.each do |user| %>
                 <tr>
-                  <td>Assassin's creed Odyssey</td>
-                  <td>Brain Training
+                  <td><%= link_to user_profile_home_path(id: user.id) do %> <%= user.email%> <% end %> </td>
+                  <td><%= user.full_name %>
                   </td>
-                  <td>iOS</td>
-                  <td>VinaGame</td>
-                  <td>5</td>
-                  <td>
-                    <a href="#">
-                    <i class="fa fa-trash-o fa-lg" style="color: red" aria-hidden="true"></i>
-                    </a>
-                    <a>
-                    <i class="fa fa-pencil-square-o fa-lg" style="color: blue" aria-hidden="true"></i>
-                    </a>
-                  </td>
+                  <td><%= user.created_at.to_date %></td>
+                  <td><%= user.reviews.count() %></td>
+                  <td><%= user.comments.count() %></td>
+                  <% if user.is_blocked == false %>
+                  <td><%= link_to manage_user_block_path(user.id), method: :patch do %> block <% end %></td>
+                  <% else %>
+                  <td><%= link_to manage_user_unblock_path(user.id), method: :patch do %> unblock <% end %></td>
+                  <% end %>
+                  
                 </tr>
-                <tr>
-                  <td>Assassin's creed Odyssey</td>
-                  <td>Brain Training
-                  </td>
-                  <td>iOS</td>
-                  <td>VinaGame</td>
-                  <td>5</td>
-                  <td>
-                    <a href="#">
-                    <i class="fa fa-trash-o fa-lg" style="color: red" aria-hidden="true"></i>
-                    </a>
-                    <a>
-                    <i class="fa fa-pencil-square-o fa-lg" style="color: blue" aria-hidden="true"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Assassin's creed Odyssey</td>
-                  <td>Brain Training
-                  </td>
-                  <td>iOS</td>
-                  <td>VinaGame</td>
-                  <td>5</td>
-                  <td>
-                    <a href="#">
-                    <i class="fa fa-trash-o fa-lg" style="color: red" aria-hidden="true"></i>
-                    </a>
-                    <a>
-                    <i class="fa fa-pencil-square-o fa-lg" style="color: blue" aria-hidden="true"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Assassin's creed Odyssey</td>
-                  <td>Brain Training
-                  </td>
-                  <td>iOS</td>
-                  <td>VinaGame</td>
-                  <td>5</td>
-                  <td>
-                    <a href="#">
-                    <i class="fa fa-trash-o fa-lg" style="color: red" aria-hidden="true"></i>
-                    </a>
-                    <a>
-                    <i class="fa fa-pencil-square-o fa-lg" style="color: blue" aria-hidden="true"></i>
-                    </a>
-                  </td>
-                </tr>
-                <tfoot>
-                <tr>
-                  <th>Name</th>
-                  <th>Genres</th>
-                  <th>Platform</th>
-                  <th>Computer</th>
-                  <th>Rate</th>
-                  <th></th>
-                </tr>
+                <% end %>
+               
                 </tfoot>
               </table>
             </div>
             <!-- /.box-body -->
           </div>
+          <!-- /.box -->
           <!-- /.box -->
         </div>
         <!-- /.col -->
