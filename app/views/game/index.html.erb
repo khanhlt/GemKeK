@@ -65,24 +65,36 @@
             </div>
             <div class="col-xs-12 col-md-8 content-game-home-page">
               <div class="about-text col-md-12">
-                <h4><%=link_to game_detail_path(id: game.id) do %> <%= game.name %><%end%> </h4>
+                <h3><%=link_to game_detail_path(id: game.id) do %> <%= game.name %><%end%> </h3>
               </div>
-              <div class="col-xs-12 col-md-5">
+              <div class="col-xs-12 col-md-6">
                 <b>Release date: <%= game.relase_date.to_date %> </b>
               </div>
-              <div class="col-xs-12 col-md-3 fix-padding">
+              <div class="col-xs-12 col-md-6 fix-padding">
                 <div class="star_home_page stars-outer">
                   <div class="stars-inner" style="width: <%= game.reviews.average(:rating).round(1)*20 %>%"></div>
                 </div>
               </div>
-              <div class="col-xs-7 col-md-4">
+              <div class="about-text col-md-12">
                 <b>Platform: </b>
-                <% game.platform_of_game.each do |platform| %>
-                <b> <%= platform.name %> </b>
+                <% game.platform_of_game.each_with_index do |platform, index| %>
+                  <%= index == 0 ? "" : "," %>
+                  <%= link_to platform.name, game_game_list_of_platform_path(:platform => platform.name) %>
+                <% end %>
+              </div>
+              <div class="about-text col-md-12">
+                <b>Genre: </b>
+                <% game.genres_of_game.each_with_index do |genre, index| %>
+                  <%= index == 0 ? "" : "," %>
+                  <%= link_to genre.name, game_game_list_of_genre_path(:genre => genre.name)%>
                 <% end %>
               </div>
               <div class="col-md-12">
-                <p ><%= game.summary %> <a href="#">more...</a></p>
+                <% if game.summary.length > 100 %>
+                  <p><%= truncate(game.summary, length: 100) %> <%=link_to "more", game_detail_path(id: game.id) %></p>
+                <% else %>
+                  <p><%= game.summary %></p>
+                <% end %>
               </div>
             </div>
           </div>

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'login/home'
   get 'game/index'
   get 'game/detail'
+  get 'game/game_list_of_platform'
+  get 'game/game_list_of_genre'
   get 'gameshousai/home'
   get 'search/index'
   get 'search/advance_search'
