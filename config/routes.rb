@@ -21,5 +21,10 @@ Rails.application.routes.draw do
   namespace :manage do
     get '/' => 'home#index'
     get 'data' => 'home#show'
+    resources :users  do
+      patch "block"
+      patch "unblock"
+    end
+    
   end
 end

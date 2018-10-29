@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :store_user_location!, if: :storable_location?
+  before_action :banned?
   #before_action :authenticate_user!
 
   
@@ -20,5 +21,12 @@ class ApplicationController < ActionController::Base
      request.referrer || super
    end
    
+  def banned?
+    if current_user.present? && current_user.is_blocked?
+      sign_out current_user
+      flash[:error] = "This account has been suspended...."
+      root_path
+    end
+  end
    
 end
