@@ -17,4 +17,9 @@ Rails.application.routes.draw do
    post 'reviews_rate' , to: 'reviews#rate'
   #get 'reviews_show', to: 'reviews#show'
    resources :likes, only: [:create, :destroy]
+
+  namespace :manage do
+    get '/' => 'home#index'
+    get 'data' => 'home#show'
+  end
 end
