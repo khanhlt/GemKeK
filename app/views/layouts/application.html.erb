@@ -13,65 +13,69 @@
 <body>
 <div class="container">
   <nav id="menu" class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="col-md-2">
-         <%= link_to root_path, class: "navbar-brand logo-header" do %>
-        <img src="/assets/logo.jpg" alt="logo">
+    <div class="container">
+      <div class="col-md-2">
+        <%= link_to root_path, class: "navbar-brand logo-header" do %>
+          <img src="/assets/logo.jpg" alt="logo">
         <% end %>
-       </div>
-    <div class="col-md-10" id="bs-example-navbar-collapse-1 ">
-      <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "PC", game_game_list_of_platform_path, class: "page-scroll" %></li>
-        <li><%= link_to "PS4", game_game_list_of_platform_path(:platform => "PS4"), class: "page-scroll" %></li>
-        <li><%= link_to "XBox One", game_game_list_of_platform_path(:platform => "XBOX ONE"), class: "page-scroll" %></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle dropdown-background-color" data-toggle="dropdown" href="#">MORE
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="#">GAME-1</a></li>
-            <li><a href="#">GAME-2</a></li>
-            <li><a href="#">GAME-3</a></li>
-          </ul>
-        </li>
-        <li>
-          <%= form_tag search_index_path, :method => 'get', :class => "navbar-form navbar-left", :rolze => "search" do %>
-          <div class="form-group">
-            <%= text_field_tag :search, params[:search], :class => "form-control" %>
-          </div>
-          <%= submit_tag "Search", name: nil, class: 'btn btn-default' %>
-          <% end %> 
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-        <li class="dropdown">
-          <a class="dropdown-toggle dropdown-background-color" data-toggle="dropdown" href="#"><b><%= current_user.full_name %></b>
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><%=link_to "Profile" , user_profile_home_path() %>
-            <% if current_user.is_admin %>
-            <li><a href="#">Admin</a></li>
+      </div>
+      <div class="col-md-10" id="bs-example-navbar-collapse-1 ">
+        <ul class="nav navbar-nav navbar-left">
+          <li><%= link_to "PC", game_game_list_of_platform_path, class: "page-scroll" %></li>
+          <li><%= link_to "PS4", game_game_list_of_platform_path(:platform => "PS4"), class: "page-scroll" %></li>
+          <li><%= link_to "XBox One", game_game_list_of_platform_path(:platform => "XBOX ONE"), class: "page-scroll" %></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle dropdown-background-color" data-toggle="dropdown" href="#">MORE
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <% platform_all = Platform.all %>
+              <% platform_all.each do |platform| %>
+                <% if platform.name != "PC" && platform.name != "PS4" && platform.name != "XBOX ONE" %>
+                  <li><%= link_to platform.name, game_game_list_of_platform_path(:platform => platform.name) %></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </li>
+          <li>
+            <%= form_tag search_index_path, :method => 'get', :class => "navbar-form navbar-left", :rolze => "search" do %>
+              <div class="form-group">
+                <%= text_field_tag :search, params[:search], :value => "", :class => "form-control", placeholder: "search..." %>
+              </div>
+              <%= submit_tag "Search", name: nil, class: 'btn btn-default' %>
             <% end %>
-            <li><a href="#"><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %> </a></li>
-          </ul>
-        </li>
-        <% else %>
-        <li>
-          <%= link_to('Sign In', new_user_session_path) %>
-        </li>
-        <li>
-          <%= link_to('Sign Up', new_user_registration_path) %>
-        </li>
-        <% end %>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li class="dropdown">
+              <a class="dropdown-toggle dropdown-background-color" data-toggle="dropdown" href="#"><b><%= current_user.full_name %></b>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", user_profile_home_path() %>
+                  <% if current_user.is_admin %>
+                  <li><a href="#">Admin</a></li>
+                <% end %>
+                <li><a href="#"><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %> </a></li>
+              </ul>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to('Sign In', new_user_session_path) %>
+            </li>
+            <li>
+              <%= link_to('Sign Up', new_user_registration_path) %>
+            </li>
+          <% end %>
 
-      </ul>
+        </ul>
+      </div>
     </div>
-  </div>
   </nav>
 </div>
 <%= yield %>
+</body>
 
 <!-- Contact Section -->
 <div id="contact">
@@ -111,28 +115,28 @@
         <h4>Contact Info</h4>
         <p><span>Address</span>4321 California St,<br>
           San Francisco, CA 12345</p>
-        </div>
-        <div class="contact-item">
-          <p><span>Phone</span> +1 123 456 1234</p>
-        </div>
-        <div class="contact-item">
-          <p><span>Email</span> info@company.com</p>
-        </div>
       </div>
-      <div class="col-md-12">
-        <div class="row">
-          <div class="social">
-            <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            </ul>
-          </div>
+      <div class="contact-item">
+        <p><span>Phone</span> +1 123 456 1234</p>
+      </div>
+      <div class="contact-item">
+        <p><span>Email</span> info@company.com</p>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="row">
+        <div class="social">
+          <ul>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 <!-- Footer Section -->
 <div id="footer">

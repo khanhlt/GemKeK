@@ -88,36 +88,7 @@
       </div>
       <!-- Search & Upcoming games list -->
       <div class="col-md-3">
-        <div class="about-text">
-          <h2>Advance Search..</h2>
-          <form action="" method="POST" role="form">
-            <div class="form-group">
-              <label for="">Game Title</label>
-              <input type="text" class="form-control" id="" placeholder="Input game title">
-            </div>
-            <div class="form-group">
-              <label for="sel1">Genre</label>
-              <select class="form-control" id="sel1">
-                <option>Genre_1</option>
-                <option>Genre_2</option>
-                <option>Genre_3</option>
-                <option>Genre_4</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="sel1">Platform</label>
-              <select class="form-control" id="sel1">
-                <option>Android</option>
-                <option>Ios</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="">Score</label>
-              <input type="text" class="form-control" id="" placeholder="Input Score">
-            </div>
-            <button type="submit" class="btn btn-primary">Search</button>
-          </form>
-        </div>
+        <%= render 'search/advance_search_box' %>
         <%= render 'game_up_comming' %>
       </div>
     </div>

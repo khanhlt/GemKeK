@@ -31,25 +31,30 @@
               <p>created by <%= @review.user.full_name %> at <%= @review.created_at.to_date %></p>
               <hr>
               <!--<div id="send_like_<%= @review.id %>_Review">-->
-              <!--<% if user_signed_in? and @review.likes.where(user_id: current_user.id).count != 0 %>-->
-              <!--  <span><%= @review.likes.count %></span>-->
-              <!--  <span>-->
-              <!--    <%= link_to like_path(likeable_type: "Review", likeable_id: @review.id), method: :delete, remote: true do %>-->
-              <!--  <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>-->
-              <!--  </strong>-->
-              <!--      </span>-->
-              <!--  <% end %>-->
-              <!--<% else %>-->
-              <!--  <span>-->
-              <!--  <span><%= @review.likes.count %></span>-->
-              <!--    <%= link_to likes_path(likeable_type: "Review", likeable_id: @review.id), method: :post, remote: true do %>-->
-              <!--  <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>-->
-              <!--  </strong>-->
-              <!--      </span>-->
-              <!--  <% end %>-->
-              <!--<% end %>-->
+              <!--
+              <% if user_signed_in? and @review.likes.where(user_id: current_user.id).count != 0 %>-->
+                <!--  <span><%= @review.likes.count %></span>-->
+                <!--  <span>-->
+                <!--    <%= link_to like_path(likeable_type: "Review", likeable_id: @review.id), method: :delete, remote: true do %>-->
+                  <!--  <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>-->
+                  <!--  </strong>-->
+                  <!--      </span>-->
+                  <!--
+                <% end %>-->
+                <!--
+              <% else %>-->
+                <!--  <span>-->
+                <!--  <span><%= @review.likes.count %></span>-->
+                <!--    <%= link_to likes_path(likeable_type: "Review", likeable_id: @review.id), method: :post, remote: true do %>-->
+                  <!--  <strong><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>-->
+                  <!--  </strong>-->
+                  <!--      </span>-->
+                  <!--
+                <% end %>-->
+                <!--
+              <% end %>-->
               <!--</div>-->
-              <%= render "reviews/like", object: @review%>
+              <%= render "reviews/like", object: @review %>
               <hr>
             </div>
           </div>
@@ -73,68 +78,13 @@
             <div class="section-title">
               <h2>Comments</h2>
             </div>
-             <%= render "comments/comment", review: @review %>
+            <%= render "comments/comment", review: @review %>
           </div>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="row ">
-          <div class="col-md-12 text-center related-game ">Related Game</div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 1</strong>
-              <hr>
-              <strong>15/11/2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 2</strong>
-              <hr>
-              <strong>15/11/2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 3</strong>
-              <hr>
-              <strong>15-11-2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 4</strong>
-              <hr>
-              <strong>15/11/2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 5</strong>
-              <hr>
-              <strong>15/11/2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 6</strong>
-              <hr>
-              <strong>15-11-2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 7</strong>
-              <hr>
-              <strong>15/11/2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 8</strong>
-              <hr>
-              <strong>15/11/2018</strong>
-            </a>
-          </div>
-          <div class="col-md-12 text-center list-related-game">
-            <a href="#"><strong>Game 9</strong>
-              <hr>
-              <strong>15-11-2018</strong>
-            </a>
-          </div>
-        </div>
+        <%= render 'search/advance_search_box' %>
+        <!--        should be upcoming game -->
       </div>
     </div>
   </div>

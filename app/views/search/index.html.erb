@@ -16,15 +16,15 @@
               <%= select_tag "platform", options_from_collection_for_select(Platform.all, :id, :name), {:class => 'form-control', :prompt => ""} %>
             </div>
 
-            <div class="col-xs-12 col-md-2">
-              Min Score:
-              <%= select_tag "min_score", options_for_select(["1", "2", "3", "4", "5"]), {:class => 'form-control', :prompt => ""} %>
-            </div>
+<!--            <div class="col-xs-12 col-md-2">-->
+<!--              Min Score:-->
+              <%#= select_tag "min_score", options_for_select(["1", "2", "3", "4", "5"]), {:class => 'form-control', :prompt => ""} %>
+<!--            </div>-->
 
-            <div class="col-xs-12 col-md-2">
-              Max Score:
-              <%= select_tag "max_score", options_for_select(["1", "2", "3", "4", "5"]), {:class => 'form-control', :prompt => ""} %>
-            </div>
+<!--            <div class="col-xs-12 col-md-2">-->
+<!--              Max Score:-->
+              <%#= select_tag "max_score", options_for_select(["1", "2", "3", "4", "5"]), {:class => 'form-control', :prompt => ""} %>
+<!--            </div>-->
 
             <% @search_results.map(&:id).each do |id| %>
               <%= hidden_field_tag "game_ids[]", id %>
@@ -44,32 +44,40 @@
             <% @search_results.each do |game| %>
               <div class="col-md-12 fix-pading-content">
                 <div class="col-xs-12 col-md-4">
-                  <%= image_tag(game.photos.first.image, :class => "img-responsive") %>
+                  <%=link_to game_detail_path(id: game.id) do %> <%= image_tag(game.photos.first.image, :class => "img-responsive fix-box-img-top-game") %><%end%>
                 </div>
-                <div class="col-xs-12 col-md-8">
-                  <div class="about-text">
-                    <h4><%= link_to game_detail_path(id: game.id) do %> <%= game.name %>
-                      <% end %> </h4>
+                <div class="col-xs-12 col-md-8 content-game-home-page">
+                  <div class="about-text col-md-12">
+                    <h3><%=link_to game_detail_path(id: game.id) do %> <%= game.name %><%end%> </h3>
                   </div>
-                  <div class="col-xs-12 col-md-5">
+                  <div class="col-xs-12 col-md-6">
                     <b>Release date: <%= game.relase_date.to_date %> </b>
                   </div>
-                  <div class="col-xs-12 col-md-3 fix-padding">
-                    <% if game.reviews.average(:rating) != nil %>
-                      <b>User score:
-                        <%= game.reviews.average(:rating) %></b>
-                    <% else %>
-                      <b>User score: No rating </b>
+                  <div class="col-xs-12 col-md-6 fix-padding">
+                    <div class="star_home_page stars-outer">
+                      <div class="stars-inner" style="width: <%= game.reviews.average(:rating).round(1)*20 %>%"></div>
+                    </div>
+                  </div>
+                  <div class="about-text col-md-12">
+                    <b>Platform: </b>
+                    <% game.platform_of_game.each_with_index do |platform, index| %>
+                      <%= index == 0 ? "" : "," %>
+                      <%= link_to platform.name, game_game_list_of_platform_path(:platform => platform.name) %>
                     <% end %>
                   </div>
-                  <div class="col-xs-7 col-md-4">
-                    <b>Platform: </b>
-                    <% game.platform_of_game.each do |platform| %>
-                      <b> <%= platform.name %> </b>
+                  <div class="about-text col-md-12">
+                    <b>Genre: </b>
+                    <% game.genres_of_game.each_with_index do |genre, index| %>
+                      <%= index == 0 ? "" : "," %>
+                      <%= link_to genre.name, game_game_list_of_genre_path(:genre => genre.name)%>
                     <% end %>
                   </div>
                   <div class="col-md-12">
-                    <p><%= game.summary %> <a href="#">more...</a></p>
+                    <% if game.summary.length > 100 %>
+                      <p><%= truncate(game.summary, length: 100) %> <%=link_to "more", game_detail_path(id: game.id) %></p>
+                    <% else %>
+                      <p><%= game.summary %></p>
+                    <% end %>
                   </div>
                 </div>
               </div>

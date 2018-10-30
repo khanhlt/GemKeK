@@ -29,7 +29,7 @@ Like.create! likeable_id: 1, likeable_type: "Comment", user_id: 2
 Platform.create name: "Windows", version: 8.1
 Platform.create name: "iOS", version: 11.4
 Platform.create name: "PS4", version: 3.0
-Platform.create name: "XBox One", version: 5.1
+Platform.create name: "XBOX ONE", version: 5.1
 GamePlatform.create game_id: 1, platform_id: 1
 GamePlatform.create game_id: 2, platform_id: 2
 GamePlatform.create game_id: 3, platform_id: 3
