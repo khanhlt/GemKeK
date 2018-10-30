@@ -55,7 +55,9 @@
                   </div>
                   <div class="col-xs-12 col-md-6 fix-padding">
                     <div class="star_home_page stars-outer">
-                      <div class="stars-inner" style="width: <%= game.reviews.average(:rating).round(1)*20 %>%"></div>
+                      <% if game.reviews.average(:rating) != nil %>
+                        <div class="stars-inner" style="width: <%= game.reviews.average(:rating).round(1)*20 %>%"></div>
+                      <% end %>
                     </div>
                   </div>
                   <div class="about-text col-md-12">

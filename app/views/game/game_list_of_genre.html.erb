@@ -51,13 +51,11 @@
                     <b>Release date: <%= game.relase_date.to_date %> </b>
                   </div>
                   <div class="col-xs-12 col-md-6 fix-padding">
-                    <% if game.reviews.average(:rating) != nil %>
-                      <div class="star_home_page stars-outer">
+                    <div class="star_home_page stars-outer">
+                      <% if game.reviews.average(:rating) != nil %>
                         <div class="stars-inner" style="width: <%= game.reviews.average(:rating).round(1)*20 %>%"></div>
-                      </div>
-                    <% else %>
-                      No rating
-                    <% end %>
+                      <% end %>
+                    </div>
                   </div>
                   <div class="about-text col-md-12">
                     <b>Platform: </b>
@@ -70,12 +68,12 @@
                     <b>Genre: </b>
                     <% game.genres_of_game.each_with_index do |genre, index| %>
                       <%= index == 0 ? "" : "," %>
-                      <%= link_to genre.name, game_game_list_of_genre_path(:genre => genre.name)%>
+                      <%= link_to genre.name, game_game_list_of_genre_path(:genre => genre.name) %>
                     <% end %>
                   </div>
                   <div class="col-md-12">
                     <% if game.summary.length > 100 %>
-                      <p><%= truncate(game.summary, length: 100) %> <%=link_to "more", game_detail_path(id: game.id) %></p>
+                      <p><%= truncate(game.summary, length: 100) %> <%= link_to "more", game_detail_path(id: game.id) %></p>
                     <% else %>
                       <p><%= game.summary %></p>
                     <% end %>

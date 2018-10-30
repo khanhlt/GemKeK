@@ -51,13 +51,11 @@
                     <b>Release date: <%= game.relase_date.to_date %> </b>
                   </div>
                   <div class="col-xs-12 col-md-6 fix-padding">
-                    <% if game.reviews.average(:rating) != nil %>
-                      <div class="star_home_page stars-outer">
+                    <div class="star_home_page stars-outer">
+                      <% if game.reviews.average(:rating) != nil %>
                         <div class="stars-inner" style="width: <%= game.reviews.average(:rating).round(1)*20 %>%"></div>
-                      </div>
-                    <% else %>
-                      No rating
-                    <% end %>
+                      <% end %>
+                    </div>
                   </div>
                   <div class="about-text col-md-12">
                     <b>Platform: </b>

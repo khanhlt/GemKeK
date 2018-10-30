@@ -1,5 +1,5 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * This is a manifest file that'll be compiled into application, which will include all the files
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
@@ -10,11 +10,19 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
+@import "css/ionicons.min";
+@import "css/dataTables.bootstrap.min";
+@import "css/AdminLTE.min";
+@import "css/_all-skins.min";
+@import "css/morris";
+@import "css/jquery-jvectormap";
+@import "css/bootstrap-datepicker.min";
+@import "css/daterangepicker";
+@import "css/bootstrap3-wysihtml5.min";

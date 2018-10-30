@@ -23,7 +23,8 @@ class SearchController < ApplicationController
       end
     end
 
-    @search_results = @search_results.sort_by! {|x| x.reviews.average(:rating) unless x.reviews.nil?}.reverse
+    @search_results = @search_results.uniq
+    @search_results = @search_results.sort_by! {|x| x.reviews.average(:rating) or 0}.reverse
   end
 
   def advance_search
@@ -117,6 +118,8 @@ class SearchController < ApplicationController
         end
       end
     end
-    @search_results = @search_results.sort_by! {|x| x.reviews.average(:rating) unless x.reviews.nil? }.reverse
+
+    @search_results = @search_results.uniq
+    @search_results = @search_results.sort_by! {|x| x.reviews.average(:rating) or 0 }.reverse
   end
 end
