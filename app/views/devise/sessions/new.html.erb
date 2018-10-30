@@ -8,6 +8,12 @@
       <span class="login100-form-title p-b-34 p-t-27">
 				Log in
 			</span>
+			<body>
+  <% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+  <% end %>
+
+  <%= yield %>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="wrap-input100 validate-input" data-validate = "Enter username">
           <%= f.email_field :email, placeholder:"Email", class:"input100"%>

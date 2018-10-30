@@ -1,0 +1,8 @@
+<td><div id="block_<%= user.id %>">
+<% if user.is_blocked == false %>
+<%= link_to manage_user_block_path(user.id), method: :get, remote: true do %> block <% end %>
+<% else %>
+<%= link_to manage_user_unblock_path(user.id), method: :get, remote: true do %> unblock <% end %>
+<% end %>
+</div>
+</td>

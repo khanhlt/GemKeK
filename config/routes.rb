@@ -24,8 +24,8 @@ Rails.application.routes.draw do
     get '/' => 'home#index'
     get 'data' => 'home#show'
     resources :users  do
-      patch "block"
-      patch "unblock"
+      get "block"
+      get "unblock"
     end
     
   end
