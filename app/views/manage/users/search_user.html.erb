@@ -26,7 +26,8 @@
       <div class="input-group">
           <span class="input-group-btn">
           <%= text_field_tag :search_user, params[:search_user], :value => "", :class => "form-control", placeholder: "Search..." %>
-            <%= submit_tag id: "search-btn", class: 'btn btn-flat' %><i class="fa fa-search"></i>
+            <%= submit_tag id: "search-btn", class: 'btn btn-flat' %>
+            <i class="fa fa-search"></i>
         </span>
       </div>
     <% end %>
@@ -133,8 +134,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <% @user = User.all %>
-                <% @user.each do |user| %>
+                <% @user_list.each do |user| %>
                   <tr>
                     <td><%= link_to user_profile_home_path(id: user.id) do %> <%= user.email %>
                       <% end %> </td>

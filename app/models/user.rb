@@ -6,4 +6,12 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :comments
   has_many :likes
+
+  def self.search(search)
+    if search
+      where('full_name LIKE ? OR email LIKE ?', "%#{search}%", "%#{search}%").order('id DESC')
+    else
+      order('id DESC')
+    end
+  end
 end

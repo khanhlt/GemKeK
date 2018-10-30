@@ -1,7 +1,8 @@
 class Manage::UsersController < ApplicationController
   before_action :authenticate_user!, :check_admin
   before_action :find_user, only: [:block, :unblock]
- 
+  layout "manage/home"
+
   def block
       @user.is_blocked = true
       if @user.save
@@ -22,6 +23,14 @@ class Manage::UsersController < ApplicationController
       end
   end
 
+  def search_user
+    if params[:search_user]
+      @user_list = User.search(params[:search_user])
+    else
+      @user_list = User.all
+    end
+  end
+
   private  
   def check_admin
     unless current_user.is_admin?
@@ -32,4 +41,5 @@ class Manage::UsersController < ApplicationController
   def find_user
     @user = User.find(params[:user_id])
   end
+
 end

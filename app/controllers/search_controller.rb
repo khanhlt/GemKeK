@@ -120,6 +120,6 @@ class SearchController < ApplicationController
     end
 
     @search_results = @search_results.uniq
-    @search_results = @search_results.sort_by! {|x| x.reviews.average(:rating) or 0 }.reverse
+    @search_results = @search_results.sort_by! {|x| x.reviews.average(:rating) or 0}.reverse
   end
 end
