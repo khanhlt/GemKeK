@@ -27,6 +27,7 @@ class GameController < ApplicationController
     platform = Platform.find_by_name(params[:platform])
     if (platform != nil)
       @game_list = platform.game_of_platform
+      @game_list = @game_list.sort_by {|x| x.reviews.average(:rating) or 0}.reverse
     end
   end
 
@@ -35,6 +36,7 @@ class GameController < ApplicationController
     genre = Genre.find_by_name(params[:genre])
     if (genre != nil)
       @game_list = genre.game_of_genre
+      @game_list = @game_list.sort_by {|x| x.reviews.average(:rating) or 0}.reverse
     end
   end
 
