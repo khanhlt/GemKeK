@@ -6,7 +6,6 @@
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag 'manage/application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'manage/application', 'data-turbolinks-track': 'reload' %>
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -357,6 +356,6 @@
   <%= yield %>
 </div>
 
-
+<%= javascript_include_tag 'manage/application', 'data-turbolinks-track': 'reload' %>
 </body>
 </html>
