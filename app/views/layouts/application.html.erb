@@ -7,7 +7,6 @@
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 </head>
 <body>
@@ -144,5 +143,18 @@
     <p>&copy; 2018 Design by <a href="http://www.templatewire.com" rel="nofollow"> KYUU-RY TEAM</a></p>
   </div>
 </div>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script>
+  var owl;
+  owl = $('.new-game');
+  owl.owlCarousel({
+    items: 4,
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 1000,
+    autoplayHoverPause: true
+  });
+</script>
 </body>
 </html>
