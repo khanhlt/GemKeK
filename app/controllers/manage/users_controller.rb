@@ -6,20 +6,24 @@ class Manage::UsersController < ApplicationController
   def block
       @user.is_blocked = true
       if @user.save
-        flash[:success] = "blocked success"
-        redirect_to request.referrer
-      else
-        flash[:danger] = "Fail"
+        respond_to do |format|
+          format.html { redirect_to request.referrer }
+          format.js
+        end
+      # else
+      #   flash[:danger] = "Fail"
       end
   end
   
   def unblock
     @user.is_blocked = false
       if @user.save
-        flash[:success] = "unblocked success"
-        redirect_to request.referrer
-      else
-        flash[:danger] = "Fail"
+        respond_to do |format|
+          format.html { redirect_to request.referrer }
+          format.js
+        end
+      # else
+      #   flash[:danger] = "Fail"
       end
   end
 
