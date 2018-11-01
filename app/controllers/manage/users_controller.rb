@@ -1,7 +1,32 @@
 class Manage::UsersController < ApplicationController
   before_action :authenticate_user!, :check_admin
-  before_action :find_user, only: [:block, :unblock]
+  before_action :find_user, only: [:block, :unblock, :upgrade, :downgrade]
   layout "manage/home"
+  
+  def upgrade
+    @user.is_admin = true
+      if @user.save
+        respond_to do |format|
+          format.html { redirect_to request.referrer }
+          format.js
+        end
+      else
+         flash[:danger] = "Fail"
+      end
+  end
+      
+  def downgrade
+    @user.is_admin = false
+      if @user.save
+        respond_to do |format|
+          format.html { redirect_to request.referrer }
+          format.js
+        end
+      else
+         flash[:danger] = "Fail"
+      end
+  end
+
 
   def block
       @user.is_blocked = true

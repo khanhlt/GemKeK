@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     get '/' => 'home#index'
     get 'data' => 'home#show'
     resources :users  do
+      get "upgrade"
+      get "downgrade"
       get "block"
       get "unblock"
       get "search_user"
