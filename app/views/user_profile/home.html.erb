@@ -130,12 +130,24 @@
                                                 <span class="caret"></span>
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dd1" style="float: right;">
-                                                <li><a href="#"><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i> Report</a></li>
+                                               <!--  <li><a href="#"><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i> Report</a></li>
                                                 <li><a href="#"><i class="fa fa-fw fa-ban" aria-hidden="true"></i> Ignore</a></li>
-                                                <li><a href="#"><i class="fa fa-fw fa-bell" aria-hidden="true"></i> Enable notifications for this post</a></li>
-                                                <li><a href="#"><i class="fa fa-fw fa-eye-slash" aria-hidden="true"></i> Hide</a></li>
-                                                <li role="separator" class="divider"></li>
-                                                <li><a href="#"><i class="fa fa-fw fa-trash" aria-hidden="true"></i> Delete</a></li>
+                                                <li><a href="#"><i class="fa fa-fw fa-bell" aria-hidden="true"></i> Enable notifications for this post</a></li> -->
+                                                <li>
+                                                    <%= link_to "#",
+                                                    data: {
+                                                      toggle: "modal",
+                                                      url: edit_review_path(review.id),
+                                                      target: "#review-form-edit"} do %>
+                                                      <i class="fa fa-pencil-square-o fa-lg"></i>
+                                                      Edit
+                                                    <% end %>
+                                                </li>
+                                                
+                                                <li><%= link_to review_path(review, user_id: @user.id),method: :delete , data: { confirm: 'Are you sure?' } do %>
+                                                    <i class="fa fa-fw fa-trash"></i> Delete
+                                                    <%end%>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -211,24 +223,6 @@
                                 </a>
                             </div>
                             <h4><a href="#" style="text-decoration:none;"><strong>review.user.full_name</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(review.created_at) %> ago</i></a></small></small></h4>
-                            <span>
-                                <div class="navbar-right">
-                                    <div class="dropdown">
-                                        <button class="btn btn-link btn-xs dropdown-toggle" type="button" id="dd1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <i class="fa fa-cog" aria-hidden="true"></i>
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dd1" style="float: right;">
-                                            <li><a href="#"><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i> Report</a></li>
-                                            <li><a href="#"><i class="fa fa-fw fa-ban" aria-hidden="true"></i> Ignore</a></li>
-                                            <li><a href="#"><i class="fa fa-fw fa-bell" aria-hidden="true"></i> Enable notifications for this post</a></li>
-                                            <li><a href="#"><i class="fa fa-fw fa-eye-slash" aria-hidden="true"></i> Hide</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="#"><i class="fa fa-fw fa-trash" aria-hidden="true"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </span>
                             <hr>
                             <div class="post-content">
                                 <h3><%=review.title%></h3>
@@ -258,24 +252,6 @@
                                 </a>
                             </div>
                             <h4><a href="#" style="text-decoration:none;"><strong>review.user.full_name</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(review.created_at) %> ago</i></a></small></small></h4>
-                            <span>
-                                <div class="navbar-right">
-                                    <div class="dropdown">
-                                        <button class="btn btn-link btn-xs dropdown-toggle" type="button" id="dd1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <i class="fa fa-cog" aria-hidden="true"></i>
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dd1" style="float: right;">
-                                            <li><a href="#"><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i> Report</a></li>
-                                            <li><a href="#"><i class="fa fa-fw fa-ban" aria-hidden="true"></i> Ignore</a></li>
-                                            <li><a href="#"><i class="fa fa-fw fa-bell" aria-hidden="true"></i> Enable notifications for this post</a></li>
-                                            <li><a href="#"><i class="fa fa-fw fa-eye-slash" aria-hidden="true"></i> Hide</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="#"><i class="fa fa-fw fa-trash" aria-hidden="true"></i> Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </span>
                             <hr>
                             <div class="post-content">
                                 <h3><%=review.title%></h3>
@@ -299,3 +275,14 @@
         </div>
     </div>
 </div>
+<div id="review-form-edit" class="modal fade">
+  <div class="modal-dialog modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>Edit User</h3>
+    </div>
+    <div class="modal-body"></div>
+  </div>
+</div>
+
+

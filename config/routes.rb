@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
-  resources :reviews,          only: [:create, :destroy, :rate, :show, :update] do
+  resources :reviews,          only: [:create, :destroy, :edit,:thangtq, :rate, :show, :update] do
     resources :comments
   end
    post 'reviews_rate' , to: 'reviews#rate'
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   namespace :manage do
     get '/' => 'home#index'
     get 'data' => 'home#show'
+    resources :games
     resources :users  do
       get "upgrade"
       get "downgrade"

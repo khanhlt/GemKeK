@@ -17,11 +17,7 @@
                 </div>
 
               <div class="header_shousai_game">
-                <% if @game.reviews.average(:rating) != nil %>
-                  <p><%= @game.reviews.average(:rating).round(1) %> Point</p>
-                <%# else %>
-<!--                  <p>No rating</p>-->
-                <% end %>
+                  <p><%= get_rate_average(@game) %> Point</p>
               </div>
               <div class="header_shousai_game">
                 <% if @game.reviews.count() != 0 %>
