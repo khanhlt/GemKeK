@@ -1,0 +1,7 @@
+<div id="upgrade_<%= user.id %>">
+<% if user.is_admin == false %>
+<%= link_to manage_user_upgrade_path(user.id), method: :get do %> upgrade <% end %>
+<% else %>
+<%= link_to manage_user_downgrade_path(user.id), method: :get do %> downgrade <% end %>
+<% end %>
+</div>

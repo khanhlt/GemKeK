@@ -1,0 +1,32 @@
+<% users.each do |user| %>
+<% if not user.id == current_user.id %>
+                    <tr>
+                      <td><%= link_to user_profile_home_path(id: user.id) do %> <%= user.email %>
+                        <% end %> </td>
+                      <td><%= user.full_name %>
+                      </td>
+                      <td><%= user.created_at.to_date %></td>
+                      <td><%= user.reviews.count() %></td>
+                      <td><%= user.comments.count() %></td>
+                      <td>
+                      <% if not user.is_admin %>
+                      <%= render "manage/users/block", user: user %>
+                      <% end %>
+                      <% if not user.is_blocked %>
+                      <%= render "manage/users/upgrade", user: user %>
+                      <% end %>
+                      </td>
+                      <!--
+                      <% if user.is_blocked == false %>-->
+                        <!--<td><%= link_to manage_user_block_path(user.id), method: :get do %> block
+                        <% end %></td>-->
+                        <!--
+                      <% else %>-->
+                        <!--<td><%= link_to manage_user_unblock_path(user.id), method: :get do %> unblock
+                        <% end %></td>-->
+                        <!--
+                      <% end %>-->
+
+                    </tr>
+                  <% end %>
+                <% end %>
