@@ -11,6 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
+ *= require select2
+ *= require manage/manage_game
  */
 
 @import "bootstrap-sprockets";

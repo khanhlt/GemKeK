@@ -1,11 +1,9 @@
 
-
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Data Tables
-      <small>advanced tables</small>
+      Game
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -20,29 +18,67 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title"><strong>Manage User</strong></h3>
+            <h3 class="box-title"><strong>Manage Game</strong></h3>
+             <%= link_to "#", class: "btn btn-success",
+                      data: { 
+                        toggle: "modal",
+                        url: new_manage_game_path(),
+                        target: "#game-form-edit"} do
+                         %>
+                         Add new
+                    <%end%>
           </div>
+          <% flash.each do |key, value|%>
+            <div class="alert-manage-game alert alert-<%= key %>"><%= value %></div>
+          <% end %>
+
           <!-- /.box-header -->
           <div class="box-body">
-            <div id="user-table">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>genere</th>
+                <th>platform</th>
+                <th>rate</th>
+                <th>action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @games.each do |game| %>
                 <tr>
-                  <th>Email</th>
-                  <th>full_name</th>
-                  <th>register date</th>
-                  <th>number of reviews</th>
-                  <th>number of comment</th>
-                  <th>Function</th>
-                </tr>
-                </thead>
-                <tbody>
-                <% @user = User.all %>
-                <%=render "manage/users/users_list", users: @user %>
+                  <td><%= game.name %></td>
+                  <td>
+                    <% game.genres_of_game.each_with_index do |genre, index| %>
+                      <%= index == 0 ? "" : "," %>
+                      <%= genre.name%>
+                    <% end %>
+                  </td>
+                  <td>
+                    <% game.platform_of_game.each_with_index do |platform, index| %>
+                      <%= index == 0 ? "" : "," %>
+                      <%= platform.name%>
+                    <% end %>
+                  </td>
+                  <td><%= get_rate_average(game) %></td>
+                  <td>
+                     
+                    <%= link_to "#", class: "btn btn-info",
+                      data: { 
+                        toggle: "modal",
+                        url: edit_manage_game_path(game.id),
+                        target: "#game-form-edit"} do
+                         %>
+                         Edit
+                    <%end%>
+                    <%= link_to "Delete", manage_game_path(game), method: :delete, class: "btn btn-danger",data: { confirm: 'Are you sure?' } %>
+                  </td>
 
-                </tfoot>
-                </table>
-            </div>
+                </tr>
+              <% end %>
+
+              </tfoot>
+              </table>
           </div>
           <!-- /.box-body -->
         </div>
@@ -50,9 +86,14 @@
         <!-- /.box -->
       </div>
       <!-- /.col -->
+   
+     
+
     </div>
     <!-- /.row -->
   </section>
+ 
+
   <!-- /.content -->
 </div>
 
@@ -253,4 +294,7 @@
   </div>
 </aside>
 <div class="control-sidebar-bg"></div>
-
+<div id="game-form-edit" class="modal fade">
+  <div class="modal-dialog modal-content">
+  </div>
+</div>

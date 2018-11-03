@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy, :edit]
-  before_action :find_review, only: [:update, :destroy]
+  before_action :find_review, only: [:update, :destroy, :edit]
   before_action :correct_user, only: [:update, :destroy]
   skip_before_action :verify_authenticity_token
 
@@ -18,6 +18,12 @@ class ReviewsController < ApplicationController
     else
       flash[:danger] = "Fail"
     end
+  end
+
+  def edit
+    respond_to do |format|
+    format.js { render partial: "form", locals: {review: @review}}
+  end
   end
 
   # Update action updates the post with the new information
@@ -60,6 +66,12 @@ class ReviewsController < ApplicationController
     else
       flash[:danger] = "Fail"
     end
+  end
+
+  def destroy
+    @review.destroy
+    
+    redirect_to user_profile_home_path id: params[:user_id]
   end
 
   private

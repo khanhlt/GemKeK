@@ -6,6 +6,7 @@
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag 'manage/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -328,7 +329,9 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Manage User</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Manage Game</a></li>
+            <li><%=link_to manage_games_path do%>
+                <i class="fa fa-circle-o"></i> Manage Game
+              <%end%>
           </ul>
         </li>
         <li>

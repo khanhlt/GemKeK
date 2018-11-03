@@ -1,5 +1,3 @@
-
-
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -20,33 +18,101 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title"><strong>Manage User</strong></h3>
+            <h3 class="box-title"><strong>Manage Game</strong></h3><hr>
+            <button class="btn btn-success" data-toggle="modal" data-target="#create_game">Create Game</button>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
-            <div id="user-table">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>Email</th>
-                  <th>full_name</th>
-                  <th>register date</th>
-                  <th>number of reviews</th>
-                  <th>number of comment</th>
-                  <th>Function</th>
-                </tr>
-                </thead>
-                <tbody>
-                <% @user = User.all %>
-                <%=render "manage/users/users_list", users: @user %>
-
-                </tfoot>
-                </table>
-            </div>
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Genres</th>
+                <th>Platform</th>
+                <th>Company</th>
+                <th>Rate</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Assassin's creed Odyssey</td>
+                <td>Brain Training
+                </td>
+                <td>iOS</td>
+                <td>VinaGame</td>
+                <td>5</td>
+                <td>
+                  <a href="#">
+                    <i class="fa fa-trash-o fa-lg" style="color: red" aria-hidden="true"></i>
+                  </a>
+                  <a>
+                    <i class="fa fa-pencil-square-o fa-lg" style="color: blue" aria-hidden="true"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Assassin's creed Odyssey</td>
+                <td>Brain Training
+                </td>
+                <td>iOS</td>
+                <td>VinaGame</td>
+                <td>5</td>
+                <td>
+                  <a href="#">
+                    <i class="fa fa-trash-o fa-lg" style="color: red" aria-hidden="true"></i>
+                  </a>
+                  <a>
+                    <i class="fa fa-pencil-square-o fa-lg" style="color: blue" aria-hidden="true"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Assassin's creed Odyssey</td>
+                <td>Brain Training
+                </td>
+                <td>iOS</td>
+                <td>VinaGame</td>
+                <td>5</td>
+                <td>
+                  <a href="#">
+                    <i class="fa fa-trash-o fa-lg" style="color: red" aria-hidden="true"></i>
+                  </a>
+                  <a>
+                    <i class="fa fa-pencil-square-o fa-lg" style="color: blue" aria-hidden="true"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Assassin's creed Odyssey</td>
+                <td>Brain Training
+                </td>
+                <td>iOS</td>
+                <td>VinaGame</td>
+                <td>5</td>
+                <td>
+                  <a href="#">
+                    <i class="fa fa-trash-o fa-lg" style="color: red" aria-hidden="true"></i>
+                  </a>
+                  <a>
+                    <i class="fa fa-pencil-square-o fa-lg" style="color: blue" aria-hidden="true"></i>
+                  </a>
+                </td>
+              </tr>
+              <tfoot>
+              <tr>
+                <th>Name</th>
+                <th>Genres</th>
+                <th>Platform</th>
+                <th>Computer</th>
+                <th>Rate</th>
+                <th></th>
+              </tr>
+              </tfoot>
+            </table>
           </div>
           <!-- /.box-body -->
         </div>
-        <!-- /.box -->
         <!-- /.box -->
       </div>
       <!-- /.col -->
@@ -254,3 +320,48 @@
 </aside>
 <div class="control-sidebar-bg"></div>
 
+<div id="create_game" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="width: 800px !important;">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Create Game</h4>
+    </div>
+    <div class="modal-body">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="Name">Name</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+          <label for="Platform">Platform:</label>
+          <input type="text" class="form-control" id="Platform">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="genres">Genres</label>
+          <input type="text" class="form-control" id="genres">
+        </div>
+        <div class="form-group">
+          <label for="Company">Company</label>
+          <input type="text" class="form-control" id="Company">
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea class="form-control" rows="5" id="Content"></textarea>
+        </div>
+        <button class=" btn btn-primary">Create</button>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+</div>
+</div>
