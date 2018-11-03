@@ -1,4 +1,5 @@
-
+//= require jquery
+//= require jquery_ujs
 //= require ./js/jquery.min
 //= require ./js/bootstrap.min
 //= require ./js/jquery.dataTables.min
@@ -8,3 +9,5 @@
 //= require ./js/adminlte.min
 //= require ./js/demo
 //= require ./js/add
+//= require select2
+//= require manage/game_edit

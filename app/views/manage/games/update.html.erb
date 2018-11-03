@@ -1,9 +1,9 @@
-
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Game
+      Data Tables
+      <small>advanced tables</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -18,7 +18,8 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title"><strong>Manage Game</strong></h3>
+            <h3 class="box-title"><strong>Manage Game</strong></h3><hr>
+            <button class="btn btn-success" data-toggle="modal" data-target="#create_game">Create Game</button>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
@@ -26,47 +27,92 @@
               <thead>
               <tr>
                 <th>Name</th>
-                <th>genere</th>
-                <th>platform</th>
-                <th>relase date</th>
-                <th>rate</th>
-                <th>action</th>
+                <th>Genres</th>
+                <th>Platform</th>
+                <th>Company</th>
+                <th>Rate</th>
+                <th></th>
               </tr>
               </thead>
               <tbody>
-              <% @games.each do |game| %>
-                <tr>
-                  <td><%= game.name %></td>
-                  <td>
-                    <% game.genres_of_game.each_with_index do |genre, index| %>
-                      <%= index == 0 ? "" : "," %>
-                      <%= genre.name%>
-                    <% end %>
-                  </td>
-                  <td>
-                    <% game.platform_of_game.each_with_index do |platform, index| %>
-                      <%= index == 0 ? "" : "," %>
-                      <%= platform.name%>
-                    <% end %>
-                  </td>
-                  <td><%= get_rate_average(game) %></td>
-                  <td><button type="button" class="btn btn-danger">Danger</button>
-                  </td>
-                  <%# if user.is_blocked == false %>
-<!--                    <td><%#= link_to manage_user_block_path(user.id), class: "btn btn-danger", method: :patch do %> Delete <%# end %></td>-->
-                  <%# else %>
-<!--                    <td><%#= link_to manage_user_unblock_path(user.id), method: :patch do %> unblock <%# end %></td>-->
-                  <%# end %>
-
-                </tr>
-              <% end %>
-
+              <tr>
+                <td>Assassin's creed Odyssey</td>
+                <td>Brain Training
+                </td>
+                <td>iOS</td>
+                <td>VinaGame</td>
+                <td>5</td>
+                <td>
+                  <a href="#">
+                    <i class="fa fa-trash-o fa-lg" style="color: red" aria-hidden="true"></i>
+                  </a>
+                  <a>
+                    <i class="fa fa-pencil-square-o fa-lg" style="color: blue" aria-hidden="true"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Assassin's creed Odyssey</td>
+                <td>Brain Training
+                </td>
+                <td>iOS</td>
+                <td>VinaGame</td>
+                <td>5</td>
+                <td>
+                  <a href="#">
+                    <i class="fa fa-trash-o fa-lg" style="color: red" aria-hidden="true"></i>
+                  </a>
+                  <a>
+                    <i class="fa fa-pencil-square-o fa-lg" style="color: blue" aria-hidden="true"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Assassin's creed Odyssey</td>
+                <td>Brain Training
+                </td>
+                <td>iOS</td>
+                <td>VinaGame</td>
+                <td>5</td>
+                <td>
+                  <a href="#">
+                    <i class="fa fa-trash-o fa-lg" style="color: red" aria-hidden="true"></i>
+                  </a>
+                  <a>
+                    <i class="fa fa-pencil-square-o fa-lg" style="color: blue" aria-hidden="true"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Assassin's creed Odyssey</td>
+                <td>Brain Training
+                </td>
+                <td>iOS</td>
+                <td>VinaGame</td>
+                <td>5</td>
+                <td>
+                  <a href="#">
+                    <i class="fa fa-trash-o fa-lg" style="color: red" aria-hidden="true"></i>
+                  </a>
+                  <a>
+                    <i class="fa fa-pencil-square-o fa-lg" style="color: blue" aria-hidden="true"></i>
+                  </a>
+                </td>
+              </tr>
+              <tfoot>
+              <tr>
+                <th>Name</th>
+                <th>Genres</th>
+                <th>Platform</th>
+                <th>Computer</th>
+                <th>Rate</th>
+                <th></th>
+              </tr>
               </tfoot>
-              </table>
+            </table>
           </div>
           <!-- /.box-body -->
         </div>
-        <!-- /.box -->
         <!-- /.box -->
       </div>
       <!-- /.col -->
@@ -274,3 +320,48 @@
 </aside>
 <div class="control-sidebar-bg"></div>
 
+<div id="create_game" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="width: 800px !important;">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Create Game</h4>
+    </div>
+    <div class="modal-body">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="Name">Name</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+          <label for="Platform">Platform:</label>
+          <input type="text" class="form-control" id="Platform">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="genres">Genres</label>
+          <input type="text" class="form-control" id="genres">
+        </div>
+        <div class="form-group">
+          <label for="Company">Company</label>
+          <input type="text" class="form-control" id="Company">
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea class="form-control" rows="5" id="Content"></textarea>
+        </div>
+        <button class=" btn btn-primary">Create</button>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+</div>
+</div>
