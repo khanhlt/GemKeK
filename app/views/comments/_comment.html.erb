@@ -1,51 +1,80 @@
-<div id="comment_<%=review.id%>">
-<% review.comments.each do |comment| %> 
-              <div class="row">
-                  
-                <div class="col-md-1 picture-user">
-                  <img src="/assets/game/game1.jpg" alt="">
-                </div>
-                <div class="col-md-11">
-                  <div class="col-md-12 fix-pading-content">
-                    <div class="name-user col-md-3"><%= comment.user.full_name %>
-                    </div>
-                    <div class="col-md-3 star-user">
-                      <div class="text-right"><%= time_ago_in_words(comment.created_at) %></div>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <% if comment.user == current_user %>
-                    <div class="fix-content-comment-space " style="margin: 9px -15px 10px 0px!important;">
-                      <a href="#" data-xeditable="true" data-pk=<%= comment.id %> data-model="comment" data-name="content" data-url=<%= review_comment_path(review_id: review.id, id: comment.id) %> data-title="Edit" class="editable editable-click"><%= comment.content %></a>
-                    </div>
-                    <% else %>
-                      <div class="fix-content-comment-space " style="margin: 9px -15px 10px 0px!important;"><%= comment.content %></div>
-                  <% end %>
-                      <div>
-                      <%= render "reviews/like", object: comment %>
-                      <% if current_user == comment.user %>
-                          <%= link_to review_comment_path(comment.id, review_id: review.id, comment_id: comment.id), method: :delete, data: {confirm: 'Are you sure?'}, remote: true do %>
-                            | <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
-                          <% end %>
-                        </strong>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-            <br><br>
-            <% if user_signed_in? %>
-              <% remo = true %>
-              <% else %>
-              <% remo = false %>
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="comment_<%= review.id %>">
+  <% review.comments.each do |comment| %>
+    <div class="row">
+      <div class="col-md-1 picture-user">
+        <img src="/assets/game/game1.jpg" alt="">
+      </div>
+      <div class="col-md-11">
+        <div class="col-md-12 fix-pading-content">
+          <div class="name-user col-md-3"><%= comment.user.full_name %>
+          </div>
+          <div class="col-md-3 star-user">
+            <div class="text-right"><%= time_ago_in_words(comment.created_at) %> ago</div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <% if comment.user == current_user %>
+            <div class="fix-content-comment-space " style="margin: 9px -15px 10px 0px!important;">
+<!--              <a href="#" data-xeditable="true" data-pk=<%#= comment.id %> data-model="comment" data-name="content" data-url=<%#= review_comment_path(review_id: review.id, id: comment.id) %> data-title="Edit" class="editable editable-click"><%#= comment.content %></a>-->
+              <a href="#" id="user-comment"><%= comment.content %></a>
+            </div>
+          <% else %>
+            <div class="fix-content-comment-space " style="margin: 9px -15px 10px 0px!important;"><%= comment.content %></div>
+          <% end %>
+          <div>
+            <%= render "reviews/like", object: comment %>
+            <% if current_user == comment.user %>
+              <%= link_to review_comment_path(comment.id, review_id: review.id, comment_id: comment.id), method: :delete, data: {confirm: 'Are you sure?'}, remote: true do %>
+                | <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
               <% end %>
-            <%= form_for [review, Comment.new], remote: remo do |f| %>
-              <%= f.text_field :content, placeholder: "Add a comment...", :class => "input-comment", required: "required" %>
-              <%= hidden_field_tag :review_id, params[review.id] %>
-              <br><br>
-              <div class="form-group text-right">
-                <%= f.submit "Add Comment", class: "btn btn-primary add-commit-button" %>
-              </div>
+              </strong>
             <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+    <script type="text/javascript">
+        //turn to inline mode
+        $.fn.editable.defaults.mode = 'inline';
+        $.fn.editable.defaults.ajaxOptions = {
+            type: "put",
+            dataType: "json"
+        }
+        $('#user-comment').editable({
+            type: 'text',
+            pk: '<%= comment.id %>',
+            url: '<%= review_comment_path(review_id: review.id, id: comment.id)%>',
+            title: 'Edit comment',
+            params: function (params) {  //params already contain `name`, `value` and `pk`
+                var data = {};
+                data['content'] = params.value;
+                return data;
+            }
+        });
+    </script>
+  <% end %>
+  <br><br>
+  <% if user_signed_in? %>
+    <% remo = true %>
+  <% else %>
+    <% remo = false %>
+  <% end %>
+  <%= form_for [review, Comment.new], remote: remo do |f| %>
+    <%= f.text_field :content, placeholder: "Add a comment...", :class => "input-comment", required: "required" %>
+    <%= hidden_field_tag :review_id, params[review.id] %>
+    <br><br>
+    <div class="form-group text-right">
+      <%= f.submit "Add Comment", class: "btn btn-primary add-commit-button" %>
+    </div>
+  <% end %>
 </div>
+</body>

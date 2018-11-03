@@ -63,11 +63,12 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     respond_to do |format|
       if @comment.update(comment_params)
+        puts "success!"
         format.html { redirect_to @comment, notice: 'Edit was successfully updated.' }
         format.json { head :no_content } # 204 No Content
       else
         format.html { render action: "edit" }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -98,6 +99,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit :content
+      params.permit :content
     end
 end
