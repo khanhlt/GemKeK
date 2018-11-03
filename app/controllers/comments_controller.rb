@@ -30,10 +30,11 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @review = Review.find(params[:review_id])
-    @comment = @review.comments.new comment_params
+    @comment = @review.comments.new comment_params_add
     @comment.user_id = current_user.id
 
     if @comment.save
+      puts "ahaha";
       respond_to do |format|
         format.html { redirect_to request.referrer }
         format.js
@@ -62,7 +63,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     respond_to do |format|
-      if @comment.update(comment_params)
+      if @comment.update(comment_params_edit)
         puts "success!"
         format.html { redirect_to @comment, notice: 'Edit was successfully updated.' }
         format.json { head :no_content } # 204 No Content
@@ -98,7 +99,11 @@ class CommentsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def comment_params
+    def comment_params_add
+      params.require(:comment).permit :content
+    end
+
+    def comment_params_edit
       params.permit :content
     end
 end

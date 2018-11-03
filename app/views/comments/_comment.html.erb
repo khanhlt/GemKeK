@@ -4,6 +4,11 @@
 </head>
 
 <body>
+
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+
 <div id="comment_<%= review.id %>">
   <% review.comments.each do |comment| %>
     <div class="row">
@@ -22,7 +27,7 @@
           <% if comment.user == current_user %>
             <div class="fix-content-comment-space " style="margin: 9px -15px 10px 0px!important;">
 <!--              <a href="#" data-xeditable="true" data-pk=<%#= comment.id %> data-model="comment" data-name="content" data-url=<%#= review_comment_path(review_id: review.id, id: comment.id) %> data-title="Edit" class="editable editable-click"><%#= comment.content %></a>-->
-              <a href="#" id="user-comment"><%= comment.content %></a>
+              <a href="#" class="user-comment"><%= comment.content %></a>
             </div>
           <% else %>
             <div class="fix-content-comment-space " style="margin: 9px -15px 10px 0px!important;"><%= comment.content %></div>
@@ -39,9 +44,6 @@
         </div>
       </div>
     </div>
-    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
     <script type="text/javascript">
         //turn to inline mode
         $.fn.editable.defaults.mode = 'inline';
@@ -49,7 +51,7 @@
             type: "put",
             dataType: "json"
         }
-        $('#user-comment').editable({
+        $('.user-comment').editable({
             type: 'text',
             pk: '<%= comment.id %>',
             url: '<%= review_comment_path(review_id: review.id, id: comment.id)%>',
@@ -62,7 +64,9 @@
         });
     </script>
   <% end %>
+
   <br><br>
+
   <% if user_signed_in? %>
     <% remo = true %>
   <% else %>
@@ -76,5 +80,6 @@
       <%= f.submit "Add Comment", class: "btn btn-primary add-commit-button" %>
     </div>
   <% end %>
+
 </div>
 </body>
