@@ -71,7 +71,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     
-    redirect_to user_profile_home_path id: params[:user_id]
+    redirect_to request.referrer
   end
 
   private

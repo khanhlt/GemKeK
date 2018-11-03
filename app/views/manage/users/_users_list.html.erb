@@ -1,5 +1,5 @@
 <% users.each do |user| %>
-<% if not user.id == current_user.id %>
+<% if not user.is_admin %>
                     <tr>
                       <td><%= link_to user_profile_home_path(id: user.id) do %> <%= user.email %>
                         <% end %> </td>
@@ -11,9 +11,6 @@
                       <td>
                       <% if not user.is_admin %>
                       <%= render "manage/users/block", user: user %>
-                      <% end %>
-                      <% if not user.is_blocked %>
-                      <%= render "manage/users/upgrade", user: user %>
                       <% end %>
                       </td>
                       <!--
