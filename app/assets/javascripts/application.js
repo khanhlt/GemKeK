@@ -9,3 +9,4 @@
 //= require bootstrap3-editable/bootstrap-editable
 //= require game_rating
 //= require edit_review
+//= require Chart.bundle.min
