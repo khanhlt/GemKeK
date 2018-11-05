@@ -1,5 +1,52 @@
-
-
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+      </div>
+      <div class="pull-left info">
+        <p>Alexander Pierce</p>
+        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+      </div>
+    </div>
+    <%= form_tag manage_user_search_user_path(current_user.id), :method => 'get', :class => "sidebar-form" do %>
+      <div class="input-group">
+          <span class="input-group-btn">
+          <%= text_field_tag :search_user, params[:search_user], :value => "", :class => "form-control", placeholder: "Search..." %>
+            <%= submit_tag id: "search-btn", class: 'btn btn-flat' %><i class="fa fa-search"></i>
+        </span>
+      </div>
+    <% end %>
+    <!-- /.search form -->
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu" data-widget="tree">
+      <li class="header">MAIN NAVIGATION</li>
+      <li>
+        <a href="#">
+          <i class="fa fa-th"></i> <span>Report</span>
+        </a>
+      </li>
+      <li class="treeview active menu-open">
+        <a href="#">
+          <i class="fa fa-files-o"></i>
+          <span>Manage</span>
+          <span class="pull-right-container">
+            <span class="label label-primary pull-right">4</span>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Manage User</a></li>
+          <li><%=link_to manage_games_path do%>
+            <i class="fa fa-circle-o"></i> Manage Game
+            <%end%>
+          </ul>
+        </li>
+      </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -27,21 +74,30 @@
             <div id="user-table">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
-                  <th>Email</th>
-                  <th>full_name</th>
-                  <th>register date</th>
-                  <th>number of reviews</th>
-                  <th>number of comment</th>
-                  <th>Function</th>
-                </tr>
+                  <tr>
+                    <th>Email</th>
+                    <th>full_name</th>
+                    <th>register date</th>
+                    <th>number of reviews</th>
+                    <th>number of comment</th>
+                    <th>Function</th>
+                  </tr>
                 </thead>
                 <tbody>
-                <% @user = User.all %>
-                <%=render "manage/users/users_list", users: @user %>
-
+                  <% @user = User.all %>
+                  <%=render "manage/users/users_list", users: @user %>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>Email</th>
+                    <th>full_name</th>
+                    <th>register date</th>
+                    <th>number of reviews</th>
+                    <th>number of comment</th>
+                    <th>Function</th>
+                  </tr>
                 </tfoot>
-                </table>
+              </table>
             </div>
           </div>
           <!-- /.box-body -->
@@ -55,14 +111,6 @@
   </section>
   <!-- /.content -->
 </div>
-
-<footer class="main-footer">
-  <div class="pull-right hidden-xs">
-    <b>Version</b> 2.4.0
-  </div>
-  <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-  reserved.
-</footer>
 
 <aside class="control-sidebar control-sidebar-dark">
   <!-- Create the tabs -->
