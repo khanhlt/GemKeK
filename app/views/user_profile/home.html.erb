@@ -1,94 +1,20 @@
 <div style="margin-top: 72px;"></div>
 <div class="mainbody container-fluid">
-    <div class="row">
-        <div class="navbar-wrapper">
-            <div class="container-fluid">
-                <div class="navbar navbar-default navbar-static-top" role="navigation">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
-                                    class="icon-bar"></span><span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="./ORqmj" style="margin-right:-8px; margin-top:-5px;">
-                                <img alt="Brand" src="https://lut.im/7trApsDX08/GeilMRp1FIm4f2p7.png" width="30px" height="30px">
-                            </a>
-                            <a class="navbar-brand" href="./ORqmj">Project*</a>
-                            <i class="brand_network"><small><small>diaspora* Network</small></small></i>
-                        </div>
-                        <div class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav">
-                                <li><a href="./ORqmj">Stream</a></li>
-                                <li><a href="#">My Activity</a></li>
-                                <li><span class="badge badge-important">2</span><a href="#"><i class="fa fa-bell-o fa-lg" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a></li>
-                            </ul>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="user-avatar pull-left" style="margin-right:8px; margin-top:-5px;">
-                                        <img src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" class="img-responsive img-circle" title="John Doe" alt="John Doe" width="30px" height="30px">
-                                    </span>
-                                    <span class="user-name">
-                                        John Doe
-                                    </span>
-                                    <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <div class="navbar-content">
-                                                <div class="row">
-                                                    <div class="col-md-5">
-                                                        <img src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" alt="Alternate Text" class="img-responsive" width="120px" height="120px" />
-                                                        <p class="text-center small">
-                                                            <a href="./3X6zm">Change Photo</a></p>
-                                                    </div>
-                                                    <div class="col-md-7">
-                                                        <span>John Doe</span>
-                                                        <p class="text-muted small">
-                                                            <%=current_user.email%></p>
-                                                        <div class="divider">
-                                                        </div>
-                                                        <a href="./56ExR" class="btn btn-default btn-xs"><i class="fa fa-user-o" aria-hidden="true"></i> Profile</a>
-                                                        <a href="#" class="btn btn-default btn-xs"><i class="fa fa-address-card-o" aria-hidden="true"></i> Contacts</a>
-                                                        <a href="#" class="btn btn-default btn-xs"><i class="fa fa-cogs" aria-hidden="true"></i> Settings</a>
-                                                        <a href="#" class="btn btn-default btn-xs"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Help!</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="navbar-footer">
-                                                <div class="navbar-footer-content">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <a href="#" class="btn btn-default btn-sm"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Change Passowrd</a>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <a href="#" class="btn btn-default btn-sm pull-right"><i class="fa fa-power-off" aria-hidden="true"></i> Sign Out</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
         <div style="padding-top:50px;"> </div>
         <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="media">
                         <div align="center">
-                            <img class="thumbnail img-responsive" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="300px" height="300px">
+                            <img class="thumbnail img-responsive" <%=image_tag @user.avatar.url, height: 300, width: 300 %>
                         </div>
                         <div class="media-body">
-                            <h3><strong>Gender</strong></h3>
-                            <p>Male</p>
+                            <h3><strong>Full Name</strong></h3>
+                            <p><%= @user.full_name %></p>
                             <hr>
-                            <h3><strong>Birthday</strong></h3>
-                            <p>January 01 1901</p>
+                            <h3><strong>Registor day</strong></h3>
+                            <p><%= @user.created_at.to_date %></p>
                         </div>
                     </div>
                 </div>
@@ -118,10 +44,10 @@
                             <div class="panel-body">
                                 <div class="pull-left">
                                     <a href="#">
-                                        <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                                        <img class="media-object img-circle" style="margin-right:8px; margin-top:-5px;" <%= image_tag @user.avatar.url, height:50, width:50 %>
                                     </a>
                                 </div>
-                                <h4><a href="#" style="text-decoration:none;"><strong><%=@user.full_name%></strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(review.created_at) %> ago</i></a></small></small></h4>
+                                <h4><a href="#" style="text-decoration:none;"><strong><%=@user.full_name%></strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(review.created_at) %> ago on <%= link_to game_detail_path(id: review.game.id) do %><%= review.game.name %> <% end %> </i></a></small></small></h4>
                                 <span>
                                     <div class="navbar-right">
                                         <div class="dropdown">
@@ -176,12 +102,12 @@
                                                 <div class="panel-body">
                                                     <div class="pull-left">
                                                         <a href="#">
-                                                            <img class="media-object img-circle" src="https://diaspote.org/uploads/images/thumb_large_283df6397c4db3fe0344.png" width="35px" height="35px" style="margin-right:8px; margin-top:-5px;">
+                                                            <img class="media-object img-circle" style="margin-right:8px; margin-top:-5px;" <%= image_tag comment.user.avatar.url, height:50, width:50 %>
                                                         </a>
                                                     </div>
                                                     <h4>
                                                     <a href="#" style="text-decoration:none;"><strong>
-                                                    <%=comment.user.full_name%></strong></a></h4>
+                                                    <%= link_to user_profile_home_path(id: comment.user.id) do%><%=comment.user.full_name%><%end%></strong></a></h4>
                                                     <hr>
                                                     <div class="post-content">
                                                         <%=comment.content%>
@@ -198,8 +124,7 @@
                                 <div class="media">
                                     <div class="pull-left">
                                         <a href="#">
-                                            <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="35px" height="35px" style="margin-left:3px; margin-right:-5px;">
-                                        </a>
+                                        <img class="media-object img-circle" style="margin-right:8px; margin-top:-5px;" <%= image_tag @user.avatar.url, height:50, width:50 %>                                        </a>
                                     </div>
                                     <div class="media-body">
                                         <textarea class="form-control" rows="1" placeholder="Comment"></textarea>
@@ -214,15 +139,16 @@
                 <div class="tab-pane" id="Like">
                     <br><br>
                     <!-- Simple post content example. -->
-                    <%@reviews_like.each do |review| %>
+                    <%@reviews_like.each do |like| %>
+                    <% review = Review.where(id: like.likeable_id).first %>
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="pull-left">
                                 <a href="#">
-                                    <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
-                                </a>
+                                    <img class="media-object img-circle" style="margin-right:8px; margin-top:-5px;" <%= image_tag review.user.avatar.url, height:50, width:50 %>
                             </div>
-                            <h4><a href="#" style="text-decoration:none;"><strong>review.user.full_name</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(review.created_at) %> ago</i></a></small></small></h4>
+                            <h4><i style="text-decoration:none; color:grey;">Liked a <%= link_to user_profile_home_path(id: review.user.id) do %><%= review.user.full_name%><% end %>'s <%= link_to review_path(id: review.id) do %> review <%end%>  <%= time_ago_in_words(like.created_at) %> ago </i></small></small></h4>
+                            <h4><a href="#" style="text-decoration:none;"><strong><%= review.user.full_name%></strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(review.created_at) %> ago</i></a></small></small></h4>
                             <hr>
                             <div class="post-content">
                                 <h3><%=review.title%></h3>
@@ -243,15 +169,17 @@
                 </div><!--/tab-pane-->
                 <div class="tab-pane" id="Comment">
                     <br><br>
-                    <%@reviews_comment.each do |review| %>
+                    <%@reviews_comment.each do |comment| %>
+                    <% review = comment.review %>
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="pull-left">
                                 <a href="#">
-                                    <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                                    <img class="media-object img-circle" style="margin-right:8px; margin-top:-5px;" <%= image_tag review.user.avatar.url, height:50, width:50 %>
                                 </a>
                             </div>
-                            <h4><a href="#" style="text-decoration:none;"><strong>review.user.full_name</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(review.created_at) %> ago</i></a></small></small></h4>
+                            <h4><i style="text-decoration:none; color:grey;">commented on a <%= link_to user_profile_home_path(id: review.user.id) do %><%= review.user.full_name%><% end %>'s <%= link_to review_path(id: review.id) do %> review <%end%>  <%= time_ago_in_words(comment.created_at) %> ago </i></small></small></h4>
+                            <h4><a href="#" style="text-decoration:none;"><strong><%= review.user.full_name %></strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(review.created_at) %> ago</i></a></small></small></h4>
                             <hr>
                             <div class="post-content">
                                 <h3><%=review.title%></h3>
