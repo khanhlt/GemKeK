@@ -13,11 +13,11 @@
   <% review.comments.each do |comment| %>
     <div class="row">
       <div class="col-md-1 picture-user">
-        <img src="/assets/game/game1.jpg" alt="">
+  <img  <%= image_tag comment.user.avatar.url, height:50, width:50 %>
       </div>
       <div class="col-md-11">
         <div class="col-md-12 fix-pading-content">
-          <div class="name-user col-md-3"><%= comment.user.full_name %>
+                            <div class="name-user-replier col-md-3"><%= link_to user_profile_home_path(id: comment.user.id) do %><%= comment.user.full_name %><% end %>
           </div>
           <div class="col-md-3 star-user">
             <div class="text-right"><%= time_ago_in_words(comment.created_at) %> ago</div>

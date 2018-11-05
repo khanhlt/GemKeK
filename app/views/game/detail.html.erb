@@ -112,11 +112,11 @@
             <% @game.reviews.where.not(:title => nil).each do |review| %>
               <div class="row">
                 <div class="col-md-1 picture-user">
-                  <img src="/assets/game/game1.jpg" alt="">
+                    <img <%= image_tag review.user.avatar.url, height:50, width:50 %>
                 </div>
                 <div class="col-md-11">
                   <div class="col-md-12 user_review_space_top">
-                    <div class="name-user col-md-3"><%= review.user.full_name %>
+                    <div class="name-user col-md-3"><%= link_to user_profile_home_path(id: review.user.id) do %><%= review.user.full_name %><% end %>
                     </div>
                     <div class="col-md-3 fix-title-space star-user">
                       <strong><%= review.title %></strong>
@@ -157,11 +157,11 @@
                     <div class="col-md-12">
                       <div class="row">
                         <div class="col-md-1 picture-user">
-                          <img src="/assets/game/game1.jpg" alt="">
+                    <img  <%= image_tag review.user.avatar.url, height:50, width:50 %>
                         </div>
                         <div class="col-md-11">
                           <div class="col-md-12 user_review_space_top fix-pading-content">
-                            <div class="name-user-replier col-md-3"><%= comment.user.full_name %>
+                            <div class="name-user-replier col-md-3"><%= link_to user_profile_home_path(id: comment.user.id) do %><%= comment.user.full_name %><% end %>
                             </div>
                             <div class="col-md-3 star-user col-md-offset-6">
                               <div class="text-right"><%= comment.created_at.to_date %></div>

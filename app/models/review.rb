@@ -1,6 +1,7 @@
 class Review < ApplicationRecord
     has_many :likes, as: :likeable
     belongs_to :user
+    belongs_to :game
     has_many :comments
     
     def self.get_count_by_date(day_ago)

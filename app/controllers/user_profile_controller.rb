@@ -3,10 +3,10 @@ class UserProfileController < ApplicationController
  
   def home
   	#@user = current_user
-  	@reviews = @user.reviews.includes(comments: :user)
+  	@reviews = @user.reviews
   	#binding.pry
-	@reviews_like = Review.where(id: @user.likes.where(likeable_type: Review.name))
-	@reviews_comment = @user.comments.map{|c| c.review}.uniq
+	@reviews_like = Like.show_liked_review(@user.id)
+	@reviews_comment = @user.comments
   end
   
   
