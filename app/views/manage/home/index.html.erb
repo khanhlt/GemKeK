@@ -36,11 +36,8 @@
         <a href="#">
           <i class="fa fa-files-o"></i>
           <span>Manage</span>
-          <span class="pull-right-container">
-            <span class="label label-primary pull-right">4</span>
-          </span>
         </a>
-        <ul class="treeview-menu">
+        <ul class="treeview-menu active">
           <li><%= link_to manage_data_path do %>
               <i class="fa fa-circle-o"></i> Manage User
             <% end %>
@@ -58,14 +55,14 @@
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
-    <h1>
+<!--     <h1>
       Dashboard
       <small>Control panel</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
       <li class="active">Dashboard</li>
-    </ol>
+    </ol> -->
   </section>
 
   <!-- Main content -->
@@ -139,17 +136,16 @@
       <!--      </div>-->
 
       <!-- /.row -->
-
+      
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
       <% options = {width: 400, height: 140} %>
       <div><%= bar_chart @data, options %></div>
+      <div class="text-center" style="margin-top: 20px"><b>Report review and comments</b></div>
 
       <!--       <!-- ./col -->
     </div>
     <!-- /.row -->
-    <!--    <div><%#= bar_chart @data %></div>-->
-    <!--    -->
-
+  <!-- <div><%= bar_chart @data %></div>  -->
   </section>
   <!-- /.content-wrapper -->
 
@@ -347,8 +343,8 @@
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
-<script>
+<!-- <script>
     $.widget.bridge('uibutton', $.ui.button);
-</script>
+</script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>      
 

@@ -2,16 +2,6 @@
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
     <!-- Sidebar user panel -->
-    <div class="user-panel">
-      <div class="pull-left image">
-        <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-      </div>
-      <div class="pull-left info">
-        <p>
-          <% current_user.full_name %></p>
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-      </div>
-    </div>
     <%= form_tag manage_search_game_path, :method => 'get', :class => "sidebar-form" do %>
       <div class="input-group">
           <span class="input-group-btn">
@@ -39,9 +29,6 @@
         <a href="#">
           <i class="fa fa-files-o"></i>
           <span>Manage</span>
-          <span class="pull-right-container">
-            <span class="label label-primary pull-right">4</span>
-          </span>
         </a>
         <ul class="treeview-menu">
           <li><%= link_to manage_data_path do %>
@@ -62,7 +49,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Game
+      GAME TABLE
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
