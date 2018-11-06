@@ -24,6 +24,7 @@ gem 'owlcarousel2'
 gem 'bootstrap-datepicker-rails'
 # use select 2
 gem "select2-rails"
+gem 'carrierwave'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
