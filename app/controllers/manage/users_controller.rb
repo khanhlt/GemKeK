@@ -35,6 +35,24 @@ class Manage::UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+    respond_to do |format|
+    format.js { render partial: "form", locals: {user: @user}}
+    end
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes user_params
+      flash[:notice] = "Successfully updated user!"
+      redirect_to user_profile_home_path(id: @user.id)
+    else
+      flash[:alert] = "Error updating post!"
+      render :edit
+    end
+  end 
+
   private  
   def check_admin
     unless current_user.is_admin?
@@ -44,6 +62,10 @@ class Manage::UsersController < ApplicationController
   
   def find_user
     @user = User.find(params[:user_id])
+  end
+
+  def user_params
+    params.require(:user).permit :full_name, :email
   end
 
 end

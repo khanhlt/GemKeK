@@ -5,8 +5,8 @@ class UserProfileController < ApplicationController
   	#@user = current_user
   	@reviews = @user.reviews.order("created_at DESC")
   	#binding.pry
-	@reviews_like = Like.show_liked_review(@user.id).order("created_at DESC")
-	@reviews_comment = @user.comments.order("created_at DESC")
+	  @reviews_like = Like.show_liked_review(@user.id).order("created_at DESC")
+	  @reviews_comment = @user.comments.order("created_at DESC")
   end
   
   
