@@ -44,7 +44,7 @@
             <% @search_results.each do |game| %>
               <div class="col-md-12 fix-pading-content">
                 <div class="col-xs-12 col-md-4">
-                  <%= link_to game_detail_path(id: game.id) do %> <%= image_tag(game.photos.first.image, :class => "img-responsive fix-box-img-top-game") %>
+                  <%= link_to game_detail_path(id: game.id) do %> <%= image_tag(game.photos.first.image_url, :class => "img-responsive fix-box-img-top-game") %>
                   <% end %>
                 </div>
                 <div class="col-xs-12 col-md-8 content-game-home-page">

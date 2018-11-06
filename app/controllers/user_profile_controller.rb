@@ -3,10 +3,10 @@ class UserProfileController < ApplicationController
  
   def home
   	#@user = current_user
-  	@reviews = @user.reviews
+  	@reviews = @user.reviews.order("created_at DESC")
   	#binding.pry
-	@reviews_like = Like.show_liked_review(@user.id)
-	@reviews_comment = @user.comments
+	@reviews_like = Like.show_liked_review(@user.id).order("created_at DESC")
+	@reviews_comment = @user.comments.order("created_at DESC")
   end
   
   

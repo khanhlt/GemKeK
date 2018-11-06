@@ -20,7 +20,12 @@ Rails.application.routes.draw do
   namespace :manage do
     get '/' => 'home#index'
     get 'data' => 'home#show'
+    get 'top_reviews' => 'home#top_review'
+    get 'new_users' => 'home#new_user'
+    get 'search_game' => 'games#search_game'
+
     resources :games
+
     resources :users  do
       get "upgrade"
       get "downgrade"

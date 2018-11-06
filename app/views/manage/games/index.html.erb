@@ -2,19 +2,10 @@
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
     <!-- Sidebar user panel -->
-    <div class="user-panel">
-      <div class="pull-left image">
-        <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-      </div>
-      <div class="pull-left info">
-        <p>Alexander Pierce</p>
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-      </div>
-    </div>
-    <%= form_tag manage_user_search_user_path(current_user.id), :method => 'get', :class => "sidebar-form" do %>
+    <%= form_tag manage_search_game_path, :method => 'get', :class => "sidebar-form" do %>
       <div class="input-group">
           <span class="input-group-btn">
-          <%= text_field_tag :search_user, params[:search_user], :value => "", :class => "form-control", placeholder: "Search..." %>
+          <%= text_field_tag :search_game, params[:search_game], :value => "", :class => "form-control", placeholder: "Search..." %>
             <%= submit_tag id: "search-btn", class: 'btn btn-flat' %><i class="fa fa-search"></i>
         </span>
       </div>
@@ -24,26 +15,33 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MAIN NAVIGATION</li>
       <li>
-        <a href="#">
-          <i class="fa fa-th"></i> <span>Report</span>
+
+<!--        <a href="#">-->
+<!--          <i class="fa fa-th"></i> <span>Report</span>-->
+<!--        </a>-->
+        <a>
+          <%= link_to manage_path, class: "fa fa-th" do %>
+            Report
+          <% end %>
         </a>
       </li>
       <li class="treeview active menu-open">
         <a href="#">
           <i class="fa fa-files-o"></i>
           <span>Manage</span>
-          <span class="pull-right-container">
-            <span class="label label-primary pull-right">4</span>
-          </span>
         </a>
         <ul class="treeview-menu">
-          <li ><a href="#"><i class="fa fa-circle-o"></i> Manage User</a></li>
-          <li class="active"><%=link_to manage_games_path do%>
-            <i class="fa fa-circle-o"></i> Manage Game
-            <%end%>
-          </ul>
-        </li>
-      </ul>
+          <li><%= link_to manage_data_path do %>
+              <i class="fa fa-circle-o"></i> Manage User
+            <% end %>
+          </li>
+          <li><%= link_to manage_games_path do %>
+              <i class="fa fa-circle-o"></i> Manage Game
+            <% end %>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </section>
   <!-- /.sidebar -->
 </aside>
@@ -51,7 +49,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Game
+      GAME TABLE
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -67,16 +65,16 @@
         <div class="box">
           <div class="box-header">
             <h3 class="box-title"><strong>Manage Game</strong></h3>
-             <%= link_to "#", class: "btn btn-success",
-                      data: { 
-                        toggle: "modal",
-                        url: new_manage_game_path(),
-                        target: "#game-form-edit"} do
-                         %>
-                         Add new
-                    <%end%>
+            <%= link_to "#", class: "btn btn-success",
+                        data: {
+                            toggle: "modal",
+                            url: new_manage_game_path(),
+                            target: "#game-form-edit"} do
+            %>
+              Add new
+            <% end %>
           </div>
-          <% flash.each do |key, value|%>
+          <% flash.each do |key, value| %>
             <div class="alert-manage-game alert alert-<%= key %>"><%= value %></div>
           <% end %>
 
@@ -86,43 +84,51 @@
               <thead>
               <tr>
                 <th>Name</th>
-                <th>genere</th>
-                <th>platform</th>
-                <th>rate</th>
-                <th>action</th>
+                <th>Genere</th>
+                <th>Platform</th>
+                <th>Rating Score</th>
+                <th>Reviews</th>
+                <th>Action</th>
               </tr>
               </thead>
               <tbody>
               <% @games.each do |game| %>
                 <tr>
-                  <td><%= game.name %></td>
-                  <td>
-                    <% game.genres_of_game.each_with_index do |genre, index| %>
-                      <%= index == 0 ? "" : "," %>
-                      <%= genre.name%>
+                  <td><%= link_to game_detail_path(:id => game.id) do %>
+                      <%= game.name %></td>
                     <% end %>
-                  </td>
-                  <td>
-                    <% game.platform_of_game.each_with_index do |platform, index| %>
-                      <%= index == 0 ? "" : "," %>
-                      <%= platform.name%>
-                    <% end %>
-                  </td>
-                  <td><%= get_rate_average(game) %></td>
-                  <td>
-                     
-                    <%= link_to "#", class: "btn btn-info",
-                      data: { 
-                        toggle: "modal",
-                        url: edit_manage_game_path(game.id),
-                        target: "#game-form-edit"} do
-                         %>
-                         Edit
-                    <%end%>
-                    <%= link_to "Delete", manage_game_path(game), method: :delete, class: "btn btn-danger",data: { confirm: 'Are you sure?' } %>
-                  </td>
+                    <td>
+                      <% game.genres_of_game.each_with_index do |genre, index| %>
+                        <%= index == 0 ? "" : "," %>
+                        <%= link_to game_game_list_of_genre_path(genre: genre.name) do %>
+                          <%= genre.name %>
+                        <% end %>
+                      <% end %>
+                    </td>
+                    <td>
+                      <% game.platform_of_game.each_with_index do |platform, index| %>
+                        <%= index == 0 ? "" : "," %>
+                        <%= link_to game_game_list_of_platform_path(platform: platform.name) do %>
+                          <%= platform.name %>
+                        <% end %>
+                      <% end %>
+                    </td>
+                    <td><%= get_rate_average(game) %></td>
+                    <td><%= game.reviews.count() %></td>
+                    <td>
 
-                </tr>
+                      <%= link_to "#", class: "btn btn-info",
+                                  data: {
+                                      toggle: "modal",
+                                      url: edit_manage_game_path(game.id),
+                                      target: "#game-form-edit"} do
+                      %>
+                        Edit
+                      <% end %>
+                      <%= link_to "Delete", manage_game_path(game), method: :delete, class: "btn btn-danger", data: {confirm: 'Are you sure?'} %>
+                    </td>
+
+                    </tr>
               <% end %>
 
               </tfoot>
@@ -134,13 +140,12 @@
         <!-- /.box -->
       </div>
       <!-- /.col -->
-   
-     
+
 
     </div>
     <!-- /.row -->
   </section>
- 
+
 
   <!-- /.content -->
 </div>

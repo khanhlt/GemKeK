@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_18_224345) do
+ActiveRecord::Schema.define(version: 2018_11_06_071507) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -70,10 +70,10 @@ ActiveRecord::Schema.define(version: 2018_10_18_224345) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.string "image", null: false
     t.integer "game_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "platforms", force: :cascade do |t|

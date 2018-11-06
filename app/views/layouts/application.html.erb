@@ -54,7 +54,7 @@
               <ul class="dropdown-menu">
                 <li><%= link_to "Profile", user_profile_home_path(id: current_user.id) %>
                   <% if current_user.is_admin %>
-                  <li><%= link_to manage_data_path do %>Admin</a>
+                  <li><%= link_to manage_path do %>Admin</a>
                     <% end %></li>
                 <% end %>
                 <li><a href="#"><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %> </a></li>
