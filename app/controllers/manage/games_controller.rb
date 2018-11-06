@@ -47,6 +47,31 @@ class Manage::GamesController < ApplicationController
     redirect_to manage_games_path
   end
 
+  def search_game
+    @games = Game.search(params[:search_game])
+    @genres = Genre.search(params[:search_game])
+    @platforms = Platform.search(params[:search_game])
+
+    @search_results = []
+    @games.each do |game|
+      @search_results.push(game)
+    end
+
+    @genres.each do |genre|
+      genre.game_of_genre.each do |g|
+        @search_results.push(g)
+      end
+    end
+
+    @platforms.each do |platform|
+      platform.game_of_platform.each do |g|
+        @search_results.push(g)
+      end
+    end
+
+    @search_results = @search_results.uniq
+  end
+
   private
   def find_game
   	@game = Game.find(params[:id])

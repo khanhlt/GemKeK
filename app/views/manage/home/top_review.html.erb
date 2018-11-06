@@ -73,38 +73,75 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title"><strong>Manage User</strong></h3>
+            <h3 class="box-title"><strong>Manage Game</strong></h3>
+            <%= link_to "#", class: "btn btn-success",
+                        data: {
+                            toggle: "modal",
+                            url: new_manage_game_path(),
+                            target: "#game-form-edit"} do
+            %>
+              Add new
+            <% end %>
           </div>
+          <% flash.each do |key, value| %>
+            <div class="alert-manage-game alert alert-<%= key %>"><%= value %></div>
+          <% end %>
+
           <!-- /.box-header -->
           <div class="box-body">
-            <div id="user-table">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Genere</th>
+                <th>Platform</th>
+                <th>Rating Score</th>
+                <th>Reviews</th>
+                <th>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @top_reviews.each do |game| %>
                 <tr>
-                  <th>Email</th>
-                  <th>Full_name</th>
-                  <th>Register date</th>
-                  <th>Reviews</th>
-                  <th>Comments</th>
-                  <th>Function</th>
-                </tr>
-                </thead>
-                <tbody>
-                <% @user = User.all %>
-                <%= render "manage/users/users_list", users: @user %>
-                </tbody>
-                <!--                <tfoot>-->
-                <!--                  <tr>-->
-                <!--                    <th>Email</th>-->
-                <!--                    <th>full_name</th>-->
-                <!--                    <th>register date</th>-->
-                <!--                    <th>number of reviews</th>-->
-                <!--                    <th>number of comment</th>-->
-                <!--                    <th>Function</th>-->
-                <!--                  </tr>-->
-                <!--                </tfoot>-->
+                  <td><%= link_to game_detail_path(:id => game.id) do %>
+                      <%= game.name %></td>
+                    <% end %>
+                    <td>
+                      <% game.genres_of_game.each_with_index do |genre, index| %>
+                        <%= index == 0 ? "" : "," %>
+                        <%= link_to game_game_list_of_genre_path(genre: genre.name) do %>
+                          <%= genre.name %>
+                        <% end %>
+                      <% end %>
+                    </td>
+                    <td>
+                      <% game.platform_of_game.each_with_index do |platform, index| %>
+                        <%= index == 0 ? "" : "," %>
+                        <%= link_to game_game_list_of_platform_path(platform: platform.name) do %>
+                          <%= platform.name %>
+                        <% end %>
+                      <% end %>
+                    </td>
+                    <td><%= get_rate_average(game) %></td>
+                    <td><%= game.reviews.count() %></td>
+                    <td>
+
+                      <%= link_to "#", class: "btn btn-info",
+                                  data: {
+                                      toggle: "modal",
+                                      url: edit_manage_game_path(game.id),
+                                      target: "#game-form-edit"} do
+                      %>
+                        Edit
+                      <% end %>
+                      <%= link_to "Delete", manage_game_path(game), method: :delete, class: "btn btn-danger", data: {confirm: 'Are you sure?'} %>
+                    </td>
+
+                    </tr>
+              <% end %>
+
+              </tfoot>
               </table>
-            </div>
           </div>
           <!-- /.box-body -->
         </div>
@@ -112,6 +149,8 @@
         <!-- /.box -->
       </div>
       <!-- /.col -->
+
+
     </div>
     <!-- /.row -->
   </section>

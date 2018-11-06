@@ -31,6 +31,22 @@ class Manage::HomeController < ApplicationController
             ]
         }
     end
+
+    def top_review
+        @games = Game.includes(:photos, :genre_game, :genres_of_game,:platform_game,:platform_of_game).all()
+        @top_reviews = @games.sort_by { |x| x.reviews.count() or 0 }.reverse
+        puts "start"
+        @top_reviews.each do  |t|
+          puts t.reviews.count()
+        end
+        puts "end"
+        @top_reviews = @games[0...10]
+    end
+
+    def new_user
+        @new_users = User.new_register(50);
+    end
+
     private  def check_admin
         unless current_user.is_admin?
           flash[:danger] = t ".not_permission"
