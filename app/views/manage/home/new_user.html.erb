@@ -74,7 +74,7 @@
               <thead>
               <tr>
                 <th>Email</th>
-                <th>Full_name</th>
+                <th>Full Name</th>
                 <th>Register date</th>
                 <th>Reviews</th>
                 <th>Comments</th>
@@ -88,7 +88,7 @@
                       <% end %> </td>
                     <td><%= user.full_name %>
                     </td>
-                    <td><%= user.created_at.to_date %></td>
+                    <td><%= user.confirmed_at.to_date %></td>
                     <td><%= user.reviews.count() %></td>
                     <td><%= user.comments.count() %></td>
 

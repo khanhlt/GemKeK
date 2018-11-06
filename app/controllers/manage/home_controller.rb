@@ -35,12 +35,12 @@ class Manage::HomeController < ApplicationController
     def top_review
         @games = Game.includes(:photos, :genre_game, :genres_of_game,:platform_game,:platform_of_game).all()
         @top_reviews = @games.sort_by { |x| x.reviews.count() or 0 }.reverse
+        @top_reviews = @top_reviews[0...10]
         puts "start"
         @top_reviews.each do  |t|
-          puts t.reviews.count()
+            puts t.reviews.count()
         end
         puts "end"
-        @top_reviews = @games[0...10]
     end
 
     def new_user
