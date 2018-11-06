@@ -25,12 +25,14 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MAIN NAVIGATION</li>
-      <li class="active">
-        <a>
-          <%= link_to manage_path, class: "fa fa-th" do %>
-            Report
-          <% end %>
-        </a>
+      <li>
+        <%= link_to manage_path do %>
+        <li class="active">
+          <i class="fa fa-th"></i>
+          <span>Report</span>
+
+        </li>
+      <% end %>
       </li>
       <li class="treeview menu-open">
         <a href="#">

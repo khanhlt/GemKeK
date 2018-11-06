@@ -5,13 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create! email: "lekhanh.lamson@gmail.com", full_name: "Le Khanh", password: "1234567", confirmed_at: "2018-10-11 11:00", is_admin: true, remote_avatar_url: "https://i.imgur.com/YrEWPTp.jpg"
-User.create! email: "hoangtuyb96@gmail.com", full_name: "abc xyz", password: "863991",  confirmed_at: "2018-10-11 11:28:26"
-User.create! email: "minhhieu1096@gmail.com", full_name: "Aru", password: "123456",  confirmed_at: "2018-10-11 11:28:26"
-User.create! email: "lmh1410@gmail.com", full_name: "Boss", password: "234567",  confirmed_at: "2018-10-11 11:28:26"
-User.create! email: "hoahm@gmail.com", full_name: "Hoa", password: "123991",  confirmed_at: "2018-10-11 11:28:26"
-User.create! email: "test@gmail.com", password: "863991", full_name: "xyz abc", confirmed_at: "2018-10-11 11:28:26"
+User.create! email: "lekhanh.lamson@gmail.com", full_name: "Le Khanh", password: "1234567", confirmed_at: "2017-10-11 11:00", is_admin: true, remote_avatar_url: "https://i.imgur.com/YrEWPTp.jpg"
+User.create! email: "hoangtuyb96@gmail.com", full_name: "abc xyz", password: "1234567",  confirmed_at: "2018-01-21 11:28:26"
+User.create! email: "minhhieu1096@gmail.com", full_name: "Aru", password: "1234567",  confirmed_at: "2018-03-15 09:20:26"
+User.create! email: "lmh1410@gmail.com", full_name: "Boss", password: "234567",  confirmed_at: "2018-04-16 11:28:26"
+User.create! email: "hoahm@gmail.com", full_name: "Hoa", password: "123991",  confirmed_at: "2018-05-17 11:28:26"
+User.create! email: "test@gmail.com", password: "1234567", full_name: "David", confirmed_at: "2018-10-11 11:28:26"
 User.create! email: "nguyenthanhchinh96@gmail.com", password: "30061996", confirmed_at: "2018-10-11 11:28:26", full_name: "Thành Chính", is_admin: true, remote_avatar_url: "https://i.imgur.com/s1PoAKN.jpg"
+User.create! email: "lenp.soict@gmail.com", full_name: "Phi Le", password: "1234567", confirmed_at: "2018-10-11 11:00"
+User.create! email: "hoangnp.hust@gmail.com", full_name: "Hoang Phi", password: "1234567",  confirmed_at: "2017-09-12 03:00"
+User.create! email: "minhnk1096@gmail.com", full_name: "Minh Khang", password: "123456",  confirmed_at: "2018-01-11 11:28:26"
+User.create! email: "nguyenhien@gmail.com", full_name: "Nguyen Hien", password: "1234567",  confirmed_at: "2018-08-21 11:28:26"
+User.create! email: "hungnt@gmail.com", full_name: "Hung Nguyen", password: "1234567",  confirmed_at: "2018-09-11 11:28:26"
+User.create! email: "testimor@gmail.com", password: "1234567", full_name: "Alice Bob", confirmed_at: "2018-10-11 11:28:26"
+User.create! email: "nguyenkim@gmail.com", full_name: "Nguyen Kim", password: "1234567",  confirmed_at: "2018-04-16 11:28:26"
+User.create! email: "hoalv@gmail.com", full_name: "Le Viet Hoang", password: "1234567",  confirmed_at: "2018-05-17 11:28:26"
+User.create! email: "ngoisao@gmail.com", password: "1234567", full_name: "Ngoi Sao", confirmed_at: "2018-10-11 11:28:26"
+User.create! email: "anhduong@gmail.com", password: "1234567", confirmed_at: "2018-10-11 11:28:26", full_name: "Anh Duong"
+User.create! email: "vanphuc@gmail.com", full_name: "Van Phuc", password: "1234567", confirmed_at: "2018-10-11 11:00"
+User.create! email: "levanduan.hust@gmail.com", full_name: "Le Van Duan", password: "863991",  confirmed_at: "2017-09-12 03:00"
+User.create! email: "luonglv1992@gmail.com", full_name: "Van Luong", password: "123456",  confirmed_at: "2018-01-11 11:28:26"
+User.create! email: "nguyentienmui@gmail.com", full_name: "Nguyen Tien", password: "1234567",  confirmed_at: "2018-08-21 11:28:26"
+User.create! email: "trungnt@gmail.com", full_name: "Thanh Trung", password: "1234567",  confirmed_at: "2018-09-11 11:28:26"
+User.create! email: "sasukeschool@gmail.com", password: "1234567", full_name: "Sasuke", confirmed_at: "2018-10-11 11:28:26"
+
 Game.create name: "Generation Streets", relase_date: DateTime.new(2018, 06, 10), summary: "Generation Streets, a game based on the real-world map. Load your hometown, find your place and this casual shooter start giving you very unexpected impressions. Almost any point on Earth is available to load except the North pole and Antarctica."
 Game.create name: "Assassin's creed Odyssey", relase_date: DateTime.new(2018, 10, 16), summary: "Choose your fate in Assassin's Creed® Odyssey. From outcast to living legend, embark on an odyssey to uncover the secrets of your past and change the fate of Ancient Greece."
 Game.create name: "Miracle Circus", relase_date: DateTime.new(2018, 12, 01), summary: "Qi joins the miracle circus as a genius magician. The other members all welcome Qi’s coming, like Liao, Liu, Ji, Xiang,Ning. But as the night is near around, something is approaching, straightly to their heart. Who is watching? And who are the demons of night exactly? Qi starts his investigation on a common day "
@@ -73,11 +90,25 @@ Comment.create! user_id: 3, review_id: 8, content: "Being a big fan of the origi
 Like.create! likeable_id: 1, likeable_type: "Comment", user_id: 1
 Like.create! likeable_id: 1, likeable_type: "Review", user_id: 1
 Like.create! likeable_id: 1, likeable_type: "Comment", user_id: 2
+
 Platform.create name: "Windows", version: 8.1
 Platform.create name: "iOS", version: 11.4
 Platform.create name: "PS4", version: 3.0
 Platform.create name: "XBOX ONE", version: 5.1
-GamePlatform.create game_id: 1, platform_id: 1
+Platform.create name: "PC", version: 8.1
+Platform.create name: "Nintendo Switch", version: 11.4
+Platform.create name: "PS3", version: 3.0
+Platform.create name: "XBOX 360", version: 5.1
+Platform.create name: "Wii U", version: 4.0
+Platform.create name: "PlayStation Vita", version: 3.0
+Platform.create name: "Nintendo 3DS", version: 5.1
+Platform.create name: "Windows Phone", version: 8.1
+Platform.create name: "Android", version: 11.4
+Platform.create name: "iPhone", version: 3.0
+Platform.create name: "SEGA STATURN", version: 5.1
+Platform.create name: "Arcade", version: 4.0
+
+GamePlatform.create game_id: 1, platform_id: 8
 GamePlatform.create game_id: 2, platform_id: 2
 GamePlatform.create game_id: 3, platform_id: 3
 GamePlatform.create game_id: 4, platform_id: 4
@@ -150,3 +181,4 @@ GameGenre.create game_id: 7, genre_id: 2
 GameGenre.create game_id: 8, genre_id: 3
 GameGenre.create game_id: 9, genre_id: 2
 GameGenre.create game_id: 10, genre_id: 2
+GameGenre.create game_id: 3, genre_id: 3
