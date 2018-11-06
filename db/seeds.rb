@@ -87,18 +87,57 @@ GamePlatform.create game_id: 7, platform_id: 3
 GamePlatform.create game_id: 8, platform_id: 4
 GamePlatform.create game_id: 9, platform_id: 2
 GamePlatform.create game_id: 10, platform_id: 3
-Photo.create game_id: 1, image: "generation_streets_1"
-Photo.create game_id: 1, image: "generation_streets_2"
-Photo.create game_id: 2, image: "assassin_creed_odyssey_1"
-Photo.create game_id: 2, image: "assassin_creed_odyssey_2"
-Photo.create game_id: 3, image: "miracle_circus_1"
-Photo.create game_id: 4, image: "rhem_ii_se_the_cave"
-Photo.create game_id: 5, image: "twilight_path_1"
-Photo.create game_id: 6, image: "giraffe_town_1"
-Photo.create game_id: 7, image: "physical_exorcism"
-Photo.create game_id: 8, image: "save_me_mrtako"
-Photo.create game_id: 9, image: "pit_of_doom"
-Photo.create game_id: 10, image: "citrouille"
+
+photo = Game.find(1).photos.build
+photo.save(validate: false)
+photo.image.store!(File.open(File.join(Rails.root+"app/assets/images", 'generation_streets_1.jpg')))
+photo.save
+photo = Game.find(1).photos.build
+photo.save(validate: false)
+photo.image.store!(File.open(File.join(Rails.root+"app/assets/images", 'generation_streets_2.jpg')))
+photo.save
+photo = Game.find(2).photos.build
+photo.save(validate: false)
+photo.image.store!(File.open(File.join(Rails.root+"app/assets/images", 'assassin_creed_odyssey_1.jpg')))
+photo.save
+photo = Game.find(2).photos.build
+photo.save(validate: false)
+photo.image.store!(File.open(File.join(Rails.root+"app/assets/images", 'assassin_creed_odyssey_2.jpg')))
+photo.save
+photo = Game.find(3).photos.build
+photo.save(validate: false)
+photo.image.store!(File.open(File.join(Rails.root+"app/assets/images", 'miracle_circus_1.jpg')))
+photo.save
+photo = Game.find(4).photos.build
+photo.save(validate: false)
+photo.image.store!(File.open(File.join(Rails.root+"app/assets/images", 'rhem_ii_se_the_cave.jpg')))
+photo.save
+photo = Game.find(5).photos.build
+photo.save(validate: false)
+photo.image.store!(File.open(File.join(Rails.root+"app/assets/images", 'twilight_path_1.jpg')))
+photo.save
+photo = Game.find(6).photos.build
+photo.save(validate: false)
+photo.image.store!(File.open(File.join(Rails.root+"app/assets/images", 'giraffe_town_1.jpg')))
+photo.save
+photo = Game.find(7).photos.build
+photo.save(validate: false)
+photo.image.store!(File.open(File.join(Rails.root+"app/assets/images", 'physical_exorcism.jpg')))
+photo.save
+photo = Game.find(8).photos.build
+photo.save(validate: false)
+photo.image.store!(File.open(File.join(Rails.root+"app/assets/images", 'save_me_mrtako.jpg')))
+photo.save
+photo = Game.find(9).photos.build
+photo.save(validate: false)
+photo.image.store!(File.open(File.join(Rails.root+"app/assets/images", 'pit_of_doom.jpg')))
+photo.save 
+photo = Game.find(10).photos.build
+photo.save(validate: false)
+photo.image.store!(File.open(File.join(Rails.root+"app/assets/images", 'citrouille.jpg')))
+photo.save
+
+
 Genre.create name: "Action"
 Genre.create name: "Brain Training"
 Genre.create name: "Relax"

@@ -9,6 +9,7 @@ class Manage::GamesController < ApplicationController
   def new
     #binding.pry
     @game = Game.new
+    @photo = @game.photos.build
     respond_to do |format|
        format.js { render partial: "form",locals: {game: @game}} 
     end     
@@ -16,7 +17,12 @@ class Manage::GamesController < ApplicationController
   def create
     #binding.pry
     @game = Game.new (game_params)
-    if @game.save 
+    if @game.save
+      unless params[:game_photos].nil?
+        params[:game_photos]['photo'].each do |a|
+            @photos = @game.photos.create!(:image => a)
+        end
+      end  
       flash[:success] = "Create success"
       redirect_to manage_games_path
     else
@@ -33,7 +39,13 @@ class Manage::GamesController < ApplicationController
   end
 
   def update
+   
     if @game.update_attributes game_params
+      unless params[:game_photos].nil?
+        params[:game_photos]['photo'].each do |a|
+            @photos = @game.photos.create!(:image => a)
+        end
+      end  
       flash[:success] = "Update success"
       redirect_to manage_games_path 
     else  
@@ -78,6 +90,6 @@ class Manage::GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:name, :summary, genres_of_game_ids: [], platform_of_game_ids: [])
+    params.require(:game).permit(:name, :summary, genres_of_game_ids: [], platform_of_game_ids: [],:photos_attributes => [:game_id, :image])
   end
 end
