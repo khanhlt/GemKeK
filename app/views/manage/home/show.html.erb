@@ -15,13 +15,11 @@
         </div>
       <% end %>
       <li>
-        <%= link_to manage_path do %>
-        <li class="active">
-          <i class="fa fa-th"></i>
-          <span>Report</span>
-
-        </li>
-      <% end %>
+        <a>
+          <%= link_to manage_path, class: "fa fa-th" do %>
+            Report
+          <% end %>
+        </a>
       </li>
       <li class="treeview active menu-open">
         <a href="#">
