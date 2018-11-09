@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
     resources :games
 
-    resources :users  do
+    resources :users, only: [:show] do
       get "upgrade"
       get "downgrade"
       get "block"
