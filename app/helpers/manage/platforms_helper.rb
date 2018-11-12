@@ -1,0 +1,2 @@
+module Manage::PlatformsHelper
+end
