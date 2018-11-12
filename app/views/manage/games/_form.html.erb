@@ -50,10 +50,35 @@
     <%= f.submit @game.name.nil? ? "Create" : "Update" , class:'btn btn-default' %> 
   </div>
  <%end%>
+ <style type="text/css">
+ .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  color: black;
+}
+
+ </style>
  <script type="text/javascript">
  
    $("#genre_game_ids").select2({
-   });
+      tags:[],
+      maximumInputLength: 100
+    });
+    function log(e) {
+      var e=$("<li>"+e+"</li>");
+      console.log(e);
+    }
+   $("#genre_game_ids")
+    .on("change", function(e) { log("change "+JSON.stringify({val:e.val, added:e.added, removed:e.removed}));
+                                  console.log(e.val+""); })
+    .on("select2-opening", function() { console.log("opening"); })
+    .on("select2-open", function() { log("open"); })
+    .on("select2-close", function() { log("close"); })
+    .on("select2-highlight", function(e) { log ("highlighted val="+ e.val+" choice="+ JSON.stringify(e.choice));})
+    .on("select2-selecting", function(e) { log ("selecting val="+ e.val+" choice="+ JSON.stringify(e.choice));})
+    .on("select2-removing", function(e) { log ("removing val="+ e.val+" choice="+ JSON.stringify(e.choice));})
+    .on("select2-removed", function(e) { log ("removed val="+ e.val+" choice="+ JSON.stringify(e.choice));})
+    .on("select2-loaded", function(e) { log ("loaded (data property omitted for brevity)");})
+    .on("select2-focus", function(e) { log ("focus");})
+    .on("select2-blur", function(e) { log ("blur");});
 
    $('#platform_game_ids').select2({
     });

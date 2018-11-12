@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     get 'search_game' => 'games#search_game'
 
     resources :games
+    resources :genres
+    resources :platforms
 
     resources :users  do
       get "upgrade"

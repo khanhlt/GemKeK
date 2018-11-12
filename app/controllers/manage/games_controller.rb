@@ -39,7 +39,7 @@ class Manage::GamesController < ApplicationController
   end
 
   def update
-   
+    #binding.pry
     if @game.update_attributes game_params
       unless params[:game_photos].nil?
         params[:game_photos]['photo'].each do |a|

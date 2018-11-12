@@ -1,0 +1,21 @@
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3><%=@genre.name.nil? ? "New Genre" : "Edit Genre" %></h3>
+    </div>
+  <%= form_for [:manage, @genre] do |f| %>
+  <div class="modal-body">
+     <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :name, 'Game Title' %>
+          <%= f.text_field :name, class:"form-control"%>
+        </div>
+       
+      </div>
+           
+  </div>
+  
+  <div class="modal-footer">
+    <%= f.submit @genre.name.nil? ? "Create" : "Update" , class:'btn btn-default' %> 
+  </div>
+ <%end%>
+

@@ -25,8 +25,46 @@ star_rating.on('click', function() {
 		    alert(xhr.statusText+""+textStatus+""+error);
 	  	}
     })
+
 	return SetRatingStar();
 });
 
 SetRatingStar();
 });
+
+/*---------------------------form modal------------------------*/
+
+$(document).ready(function() {
+var star_rating_form = $('.star-rating-form .fa');
+
+var SetRatingStar = function() {
+console.log("thangtq");
+  return star_rating_form.each(function() {
+    if (parseInt(star_rating_form.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+      return $(this).removeClass('fa-star-o').addClass('fa-star');
+    } else {
+      return $(this).removeClass('fa-star').addClass('fa-star-o');
+    }
+  });
+};
+
+star_rating_form.on('click', function() {
+  star_rating_form.siblings('input.rating-value').val($(this).data('rating'));
+  console.log($(this).data('rating'))
+  // $.ajax({
+  //     type: "POST",
+  //     url: "/reviews_rate",
+  //     data: {review: { content: "", title: "", rating: $(this).data('rating')}, game_id: $('#game_id').val()},
+  //      success: function(data) {
+  //      },
+  //     error: function(xhr, textStatus, error) {
+  //       alert(xhr.statusText+""+textStatus+""+error);
+  //     }
+  //   })
+  return SetRatingStar();
+});
+
+SetRatingStar();
+});
+
+
