@@ -6,7 +6,7 @@ before_action :find_platform , only: [:destroy, :edit, :update]
   	end
 
   def new
-    binding.pry
+   
     @platform = Platform.new
     respond_to do |format|
        format.js { render partial: "form",locals: {platform: @platform}} 
@@ -21,7 +21,7 @@ before_action :find_platform , only: [:destroy, :edit, :update]
     else
    
       flash[:danger] = "Create error: " + @platform.errors.full_messages[0]
-      redirect_to manage_platformes_path   
+      redirect_to manage_platforms_path   
     end    
   end
 
