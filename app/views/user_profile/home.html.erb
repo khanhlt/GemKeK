@@ -35,8 +35,13 @@
                             <span>
                                 <h1 class="panel-title pull-left" style="font-size:30px;"><%=@user.full_name%> <small><%= @user.email%></small> <i class="fa fa-check text-success" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="John Doe is sharing with you"></i></h1>
                             </span>
+                            
+                                <% flash.each do |key, value| %>
+                                <br><hr>
+                                    <div class="flash notice">edit <%= key %>: <%= value %></div>
+                                  <% end %>
                             <%if user_signed_in? and @current_user.id == @user.id %>
-                            <br><br><hr>
+                            <br><hr>
                             <%= link_to "#",
                                 data: {
                                 toggle: "modal",
@@ -61,6 +66,7 @@
                                     </a>
                                 </div>
                                 <h4><a href="#" style="text-decoration:none;"><strong><%=@user.full_name%></strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(review.created_at) %> ago on <%= link_to game_detail_path(id: review.game.id) do %><%= review.game.name %> <% end %> </i></a></small></small></h4>
+                                
                                 <span>
                                     <div class="navbar-right">
                                         <div class="dropdown">

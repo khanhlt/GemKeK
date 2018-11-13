@@ -6,7 +6,7 @@ class RegistrationsController < Devise::RegistrationsController
     resource_updated = update_resource(resource, account_update_params)
     yield resource if block_given?
     if resource_updated
-
+      flash[:notice] = "Update Succesfull"
       bypass_sign_in resource, scope: resource_name
       respond_with resource, location: after_update_path_for(resource)
     else
