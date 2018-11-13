@@ -159,7 +159,7 @@
                                 <a href="#">
                                     <img class="media-object img-circle" style="margin-right:8px; margin-top:-5px;" <%= image_tag review.user.avatar.url, height:50, width:50 %>
                             </div>
-                            <h4><i style="text-decoration:none; color:grey;">Liked a <%= link_to user_profile_home_path(id: review.user.id) do %><%= review.user.full_name%><% end %>'s <%= link_to review_path(id: review.id) do %> review <%end%>  <%= time_ago_in_words(like.created_at) %> ago </i></small></small></h4>
+                            <h4><i style="text-decoration:none; color:grey;">Liked a <%= link_to user_profile_home_path(id: review.user.id) do %><%= review.user.full_name%><% end %>'s <%= link_to review_path(id: review.id) do %> review <%end%>  <%= time_ago_in_words(like.created_at) %> ago </i><small></small></h4>
                             <h4><a href="#" style="text-decoration:none;"><strong><%= review.user.full_name%></strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(review.created_at) %> ago</i></a></small></small></h4>
                             <hr>
                             <div class="post-content">
@@ -190,7 +190,7 @@
                                     <img class="media-object img-circle" style="margin-right:8px; margin-top:-5px;" <%= image_tag review.user.avatar.url, height:50, width:50 %>
                                 </a>
                             </div>
-                            <h4><i style="text-decoration:none; color:grey;">commented on a <%= link_to user_profile_home_path(id: review.user.id) do %><%= review.user.full_name%><% end %>'s <%= link_to review_path(id: review.id) do %> review <%end%>  <%= time_ago_in_words(comment.created_at) %> ago </i></small></small></h4>
+                            <h4><i style="text-decoration:none; color:grey;">commented on a <%= link_to user_profile_home_path(id: review.user.id) do %><%= review.user.full_name%><% end %>'s <%= link_to review_path(id: review.id) do %> review <%end%>  <%= time_ago_in_words(comment.created_at) %> ago </i><small></small></h4>
                             <h4><a href="#" style="text-decoration:none;"><strong><%= review.user.full_name %></strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(review.created_at) %> ago</i></a></small></small></h4>
                             <hr>
                             <div class="post-content">
@@ -225,3 +225,8 @@
     <div class="modal-body"></div>
   </div>
 </div>
+<script type="text/javascript">
+    $('#user-form-edit').on("show.bs.modal", function(e) {
+        $(this).find('.modal-body').load(e.relatedTarget.dataset.url);
+    });
+</script>

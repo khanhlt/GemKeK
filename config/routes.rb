@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     resources :games
     resources :genres
     resources :platforms
+    resources :reviews
+    resources :comments
 
     resources :users, only: [:show] do
       get "upgrade"
