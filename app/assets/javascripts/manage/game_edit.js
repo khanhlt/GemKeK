@@ -7,7 +7,7 @@
         $(this).find('.modal-content').load(e.relatedTarget.dataset.url);
         });
  $('#platform-form-edit').on("show.bs.modal", function(e) {
-        console.log("hello thangtqt");
+        console.log("hello thangtqt platform");
         $(this).find('.modal-content').load(e.relatedTarget.dataset.url);
         });
  
