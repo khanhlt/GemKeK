@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   get 'user_profile/home'
+  
   get 'game/index'
   get 'game/detail'
   get 'game/game_list_of_platform'
