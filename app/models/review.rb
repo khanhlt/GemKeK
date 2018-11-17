@@ -1,8 +1,8 @@
 class Review < ApplicationRecord
-    has_many :likes, as: :likeable
+    has_many :likes, as: :likeable, dependent: :destroy
     belongs_to :user
     belongs_to :game
-    has_many :comments
+    has_many :comments, dependent: :destroy
     
     def self.get_count_by_date(day_ago)
         if day_ago == 0
