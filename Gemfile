@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) {|repo| "https://github.com/#{repo}.git"}
 
 ruby '2.5.1'
 
@@ -10,7 +10,7 @@ gem 'sqlite3'
 gem 'ckeditor'
 gem 'chartjs-ror'
 gem "paperclip", "~> 6.0.0"
-gem "carrierwave" 
+gem "carrierwave"
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -20,7 +20,7 @@ gem "will_paginate"
 gem "bootstrap-will_paginate"
 # use js for
 gem 'jquery-rails'
-gem 'font-awesome-sass','~>4.3','>= 4.3.0'
+gem 'font-awesome-sass', '~>4.3', '>= 4.3.0'
 gem 'owlcarousel2'
 gem 'bootstrap-datepicker-rails'
 # use select 2
@@ -51,6 +51,8 @@ gem 'devise'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'bootstrap-x-editable-rails'
+gem 'igdb_client'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
