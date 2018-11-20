@@ -21,7 +21,7 @@
       </div>
       <div class="col-md-10" id="bs-example-navbar-collapse-1 ">
         <ul class="nav navbar-nav navbar-left">
-          <li><%= link_to "PC", game_game_list_of_platform_path, class: "page-scroll" %></li>
+          <li><%= link_to "PC", game_game_list_of_platform_path(:platform => "PC"), class: "page-scroll" %></li>
           <li><%= link_to "PS4", game_game_list_of_platform_path(:platform => "PS4"), class: "page-scroll" %></li>
           <li><%= link_to "XBox One", game_game_list_of_platform_path(:platform => "XBOX ONE"), class: "page-scroll" %></li>
           <li class="dropdown">
