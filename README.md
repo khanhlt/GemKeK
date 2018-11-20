@@ -16,3 +16,4 @@ Things you may want to cover:
         
         `rake db:drop db:create db:migrate db:seed`
 
+        `rake crawl:game`
