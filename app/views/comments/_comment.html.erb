@@ -13,7 +13,7 @@
   <% review.comments.each do |comment| %>
     <div class="row">
       <div class="col-md-1 picture-user">
-        <%= image_tag comment.user.avatar.url, height: 50, width: 50 %>
+        <%= image_tag comment.user.avatar.url, height: 50, width: 50, style:"height: 50px !important;" %>
       </div>
       <div class="col-md-11">
         <div class="col-md-12 fix-pading-content">

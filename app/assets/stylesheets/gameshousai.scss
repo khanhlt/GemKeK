@@ -547,7 +547,6 @@ label {
 }
 
 .space-i {
-  margin-left: 20px;
   margin-right: 10px;
 }
 
@@ -615,5 +614,13 @@ label {
 }
 
 .list-related-game a:hover {
+  color:red !important;
+}
+
+.user_review_space_top a:hover {
+  color:red !important;
+}
+
+.space-i>a:hover {
   color:red !important;
 }
