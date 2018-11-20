@@ -109,7 +109,8 @@
               <h2>Review Game</h2>
             </div>
             <div class="header-rating"><%= @game.reviews.where.not(:title => nil).count() %> Rating Detail</div>
-            <% @game.reviews.where.not(:title => nil).each do |review| %>
+            <% reviews = @game.reviews.where.not(:title => nil).paginate page: params[:page], per_page: 3%>
+            <% reviews.each do |review| %>
               <div class="row">
                 <div class="col-md-1 picture-user">
                     <img <%= image_tag review.user.avatar.url, height:50, width:50 %>
@@ -190,6 +191,7 @@
                 </div>
               </div>
             <% end %>
+            <%= will_paginate reviews %>
           </div>
         </div>
       </div>
