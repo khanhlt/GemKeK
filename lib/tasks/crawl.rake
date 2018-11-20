@@ -1,10 +1,12 @@
 require 'igdb_client'
 require 'faker'
+require 'progress_bar'
 
 namespace :crawl do
   desc "Crawl data"
   task game: :environment do
-    client = IGDB::Client.new "7d1ef02923e10c6db545d816380cfad5"
+    bar = ProgressBar.new
+    client = IGDB::Client.new "ccf51aac8309875ed3e52a94ef66a8ab"
     crawl_number = 200
     count = 1
     while count < crawl_number
@@ -26,6 +28,8 @@ namespace :crawl do
         photo.save
       end
       count += 1
+      sleep 0.1
+      bar.increment!
     end
     puts 'Done.'
   end
