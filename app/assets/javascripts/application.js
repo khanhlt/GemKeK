@@ -3,7 +3,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require ckeditor/init
 //= require owlcarousel2/owl.carousel
 //= require bootstrap3-editable/bootstrap-editable

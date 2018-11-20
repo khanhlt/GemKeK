@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function () {
+$(document).ready(function () {
 
     //infinite scrolling
     if ($('#paginate-infinite-scrolling').size() > 0) {
@@ -9,8 +9,7 @@ $(document).on('turbolinks:load', function () {
                 $.getScript(more_posts_url);
             }
         });
-    }
-    ;
+    };
 
 
     //load more posts on click of button
