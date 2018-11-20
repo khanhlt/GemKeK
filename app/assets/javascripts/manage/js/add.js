@@ -1,10 +1,11 @@
 $(function () {
   $('#example1').DataTable({
     'paging'      : true,
-    'lengthChange': false,
-    'searching'   : false,
+    'lengthChange': true,
+    'searching'   : true,
+    'sorting'	  : false,
     'ordering'    : true,
     'info'        : true,
-    'autoWidth'   : false
+    'autoWidth'   : true
   })
 })

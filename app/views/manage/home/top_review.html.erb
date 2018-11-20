@@ -15,14 +15,14 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MAIN NAVIGATION</li>
-      <%= form_tag manage_user_search_user_path(current_user.id), :method => 'get', :class => "sidebar-form" do %>
+      <!--<%= form_tag manage_user_search_user_path(current_user.id), :method => 'get', :class => "sidebar-form" do %>
         <div class="input-group">
           <span class="input-group-btn">
           <%= text_field_tag :search_user, params[:search_user], :value => "", :class => "form-control", placeholder: "Search..." %>
             <%= submit_tag id: "search-btn", class: 'btn btn-flat' %><i class="fa fa-search"></i>
         </span>
         </div>
-      <% end %>
+      <% end %>-->
       <li>
         <%= link_to manage_path do %>
         <li class="active">
