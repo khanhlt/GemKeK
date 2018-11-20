@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_071507) do
+ActiveRecord::Schema.define(version: 2018_11_20_170609) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -91,6 +91,15 @@ ActiveRecord::Schema.define(version: 2018_11_06_071507) do
     t.integer "game_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string "session_id", null: false
+    t.text "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true
+    t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
