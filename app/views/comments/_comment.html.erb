@@ -59,7 +59,7 @@
             dataType: "json"
         }
         $('.user-comment').editable({
-            type: 'text',
+            type: 'textarea',
             pk: '<%= comment.id %>',
             url: '<%= review_comment_path(review_id: review.id, id: comment.id)%>',
             title: 'Edit comment',
@@ -67,7 +67,8 @@
                 var data = {};
                 data['content'] = params.value;
                 return data;
-            }
+            },
+            tpl: "<textarea style='width: 700px; height: 100px'>"
         });
     </script>
   <% end %>
