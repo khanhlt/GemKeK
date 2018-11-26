@@ -8,7 +8,7 @@
             <%= image_tag(@game.photos.first.image_url, :class => "img-responsive") %>
           </div>
           <div class="col-xs-12 col-md-7">
-            <div class="about-text">
+            <div>
               <h2><%= @game.name %></h2>
                 <div class="header_shousai_game_star stars-outer">
                   <% if @game.reviews.average(:rating) != nil %>
