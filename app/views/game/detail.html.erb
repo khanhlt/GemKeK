@@ -8,7 +8,7 @@
             <%= image_tag(@game.photos.first.image_url, :class => "img-responsive") %>
           </div>
           <div class="col-xs-12 col-md-7">
-            <div class="about-text">
+            <div>
               <h2><%= @game.name %></h2>
                 <div class="header_shousai_game_star stars-outer">
                   <% if @game.reviews.average(:rating) != nil %>
@@ -24,10 +24,10 @@
                   <p><%= @game.reviews.count() %> rating</p>
                 <% end %>
               </div>
+
               <hr>
-              <!--<div>-->
-              <!--  <p class="text-indent-content-game"><%= @game.summary.slice(0, 200) %></p>-->
-              <!--</div>-->
+
+              <br>
               <div>
               <% if @game.summary.length > 250 %>
               <p class="text-indent-content-game"><%= truncate(@game.summary, length: 250) %>
@@ -144,7 +144,7 @@
                     <div class="name-user col-md-3"><%= link_to user_profile_home_path(id: review.user.id) do %><%= review.user.full_name %><% end %>
                     </div>
                     <div class="col-md-3 fix-title-space star-user">
-                      <strong><%= review.title %></strong>
+                      <!-- <strong><%= review.title %></strong> -->
                     </div>
                     <div class="col-md-3 star-user">
                       <div class="star_home_page stars-outer">
@@ -155,9 +155,9 @@
                       <div class="text-right"><%= review.created_at.to_date() %></div>
                     </div>
                   </div>
-                  <!--                   <div class="col-md-12 fix-title-space">
+                  <div class="col-md-12 fix-title-space star-user">
                     <span ><%= review.title %></span>
-                  </div> -->
+                  </div>
                   <div class="col-md-12 ">
                     <div class="fix-content-review-space" style="margin: 20px 0px 15px 0px !important"><%= raw review.content[0,300] %></div>
                     <div>
