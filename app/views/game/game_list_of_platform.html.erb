@@ -44,8 +44,8 @@
                 </div>
                 <div class="col-xs-12 col-md-8 content-game-home-page">
                   <div class="about-text col-md-12">
-                    <h3><%= link_to game_detail_path(id: game.id) do %> <%= game.name %>
-                      <% end %> </h3>
+                    <%= link_to game_detail_path(id: game.id),{:class=>"name_game"} do %> <%= game.name %>
+                      <% end %>
                   </div>
                   <div class="col-xs-12 col-md-6">
                     <b>Release date: <%= game.relase_date.to_date %> </b>

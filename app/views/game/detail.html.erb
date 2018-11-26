@@ -24,7 +24,7 @@
                   <p><%= @game.reviews.count() %> rating</p>
                 <% end %>
               </div>
-              <hr>
+              <br>
               <div>
                 <p class="text-indent-content-game"><%= @game.summary.slice(0, 200) %></p>
               </div>
@@ -120,7 +120,7 @@
                     <div class="name-user col-md-3"><%= link_to user_profile_home_path(id: review.user.id) do %><%= review.user.full_name %><% end %>
                     </div>
                     <div class="col-md-3 fix-title-space star-user">
-                      <strong><%= review.title %></strong>
+                      <!-- <strong><%= review.title %></strong> -->
                     </div>
                     <div class="col-md-3 star-user">
                       <div class="star_home_page stars-outer">
@@ -131,9 +131,9 @@
                       <div class="text-right"><%= review.created_at.to_date() %></div>
                     </div>
                   </div>
-                  <!--                   <div class="col-md-12 fix-title-space">
+                  <div class="col-md-12 fix-title-space star-user">
                     <span ><%= review.title %></span>
-                  </div> -->
+                  </div>
                   <div class="col-md-12 ">
                     <div class="fix-content-review-space" style="margin: 20px 0px 15px 0px !important"><%= raw review.content[0..1000] + "....." %></div>
                     <div>
