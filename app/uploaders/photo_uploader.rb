@@ -27,6 +27,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
+  def default_url
+       'avatar.png'
+  end
 
   # Create different versions of your uploaded files:
   # version :thumb do

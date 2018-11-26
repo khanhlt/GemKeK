@@ -25,10 +25,24 @@
                 <% end %>
               </div>
               <hr>
+              <!--<div>-->
+              <!--  <p class="text-indent-content-game"><%= @game.summary.slice(0, 200) %></p>-->
+              <!--</div>-->
               <div>
-                <p class="text-indent-content-game"><%= @game.summary.slice(0, 200) %></p>
+              <% if @game.summary.length > 250 %>
+              <p class="text-indent-content-game"><%= truncate(@game.summary, length: 250) %>
+              <%= link_to 'Read more', '', class: "read-more-#{@game.id}" %></p>
+              <script>
+                $('.read-more-<%= @game.id %>').on('click', function(e) {
+                  e.preventDefault()
+              $(this).parent().html('<p class="text-indent-content-game"><%= escape_javascript @game.summary %></p>')
+            })
+            </script>
+              <% else %>
+              <p class="text-indent-content-game"><%= @game.summary %></p>
+                  <% end %>
               </div>
-              <div class="collapse" id="collapseExample">
+              <div>
                 <strong>Platform:</strong>
                 <span>
                   <% @game.platform_of_game.each_with_index do |platform, index| %>
@@ -36,7 +50,7 @@
                     <%= link_to platform.name, game_game_list_of_platform_path(:platform => platform.name) %>
                   <% end %>
                 </span>
-                <br><br>
+                <br>
                 <strong>Genres:</strong>
                 <span>
                   <% @game.genres_of_game.each_with_index do |genre, index| %>
@@ -44,13 +58,19 @@
                     <%= link_to genre.name, game_game_list_of_genre_path(:genre => genre.name)%>
                   <% end %>
                 </span>
+                <br>
+                <strong>Devoloper:</strong>
+                <span>
+                  <%= @game.developer %>
+                </span>
+                <br>
+                <strong>Relased date:</strong>
+                <span>
+                  <%= @game.relase_date.to_date.to_s %>
+                </span>
               </div>
               <br>
-              <div>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                  Read more
-                </button>
-              </div>
+    
             </div>
           </div>
         </div>
@@ -77,7 +97,7 @@
             <div class="create_review_button">
               <% if user_signed_in? and @game.reviews.where(user_id: current_user.id).count != 0 %>
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModalEdit">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
                   Edit your Review
                 </button>
               <% else %>
@@ -93,14 +113,18 @@
           <div class="col-md-8">
             <h2>GET GAME</h2>
             <div class="col-md-4 url_link_game">
-              <a href="#">URL A</a>
+              <a href=<%=@game.link1 %>>URL A</a>
             </div>
+            <% if @game.link2 %>
             <div class="col-md-4 url_link_game">
-              <a href="#">URL B</a>
+              <a href="<%= @game.link2 %>">URL B</a>
             </div>
+            <% end %>
+            <% if @game.link3 %>
             <div class="col-md-4 url_link_game">
-              <a href="#">URL C</a>
+              <a href="<%= @game.link3 %>">URL C</a>
             </div>
+            <% end %>
           </div>
         </div>
         <div class="col-md-12">
@@ -109,7 +133,7 @@
               <h2>Review Game</h2>
             </div>
             <div class="header-rating"><%= @game.reviews.where.not(:title => nil).count() %> Rating Detail</div>
-            <% reviews = @game.reviews.where.not(:title => nil).paginate page: params[:page], per_page: 3%>
+            <% reviews = @game.reviews.where.not(:title => nil).order("created_at DESC").paginate page: params[:page], per_page: 15%>
             <% reviews.each do |review| %>
               <div class="row">
                 <div class="col-md-1 picture-user">
@@ -135,7 +159,7 @@
                     <span ><%= review.title %></span>
                   </div> -->
                   <div class="col-md-12 ">
-                    <div class="fix-content-review-space" style="margin: 20px 0px 15px 0px !important"><%= truncate(review.content, length: 100) %></div>
+                    <div class="fix-content-review-space" style="margin: 20px 0px 15px 0px !important"><%= raw review.content[0,300] %></div>
                     <div>
                       <%= render "reviews/like", object: review %>
 

@@ -49,7 +49,7 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
-
+public/uploads/
 # Ignore Byebug command history file.
 .byebug_history
 

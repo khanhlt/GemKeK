@@ -61,7 +61,10 @@
           <% @game_top.each do |game| %>
           <div class="col-md-12 fix-pading-content">
             <div class="col-xs-12 col-md-4">
-              <%=link_to game_detail_path(id: game.id) do %> <%= image_tag(game.photos.first.image_url, :class => "img-responsive fix-box-img-top-game") %><%end%>
+              <% if game.photos.first%>
+              <%=link_to game_detail_path(id: game.id) do %> 
+              <%= image_tag(game.photos.first.image_url, :class => "img-responsive fix-box-img-top-game") %><%end%>
+              <% end %>
             </div>
             <div class="col-xs-12 col-md-8 content-game-home-page">
               <div class="about-text col-md-12">
@@ -99,6 +102,7 @@
             </div>
           </div>
           <% end %>
+          <%= will_paginate @game_top %>
         </div>
       </div>
       <!-- Search & Upcoming games list -->
