@@ -126,7 +126,7 @@ GamePlatform.create game_id: 1, platform_id: 8
 GamePlatform.create game_id: 2, platform_id: 2
 GamePlatform.create game_id: 3, platform_id: 3
 GamePlatform.create game_id: 4, platform_id: 4
-GamePlatform.create game_id: 5, platform_id: 2
+GamePlatform.create game_id: 5, platform_id: 5
 GamePlatform.create game_id: 6, platform_id: 3
 GamePlatform.create game_id: 7, platform_id: 3
 GamePlatform.create game_id: 8, platform_id: 4
