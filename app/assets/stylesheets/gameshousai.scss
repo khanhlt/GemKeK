@@ -38,8 +38,9 @@ p {
 }
 
 .logo-header img {
-  width: 114px;
-  height: 100px;
+  width: 185px;
+  height: 102px;
+  margin-top: 12px;
 }
 
 .dropdown-background-color {
@@ -339,7 +340,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 /* Contact Section */
 #contact {
   padding: 100px 0 60px 0;
-  background: #1f386e;
+  background: #353d4e;
   color: rgba(255,255,255,.65);
 }
 #contact .section-title {
@@ -595,7 +596,7 @@ label {
 }
 
 .fix-pading-content {
-  padding:0px !important;
+  padding:0px 10px 10px 0px !important;
 }
 
 #bs-example-navbar-collapse-1  {
