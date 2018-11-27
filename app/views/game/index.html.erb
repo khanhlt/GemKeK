@@ -7,14 +7,18 @@
       <li data-target="#carousel-example-generic" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner" role="listbox">
+      
       <% @game_upcoming.each.with_index do |game, index| %>
-      <div class="item <%= index == 0 ? 'active' : '' %>">
-        <%= image_tag(game.photos.first.image_url, :alt => "First Slide") %>
-        <div class="carousel-caption">
-          <h2><%= game.name %></h2>
-          <h1><%= game.relase_date.to_date %></h1>
+        <%= link_to game_detail_path(id: game.id) do%>
+          <div class="item <%= index == 0 ? 'active' : '' %>">
+            <%= image_tag(game.photos.first.image_url, :alt => "First Slide") %>
+            <div class="carousel-caption">
+              <h2><%= game.name %></h2>
+              <h1><%= game.relase_date.to_date %></h1>
+          </div>
         </div>
-      </div>
+      <%end%>
+     
       <% end %>
     </div>
     <!-- Controls -->
@@ -72,8 +76,9 @@
               </div>
               <div class="col-xs-12 col-md-6 fix-padding">
                 <div class="star_home_page stars-outer">
-                  <div class="stars-inner" style="width: <%= game.reviews.average(:rating).round(1)*20 %>%"></div>
+                  <div class="stars-inner" style="width: <%= game.reviews.average(:rating).round(1)*20 + 6 %>%"></div>
                 </div>
+                 <%= game.reviews.average(:rating).round(1) %>
               </div>
               <div class="col-md-12">
                 <b>Platform: </b>
@@ -99,6 +104,7 @@
             </div>
           </div>
           <% end %>
+           <p><%= will_paginate @game_top %></p>
         </div>
       </div>
       <!-- Search & Upcoming games list -->
