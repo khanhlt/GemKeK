@@ -209,7 +209,7 @@
 # GameGenre.create game_id: 9, genre_id: 2
 # GameGenre.create game_id: 10, genre_id: 2
 # GameGenre.create game_id: 3, genre_id: 3
-User.create! email: "lekhanh.lamson@gmail.com", full_name: "Le Thi Khanh", password: "1234567", confirmed_at: "2017-10-11 11:00", is_admin: true, remote_avatar_url: "https://i..com/YrEWPTp.jpg"
+User.create! email: "lekhanh.lamson@gmail.com", full_name: "Le Thi Khanh", password: "1234567", confirmed_at: "2017-10-11 11:00", is_admin: true, remote_avatar_url: "https://i.imgur.com/YrEWPTp.jpg"
 User.create! email: "nguyenthanhchinh96@gmail.com", password: "30061996", confirmed_at: "2018-10-11 11:28:26", full_name: "Thành Chính", is_admin: true, remote_avatar_url: "https://i.imgur.com/s1PoAKN.jpg"
 
 file = File.read(Rails.root+"db/game.json")
@@ -281,4 +281,3 @@ user_hash.each do |u|
     c = c+ 1
     p c, user_hash.length
 end
-
