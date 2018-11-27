@@ -51,6 +51,10 @@ ActiveRecord::Schema.define(version: 2018_11_06_071507) do
     t.string "name"
     t.string "summary"
     t.datetime "relase_date"
+    t.string "link1"
+    t.string "link2"
+    t.string "link3"
+    t.string "developer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -78,7 +82,6 @@ ActiveRecord::Schema.define(version: 2018_11_06_071507) do
 
   create_table "platforms", force: :cascade do |t|
     t.string "name"
-    t.float "version"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

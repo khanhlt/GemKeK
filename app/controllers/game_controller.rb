@@ -12,13 +12,15 @@ class GameController < ApplicationController
       end
     end
 
-    #@game_top = @game_top.sort_by! {|x| x.reviews.average(:rating)}.reverse
+#     @game_top = @game_top.sort_by! {|x| x.reviews.average(:rating)}.reverse.paginate page: params[:page], per_page: 15
+#     @game_top = @game_top.sort_by! {|x| x.reviews.average(:rating)}.reverse
     @game_top = 
       Game.joins(:reviews)
         .group(:id)
         .select('id','name','summary','relase_date','avg(reviews.rating) as average_rating')
         .paginate(:page => params[:page], :per_page => 5)
         .order('average_rating desc')
+
     @game_news = Game.just_published(5).includes(:photos)
     if user_signed_in?
       @review = current_user.reviews.build
