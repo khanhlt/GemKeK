@@ -282,6 +282,7 @@ user_hash.each do |u|
     p c, user_hash.length
 end
 
+
 Game.create name: "Miracle Circus", relase_date: DateTime.new(2018, 12, 01), summary: "Qi joins the miracle circus as a genius magician. The other members all welcome Qi’s coming, like Liao, Liu, Ji, Xiang,Ning. But as the night is near around, something is approaching, straightly to their heart. Who is watching? And who are the demons of night exactly? Qi starts his investigation on a common day "
 photo = Game.last.photos.build
 photo.save(validate: false)
