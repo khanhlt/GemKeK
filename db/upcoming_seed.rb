@@ -1,3 +1,6 @@
+namespace :seed do
+  desc "seed game"
+  task game: :environment do
 Game.create name: "Miracle Circus", relase_date: DateTime.new(2018, 12, 01), summary: "Qi joins the miracle circus as a genius magician. The other members all welcome Qi’s coming, like Liao, Liu, Ji, Xiang,Ning. But as the night is near around, something is approaching, straightly to their heart. Who is watching? And who are the demons of night exactly? Qi starts his investigation on a common day "
 photo = Game.last.photos.build
 photo.save(validate: false)
@@ -14,3 +17,5 @@ photo.save(validate: false)
 photo.image.store!(File.open(File.join(Rails.root+"app/assets/images", 'twilight_path_1.jpg')))
 photo.save
 Game.create name: "Giraffe Town", relase_date: DateTime.new(2018, 12, 9), summary: "A giraffe born with slippery feet sets out to find love....Take control of a giraffe who has had enough of being held back in life by his weird feet as you slide your way through the town in a courageous pursuit of love."
+end
+end
