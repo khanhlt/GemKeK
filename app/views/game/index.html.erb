@@ -69,7 +69,7 @@
             <div class="col-xs-12 col-md-4">
               <% if game.photos.first%>
               <%=link_to game_detail_path(id: game.id) do %> 
-              <%= image_tag(game.photos.first.image_url, :class => "img-responsive fix-box-img-top-game") %><%end%>
+              <%= image_tag(game.photos.first.image_url, :class => "img-responsive fix-box-img-top-game", :crop => :fill) %><%end%>
               <% end %>
             </div>
             <div class="col-xs-12 col-md-8 content-game-home-page">

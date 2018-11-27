@@ -3,7 +3,7 @@
                             <div class="panel-body">
                                 <div class="pull-left">
                                     <a href="#">
-                                        <img class="media-object img-circle" style="margin-right:8px; margin-top:-5px;" <%= image_tag @user.avatar.url, height:50, width:50 %>
+                                        <img  <%= image_tag @user.avatar.url, height:50, width:50 %>
                                     </a>
                                 </div>
                                 <h4><a href="#" style="text-decoration:none;"><strong><%=@user.full_name%></strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(review.created_at) %> ago on <%= link_to game_detail_path(id: review.game.id) do %><%= review.game.name %> <% end %> </i></a></small></small></h4>

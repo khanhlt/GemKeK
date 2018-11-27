@@ -97,7 +97,7 @@
             <div class="create_review_button">
               <% if user_signed_in? and @game.reviews.where(user_id: current_user.id).count != 0 %>
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModalCreate">
                   Edit your Review
                 </button>
               <% else %>
