@@ -22,17 +22,17 @@
       <div class="col-md-10" id="bs-example-navbar-collapse-1 ">
         <ul class="nav navbar-nav navbar-left">
           <% if Platform.first.present? %>
-          <li><%= link_to Platform.first.name, game_game_list_of_platform_path(:platform => Platform.first.name), class: "page-scroll" %></li>
+          <li><%= link_to Platform.first.name, game_game_list_of_platform_path(:platform => Platform.first.name), class: "page-scroll", style: "font-size: 12px" %></li>
           <%end%>
           <% if Platform.second.present? %>
-          <li><%= link_to Platform.second.name, game_game_list_of_platform_path(:platform => Platform.second.name), class: "page-scroll" %></li>
+          <li><%= link_to Platform.second.name, game_game_list_of_platform_path(:platform => Platform.second.name), class: "page-scroll", style: "font-size: 12px" %></li>
           <%end%>
-          <% if Platform.third.present? %>
-          <li><%= link_to Platform.third.name, game_game_list_of_platform_path(:platform => Platform.third.name), class: "page-scroll" %></li>
-          <%end%>
+          <%# if Platform.third.present? %>
+<!--          <li><%#= link_to Platform.third.name, game_game_list_of_platform_path(:platform => Platform.third.name), class: "page-scroll" %></li>-->
+          <%#end%>
           
           <li class="dropdown">
-            <a class="dropdown-toggle dropdown-background-color" data-toggle="dropdown" href="#">MORE
+            <a class="dropdown-toggle dropdown-background-color" style="font-size: 12px" data-toggle="dropdown" href="#">MORE
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
@@ -56,7 +56,7 @@
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
             <li>
-              <a class="dropdown-toggle dropdown-background-color" data-toggle="dropdown" href="#"><b><%= current_user.full_name %></b>
+              <a class="dropdown-toggle dropdown-background-color" style="font-size: 12px" data-toggle="dropdown" href="#"><b><%= current_user.full_name %></b>
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">

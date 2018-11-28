@@ -76,23 +76,23 @@
               <div class="col-md-12">
                 <%=link_to game_detail_path(id: game.id),{:class=>"name_game"} do %> <%= game.name %><%end%>
               </div>
-              <div class="col-xs-12 col-md-6">
+              <div class="col-xs-12 col-md-8">
                 <b>Release date: <%= game.relase_date.to_date %> </b>
               </div>
-              <div class="col-xs-12 col-md-6 fix-padding">
+              <div class="col-xs-12 col-md-4 fix-padding">
                 <div class="star_home_page stars-outer">
                   <div class="stars-inner" style="width: <%= game.reviews.average(:rating).round(1)*20 +3  %>%"></div>
                 </div>
                  <%= game.reviews.average(:rating).round(1) %>
               </div>
-              <div class="col-xs-12 col-md-6">
+              <div class="col-xs-12 col-md-8">
                 <b>Platform: </b>
                 <% game.platform_of_game.each_with_index do |platform, index| %>
                   <%= index == 0 ? "" : "," %>
                   <%= link_to platform.name, game_game_list_of_platform_path(:platform => platform.name) %>
                 <% end %>
               </div>
-              <div class="col-xs-12 col-md-6">
+              <div class="col-xs-12 col-md-4">
                 <%= game.reviews.where.not(:title => nil).count() %> rating
               </div>
               <div class="col-md-12">
