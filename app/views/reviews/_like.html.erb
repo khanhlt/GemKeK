@@ -1,4 +1,4 @@
-<div id="send_like_<%= object.id %>_<%= object.class %>">
+<div id="send_like_<%= object.id %>_<%= object.class %>" class="like_space">
 <% if user_signed_in? and object.likes.where(user_id: current_user.id).count != 0 %>
 <span><%= object.likes.count %>
 </span>
@@ -18,7 +18,7 @@
 <%end%>
 <%end%>
 <% else %>
-<span>
+<span class="comment_icon">
 	<span><%= object.likes.count %>
 	</span><%= link_to likes_path(likeable_type: object.class, likeable_id: object.id), method: :post, remote: true do %>
 	<strong>

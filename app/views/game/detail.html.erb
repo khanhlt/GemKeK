@@ -7,7 +7,7 @@
           <div class="col-xs-12 col-md-5">
             <%= image_tag(@game.photos.first.image_url, :class => "img-responsive") %>
           </div>
-          <div class="col-xs-12 col-md-7">
+          <div class="col-xs-12 col-md-7 jouhou">
             <div>
               <h2><%= @game.name %></h2>
                 <div class="header_shousai_game_star stars-outer">
@@ -24,9 +24,6 @@
                   <p><%= @game.reviews.count() %> rating</p>
                 <% end %>
               </div>
-
-              <hr>
-
               <br>
               <div>
               <% if @game.summary.length > 250 %>
@@ -164,7 +161,7 @@
                       <%= render "reviews/like", object: review %>
 
                       <strong class="space-i"><%= review.comments.count() %> comments</strong>
-                      <strong class="space-i"><%= link_to review_path(id: review.id), method: :get do %>
+                      <strong class="space-i full_review"><%= link_to review_path(id: review.id), method: :get do %>
                           Full Review
                         <% end %></strong>
                       <% if current_user == review.user %>
@@ -197,7 +194,7 @@
                               <%= comment.content %>
                             </div>
                             <div>
-                              <div>
+                              <div class="coment_review">
                                 <%= render "reviews/like", object: comment %>
                               </div>
                               <%# if current_user == comment.user %>
@@ -219,7 +216,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 search-advance">
         <div class="row ">
           <%= render 'search/advance_search_box' %>
           <%= render 'game_up_comming' %>

@@ -1,5 +1,5 @@
 <div class="limiter">
-  <div class="container-login100" style="background-image: url('../assets/slider/1.jpg');">
+  <div class="container-login100">
     <div class="wrap-login100">
 			<span class="login100-form-logo">
 				<!-- <i class="zmdi zmdi-landscape"></i> -->
@@ -23,10 +23,11 @@
           <%= f.password_field :password, placeholder:"Password", id:"password",  class:"input100"%>
           <span class="focus-input100" data-placeholder=""></span>
         </div>
+        <!--
         <div class="contact100-form-show">
           <input type="checkbox" class= "input-show" onclick="myFunction()">
           <label class="label_show">Show Password</label>
-        </div>
+        </div>-->
         </br>
         <% if devise_mapping.rememberable? -%>
           <div class="contact100-form-checkbox">
