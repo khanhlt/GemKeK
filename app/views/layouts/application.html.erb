@@ -14,9 +14,9 @@
 <div class="container">
   <nav id="menu" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-      <div class="col-md-2">
+      <div class="col-md-2 logo">
         <%= link_to root_path, class: "navbar-brand logo-header" do %>
-          <img src="/assets/log.png" alt="logo">
+          <h1>Gem<span>KeK</span> </h1>
         <% end %>
       </div>
       <div class="col-md-10" id="bs-example-navbar-collapse-1 ">
@@ -35,7 +35,7 @@
             <a class="dropdown-toggle dropdown-background-color" style="font-size: 12px" data-toggle="dropdown" href="#">MORE
               <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" id="menu-item">
               <% platform_all = Platform.all %>
               <% platform_all.each do |platform| %>
                 <% if platform.name != "PC" && platform.name != "PS4" && platform.name != "XBOX ONE" %>
@@ -45,7 +45,7 @@
             </ul>
           </li>
           <li>
-            <%= form_tag search_index_path, :method => 'get', :class => "navbar-form navbar-left", :rolze => "search" do %>
+            <%= form_tag search_index_path, :method => 'get', :class => "navbar-form navbar-left search-header", :rolze => "search" do %>
               <div class="form-group">
                 <%= text_field_tag :search, params[:search], :value => "", :class => "form-control", placeholder: "search..." %>
               </div>
@@ -59,7 +59,7 @@
               <a class="dropdown-toggle dropdown-background-color" style="font-size: 12px" data-toggle="dropdown" href="#"><b><%= current_user.full_name %></b>
                 <span class="caret"></span>
               </a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu" id="menu-item">
                 <li><%= link_to "Profile", user_profile_home_path(id: current_user.id) %>
                   <% if current_user.is_admin %>
                   <li><%= link_to manage_path do %>Admin</a>
@@ -85,6 +85,7 @@
 <%= yield %>
 
 <!-- Contact Section -->
+<!--
 <div id="contact">
   <div class="container">
     <div class="col-md-8">
@@ -144,7 +145,7 @@
     </div>
   </div>
 </div>
-</div>
+</div>-->
 <!-- Footer Section -->
 <div id="footer">
   <div class="container text-center">

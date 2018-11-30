@@ -143,7 +143,6 @@ iframe {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  position: relative;
   z-index: 1;  
 }
 
@@ -163,10 +162,10 @@ iframe {
     margin-top: 100px;
     margin-bottom: 100px;
     width: 500px;
-    border-radius: 10px;
+    // border-radius: 10px;
     overflow: hidden;
     padding: 25px 55px 20px 55px;
-    box-shadow: 5px 5px 5px #cec8c8;
+    // box-shadow: 5px 5px 5px #cec8c8;
     background: #337ab7;
 }
 

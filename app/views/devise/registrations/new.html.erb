@@ -12,73 +12,80 @@
 </head>
 <body>
 <div class="container">
-  <nav id="menu" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="col-md-2">
-        <%= link_to root_path, class: "navbar-brand logo-header" do %>
-          <img src="/assets/log.png" alt="logo">
-        <% end %>
-      </div>
-      <div class="col-md-10" id="bs-example-navbar-collapse-1 ">
-        <ul class="nav navbar-nav navbar-left">
-          <li><%= link_to "PC", game_game_list_of_platform_path, class: "page-scroll" %></li>
-          <li><%= link_to "PS4", game_game_list_of_platform_path(:platform => "PS4"), class: "page-scroll" %></li>
-          <li><%= link_to "XBox One", game_game_list_of_platform_path(:platform => "XBOX ONE"), class: "page-scroll" %></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle dropdown-background-color" data-toggle="dropdown" href="#">MORE
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <% platform_all = Platform.all %>
-              <% platform_all.each do |platform| %>
-                <% if platform.name != "PC" && platform.name != "PS4" && platform.name != "XBOX ONE" %>
-                  <li><%= link_to platform.name, game_game_list_of_platform_path(:platform => platform.name) %></li>
-                <% end %>
-              <% end %>
-            </ul>
-          </li>
-          <li>
-            <%= form_tag search_index_path, :method => 'get', :class => "navbar-form navbar-left", :rolze => "search" do %>
-              <div class="form-group">
-                <%= text_field_tag :search, params[:search], :value => "", :class => "form-control", placeholder: "search..." %>
-              </div>
-              <%= submit_tag "Search", name: nil, class: 'btn btn-default' %>
+<nav id="menu" class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+  <div class="col-md-2 logo">
+    <%= link_to root_path, class: "navbar-brand logo-header" do %>
+      <h1>Gem<span>KeK</span> </h1>
+    <% end %>
+  </div>
+  <div class="col-md-10" id="bs-example-navbar-collapse-1 ">
+    <ul class="nav navbar-nav navbar-left">
+      <% if Platform.first.present? %>
+      <li><%= link_to Platform.first.name, game_game_list_of_platform_path(:platform => Platform.first.name), class: "page-scroll", style: "font-size: 12px" %></li>
+      <%end%>
+      <% if Platform.second.present? %>
+      <li><%= link_to Platform.second.name, game_game_list_of_platform_path(:platform => Platform.second.name), class: "page-scroll", style: "font-size: 12px" %></li>
+      <%end%>
+      <%# if Platform.third.present? %>
+<!--          <li><%#= link_to Platform.third.name, game_game_list_of_platform_path(:platform => Platform.third.name), class: "page-scroll" %></li>-->
+      <%#end%>
+      
+      <li class="dropdown">
+        <a class="dropdown-toggle dropdown-background-color" style="font-size: 12px" data-toggle="dropdown" href="#">MORE
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" id="menu-item">
+          <% platform_all = Platform.all %>
+          <% platform_all.each do |platform| %>
+            <% if platform.name != "PC" && platform.name != "PS4" && platform.name != "XBOX ONE" %>
+              <li><%= link_to platform.name, game_game_list_of_platform_path(:platform => platform.name) %></li>
             <% end %>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-            <li class="dropdown">
-              <a class="dropdown-toggle dropdown-background-color" data-toggle="dropdown" href="#"><b><%= current_user.full_name %></b>
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Profile", user_profile_home_path(id: current_user.id) %>
-                  <% if current_user.is_admin %>
-                  <li><%= link_to manage_path do %>Admin</a>
-                    <% end %></li>
-                <% end %>
-                <li><a href="#"><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %> </a></li>
-              </ul>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to('Sign In', new_user_session_path) %>
-            </li>
-            <li>
-              <%= link_to('Sign Up', new_user_registration_path) %>
-            </li>
           <% end %>
-
         </ul>
-      </div>
-    </div>
-  </nav>
+      </li>
+      <li>
+        <%= form_tag search_index_path, :method => 'get', :class => "navbar-form navbar-left search-header", :rolze => "search" do %>
+          <div class="form-group">
+            <%= text_field_tag :search, params[:search], :value => "", :class => "form-control", placeholder: "search..." %>
+          </div>
+          <%= submit_tag "Search", name: nil, class: 'btn btn-default' %>
+        <% end %>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        <li>
+          <a class="dropdown-toggle dropdown-background-color" style="font-size: 12px" data-toggle="dropdown" href="#"><b><%= current_user.full_name %></b>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" id="menu-item">
+            <li><%= link_to "Profile", user_profile_home_path(id: current_user.id) %>
+              <% if current_user.is_admin %>
+              <li><%= link_to manage_path do %>Admin</a>
+                <% end %></li>
+            <% end %>
+            <li><a href="#"><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %> </a></li>
+          </ul>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to('Sign In', new_user_session_path) %>
+        </li>
+        <li>
+          <%= link_to('Sign Up', new_user_registration_path) %>
+        </li>
+      <% end %>
+
+    </ul>
+  </div>
+</div>
+</nav>
 </div>
 
 
 <div class="limiter">
-  <div class="container-login100" style="background-image: url('../assets/slider/1.jpg');">
+  <div class="container-login100">
     <div class="wrap-login100">
 			<span class="login100-form-logo">
 				<img src="../assets/log.png" alt="">
@@ -93,7 +100,7 @@
           <span class="focus-input100" data-placeholder=""></span>
         </div>
         <div class="wrap-input100 validate-input" data-validate = "Enter username">
-          <%= f.text_field :full_name, placeholder:"full name", class:"input100"%>
+          <%= f.text_field :full_name, placeholder:"Full name", class:"input100"%>
           <span class="focus-input100" data-placeholder=""></span>
         </div>
         <div class="wrap-input100 validate-input" data-validate = "Enter username">
@@ -102,13 +109,13 @@
         </div>
         <div class="wrap-input100 validate-input" data-validate="Enter password">
           <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum and 20 characters maximum)</em>
+            <em style="color:#f3f3f3;"><span style="color:red;font-size:21px;">*</span>(<%= @minimum_password_length %> characters minimum and 20 characters maximum)</em>
           <% end %><br />
           <%= f.password_field :password, placeholder:"Password",   class:"input100"%>
           <span class="focus-input100" data-placeholder=""></span>
         </div>
         <div class="wrap-input100 validate-input" data-validate="Enter password">
-          <%= f.password_field :password_confirmation, placeholder:"new password",   class:"input100"%>
+          <%= f.password_field :password_confirmation, placeholder:"Confirm password",   class:"input100"%>
           <span class="focus-input100" data-placeholder=""></span>
         </div>
         <div class="actions" >
