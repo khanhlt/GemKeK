@@ -28,7 +28,7 @@ class GameController < ApplicationController
   end
   
   def detail
-    @game = Game.find_by_id(params[:id])
+    @game = Game.find(params[:id])
   end
 
   def game_list_of_platform

@@ -15,5 +15,3 @@ Things you may want to cover:
         `bundle install`
         
         `rake db:drop db:create db:migrate db:seed`
-
-        `rake crawl:game`
