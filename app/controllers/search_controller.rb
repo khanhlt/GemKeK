@@ -41,7 +41,6 @@ class SearchController < ApplicationController
         @games.each do |game_id|
           platform = Game.find(game_id).platform_of_game
           genre = Game.find(game_id).genres_of_game
-          # score = Game.find(game_id).reviews.average(:rating)
 
           flag1 = params[:platform].to_i == 0 ? true : false
           if (flag1 == false)
@@ -59,13 +58,6 @@ class SearchController < ApplicationController
               end
             end
           end
-
-          # flag3 = @score_min == 0 && @score_max == 5 ? true : false
-          # if (flag3 == false)
-          #   if (score.to_i >= @score_min.to_i && score.to_i <= @score_max.to_i)
-          #     flag3 = true
-          #   end
-          # end
 
           if flag1 == true && flag2 == true
             game_ids.push(game_id)
