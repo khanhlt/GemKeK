@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
+  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
   before_action :store_user_location!, if: :storable_location?
   before_action :banned?
+  
   #before_action :authenticate_user!
 
   
@@ -37,5 +39,10 @@ class ApplicationController < ActionController::Base
     else
       root_path
     end
+  end
+  
+
+  def render_404
+    render :template => "errors/error_404", :status => 404
   end
 end
