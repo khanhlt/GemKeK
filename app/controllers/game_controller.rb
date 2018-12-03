@@ -12,8 +12,6 @@ class GameController < ApplicationController
       end
     end
 
-#     @game_top = @game_top.sort_by! {|x| x.reviews.average(:rating)}.reverse.paginate page: params[:page], per_page: 15
-#     @game_top = @game_top.sort_by! {|x| x.reviews.average(:rating)}.reverse
     @game_top = 
       Game.joins(:reviews)
         .group(:id)
@@ -28,7 +26,19 @@ class GameController < ApplicationController
   end
   
   def detail
-    @game = Game.find_by_id(params[:id])
+    @game = Game.find(params[:id])
+    @game_related = []
+    @game.platform_of_game.each do |t|
+      t.game_of_platform.each do |k|
+        @game_related.push(k)
+      end
+    end
+    @game.genres_of_game.each do |t|
+      t.game_of_genre.each do |k|
+        @game_related.push(k)
+      end
+    end
+    @game_related = @game_related.uniq
   end
 
   def game_list_of_platform

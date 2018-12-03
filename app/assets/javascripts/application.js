@@ -1,3 +1,4 @@
+//= require bootstrap
 //= require rails-ujs
 //= require activestorage
 //= require jquery
