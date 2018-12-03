@@ -38,7 +38,7 @@
             <ul class="dropdown-menu" id="menu-item">
               <% platform_all = Platform.all %>
               <% platform_all.each do |platform| %>
-                <% if platform.name != "PC" && platform.name != "PS4" && platform.name != "XBOX ONE" %>
+                <% if platform.name != Platform.first.name && platform.name != Platform.second.name %>
                   <li><%= link_to platform.name, game_game_list_of_platform_path(:platform => platform.name) %></li>
                 <% end %>
               <% end %>

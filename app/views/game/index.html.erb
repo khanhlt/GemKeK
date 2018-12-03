@@ -7,20 +7,20 @@
       <li data-target="#carousel-example-generic" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner" role="listbox">
-      
+
       <% @game_upcoming.each.with_index do |game, index| %>
- 
-          <div class="item <%= index == 0 ? 'active' : '' %>">
-            <%= link_to game_detail_path(id: game.id) do%>
-            <%= image_tag(game.photos.first.image_url, :alt => "First Slide") %>
+
+        <div class="item <%= index == 0 ? 'active' : '' %>">
+          <%= link_to game_detail_path(id: game.id) do %>
+            <%= image_tag(game.photos.first.image_url, :alt => "First Slide") if game.photos.first.present? %>
             <div class="carousel-caption">
               <h2><%= game.name %></h2>
               <h1><%= game.relase_date.to_date %></h1>
-          </div>
-             <%end%>
+            </div>
+          <% end %>
         </div>
-   
-     
+
+
       <% end %>
     </div>
     <!-- Controls -->
@@ -45,16 +45,16 @@
           <div class="col-md-12">
             <div class="owl-carousel new-game">
               <% @game_news.each do |game| %>
-              <div class="container-top-game">
-                <%= image_tag(game.photos.last.image_url, :class => "img-responsive image") %>
-                <div class="overlay">
-                <%=link_to game_detail_path(id: game.id) do %>
-                  <div class="text"><%= game.name %>
-                    <br><strong><%= game.relase_date.strftime("%F") %></strong>
+                <div class="container-top-game">
+                  <%= image_tag(game.photos.last.image_url, :class => "img-responsive image") if game.photos.last.present? %>
+                  <div class="overlay">
+                    <%= link_to game_detail_path(id: game.id) do %>
+                      <div class="text"><%= game.name %>
+                        <br><strong><%= game.relase_date.strftime("%F") %></strong>
+                      </div>
+                    <% end %>
                   </div>
-                <%end%>
                 </div>
-              </div>
               <% end %>
             </div>
           </div>
@@ -64,55 +64,57 @@
             <h2>Top Games</h2>
           </div>
           <% @game_top.each do |game| %>
-          <div class="col-md-12 fix-pading-content ">
-            <div class="col-xs-12 col-md-4">
-              <% if game.photos.first%>
-              <%=link_to game_detail_path(id: game.id) do %> 
-              <%= image_tag(game.photos.first.image_url, :class => "img-responsive fix-box-img-top-game", :crop => :fill) %><%end%>
-              <% end %>
-            </div>
-            <div class="col-xs-12 col-md-8 content-game-home-page background-item">
-              <div class="col-md-12">
-                <%=link_to game_detail_path(id: game.id),{:class=>"name_game"} do %> <%= game.name %><%end%>
-              </div>
-              <div class="col-xs-12 col-md-8">
-                <b>Release date: <%= game.relase_date.to_date %> </b>
-              </div>
-              <div class="col-xs-12 col-md-4 fix-padding">
-                <div class="star_home_page stars-outer">
-                  <div class="stars-inner" style="width: <%= game.reviews.average(:rating).round(1)*20 +3  %>%"></div>
-                </div>
-                 <%= game.reviews.average(:rating).round(1) %>
-              </div>
-              <div class="col-xs-12 col-md-8">
-                <b>Platform: </b>
-                <% game.platform_of_game.each_with_index do |platform, index| %>
-                  <%= index == 0 ? "" : "," %>
-                  <%= link_to platform.name, game_game_list_of_platform_path(:platform => platform.name) %>
-                <% end %>
-              </div>
+            <div class="col-md-12 fix-pading-content ">
               <div class="col-xs-12 col-md-4">
-                <%= game.reviews.where.not(:title => nil).count() %> rating
-              </div>
-              <div class="col-md-12">
-                <b>Genre: </b>
-                <% game.genres_of_game.each_with_index do |genre, index| %>
-                  <%= index == 0 ? "" : "," %>
-                  <%= link_to genre.name, game_game_list_of_genre_path(:genre => genre.name)%>
+                <% if game.photos.first %>
+                  <%= link_to game_detail_path(id: game.id) do %>
+                    <%= image_tag(game.photos.first.image_url, :class => "img-responsive fix-box-img-top-game", :crop => :fill) if game.photos.first.present? %>
+                  <% end %>
                 <% end %>
               </div>
-              <div class="col-md-12">
-                <% if game.summary.length > 100 %>
-                  <p class="more"><%= truncate(game.summary, length: 100) %> <%=link_to "more", game_detail_path(id: game.id) %></p>
-                <% else %>
-                  <p><%= game.summary %></p>
-                <% end %>
+              <div class="col-xs-12 col-md-8 content-game-home-page background-item">
+                <div class="col-md-12">
+                  <%= link_to game_detail_path(id: game.id), {:class => "name_game"} do %> <%= game.name %>
+                  <% end %>
+                </div>
+                <div class="col-xs-12 col-md-8">
+                  <b>Release date: <%= game.relase_date.to_date %> </b>
+                </div>
+                <div class="col-xs-12 col-md-4 fix-padding">
+                  <div class="star_home_page stars-outer">
+                    <div class="stars-inner" style="width: <%= game.reviews.average(:rating).round(1)*20 +3  %>%"></div>
+                  </div>
+                  <%= game.reviews.average(:rating).round(1) %>
+                </div>
+                <div class="col-xs-12 col-md-8">
+                  <b>Platform: </b>
+                  <% game.platform_of_game.each_with_index do |platform, index| %>
+                    <%= index == 0 ? "" : "," %>
+                    <%= link_to platform.name, game_game_list_of_platform_path(:platform => platform.name) %>
+                  <% end %>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                  <%= game.reviews.where.not(:title => nil).count() %> rating
+                </div>
+                <div class="col-md-12">
+                  <b>Genre: </b>
+                  <% game.genres_of_game.each_with_index do |genre, index| %>
+                    <%= index == 0 ? "" : "," %>
+                    <%= link_to genre.name, game_game_list_of_genre_path(:genre => genre.name) %>
+                  <% end %>
+                </div>
+                <div class="col-md-12">
+                  <% if game.summary.length > 100 %>
+                    <p class="more"><%= truncate(game.summary, length: 100) %> <%= link_to "more", game_detail_path(id: game.id) %></p>
+                  <% else %>
+                    <p><%= game.summary %></p>
+                  <% end %>
+                </div>
               </div>
             </div>
-          </div>
           <% end %>
-<!--           <%= will_paginate @game_top %> -->
-           <p><%= will_paginate @game_top %></p>
+          <!--           <%= will_paginate @game_top %> -->
+          <p><%= will_paginate @game_top %></p>
         </div>
       </div>
       <!-- Search & Upcoming games list -->
@@ -125,14 +127,14 @@
 </div>
 
 <script>
-  var owl;
-  owl = $('.new-game');
-  owl.owlCarousel({
-    items: 4,
-    loop: true,
-    margin: 10,
-    autoplay: true,
-    navigation: true,
-    nav: true,
-  });
+    var owl;
+    owl = $('.new-game');
+    owl.owlCarousel({
+        items: 4,
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        navigation: true,
+        nav: true,
+    });
 </script>

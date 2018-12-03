@@ -1,33 +1,5 @@
 <%= render 'page_title', title: 'GemKeK' %>
-<!--<div class="container space-nav">-->
-<!--  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">-->
-<!--    <ol class="carousel-indicators">-->
-<!--      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>-->
-<!--      <li data-target="#carousel-example-generic" data-slide-to="1"></li>-->
-<!--      <li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
-<!--    </ol>-->
-<!--    <div class="carousel-inner" role="listbox">-->
-<%# @game_upcoming.each.with_index do |game, index| %>
-<!--        <div class="item <%#= index == 0 ? 'active' : '' %>">-->
-<%#= image_tag(game.photos.first.image, :alt => "First Slide") %>
-<!--          <div class="carousel-caption">-->
-<!--            <h2><%#= game.name %></h2>-->
-<!--            <h1><%#= game.relase_date.to_date %></h1>-->
-<!--          </div>-->
-<!--        </div>-->
-<%# end %>
-<!--    </div>-->
-<!--    <!-- Controls -->-->
-<!--    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
-<!--      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
-<!--      <span class="sr-only">Previous</span>-->
-<!--    </a>-->
-<!--    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
-<!--      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
-<!--      <span class="sr-only">Next</span>-->
-<!--    </a>-->
-<!--  </div>-->
-<!--</div>-->
+
 <div id="about">
   <div class="container">
     <div class="row">
@@ -39,7 +11,8 @@
             <% @game_list.each do |game| %>
               <div class="col-md-12 fix-pading-content">
                 <div class="col-xs-12 col-md-4">
-                  <%= link_to game_detail_path(id: game.id) do %> <%= image_tag(game.photos.first.image_url, :class => "img-responsive fix-box-img-top-game") %>
+                  <%= link_to game_detail_path(id: game.id) do %>
+                    <%= image_tag(game.photos.first.image_url, :class => "img-responsive fix-box-img-top-game") if game.photos.first.present? %>
                   <% end %>
                 </div>
                 <div class="">
