@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :likes
   validates_integrity_of  :avatar
   validates_processing_of :avatar
+
+  has_many :bookmarks, dependent: :destroy
+  has_many :games, through: :bookmarks
   #has_attached_file :avatar
 
   scope :new_register, -> number {where("confirmed_at < ?", Time.current).limit(number)}

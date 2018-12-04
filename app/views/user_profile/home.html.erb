@@ -1,3 +1,8 @@
+<style type="text/css">
+   .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+        color: black !important;
+    }
+</style>
 <div style="margin-top: 72px;"></div>
 <div class="mainbody container-fluid">
     
@@ -25,6 +30,7 @@
                 <li class="active"><a data-toggle="tab" href="#Reviews">Reviews</a></li>
                 <li><a data-toggle="tab" href="#Like">Like</a></li>
                 <li><a data-toggle="tab" href="#Comment">Comment</a></li>
+                <li><a data-toggle="tab" href="#Bookmark">Bookmark</a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="Reviews">
@@ -65,8 +71,7 @@
                     <div id="infinite-scrolling">
                           <%= will_paginate @reviews%>
                     </div>
-                   
-                </div><!--/tab-pane-->
+                 </div><!--/tab-pane-->
                 <div class="tab-pane" id="Like">
                     <br><br>
                     <!-- Simple post content example. -->
@@ -135,6 +140,16 @@
                     <!-- Reshare Example -->
                     <hr>
                 </div><!--/tab-pane-->
+                <div class="tab-pane" id="Bookmark">
+                    
+                <div class="col-md-12 fix-pading-content">
+
+                      <% @current_user.games.each do |game| %>
+                       <%= render "game", game: game%>
+                      <% end %>
+                       
+                    </div>
+                </div>
             </div><!--/tab-content-->
         </div>
     </div>
