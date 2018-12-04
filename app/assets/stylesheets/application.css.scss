@@ -20,6 +20,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import 'bootstrap3-editable/bootstrap-editable';
+@import "font-awesome";
 #about img {
     padding: 3px;
     width: 500px;
@@ -52,7 +53,9 @@ a{
     /*background: rgba(128, 126, 126, 0.06) !important;*/
     background: #424242 !important;
 }
-
+.url_link_game a { color: #fff !important;}
+.url_link_game a i { color: #fff !important;}
+.url_link_game a { }
 #menu a {
     color:white !important;
 }
@@ -113,7 +116,7 @@ a{
     color:rgb(224, 218, 218);
 }
 
-.more a,.read-more-62,.full_review a{
+.more a,.read-more,.full_review a{
     color:#ff7a49 !important;
     font-weight: 600;
 

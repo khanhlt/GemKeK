@@ -46,9 +46,9 @@
               <div>
                 <% if @game.summary.length > 250 %>
                   <p class="text-indent-content-game"><%= truncate(@game.summary, length: 250) %>
-                    <%= link_to 'Read more', '', class: "read-more-#{@game.id}" %></p>
+                    <%= link_to 'Read more', '', class: "read-more" %></p>
                   <script>
-                      $('.read-more-<%= @game.id %>').on('click', function (e) {
+                      $('.read-more').on('click', function (e) {
                           e.preventDefault()
                           $(this).parent().html('<p class="text-indent-content-game"><%= escape_javascript @game.summary %></p>')
                       })
@@ -128,16 +128,83 @@
           <div class="col-md-8">
             <h2>GET GAME</h2>
             <div class="col-md-4 url_link_game">
-              <a href=<%= @game.link1 %>>URL A</a>
+              
+              <% if @game.link1.include? "facebook" %>
+              <a href=<%= @game.link1 %>><%= fa_icon "facebook", class: "fa-2x", text: "Facebook page"%></a>
+              <% elsif @game.link1.include? "steam" %>
+              <a href=<%= @game.link1 %>><%= fa_icon "steam", class: "fa-2x", text: "Steam"%></a>
+              <% elsif @game.link1.include? "youtube" %>
+              <a href=<%= @game.link1 %>><%= fa_icon "youtube", class: "fa-2x", text: "Youtube Channel"%></a>
+              <% elsif @game.link1.include? "wikipedia" %>
+              <a href=<%= @game.link1 %>><%= fa_icon "wikipedia-w", class: "fa-2x", text: "Wikipedia"%></a>
+              <% elsif @game.link1.include? "wiki" %>
+              <a href=<%= @game.link1 %>><%= fa_icon "file", class: "fa-2x", text: "Wikia"%></a>
+              <% elsif @game.link1.include? "twitter" %>
+              <a href=<%= @game.link1 %>><%= fa_icon "twitter", class: "fa-2x", text: "Twitter Profile"%></a>
+              <% elsif @game.link1.include? "instagram" %>
+              <a href=<%= @game.link1 %>><%= fa_icon "instagram", class: "fa-2x", text: "Instargram"%></a>
+              <% elsif @game.link1.include? "reddit" %>
+              <a href=<%= @game.link1 %>><%= fa_icon "reddit", class: "fa-2x", text: "Subreddit"%></a>
+               <% elsif @game.link1.include? "gog" %>
+              <a href=<%= @game.link1 %>><%= fa_icon "shopping-bag", class: "fa-2x", text: "gog.com"%></a>
+              <% elsif @game.link1.include? "apple" %>
+              <a href=<%= @game.link1 %>><%= fa_icon "apple", class: "fa-2x", text: "App Store"%></a>
+              <% else %>
+              <a href=<%= @game.link1 %>><%= fa_icon "external-link", class: "fa-2x", text: "Office Website"%></a>
+              <% end %>
             </div>
             <% if @game.link2 %>
               <div class="col-md-4 url_link_game">
-                <a href="<%= @game.link2 %>">URL B</a>
+              <% if @game.link2.include? "facebook" %>
+              <a href=<%= @game.link2 %>><%= fa_icon "facebook", class: "fa-2x", text: "Facebook page"%></a>
+              <% elsif @game.link2.include? "steam" %>
+              <a href=<%= @game.link2 %>><%= fa_icon "steam", class: "fa-2x", text: "Steam"%></a>
+              <% elsif @game.link2.include? "youtube" %>
+              <a href=<%= @game.link2 %>><%= fa_icon "youtube", class: "fa-2x", text: "Youtube Channel"%></a>
+              <% elsif @game.link2.include? "wikipedia" %>
+              <a href=<%= @game.link2 %>><%= fa_icon "wikipedia-w", class: "fa-2x", text: "Wikipedia"%></a>
+              <% elsif @game.link2.include? "wiki" %>
+              <a href=<%= @game.link2 %>><%= fa_icon "file", class: "fa-2x", text: "Wikia"%></a>
+              <% elsif @game.link2.include? "twitter" %>
+              <a href=<%= @game.link2 %>><%= fa_icon "twitter", class: "fa-2x", text: "Twitter Profile"%></a>
+              <% elsif @game.link2.include? "instagram" %>
+              <a href=<%= @game.link2 %>><%= fa_icon "instagram", class: "fa-2x", text: "Instargram"%></a>
+              <% elsif @game.link2.include? "reddit" %>
+              <a href=<%= @game.link2 %>><%= fa_icon "reddit", class: "fa-2x", text: "Subreddit"%></a>
+               <% elsif @game.link2.include? "gog" %>
+              <a href=<%= @game.link2 %>><%= fa_icon "shopping-bag", class: "fa-2x", text: "gog.com"%></a>
+              <% elsif @game.link2.include? "apple" %>
+              <a href=<%= @game.link2 %>><%= fa_icon "apple", class: "fa-2x", text: "App Store"%></a
+              <% else %>
+              <a href=<%= @game.link2 %>><%= fa_icon "external-link", class: "fa-2x", text: "Office Website"%></a>
+              <% end %>
               </div>
             <% end %>
             <% if @game.link3 %>
               <div class="col-md-4 url_link_game">
-                <a href="<%= @game.link3 %>">URL C</a>
+                <% if @game.link3.include? "facebook" %>
+              <a href=<%= @game.link3 %>><%= fa_icon "facebook", class: "fa-2x", text: "Facebook page"%></a>
+              <% elsif @game.link3.include? "steam" %>
+              <a href=<%= @game.link3 %>><%= fa_icon "steam", class: "fa-2x", text: "Steam"%></a>
+              <% elsif @game.link3.include? "youtube" %>
+              <a href=<%= @game.link3 %>><%= fa_icon "youtube", class: "fa-2x", text: "Youtube Channel"%></a>
+              <% elsif @game.link3.include? "wikipedia" %>
+              <a href=<%= @game.link3 %>><%= fa_icon "wikipedia-w", class: "fa-2x", text: "Wikipedia"%></a>
+              <% elsif @game.link3.include? "wiki" %>
+              <a href=<%= @game.link3 %>><%= fa_icon "file", class: "fa-2x", text: "Wikia"%></a>
+              <% elsif @game.link3.include? "twitter" %>
+              <a href=<%= @game.link3 %>><%= fa_icon "twitter", class: "fa-2x", text: "Twitter Profile"%></a>
+              <% elsif @game.link3.include? "instagram" %>
+              <a href=<%= @game.link3 %>><%= fa_icon "instagram", class: "fa-2x", text: "Instargram"%></a>
+              <% elsif @game.link3.include? "reddit" %>
+              <a href=<%= @game.link3 %>><%= fa_icon "reddit", class: "fa-2x", text: "Subreddit"%></a>
+              <% elsif @game.link3.include? "gog" %>
+              <a href=<%= @game.link3 %>><%= fa_icon "shopping-bag", class: "fa-2x", text: "gog.com"%></a>
+              <% elsif @game.link3.include? "apple" %>
+              <a href=<%= @game.link3 %>><%= fa_icon "apple", class: "fa-2x", text: "App Store"%></a
+              <% else %>
+              <a href=<%= @game.link3 %>><%= fa_icon "external-link", class: "fa-2x", text: "Office Website"%></a>
+              <% end %>
               </div>
             <% end %>
           </div>
