@@ -4,8 +4,7 @@ class GameController < ApplicationController
   def index
   
     @games = Game.all
-
-    @game_top = 
+    @game_top =
       Game.joins(:reviews)
         .group(:id)
         .select('id','name','summary','relase_date','avg(reviews.rating) as average_rating')

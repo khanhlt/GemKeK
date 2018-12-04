@@ -137,7 +137,7 @@
               <a href=<%= @game.link1 %>><%= fa_icon "youtube", class: "fa-2x", text: "Youtube Channel"%></a>
               <% elsif @game.link1.include? "wikipedia" %>
               <a href=<%= @game.link1 %>><%= fa_icon "wikipedia-w", class: "fa-2x", text: "Wikipedia"%></a>
-              <% elsif @game.link1.include? "wikia" %>
+              <% elsif @game.link1.include? "wiki" %>
               <a href=<%= @game.link1 %>><%= fa_icon "file", class: "fa-2x", text: "Wikia"%></a>
               <% elsif @game.link1.include? "twitter" %>
               <a href=<%= @game.link1 %>><%= fa_icon "twitter", class: "fa-2x", text: "Twitter Profile"%></a>
@@ -147,6 +147,8 @@
               <a href=<%= @game.link1 %>><%= fa_icon "reddit", class: "fa-2x", text: "Subreddit"%></a>
                <% elsif @game.link1.include? "gog" %>
               <a href=<%= @game.link1 %>><%= fa_icon "shopping-bag", class: "fa-2x", text: "gog.com"%></a>
+              <% elsif @game.link1.include? "apple" %>
+              <a href=<%= @game.link1 %>><%= fa_icon "apple", class: "fa-2x", text: "App Store"%></a>
               <% else %>
               <a href=<%= @game.link1 %>><%= fa_icon "external-link", class: "fa-2x", text: "Office Website"%></a>
               <% end %>
@@ -171,6 +173,8 @@
               <a href=<%= @game.link2 %>><%= fa_icon "reddit", class: "fa-2x", text: "Subreddit"%></a>
                <% elsif @game.link2.include? "gog" %>
               <a href=<%= @game.link2 %>><%= fa_icon "shopping-bag", class: "fa-2x", text: "gog.com"%></a>
+              <% elsif @game.link2.include? "apple" %>
+              <a href=<%= @game.link2 %>><%= fa_icon "apple", class: "fa-2x", text: "App Store"%></a
               <% else %>
               <a href=<%= @game.link2 %>><%= fa_icon "external-link", class: "fa-2x", text: "Office Website"%></a>
               <% end %>
@@ -186,7 +190,7 @@
               <a href=<%= @game.link3 %>><%= fa_icon "youtube", class: "fa-2x", text: "Youtube Channel"%></a>
               <% elsif @game.link3.include? "wikipedia" %>
               <a href=<%= @game.link3 %>><%= fa_icon "wikipedia-w", class: "fa-2x", text: "Wikipedia"%></a>
-              <% elsif @game.link3.include? "wikia" %>
+              <% elsif @game.link3.include? "wiki" %>
               <a href=<%= @game.link3 %>><%= fa_icon "file", class: "fa-2x", text: "Wikia"%></a>
               <% elsif @game.link3.include? "twitter" %>
               <a href=<%= @game.link3 %>><%= fa_icon "twitter", class: "fa-2x", text: "Twitter Profile"%></a>
@@ -196,6 +200,8 @@
               <a href=<%= @game.link3 %>><%= fa_icon "reddit", class: "fa-2x", text: "Subreddit"%></a>
               <% elsif @game.link3.include? "gog" %>
               <a href=<%= @game.link3 %>><%= fa_icon "shopping-bag", class: "fa-2x", text: "gog.com"%></a>
+              <% elsif @game.link3.include? "apple" %>
+              <a href=<%= @game.link3 %>><%= fa_icon "apple", class: "fa-2x", text: "App Store"%></a
               <% else %>
               <a href=<%= @game.link3 %>><%= fa_icon "external-link", class: "fa-2x", text: "Office Website"%></a>
               <% end %>
