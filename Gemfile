@@ -21,7 +21,7 @@ gem "bootstrap-will_paginate"
 # use js for
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~>4.3', '>= 4.3.0'
-gem 'owlcarousel2'
+gem 'owlcarousel-rails'
 gem 'bootstrap-datepicker-rails'
 # use select 2
 gem "select2-rails"
