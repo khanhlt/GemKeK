@@ -53,4 +53,14 @@ class GameController < ApplicationController
     @game_upcoming = Game.upcoming(5).includes(:photos)
   end
 
+  def  add_bookmark
+    #binding.pry
+    Bookmark.create user_id: current_user.id , game_id: params[:game_id]
+    redirect_to game_detail_path(id: params[:game_id])
+  end
+   def  undo_bookmark
+    #binding.pry
+    Bookmark.where(user_id: current_user.id, game_id: params[:game_id]).delete_all
+    redirect_to request.referrer
+  end
 end

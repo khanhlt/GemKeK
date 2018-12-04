@@ -8,6 +8,9 @@ class Game < ApplicationRecord
   has_many :platform_game, class_name: GamePlatform.name, dependent: :destroy
   has_many :platform_of_game, through: :platform_game, source: :platform
 
+  has_many :bookmarks, dependent: :destroy
+  has_many :users, through: :bookmarks
+
   validates :name, presence: true
 
   scope :just_published, -> number {where("relase_date < ?", Time.current).limit(number)}
