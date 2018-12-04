@@ -4,15 +4,7 @@ class GameController < ApplicationController
   def index
   
     @games = Game.all
-
-    @game_top = []
-    @games.each do |game|
-      if (game.reviews.average(:rating) != nil)
-        @game_top.push(game)
-      end
-    end
-
-    @game_top = 
+    @game_top =
       Game.joins(:reviews)
         .group(:id)
         .select('id','name','summary','relase_date','avg(reviews.rating) as average_rating')
