@@ -12,12 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require owl.carousel
+ *= require owl.theme
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import 'owlcarousel2/owl.carousel';
 @import 'bootstrap3-editable/bootstrap-editable';
 #about img {
     padding: 3px;
@@ -64,7 +65,7 @@ a{
 }
 
 .logo h1 {
-   padding-top:25px;
+   padding-top:27px;
 }
 
 .search-header .form-group input{
@@ -81,8 +82,8 @@ a{
 }
 
 .search-header input[type="submit"]:hover{
-    background: blue;
-    color: #fff;
+    background: #fff;
+    color: #000;
 }
 
 #menu-item li a{
@@ -230,7 +231,23 @@ a{
     color:#fff;
 }
 
+.owl-nav span{
+    font-size: 50px;
+    margin-left: 20px;
+}
 
+.owl-nav {
+    text-align: center;
+}
+
+.navbar-fixed-top {
+    position: relative;
+    margin: 0 !important;
+}
+
+.space-nav {
+    margin:0 auto!important;
+}
 // input[type="file"]
 // {
 //     display: none !important;
