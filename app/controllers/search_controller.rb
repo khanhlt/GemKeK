@@ -22,7 +22,7 @@ class SearchController < ApplicationController
     end
 
     @search_results = @search_results.uniq
-    @search_results = @search_results.sort_by! {|x| x.reviews.average(:rating) or 0}.reverse
+    @search_results = @search_results.sort_by! {|x| x.reviews.average(:rating) or 0}.reverse.paginate(:page => params[:page], :per_page => 5)
   end
 
   def advance_search
@@ -110,6 +110,6 @@ class SearchController < ApplicationController
     end
 
     @search_results = @search_results.uniq
-    @search_results = @search_results.sort_by! {|x| x.reviews.average(:rating) or 0}.reverse
+    @search_results = @search_results.sort_by! {|x| x.reviews.average(:rating) or 0}.reverse.paginate(:page => params[:page], :per_page => 5)
   end
 end

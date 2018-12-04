@@ -48,7 +48,7 @@
                             </div>
                             <div class="col-md-12">
                                 <% if game.summary.length > 100 %>
-                                <p>
+                                <p class="more">
                                     <%= truncate(game.summary, length: 100) %>
                                     <%=link_to "more", game_detail_path(id: game.id) %>
                                 </p>
