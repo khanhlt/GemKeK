@@ -1,13 +1,13 @@
 class GameController < ApplicationController
   before_action :get_game_upcomming
-
+  before_action :find_game, only: [:add_bookmark, :undo_bookmark]
   def index
   
     @games = Game.all
     @game_top =
       Game.joins(:reviews)
         .group(:id)
-        .select('id','name','summary','relase_date','avg(reviews.rating) as average_rating')
+        .select('id','name','summary','relase_date','avg(reviews.rating) as average_rating','count(reviews.rating) as count_rating')
         .paginate(:page => params[:page], :per_page => 5)
         .order('average_rating desc')
 
@@ -57,13 +57,22 @@ class GameController < ApplicationController
   end
 
   def  add_bookmark
-    #binding.pry
     Bookmark.create user_id: current_user.id , game_id: params[:game_id]
-    redirect_to game_detail_path(id: params[:game_id])
+    respond_to do |format|
+      format.html { redirect_to request.referrer }
+      format.js { render 'game/bookmark.js.erb' }
+    end
   end
-   def  undo_bookmark
-    #binding.pry
+  def  undo_bookmark
     Bookmark.where(user_id: current_user.id, game_id: params[:game_id]).delete_all
-    redirect_to request.referrer
+    respond_to do |format|
+      format.html { redirect_to request.referrer }
+      format.js { render 'game/bookmark.js.erb' }
+    end
+  end
+
+  private
+  def find_game
+    @game = Game.find params[:game_id]
   end
 end

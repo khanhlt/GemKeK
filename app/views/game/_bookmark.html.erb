@@ -1,0 +1,16 @@
+
+  <% if user_signed_in? %>
+    <%if current_user.games.exists?game.id %>
+      <div class="col-md-4 btn-my-list">
+       <%= link_to undo_bookmark_path(game_id: game.id) , cLass: "btn btn-danger", style: "margin-top: 25px; border-radius: 0px;", method: :post, remote: true do %>
+                <i class="fa fa-fw fa-bookmark", style="color: black;"></i> UnBookmark
+       <%end%>
+      </div>
+    <%else%>
+      <div class="col-md-4 btn-my-list">
+        <%= link_to add_bookmark_path(game_id: game.id) , cLass: "btn btn-danger", style: "margin-top: 25px; border-radius: 0px;", method: :post, remote: true do %>
+                <i class="fa fa-fw fas fa-bookmark"></i> Bookmark
+       <%end%>
+      </div>
+    <%end%>
+<%end%>

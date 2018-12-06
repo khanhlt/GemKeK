@@ -83,9 +83,9 @@
                 </div>
                 <div class="col-xs-12 col-md-4 fix-padding">
                   <div class="star_home_page stars-outer">
-                    <div class="stars-inner" style="width: <%= game.reviews.average(:rating).round(1)*20 +3  %>%"></div>
+                    <div class="stars-inner" style="width: <%= game.average_rating.round(1)*20 +3  %>%"></div>
                   </div>
-                  <%= game.reviews.average(:rating).round(1) %>
+                  <%= game.average_rating.round(1) %>
                 </div>
                 <div class="col-xs-12 col-md-8">
                   <b>Platform: </b>
@@ -95,7 +95,7 @@
                   <% end %>
                 </div>
                 <div class="col-xs-12 col-md-4">
-                  <%= game.reviews.where.not(:title => nil).count() %> rating
+                  <%= game.count_rating %> rating
                 </div>
                 <div class="col-md-12">
                   <b>Genre: </b>
