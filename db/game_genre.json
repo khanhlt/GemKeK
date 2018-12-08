@@ -16,11 +16,19 @@
     "game_id": 2
   },
   {
-    "genre_id": 1,
+    "genre_id": 5,
     "game_id": 3
   },
   {
-    "genre_id": 2,
+    "genre_id": 6,
+    "game_id": 3
+  },
+  {
+    "genre_id": 7,
+    "game_id": 3
+  },
+  {
+    "genre_id": 8,
     "game_id": 3
   },
   {
@@ -28,7 +36,19 @@
     "game_id": 4
   },
   {
-    "genre_id": 5,
+    "genre_id": 9,
+    "game_id": 4
+  },
+  {
+    "genre_id": 10,
+    "game_id": 4
+  },
+  {
+    "genre_id": 1,
+    "game_id": 4
+  },
+  {
+    "genre_id": 11,
     "game_id": 4
   },
   {
@@ -36,283 +56,267 @@
     "game_id": 5
   },
   {
-    "genre_id": 6,
+    "genre_id": 12,
     "game_id": 5
-  },
-  {
-    "genre_id": 7,
-    "game_id": 5
-  },
-  {
-    "genre_id": 3,
-    "game_id": 5
-  },
-  {
-    "genre_id": 8,
-    "game_id": 5
-  },
-  {
-    "genre_id": 3,
-    "game_id": 6
   },
   {
     "genre_id": 5,
     "game_id": 6
   },
   {
-    "genre_id": 9,
-    "game_id": 7
-  },
-  {
-    "genre_id": 10,
-    "game_id": 7
-  },
-  {
-    "genre_id": 11,
-    "game_id": 7
-  },
-  {
-    "genre_id": 12,
-    "game_id": 7
-  },
-  {
-    "genre_id": 9,
-    "game_id": 8
-  },
-  {
-    "genre_id": 10,
-    "game_id": 8
-  },
-  {
-    "genre_id": 11,
-    "game_id": 8
-  },
-  {
-    "genre_id": 12,
-    "game_id": 8
-  },
-  {
-    "genre_id": 3,
-    "game_id": 9
-  },
-  {
-    "genre_id": 8,
-    "game_id": 9
-  },
-  {
-    "genre_id": 9,
-    "game_id": 10
-  },
-  {
-    "genre_id": 10,
-    "game_id": 10
-  },
-  {
-    "genre_id": 11,
-    "game_id": 10
-  },
-  {
-    "genre_id": 13,
-    "game_id": 10
-  },
-  {
-    "genre_id": 1,
-    "game_id": 11
-  },
-  {
-    "genre_id": 2,
-    "game_id": 11
-  },
-  {
-    "genre_id": 1,
-    "game_id": 12
-  },
-  {
-    "genre_id": 2,
-    "game_id": 12
-  },
-  {
-    "genre_id": 1,
-    "game_id": 13
-  },
-  {
     "genre_id": 6,
-    "game_id": 13
-  },
-  {
-    "genre_id": 6,
-    "game_id": 14
-  },
-  {
-    "genre_id": 3,
-    "game_id": 14
-  },
-  {
-    "genre_id": 14,
-    "game_id": 14
-  },
-  {
-    "genre_id": 15,
-    "game_id": 15
-  },
-  {
-    "genre_id": 16,
-    "game_id": 15
-  },
-  {
-    "genre_id": 17,
-    "game_id": 15
-  },
-  {
-    "genre_id": 18,
-    "game_id": 15
-  },
-  {
-    "genre_id": 1,
-    "game_id": 16
-  },
-  {
-    "genre_id": 6,
-    "game_id": 16
-  },
-  {
-    "genre_id": 19,
-    "game_id": 17
-  },
-  {
-    "genre_id": 20,
-    "game_id": 17
-  },
-  {
-    "genre_id": 21,
-    "game_id": 17
-  },
-  {
-    "genre_id": 1,
-    "game_id": 18
-  },
-  {
-    "genre_id": 6,
-    "game_id": 18
-  },
-  {
-    "genre_id": 15,
-    "game_id": 19
-  },
-  {
-    "genre_id": 22,
-    "game_id": 19
-  },
-  {
-    "genre_id": 23,
-    "game_id": 19
+    "game_id": 6
   },
   {
     "genre_id": 7,
-    "game_id": 20
+    "game_id": 6
+  },
+  {
+    "genre_id": 8,
+    "game_id": 6
   },
   {
     "genre_id": 1,
-    "game_id": 20
+    "game_id": 7
   },
   {
-    "genre_id": 24,
-    "game_id": 20
-  },
-  {
-    "genre_id": 1,
-    "game_id": 21
-  },
-  {
-    "genre_id": 6,
-    "game_id": 21
-  },
-  {
-    "genre_id": 9,
-    "game_id": 22
-  },
-  {
-    "genre_id": 25,
-    "game_id": 22
-  },
-  {
-    "genre_id": 26,
-    "game_id": 22
-  },
-  {
-    "genre_id": 27,
-    "game_id": 23
-  },
-  {
-    "genre_id": 6,
-    "game_id": 23
-  },
-  {
-    "genre_id": 28,
-    "game_id": 24
-  },
-  {
-    "genre_id": 29,
-    "game_id": 24
-  },
-  {
-    "genre_id": 30,
-    "game_id": 24
+    "genre_id": 11,
+    "game_id": 7
   },
   {
     "genre_id": 3,
-    "game_id": 25
+    "game_id": 8
   },
   {
     "genre_id": 4,
-    "game_id": 25
+    "game_id": 8
   },
   {
-    "genre_id": 9,
-    "game_id": 26
-  },
-  {
-    "genre_id": 25,
-    "game_id": 26
-  },
-  {
-    "genre_id": 26,
-    "game_id": 26
-  },
-  {
-    "genre_id": 15,
-    "game_id": 27
-  },
-  {
-    "genre_id": 16,
-    "game_id": 27
-  },
-  {
-    "genre_id": 31,
-    "game_id": 27
-  },
-  {
-    "genre_id": 13,
-    "game_id": 27
-  },
-  {
-    "genre_id": 18,
-    "game_id": 27
-  },
-  {
-    "genre_id": 1,
-    "game_id": 28
+    "genre_id": 5,
+    "game_id": 9
   },
   {
     "genre_id": 6,
-    "game_id": 28
+    "game_id": 9
+  },
+  {
+    "genre_id": 7,
+    "game_id": 9
+  },
+  {
+    "genre_id": 13,
+    "game_id": 9
   },
   {
     "genre_id": 3,
-    "game_id": 29
+    "game_id": 10
+  },
+  {
+    "genre_id": 4,
+    "game_id": 10
+  },
+  {
+    "genre_id": 3,
+    "game_id": 11
+  },
+  {
+    "genre_id": 9,
+    "game_id": 11
+  },
+  {
+    "genre_id": 9,
+    "game_id": 12
+  },
+  {
+    "genre_id": 1,
+    "game_id": 12
   },
   {
     "genre_id": 14,
+    "game_id": 12
+  },
+  {
+    "genre_id": 3,
+    "game_id": 13
+  },
+  {
+    "genre_id": 9,
+    "game_id": 13
+  },
+  {
+    "genre_id": 15,
+    "game_id": 14
+  },
+  {
+    "genre_id": 16,
+    "game_id": 14
+  },
+  {
+    "genre_id": 17,
+    "game_id": 14
+  },
+  {
+    "genre_id": 18,
+    "game_id": 15
+  },
+  {
+    "genre_id": 19,
+    "game_id": 15
+  },
+  {
+    "genre_id": 20,
+    "game_id": 15
+  },
+  {
+    "genre_id": 3,
+    "game_id": 16
+  },
+  {
+    "genre_id": 9,
+    "game_id": 16
+  },
+  {
+    "genre_id": 3,
+    "game_id": 17
+  },
+  {
+    "genre_id": 9,
+    "game_id": 17
+  },
+  {
+    "genre_id": 21,
+    "game_id": 18
+  },
+  {
+    "genre_id": 22,
+    "game_id": 18
+  },
+  {
+    "genre_id": 23,
+    "game_id": 18
+  },
+  {
+    "genre_id": 10,
+    "game_id": 19
+  },
+  {
+    "genre_id": 3,
+    "game_id": 19
+  },
+  {
+    "genre_id": 24,
+    "game_id": 19
+  },
+  {
+    "genre_id": 5,
+    "game_id": 20
+  },
+  {
+    "genre_id": 25,
+    "game_id": 20
+  },
+  {
+    "genre_id": 26,
+    "game_id": 20
+  },
+  {
+    "genre_id": 27,
+    "game_id": 21
+  },
+  {
+    "genre_id": 9,
+    "game_id": 21
+  },
+  {
+    "genre_id": 18,
+    "game_id": 22
+  },
+  {
+    "genre_id": 19,
+    "game_id": 22
+  },
+  {
+    "genre_id": 28,
+    "game_id": 22
+  },
+  {
+    "genre_id": 1,
+    "game_id": 23
+  },
+  {
+    "genre_id": 2,
+    "game_id": 23
+  },
+  {
+    "genre_id": 5,
+    "game_id": 24
+  },
+  {
+    "genre_id": 25,
+    "game_id": 24
+  },
+  {
+    "genre_id": 26,
+    "game_id": 24
+  },
+  {
+    "genre_id": 21,
+    "game_id": 25
+  },
+  {
+    "genre_id": 29,
+    "game_id": 25
+  },
+  {
+    "genre_id": 30,
+    "game_id": 25
+  },
+  {
+    "genre_id": 13,
+    "game_id": 25
+  },
+  {
+    "genre_id": 31,
+    "game_id": 25
+  },
+  {
+    "genre_id": 1,
+    "game_id": 26
+  },
+  {
+    "genre_id": 14,
+    "game_id": 26
+  },
+  {
+    "genre_id": 3,
+    "game_id": 27
+  },
+  {
+    "genre_id": 9,
+    "game_id": 27
+  },
+  {
+    "genre_id": 1,
+    "game_id": 28
+  },
+  {
+    "genre_id": 9,
+    "game_id": 28
+  },
+  {
+    "genre_id": 11,
+    "game_id": 28
+  },
+  {
+    "genre_id": 5,
+    "game_id": 29
+  },
+  {
+    "genre_id": 32,
+    "game_id": 29
+  },
+  {
+    "genre_id": 26,
     "game_id": 29
   },
   {
@@ -320,11 +324,7 @@
     "game_id": 30
   },
   {
-    "genre_id": 6,
-    "game_id": 30
-  },
-  {
-    "genre_id": 8,
+    "genre_id": 24,
     "game_id": 30
   },
   {
@@ -332,203 +332,207 @@
     "game_id": 31
   },
   {
-    "genre_id": 24,
+    "genre_id": 11,
     "game_id": 31
   },
   {
-    "genre_id": 15,
-    "game_id": 32
-  },
-  {
-    "genre_id": 16,
-    "game_id": 32
-  },
-  {
-    "genre_id": 32,
-    "game_id": 32
-  },
-  {
     "genre_id": 18,
-    "game_id": 32
-  },
-  {
-    "genre_id": 3,
-    "game_id": 33
-  },
-  {
-    "genre_id": 8,
-    "game_id": 33
-  },
-  {
-    "genre_id": 28,
-    "game_id": 33
-  },
-  {
-    "genre_id": 29,
-    "game_id": 33
-  },
-  {
-    "genre_id": 33,
-    "game_id": 33
-  },
-  {
-    "genre_id": 9,
-    "game_id": 34
-  },
-  {
-    "genre_id": 25,
-    "game_id": 34
-  },
-  {
-    "genre_id": 26,
-    "game_id": 34
-  },
-  {
-    "genre_id": 3,
-    "game_id": 35
-  },
-  {
-    "genre_id": 8,
-    "game_id": 35
-  },
-  {
-    "genre_id": 9,
-    "game_id": 36
-  },
-  {
-    "genre_id": 34,
-    "game_id": 36
-  },
-  {
-    "genre_id": 35,
-    "game_id": 36
-  },
-  {
-    "genre_id": 9,
-    "game_id": 37
-  },
-  {
-    "genre_id": 10,
-    "game_id": 37
-  },
-  {
-    "genre_id": 11,
-    "game_id": 37
-  },
-  {
-    "genre_id": 13,
-    "game_id": 37
-  },
-  {
-    "genre_id": 9,
-    "game_id": 38
-  },
-  {
-    "genre_id": 34,
-    "game_id": 38
-  },
-  {
-    "genre_id": 26,
-    "game_id": 38
-  },
-  {
-    "genre_id": 9,
-    "game_id": 39
-  },
-  {
-    "genre_id": 10,
-    "game_id": 39
-  },
-  {
-    "genre_id": 11,
-    "game_id": 39
-  },
-  {
-    "genre_id": 13,
-    "game_id": 39
-  },
-  {
-    "genre_id": 36,
-    "game_id": 40
-  },
-  {
-    "genre_id": 37,
-    "game_id": 40
-  },
-  {
-    "genre_id": 9,
-    "game_id": 41
-  },
-  {
-    "genre_id": 10,
-    "game_id": 41
-  },
-  {
-    "genre_id": 38,
-    "game_id": 41
-  },
-  {
-    "genre_id": 12,
-    "game_id": 41
-  },
-  {
-    "genre_id": 3,
-    "game_id": 42
-  },
-  {
-    "genre_id": 8,
-    "game_id": 42
-  },
-  {
-    "genre_id": 9,
-    "game_id": 43
-  },
-  {
-    "genre_id": 10,
-    "game_id": 43
-  },
-  {
-    "genre_id": 11,
-    "game_id": 43
-  },
-  {
-    "genre_id": 13,
-    "game_id": 43
+    "game_id": 31
   },
   {
     "genre_id": 19,
-    "game_id": 44
+    "game_id": 31
   },
   {
     "genre_id": 20,
-    "game_id": 44
+    "game_id": 31
   },
   {
     "genre_id": 21,
-    "game_id": 44
+    "game_id": 32
   },
   {
-    "genre_id": 39,
-    "game_id": 45
+    "genre_id": 29,
+    "game_id": 32
   },
   {
-    "genre_id": 9,
-    "game_id": 45
+    "genre_id": 33,
+    "game_id": 32
   },
   {
-    "genre_id": 10,
-    "game_id": 45
+    "genre_id": 31,
+    "game_id": 32
+  },
+  {
+    "genre_id": 5,
+    "game_id": 33
+  },
+  {
+    "genre_id": 25,
+    "game_id": 33
+  },
+  {
+    "genre_id": 26,
+    "game_id": 33
+  },
+  {
+    "genre_id": 34,
+    "game_id": 34
+  },
+  {
+    "genre_id": 35,
+    "game_id": 34
+  },
+  {
+    "genre_id": 1,
+    "game_id": 35
   },
   {
     "genre_id": 11,
-    "game_id": 45
+    "game_id": 35
+  },
+  {
+    "genre_id": 5,
+    "game_id": 36
+  },
+  {
+    "genre_id": 32,
+    "game_id": 36
+  },
+  {
+    "genre_id": 36,
+    "game_id": 36
+  },
+  {
+    "genre_id": 5,
+    "game_id": 37
+  },
+  {
+    "genre_id": 6,
+    "game_id": 37
+  },
+  {
+    "genre_id": 7,
+    "game_id": 37
   },
   {
     "genre_id": 13,
+    "game_id": 37
+  },
+  {
+    "genre_id": 5,
+    "game_id": 38
+  },
+  {
+    "genre_id": 6,
+    "game_id": 38
+  },
+  {
+    "genre_id": 7,
+    "game_id": 38
+  },
+  {
+    "genre_id": 13,
+    "game_id": 38
+  },
+  {
+    "genre_id": 5,
+    "game_id": 39
+  },
+  {
+    "genre_id": 32,
+    "game_id": 39
+  },
+  {
+    "genre_id": 26,
+    "game_id": 39
+  },
+  {
+    "genre_id": 3,
+    "game_id": 40
+  },
+  {
+    "genre_id": 4,
+    "game_id": 40
+  },
+  {
+    "genre_id": 5,
+    "game_id": 41
+  },
+  {
+    "genre_id": 6,
+    "game_id": 41
+  },
+  {
+    "genre_id": 37,
+    "game_id": 41
+  },
+  {
+    "genre_id": 8,
+    "game_id": 41
+  },
+  {
+    "genre_id": 1,
+    "game_id": 42
+  },
+  {
+    "genre_id": 11,
+    "game_id": 42
+  },
+  {
+    "genre_id": 5,
+    "game_id": 43
+  },
+  {
+    "genre_id": 6,
+    "game_id": 43
+  },
+  {
+    "genre_id": 7,
+    "game_id": 43
+  },
+  {
+    "genre_id": 13,
+    "game_id": 43
+  },
+  {
+    "genre_id": 38,
+    "game_id": 44
+  },
+  {
+    "genre_id": 5,
+    "game_id": 44
+  },
+  {
+    "genre_id": 6,
+    "game_id": 44
+  },
+  {
+    "genre_id": 7,
+    "game_id": 44
+  },
+  {
+    "genre_id": 13,
+    "game_id": 44
+  },
+  {
+    "genre_id": 15,
     "game_id": 45
   },
   {
-    "genre_id": 28,
+    "genre_id": 16,
+    "game_id": 45
+  },
+  {
+    "genre_id": 17,
+    "game_id": 45
+  },
+  {
+    "genre_id": 18,
+    "game_id": 46
+  },
+  {
+    "genre_id": 39,
     "game_id": 46
   },
   {
@@ -536,15 +540,11 @@
     "game_id": 46
   },
   {
-    "genre_id": 41,
-    "game_id": 46
-  },
-  {
-    "genre_id": 9,
+    "genre_id": 5,
     "game_id": 47
   },
   {
-    "genre_id": 34,
+    "genre_id": 32,
     "game_id": 47
   },
   {
@@ -552,11 +552,15 @@
     "game_id": 47
   },
   {
-    "genre_id": 15,
+    "genre_id": 21,
     "game_id": 48
   },
   {
     "genre_id": 22,
+    "game_id": 48
+  },
+  {
+    "genre_id": 41,
     "game_id": 48
   },
   {
@@ -565,18 +569,14 @@
   },
   {
     "genre_id": 43,
-    "game_id": 48
-  },
-  {
-    "genre_id": 44,
     "game_id": 49
   },
   {
-    "genre_id": 44,
+    "genre_id": 43,
     "game_id": 49
   },
   {
-    "genre_id": 1,
+    "genre_id": 3,
     "game_id": 49
   },
   {
@@ -584,759 +584,15 @@
     "game_id": 49
   },
   {
-    "genre_id": 1,
+    "genre_id": 5,
     "game_id": 50
   },
   {
-    "genre_id": 2,
+    "genre_id": 32,
     "game_id": 50
-  },
-  {
-    "genre_id": 9,
-    "game_id": 51
-  },
-  {
-    "genre_id": 1,
-    "game_id": 51
-  },
-  {
-    "genre_id": 45,
-    "game_id": 51
-  },
-  {
-    "genre_id": 2,
-    "game_id": 51
-  },
-  {
-    "genre_id": 35,
-    "game_id": 51
-  },
-  {
-    "genre_id": 9,
-    "game_id": 52
-  },
-  {
-    "genre_id": 10,
-    "game_id": 52
-  },
-  {
-    "genre_id": 11,
-    "game_id": 52
-  },
-  {
-    "genre_id": 13,
-    "game_id": 52
-  },
-  {
-    "genre_id": 28,
-    "game_id": 53
-  },
-  {
-    "genre_id": 6,
-    "game_id": 53
-  },
-  {
-    "genre_id": 9,
-    "game_id": 54
-  },
-  {
-    "genre_id": 34,
-    "game_id": 54
-  },
-  {
-    "genre_id": 35,
-    "game_id": 54
-  },
-  {
-    "genre_id": 9,
-    "game_id": 55
-  },
-  {
-    "genre_id": 25,
-    "game_id": 55
-  },
-  {
-    "genre_id": 26,
-    "game_id": 55
-  },
-  {
-    "genre_id": 9,
-    "game_id": 56
-  },
-  {
-    "genre_id": 10,
-    "game_id": 56
-  },
-  {
-    "genre_id": 38,
-    "game_id": 56
-  },
-  {
-    "genre_id": 13,
-    "game_id": 56
-  },
-  {
-    "genre_id": 9,
-    "game_id": 57
-  },
-  {
-    "genre_id": 34,
-    "game_id": 57
-  },
-  {
-    "genre_id": 26,
-    "game_id": 57
-  },
-  {
-    "genre_id": 1,
-    "game_id": 58
-  },
-  {
-    "genre_id": 24,
-    "game_id": 58
-  },
-  {
-    "genre_id": 9,
-    "game_id": 59
-  },
-  {
-    "genre_id": 10,
-    "game_id": 59
-  },
-  {
-    "genre_id": 11,
-    "game_id": 59
-  },
-  {
-    "genre_id": 12,
-    "game_id": 59
-  },
-  {
-    "genre_id": 3,
-    "game_id": 60
-  },
-  {
-    "genre_id": 8,
-    "game_id": 60
-  },
-  {
-    "genre_id": 9,
-    "game_id": 61
-  },
-  {
-    "genre_id": 25,
-    "game_id": 61
-  },
-  {
-    "genre_id": 35,
-    "game_id": 61
-  },
-  {
-    "genre_id": 3,
-    "game_id": 62
-  },
-  {
-    "genre_id": 14,
-    "game_id": 62
-  },
-  {
-    "genre_id": 9,
-    "game_id": 63
-  },
-  {
-    "genre_id": 10,
-    "game_id": 63
-  },
-  {
-    "genre_id": 11,
-    "game_id": 63
-  },
-  {
-    "genre_id": 13,
-    "game_id": 63
-  },
-  {
-    "genre_id": 3,
-    "game_id": 64
-  },
-  {
-    "genre_id": 8,
-    "game_id": 64
-  },
-  {
-    "genre_id": 1,
-    "game_id": 65
-  },
-  {
-    "genre_id": 24,
-    "game_id": 65
-  },
-  {
-    "genre_id": 46,
-    "game_id": 66
-  },
-  {
-    "genre_id": 46,
-    "game_id": 66
-  },
-  {
-    "genre_id": 1,
-    "game_id": 66
-  },
-  {
-    "genre_id": 2,
-    "game_id": 66
-  },
-  {
-    "genre_id": 1,
-    "game_id": 67
-  },
-  {
-    "genre_id": 2,
-    "game_id": 67
-  },
-  {
-    "genre_id": 9,
-    "game_id": 68
-  },
-  {
-    "genre_id": 10,
-    "game_id": 68
-  },
-  {
-    "genre_id": 11,
-    "game_id": 68
-  },
-  {
-    "genre_id": 13,
-    "game_id": 68
-  },
-  {
-    "genre_id": 19,
-    "game_id": 69
-  },
-  {
-    "genre_id": 20,
-    "game_id": 69
-  },
-  {
-    "genre_id": 21,
-    "game_id": 69
-  },
-  {
-    "genre_id": 1,
-    "game_id": 70
-  },
-  {
-    "genre_id": 2,
-    "game_id": 70
-  },
-  {
-    "genre_id": 3,
-    "game_id": 71
-  },
-  {
-    "genre_id": 8,
-    "game_id": 71
-  },
-  {
-    "genre_id": 3,
-    "game_id": 72
-  },
-  {
-    "genre_id": 8,
-    "game_id": 72
-  },
-  {
-    "genre_id": 9,
-    "game_id": 73
-  },
-  {
-    "genre_id": 10,
-    "game_id": 73
-  },
-  {
-    "genre_id": 11,
-    "game_id": 73
-  },
-  {
-    "genre_id": 12,
-    "game_id": 73
-  },
-  {
-    "genre_id": 47,
-    "game_id": 74
-  },
-  {
-    "genre_id": 19,
-    "game_id": 74
-  },
-  {
-    "genre_id": 13,
-    "game_id": 74
-  },
-  {
-    "genre_id": 21,
-    "game_id": 74
-  },
-  {
-    "genre_id": 3,
-    "game_id": 75
-  },
-  {
-    "genre_id": 4,
-    "game_id": 75
-  },
-  {
-    "genre_id": 15,
-    "game_id": 76
-  },
-  {
-    "genre_id": 16,
-    "game_id": 76
-  },
-  {
-    "genre_id": 17,
-    "game_id": 76
-  },
-  {
-    "genre_id": 18,
-    "game_id": 76
-  },
-  {
-    "genre_id": 9,
-    "game_id": 77
-  },
-  {
-    "genre_id": 10,
-    "game_id": 77
-  },
-  {
-    "genre_id": 38,
-    "game_id": 77
-  },
-  {
-    "genre_id": 13,
-    "game_id": 77
-  },
-  {
-    "genre_id": 8,
-    "game_id": 78
-  },
-  {
-    "genre_id": 3,
-    "game_id": 78
-  },
-  {
-    "genre_id": 4,
-    "game_id": 78
-  },
-  {
-    "genre_id": 9,
-    "game_id": 79
-  },
-  {
-    "genre_id": 10,
-    "game_id": 79
-  },
-  {
-    "genre_id": 11,
-    "game_id": 79
-  },
-  {
-    "genre_id": 13,
-    "game_id": 79
-  },
-  {
-    "genre_id": 1,
-    "game_id": 80
-  },
-  {
-    "genre_id": 6,
-    "game_id": 80
-  },
-  {
-    "genre_id": 13,
-    "game_id": 81
-  },
-  {
-    "genre_id": 15,
-    "game_id": 81
-  },
-  {
-    "genre_id": 16,
-    "game_id": 81
-  },
-  {
-    "genre_id": 31,
-    "game_id": 81
-  },
-  {
-    "genre_id": 18,
-    "game_id": 81
-  },
-  {
-    "genre_id": 1,
-    "game_id": 82
-  },
-  {
-    "genre_id": 6,
-    "game_id": 82
   },
   {
     "genre_id": 36,
-    "game_id": 83
-  },
-  {
-    "genre_id": 37,
-    "game_id": 83
-  },
-  {
-    "genre_id": 9,
-    "game_id": 84
-  },
-  {
-    "genre_id": 25,
-    "game_id": 84
-  },
-  {
-    "genre_id": 26,
-    "game_id": 84
-  },
-  {
-    "genre_id": 46,
-    "game_id": 85
-  },
-  {
-    "genre_id": 1,
-    "game_id": 85
-  },
-  {
-    "genre_id": 6,
-    "game_id": 85
-  },
-  {
-    "genre_id": 20,
-    "game_id": 86
-  },
-  {
-    "genre_id": 19,
-    "game_id": 86
-  },
-  {
-    "genre_id": 13,
-    "game_id": 86
-  },
-  {
-    "genre_id": 21,
-    "game_id": 86
-  },
-  {
-    "genre_id": 9,
-    "game_id": 87
-  },
-  {
-    "genre_id": 10,
-    "game_id": 87
-  },
-  {
-    "genre_id": 11,
-    "game_id": 87
-  },
-  {
-    "genre_id": 13,
-    "game_id": 87
-  },
-  {
-    "genre_id": 9,
-    "game_id": 88
-  },
-  {
-    "genre_id": 6,
-    "game_id": 88
-  },
-  {
-    "genre_id": 6,
-    "game_id": 89
-  },
-  {
-    "genre_id": 9,
-    "game_id": 89
-  },
-  {
-    "genre_id": 10,
-    "game_id": 89
-  },
-  {
-    "genre_id": 11,
-    "game_id": 89
-  },
-  {
-    "genre_id": 13,
-    "game_id": 89
-  },
-  {
-    "genre_id": 1,
-    "game_id": 90
-  },
-  {
-    "genre_id": 2,
-    "game_id": 90
-  },
-  {
-    "genre_id": 9,
-    "game_id": 91
-  },
-  {
-    "genre_id": 25,
-    "game_id": 91
-  },
-  {
-    "genre_id": 26,
-    "game_id": 91
-  },
-  {
-    "genre_id": 19,
-    "game_id": 92
-  },
-  {
-    "genre_id": 20,
-    "game_id": 92
-  },
-  {
-    "genre_id": 21,
-    "game_id": 92
-  },
-  {
-    "genre_id": 39,
-    "game_id": 93
-  },
-  {
-    "genre_id": 28,
-    "game_id": 93
-  },
-  {
-    "genre_id": 48,
-    "game_id": 93
-  },
-  {
-    "genre_id": 6,
-    "game_id": 93
-  },
-  {
-    "genre_id": 1,
-    "game_id": 94
-  },
-  {
-    "genre_id": 24,
-    "game_id": 94
-  },
-  {
-    "genre_id": 3,
-    "game_id": 95
-  },
-  {
-    "genre_id": 49,
-    "game_id": 95
-  },
-  {
-    "genre_id": 1,
-    "game_id": 96
-  },
-  {
-    "genre_id": 2,
-    "game_id": 96
-  },
-  {
-    "genre_id": 9,
-    "game_id": 97
-  },
-  {
-    "genre_id": 34,
-    "game_id": 97
-  },
-  {
-    "genre_id": 35,
-    "game_id": 97
-  },
-  {
-    "genre_id": 9,
-    "game_id": 98
-  },
-  {
-    "genre_id": 15,
-    "game_id": 98
-  },
-  {
-    "genre_id": 34,
-    "game_id": 98
-  },
-  {
-    "genre_id": 22,
-    "game_id": 98
-  },
-  {
-    "genre_id": 35,
-    "game_id": 98
-  },
-  {
-    "genre_id": 42,
-    "game_id": 98
-  },
-  {
-    "genre_id": 43,
-    "game_id": 98
-  },
-  {
-    "genre_id": 1,
-    "game_id": 99
-  },
-  {
-    "genre_id": 2,
-    "game_id": 99
-  },
-  {
-    "genre_id": 9,
-    "game_id": 100
-  },
-  {
-    "genre_id": 34,
-    "game_id": 100
-  },
-  {
-    "genre_id": 26,
-    "game_id": 100
-  },
-  {
-    "genre_id": 28,
-    "game_id": 101
-  },
-  {
-    "genre_id": 48,
-    "game_id": 101
-  },
-  {
-    "genre_id": 6,
-    "game_id": 101
-  },
-  {
-    "genre_id": 9,
-    "game_id": 102
-  },
-  {
-    "genre_id": 25,
-    "game_id": 102
-  },
-  {
-    "genre_id": 35,
-    "game_id": 102
-  },
-  {
-    "genre_id": 3,
-    "game_id": 103
-  },
-  {
-    "genre_id": 6,
-    "game_id": 103
-  },
-  {
-    "genre_id": 6,
-    "game_id": 104
-  },
-  {
-    "genre_id": 6,
-    "game_id": 104
-  },
-  {
-    "genre_id": 3,
-    "game_id": 104
-  },
-  {
-    "genre_id": 4,
-    "game_id": 104
-  },
-  {
-    "genre_id": 3,
-    "game_id": 105
-  },
-  {
-    "genre_id": 4,
-    "game_id": 105
-  },
-  {
-    "genre_id": 3,
-    "game_id": 106
-  },
-  {
-    "genre_id": 49,
-    "game_id": 106
-  },
-  {
-    "genre_id": 9,
-    "game_id": 107
-  },
-  {
-    "genre_id": 25,
-    "game_id": 107
-  },
-  {
-    "genre_id": 35,
-    "game_id": 107
-  },
-  {
-    "genre_id": 9,
-    "game_id": 108
-  },
-  {
-    "genre_id": 10,
-    "game_id": 108
-  },
-  {
-    "genre_id": 11,
-    "game_id": 108
-  },
-  {
-    "genre_id": 13,
-    "game_id": 108
-  },
-  {
-    "genre_id": 9,
-    "game_id": 109
-  },
-  {
-    "genre_id": 10,
-    "game_id": 109
-  },
-  {
-    "genre_id": 11,
-    "game_id": 109
-  },
-  {
-    "genre_id": 13,
-    "game_id": 109
-  },
-  {
-    "genre_id": 27,
-    "game_id": 110
-  },
-  {
-    "genre_id": 35,
-    "game_id": 110
-  },
-  {
-    "genre_id": 11,
-    "game_id": 110
-  },
-  {
-    "genre_id": 50,
-    "game_id": 111
-  },
-  {
-    "genre_id": 9,
-    "game_id": 111
-  },
-  {
-    "genre_id": 13,
-    "game_id": 111
+    "game_id": 50
   }
 ]

@@ -216,7 +216,7 @@ file = File.read(Rails.root+"db/game.json")
 user_hash = JSON.parse(file)
 c = 0
 user_hash.each do |u|
-     Game.create name: u["name"], relase_date: u["relase_date"], summary: u["summary"], developer: u["developer"], link1: u["link1"], link2: u["link2"], link3: u["link3"] 
+     Game.create name: u["name"], relase_date: u["relase_date"], yotube_id: u["youtube_id"], summary: u["summary"], developer: u["developer"], link1: u["link1"], link2: u["link2"], link3: u["link3"] 
     c = c+ 1
     p c, user_hash.length
 end

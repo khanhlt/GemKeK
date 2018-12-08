@@ -8,6 +8,7 @@ class CreateGames < ActiveRecord::Migration[5.2]
       t.string :link2
       t.string :link3
       t.string :developer
+      t.string :yotube_id
       t.timestamps
     end
   end
